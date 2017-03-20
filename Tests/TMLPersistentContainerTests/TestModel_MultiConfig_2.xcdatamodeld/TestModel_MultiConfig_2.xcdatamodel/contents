@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MultiItem1" representedClassName="MultiItem1_2" syncable="YES" codeGenerationType="class">
+        <attribute name="counter1" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id1" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="MultiItem2" representedClassName="MultiItem2_2" syncable="YES" codeGenerationType="class">
+        <attribute name="counter2" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id2" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <configuration name="Config1">
+        <memberEntity name="MultiItem1"/>
+    </configuration>
+    <configuration name="Config2">
+        <memberEntity name="MultiItem2"/>
+    </configuration>
+    <elements>
+        <element name="MultiItem1" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="MultiItem2" positionX="-54" positionY="0" width="128" height="75"/>
+    </elements>
+</model>
