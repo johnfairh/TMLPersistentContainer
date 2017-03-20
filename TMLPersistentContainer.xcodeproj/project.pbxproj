@@ -209,7 +209,7 @@
 		AD2FAA261CD0B6D800659CF4 /* TMLPersistentContainer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TMLPersistentContainer.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* TMLPersistentContainerTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TMLPersistentContainerTests.plist; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* TMLPersistentContainer-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMLPersistentContainer-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD75028D1C690C7A006590AF /* TMLPersistentContainerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMLPersistentContainerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD75028D1C690C7A006590AF /* TMLPersistentContainer-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMLPersistentContainer-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,7 +338,7 @@
 				52D6D9F01BEFFFBE002C0205 /* TMLPersistentContainer.framework */,
 				52D6DA0F1BF000BD002C0205 /* TMLPersistentContainer.framework */,
 				DD75027A1C68FCFC006590AF /* TMLPersistentContainer-macOS Tests.xctest */,
-				DD75028D1C690C7A006590AF /* TMLPersistentContainerTests.xctest */,
+				DD75028D1C690C7A006590AF /* TMLPersistentContainer-tvOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -525,7 +525,7 @@
 			);
 			name = "TMLPersistentContainer-tvOS Tests";
 			productName = "TMLPersistentContainer-tvOS Tests";
-			productReference = DD75028D1C690C7A006590AF /* TMLPersistentContainerTests.xctest */;
+			productReference = DD75028D1C690C7A006590AF /* TMLPersistentContainer-tvOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1211,7 +1211,7 @@
 				INFOPLIST_FILE = Configs/TMLPersistentContainerTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-tvOS-Tests";
-				PRODUCT_NAME = TMLPersistentContainerTests;
+				PRODUCT_NAME = "TMLPersistentContainer-tvOS Tests";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
@@ -1226,7 +1226,7 @@
 				INFOPLIST_FILE = Configs/TMLPersistentContainerTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-tvOS-Tests";
-				PRODUCT_NAME = TMLPersistentContainerTests;
+				PRODUCT_NAME = "TMLPersistentContainer-tvOS Tests";
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
