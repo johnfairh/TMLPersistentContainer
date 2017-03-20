@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MigrationError Enum Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/MigrationError" class="dashAnchor"></a>
+    <a title="MigrationError Enum Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TMLPersistentContainer Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/johnfairh/TMLPersistentContainer"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TMLPersistentContainer Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MigrationError Enum Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../usage.html">Usage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/PersistentContainer.html">PersistentContainer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MigrationError.html">MigrationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/LogMessage.html">LogMessage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Subscripts.html">Subscripts</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Subscripts.html#/s:iE22TMLPersistentContainerSS9subscriptFVSC8_NSRangeSS">subscript(_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:22TMLPersistentContainer23PersistentStoreMetadata">PersistentStoreMetadata</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:22TMLPersistentContainer19StoreLoadCompletion">StoreLoadCompletion</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MigrationError</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MigrationError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                </div>
+              </div>
+            <p>Errors that can occur preventing persistent store loading, passed into the callback given to
+<code>PersistentContainer.loadPersistentStores</code>.</p>
+
+<p>When any of these unusual conditions occurs, the persistent container provides a lot of
+human-readable (-ish) information to the logging interface.  The first step to debugging
+one of these errors is to read that text and try to make sense of it.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO22TMLPersistentContainer14MigrationError20coreqMigrationFailedFMS0_FCSo28NSPersistentStoreDescriptionS0_"></a>
+                    <a name="//apple_ref/swift/Element/coreqMigrationFailed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO22TMLPersistentContainer14MigrationError20coreqMigrationFailedFMS0_FCSo28NSPersistentStoreDescriptionS0_">coreqMigrationFailed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The persistent store has not been loaded because another store associated with the persistent
+container required migration but there was an error attempting to migrate it.  To avoid leaving
+the application with stores having a mixture of versions all store loading is prevented.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">coreqMigrationFailed</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO22TMLPersistentContainer14MigrationError20badModelVersionOrderFMS0_FTCSo28NSPersistentStoreDescriptionOS_17ModelVersionOrder_S0_"></a>
+                    <a name="//apple_ref/swift/Element/badModelVersionOrder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO22TMLPersistentContainer14MigrationError20badModelVersionOrderFMS0_FTCSo28NSPersistentStoreDescriptionOS_17ModelVersionOrder_S0_">badModelVersionOrder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Migration cannot precede because the <code><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></code> for the store is invalid.
+This could mean:</p>
+
+<ul>
+<li><code>.patternMatchCompare</code> - not a valid regular expression (according to <code>NSRegularExpression</code>);</li>
+<li><code>.list</code> - empty list, or list contains repeated elements;</li>
+<li><code>.pairList</code> - there is a cycle in the list of migrations.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">badModelVersionOrder</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt"><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO22TMLPersistentContainer14MigrationError21cannotFindSourceModelFMS0_FTCSo28NSPersistentStoreDescriptionGVs10DictionarySSP___S0_"></a>
+                    <a name="//apple_ref/swift/Element/cannotFindSourceModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO22TMLPersistentContainer14MigrationError21cannotFindSourceModelFMS0_FTCSo28NSPersistentStoreDescriptionGVs10DictionarySSP___S0_">cannotFindSourceModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Migration cannot proceed because the persistent container cannot find a managed object model
+that is compatible with the persistent store&rsquo;s metadata in the bundles passed to
+<code>PersistentContainer.init</code>.
+The enum parameters are the particular store with the problem and the metadata of that
+store that cannot be matched to a model.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cannotFindSourceModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:22TMLPersistentContainer23PersistentStoreMetadata">PersistentStoreMetadata</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO22TMLPersistentContainer14MigrationError26cannotFindDestinationModelFMS0_FTCSo28NSPersistentStoreDescriptionCSo20NSManagedObjectModel_S0_"></a>
+                    <a name="//apple_ref/swift/Element/cannotFindDestinationModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO22TMLPersistentContainer14MigrationError26cannotFindDestinationModelFMS0_FTCSo28NSPersistentStoreDescriptionCSo20NSManagedObjectModel_S0_">cannotFindDestinationModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Migration cannot proceed because the persistent container cannot find a managed object model
+that matches the <code>NSManagedObjectModel</code> passed to <code>PersistentContainer.init(name:managedObjectModel:bundles:modelVersionOrder)</code>
+in the list of bundles.
+This means either a bundle is missing from the list or the <code>NSManagedObjectModel</code> has been
+created by merging several models &ndash; this second use case is not currently supported by this library. Sorry.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cannotFindDestinationModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt">NSManagedObjectModel</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO22TMLPersistentContainer14MigrationError20noRouteBetweenModelsFMS0_FTSSSS_S0_"></a>
+                    <a name="//apple_ref/swift/Element/noRouteBetweenModels" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO22TMLPersistentContainer14MigrationError20noRouteBetweenModelsFMS0_FTSSSS_S0_">noRouteBetweenModels</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Migration cannot proceed because the persistent container cannot find a migration path
+from the source model version (first string parameter) to the destination model version (second string
+parameter) using mapping models from the bundles passed to <code>PersistentContainer.init</code> combined
+with inferred mappings if enabled.  Possible reasons include:</p>
+
+<ul>
+<li>The <code><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></code> given to the container is too strict/incorrect;</li>
+<li>Intermediate data model versions have been incorrectly deleted from the app&rsquo;s bundles;</li>
+<li>Inferred mappings are required but have been disabled via <code>NSPersistentStoreDescription.shouldInferMappingModelAutomatically</code>;</li>
+<li>Mapping models have been incorrectly deleted from the app&rsquo;s bundles;</li>
+<li>The bundles given to the persistent container to search are wrong.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">noRouteBetweenModels</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO22TMLPersistentContainer14MigrationError12cyclicRoute1FMS0_FTSSSS_S0_"></a>
+                    <a name="//apple_ref/swift/Element/cyclicRoute1" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO22TMLPersistentContainer14MigrationError12cyclicRoute1FMS0_FTSSSS_S0_">cyclicRoute1</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Migration cannot proceed because the persistent container has got confused: after examining
+all the model versions and mapping models it has not been able to understand the fastest way
+of migrating between the two model versions named in the string parameters.
+This probably means there are cycles in the persistent container&rsquo;s <code><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cyclicRoute1</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO22TMLPersistentContainer14MigrationError12cyclicRoute2FMS0_FTSSSS_S0_"></a>
+                    <a name="//apple_ref/swift/Element/cyclicRoute2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO22TMLPersistentContainer14MigrationError12cyclicRoute2FMS0_FTSSSS_S0_">cyclicRoute2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Migration cannot proceed because the persistent container is confused: after examining all
+the model versions and mapping models it has not been able to understand the fastest way
+of migrating between the two model versions named in the string parameters.
+This also probably means there are cycles in the persistent container&rsquo;s <code><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cyclicRoute2</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO22TMLPersistentContainer14MigrationError12cyclicRoute3FMS0_FTSSSS_S0_"></a>
+                    <a name="//apple_ref/swift/Element/cyclicRoute3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO22TMLPersistentContainer14MigrationError12cyclicRoute3FMS0_FTSSSS_S0_">cyclicRoute3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Migration cannot proceed because the persistent container is confused: after examining all
+the model versions and mapping models it has found a path involving a mapping model that leads
+from the store&rsquo;s current model version back to itself.
+This ALSO probably means there are cycles in the persistent container&rsquo;s <code><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cyclicRoute3</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO22TMLPersistentContainer14MigrationError12logicFailureFMS0_FSSS0_"></a>
+                    <a name="//apple_ref/swift/Element/logicFailure" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO22TMLPersistentContainer14MigrationError12logicFailureFMS0_FSSS0_">logicFailure</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Migration has failed due to what seems to be a bug in the library code or, less likely, its
+dependencies.  Sorry about that.  A bug report including as full a log output as possible would
+be welcome.  The string parameter is a brief explanation of the problem.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">logicFailure</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vO22TMLPersistentContainer14MigrationError11descriptionSS"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vO22TMLPersistentContainer14MigrationError11descriptionSS">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A human-readable description of the error</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2017 John Fairhurst. All rights reserved.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

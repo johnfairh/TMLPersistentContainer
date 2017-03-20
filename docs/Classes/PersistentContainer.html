@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PersistentContainer Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/PersistentContainer" class="dashAnchor"></a>
+    <a title="PersistentContainer Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TMLPersistentContainer Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/johnfairh/TMLPersistentContainer"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TMLPersistentContainer Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        PersistentContainer Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../usage.html">Usage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/PersistentContainer.html">PersistentContainer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MigrationError.html">MigrationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/LogMessage.html">LogMessage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Subscripts.html">Subscripts</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Subscripts.html#/s:iE22TMLPersistentContainerSS9subscriptFVSC8_NSRangeSS">subscript(_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:22TMLPersistentContainer23PersistentStoreMetadata">PersistentStoreMetadata</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:22TMLPersistentContainer19StoreLoadCompletion">StoreLoadCompletion</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>PersistentContainer</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">PersistentContainer</span><span class="p">:</span> <span class="kt">NSPersistentContainer</span><span class="p">,</span> <span class="kt">LogMessageEmitter</span></code></pre>
+
+                </div>
+              </div>
+            <p>A container for a Core Data stack that provides automatic multi-step persistent store migration.</p>
+
+<p>This is a drop-in replacement for <code>NSPersistentContainer</code> that automatically detects
+and performs multi-step store migration as part of the <code>loadPersistentStores</code> method.</p>
+
+<p>The container searches for models and mapping models, and constructs the
+best sequence in which to migrate stores.  It prefers to use explicit mapping models over
+inferred mapping models when there is a choice.  Progress and status can be reported
+back to the client code.</p>
+
+<p>See <a href="https://some/url">the user guide</a> for more details.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC22TMLPersistentContainer19PersistentContainer17migrationDelegateXwGSqPS_17MigrationDelegate__"></a>
+                    <a name="//apple_ref/swift/Property/migrationDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC22TMLPersistentContainer19PersistentContainer17migrationDelegateXwGSqPS_17MigrationDelegate__">migrationDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Optional delegate to receive migration progress notifications</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">migrationDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MigrationDelegate.html">MigrationDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC22TMLPersistentContainer19PersistentContainercFT4nameSS7bundlesGSaCSo6Bundle_17modelVersionOrderOS_17ModelVersionOrder17logMessageHandlerGSqFVS_10LogMessageT___S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(name:bundles:modelVersionOrder:logMessageHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC22TMLPersistentContainer19PersistentContainercFT4nameSS7bundlesGSaCSo6Bundle_17modelVersionOrderOS_17ModelVersionOrder17logMessageHandlerGSqFVS_10LogMessageT___S0_">init(name:bundles:modelVersionOrder:logMessageHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a persistent container from a named model.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                            <span class="nv">bundles</span><span class="p">:</span> <span class="p">[</span><span class="kt">Bundle</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">],</span>
+                            <span class="nv">modelVersionOrder</span><span class="p">:</span> <span class="kt"><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">compare</span><span class="p">,</span>
+                            <span class="nv">logMessageHandler</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogMessage.html">LogMessage</a></span><span class="o">.</span><span class="kt">Handler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the managed object model to use with the container. This name is the default name for the first persistent store.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bundles</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of bundles to search for the model, by default only the app’s main bundle. If the model exists in multiple bundles then the first one in the array is used. If the model exists more than once in the same bundle then it is undefined which is used. These bundles are also used to search for data and mapping models during automatic multi-step store migration.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>modelVersionOrder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ordering algorithm of data model versions used to guide automatic multi-step store migration. The default is a numeric string comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes <code>MyModel10</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>logMessageHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A callback to receive log messages from the library suitable for helping debug applications.  Calls can occur on any queue. The default performs no logging.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC22TMLPersistentContainer19PersistentContainercFT4nameSS18managedObjectModelCSo20NSManagedObjectModel7bundlesGSaCSo6Bundle_17modelVersionOrderOS_17ModelVersionOrder17logMessageHandlerGSqFVS_10LogMessageT___S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(name:managedObjectModel:bundles:modelVersionOrder:logMessageHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC22TMLPersistentContainer19PersistentContainercFT4nameSS18managedObjectModelCSo20NSManagedObjectModel7bundlesGSaCSo6Bundle_17modelVersionOrderOS_17ModelVersionOrder17logMessageHandlerGSqFVS_10LogMessageT___S0_">init(name:managedObjectModel:bundles:modelVersionOrder:logMessageHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a persistent container using a managed object model</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                <span class="n">managedObjectModel</span> <span class="nv">model</span><span class="p">:</span> <span class="kt">NSManagedObjectModel</span><span class="p">,</span>
+                <span class="nv">bundles</span><span class="p">:</span> <span class="p">[</span><span class="kt">Bundle</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">],</span>
+                <span class="nv">modelVersionOrder</span><span class="p">:</span> <span class="kt"><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">compare</span><span class="p">,</span>
+                <span class="nv">logMessageHandler</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogMessage.html">LogMessage</a></span><span class="o">.</span><span class="kt">Handler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The defaut name for the first persistent store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>model</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The managed object model to be used by the persistent container</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bundles</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of bundles used to search for data models and mapping models as part of automatic multi-step store migration.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>modelVersionOrder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ordering algorithm of data model versions used to guide automatic multi-step store migration.  The default is a numeric string comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes <code>MyModel10</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>logMessageHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A callback to receive log messages from the library suitable for helping debug applications.  Calls can occur on any queue. The default performs no logging.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC22TMLPersistentContainer19PersistentContainer13destroyStoresFzT_T_"></a>
+                    <a name="//apple_ref/swift/Method/destroyStores()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC22TMLPersistentContainer19PersistentContainer13destroyStoresFzT_T_">destroyStores()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cleanly empty out all persistent stores described by <code>persistentStoreDescriptions</code>.
+Typically useful to reset the app to a fresh state before loading the stores.</p>
+
+<div class="aside aside-attention">
+    <p class="aside-title">Attention</p>
+    <p>May not remove files from disk.  In the case of SQLite3 stores, database files
+         making up an empty store are left behind.</p>
+
+</div>
+
+<div class="aside aside-attention">
+    <p class="aside-title">Attention</p>
+    <p>Goodness knows what this will do with custom stores.  There does not appear to be
+         an API into the <code>NSPersistentStore</code> tree to implement this operation.</p>
+
+</div>
+
+<div class="aside aside-attention">
+    <p class="aside-title">Attention</p>
+    <p>This is not atomic with respect to multiple stores.  The routine attempts to
+         destroy each store one by one; the first destroy operation to fail causes the
+         entire routine to fail.</p>
+
+</div>
+
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p>Errors thrown by <code>NSPersistentStoreCoordinator.destroyPersistentStore(at:ofType:options:)</code> which
+      is undocumented &ndash; assumed to be filesystem access errors that the app should probably consider as
+      fatal.  Does <em>not</em> throw an error if a persistent store does not currently exist.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">destroyStores</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC22TMLPersistentContainer19PersistentContainer20loadPersistentStoresFT17completionHandlerFTCSo28NSPersistentStoreDescriptionGSqPs5Error___T__T_"></a>
+                    <a name="//apple_ref/swift/Method/loadPersistentStores(completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC22TMLPersistentContainer19PersistentContainer20loadPersistentStoresFT17completionHandlerFTCSo28NSPersistentStoreDescriptionGSqPs5Error___T__T_">loadPersistentStores(completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begin loading and migrating the persistent stores mentioned in <code>persistentStoreDescriptions</code> that have
+not already been loaded.  The completion handler is called once for each such store on the main queue
+indicating whether the store has been loaded successfully or not.</p>
+
+<p>If the store description has <code>shouldMigrateStoreAutomatically</code> set then the container automatically
+attempts multi-step migration.  If the store description also has <code>shouldInferMappingModelAutomatically</code>
+set then the multi-step migration can include the use of inferred mapping models and light-weight
+migration.  Once any multi-step migration is complete, Core Data is invoked to load the store and set
+up the stack for use.</p>
+
+<p>These flags are both on by default.</p>
+
+<p>If the container has multiple stores then the container tries very hard to ensure either all stores
+are migrated successfully or none are &ndash; leaving all stores at the original version.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">loadPersistentStores</span><span class="p">(</span><span class="n">completionHandler</span> <span class="nv">block</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>block</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Callback made on the main queue for each store when it has either been loaded successfully or failed to load.  The <code>Error</code> here can be anything provided by <code>NSPersistentContainer.loadPersistentStores</code> as well as anything from <code>MigrationError</code> in this package.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2017 John Fairhurst. All rights reserved.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

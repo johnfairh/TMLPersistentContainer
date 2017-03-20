@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MigrationDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/MigrationDelegate" class="dashAnchor"></a>
+    <a title="MigrationDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TMLPersistentContainer Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/johnfairh/TMLPersistentContainer"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TMLPersistentContainer Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MigrationDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../usage.html">Usage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/PersistentContainer.html">PersistentContainer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MigrationError.html">MigrationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/LogMessage.html">LogMessage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Subscripts.html">Subscripts</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Subscripts.html#/s:iE22TMLPersistentContainerSS9subscriptFVSC8_NSRangeSS">subscript(_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:22TMLPersistentContainer23PersistentStoreMetadata">PersistentStoreMetadata</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:22TMLPersistentContainer19StoreLoadCompletion">StoreLoadCompletion</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MigrationDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MigrationDelegate</span><span class="p">:</span> <span class="kd">class</span></code></pre>
+
+                </div>
+              </div>
+            <p>A delegate that can be provided to <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> to receive events describing the
+progress of migrations.  These events can be used to update a user interface or for app
+internal logging.</p>
+
+<p>All methods are called while <code>PersistentContainer.loadPersistentStores</code> is active.
+If <em>any</em> of the <code>NSPersistentStoreDescription</code>s have the <code>shouldAddStoreAsynchronously</code> flag
+set to <code>true</code> then all methods are called on a private background queue.  If all of the store
+descriptions have the flag set to <code>false</code> then the methods are called on the same queue on which
+<code>PersistentContainer.loadPersistentStores</code> was called.</p>
+
+<p>The stores in <code>PersistentContainer.persistentStoreDescriptions</code> are processed sequentially.
+Stores that are not migratable (not on disk) are ignored and do not represent in this delegate.</p>
+
+<p>A store that does not require migration (the normal case!) sees the sequence:</p>
+
+<ol>
+<li>willConsiderStore</li>
+<li>willNotMigrateStore</li>
+</ol>
+
+<p>A store requiring a 2-step migration sees the sequence:</p>
+
+<ol>
+<li>willConsiderStore</li>
+<li>willMigrateStore - totalSteps=2</li>
+<li>willSingleMigrateStore - stepsRemaining=2</li>
+<li>willSingleMigrateStore - stepsRemaining=1</li>
+<li>didMigrateStore</li>
+</ol>
+
+<p>Errors can occur at any point following <code>willConsiderStore</code> for example:</p>
+
+<ol>
+<li>willConsiderStore</li>
+<li>willMigrateStore - totalSteps=8</li>
+<li>didFailToMigrateStore</li>
+</ol>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer17willConsiderStoreCSo28NSPersistentStoreDescription_T_"></a>
+                    <a name="//apple_ref/swift/Method/persistentContainer(_:willConsiderStore:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer17willConsiderStoreCSo28NSPersistentStoreDescription_T_">persistentContainer(_:willConsiderStore:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called for each store that might need to be migrated, before deciding whether to
+migrate it.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Do nothing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>container</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>willConsiderStore</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The store that may be migrated</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer16willMigrateStoreCSo28NSPersistentStoreDescription18sourceModelVersionSS23destinationModelVersionSS10totalStepsSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/persistentContainer(_:willMigrateStore:sourceModelVersion:destinationModelVersion:totalSteps:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer16willMigrateStoreCSo28NSPersistentStoreDescription18sourceModelVersionSS23destinationModelVersionSS10totalStepsSi_T_">persistentContainer(_:willMigrateStore:sourceModelVersion:destinationModelVersion:totalSteps:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called for each store that will be migrated, before any migrations start for the store.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Do nothing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>container</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>willMigrateStore</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The store that will be migrated</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sourceModelVersion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The model version that the store currently has</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destinationModelVersion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The model version that the store will have after all migrations</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>totalSteps</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The number of separate migration steps that will be executed on the store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer19willNotMigrateStoreCSo28NSPersistentStoreDescription11storeExistsSb_T_"></a>
+                    <a name="//apple_ref/swift/Method/persistentContainer(_:willNotMigrateStore:storeExists:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer19willNotMigrateStoreCSo28NSPersistentStoreDescription11storeExistsSb_T_">persistentContainer(_:willNotMigrateStore:storeExists:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called for each store that will <em>not</em> be migrated because either it does not exist or
+it is already at the latest version.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Do nothing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>container</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>willNotMigrateStore</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The store that will not be migrated</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>storeExists</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>true</code> if the store exists on disk at the right version</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer22willSingleMigrateStoreCSo28NSPersistentStoreDescription18sourceModelVersionSS23destinationModelVersionSS20usingInferredMappingSb20withMigrationManagerCSo18NSMigrationManager19toTemporaryLocationV10Foundation3URL14stepsRemainingSi10totalStepsSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/persistentContainer(_:willSingleMigrateStore:sourceModelVersion:destinationModelVersion:usingInferredMapping:withMigrationManager:toTemporaryLocation:stepsRemaining:totalSteps:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer22willSingleMigrateStoreCSo28NSPersistentStoreDescription18sourceModelVersionSS23destinationModelVersionSS20usingInferredMappingSb20withMigrationManagerCSo18NSMigrationManager19toTemporaryLocationV10Foundation3URL14stepsRemainingSi10totalStepsSi_T_">persistentContainer(_:willSingleMigrateStore:sourceModelVersion:destinationModelVersion:usingInferredMapping:withMigrationManager:toTemporaryLocation:stepsRemaining:totalSteps:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called before each migration step.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Do nothing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>container</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>willSingleMigrateStore</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The store that will be migrated</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sourceModelVersion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The model version this step will be from</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destinationModelVersion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The model version this step will be to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>usingInferredMapping</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>true</code> if the mapping model for the step has been inferred</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>withMigrationManager</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>NSMigrationManager</code> that will be used</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toTemporaryLocation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The location on disk of the migrated version of the store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>stepsRemaining</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The number of migration steps remaining for the store,  this step!</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>totalSteps</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The total number of migration steps for this store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer15didMigrateStoreCSo28NSPersistentStoreDescription_T_"></a>
+                    <a name="//apple_ref/swift/Method/persistentContainer(_:didMigrateStore:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer15didMigrateStoreCSo28NSPersistentStoreDescription_T_">persistentContainer(_:didMigrateStore:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called after a successful store migration.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Do nothing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>container</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>didMigrateStore</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The store that has been migrated</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer21didFailToMigrateStoreCSo28NSPersistentStoreDescription5errorPs5Error__T_"></a>
+                    <a name="//apple_ref/swift/Method/persistentContainer(_:didFailToMigrateStore:error:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP22TMLPersistentContainer17MigrationDelegate19persistentContainerFTCS_19PersistentContainer21didFailToMigrateStoreCSo28NSPersistentStoreDescription5errorPs5Error__T_">persistentContainer(_:didFailToMigrateStore:error:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called after an error has occurred during or before migrating a store.
+The <code>PersistentContainer.loadPersistentStores</code> error callback will be made later.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Do nothing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>container</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>didFailToMigrateStore</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The store that could not be migrated</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The reason the store could not be migrated, could be from <code>MigrationError</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2017 John Fairhurst. All rights reserved.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
