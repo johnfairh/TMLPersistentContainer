@@ -11,6 +11,7 @@ import CoreData
 
 // MARK: Additions to Foundation.FileManager
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension FileManager {
 
     /// Get a new temporary directory.  Caller must delete.
@@ -29,6 +30,7 @@ extension FileManager {
 }
 
 /// More wrappers for temp file patterns
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 class TemporaryDirectory {
     private(set) var directoryURL: URL?
 

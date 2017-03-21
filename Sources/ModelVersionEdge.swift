@@ -28,6 +28,7 @@ import CoreData
 /// TODO: Consider user-supplied edges, completely mandraulic migrations - another valid
 /// technique to avoid memory footprint issues.
 ///
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 struct ModelVersionEdge: GraphEdge, CustomStringConvertible {
     let sourceNode: ModelVersionNode
     let destinationNode: ModelVersionNode
@@ -52,6 +53,7 @@ struct ModelVersionEdge: GraphEdge, CustomStringConvertible {
     }
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 final class ModelVersionEdges: LogMessageEmitter {
 
     private var edgesDict: [String:[String:ModelVersionEdge]]

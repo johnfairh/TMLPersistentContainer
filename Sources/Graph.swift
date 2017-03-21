@@ -86,6 +86,7 @@ fileprivate struct NodeState<Edge> where Edge: GraphEdge {
     }
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 struct Graph<Edge>: LogMessageEmitter where Edge: GraphEdge {
     private let nodeCount: Int
     private let edges: [Edge]

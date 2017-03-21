@@ -78,6 +78,7 @@ struct ModelVersionNode: NamedEntityVersion, Equatable, CustomStringConvertible 
 }
 
 /// The container for the core data model versions.
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 final class ModelVersionNodes: LogMessageEmitter {
 
     private var nodesByName: [String:ModelVersionNode]

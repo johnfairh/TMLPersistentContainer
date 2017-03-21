@@ -15,6 +15,7 @@ import CoreData
 public typealias PersistentStoreMetadata = [String:Any]
 
 /// Helpers to save typing and better locate function to do with stores/store descriptions.
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension NSPersistentStoreDescription {
 
     /// The URL of the store's backing file

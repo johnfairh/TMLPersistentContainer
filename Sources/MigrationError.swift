@@ -16,6 +16,7 @@ import CoreData
 /// human-readable (-ish) information to the logging interface.  The first step to debugging
 /// one of these errors is to read that text and try to make sense of it.
 ///
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public enum MigrationError: Error {
 
     /// The persistent store has not been loaded because another store associated with the persistent
@@ -81,6 +82,7 @@ public enum MigrationError: Error {
     case logicFailure(String)
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension MigrationError: CustomStringConvertible {
     /// A human-readable description of the error
     public var description: String {

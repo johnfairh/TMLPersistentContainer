@@ -10,7 +10,8 @@ import Foundation
 import CoreData
 
 /// User callback for persistent store load completion, made on the main queue.
-typealias StoreLoadCompletion = (NSPersistentStoreDescription, Error?) -> Void
+//@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+//typealias StoreLoadCompletion = (NSPersistentStoreDescription, Error?) -> Void
 
 
 /// A container for a Core Data stack that provides automatic multi-step persistent store migration.
@@ -25,6 +26,7 @@ typealias StoreLoadCompletion = (NSPersistentStoreDescription, Error?) -> Void
 ///
 /// See [the user guide](https://some/url) for more details.
 ///
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
 
     /// Background queue for running store operations

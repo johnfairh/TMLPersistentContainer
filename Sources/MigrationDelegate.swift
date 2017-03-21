@@ -41,6 +41,7 @@ import CoreData
 ///  2. willMigrateStore - totalSteps=8
 ///  3. didFailToMigrateStore
 ///
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public protocol MigrationDelegate: class {
 
     /// Called for each store that might need to be migrated, before deciding whether to
@@ -120,6 +121,7 @@ public protocol MigrationDelegate: class {
 }
 
 /// Do nothing.
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public extension MigrationDelegate {
     func persistentContainer(_ container: PersistentContainer,
                              willConsiderStore: NSPersistentStoreDescription) {

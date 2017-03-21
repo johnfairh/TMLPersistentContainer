@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 
 /// A store that has been migrated -- its description and the file URL of its temporary location
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 struct MigratedStore
 {
     let description: NSPersistentStoreDescription
@@ -48,6 +49,7 @@ struct MigratedStore
 /// API call fails.  In that case we end up with one migrated store marked co-req and one unmigrated
 /// store marked with a filesystem error from `replacePersistentStore`.  When the user fixes their
 /// filesystem and retries this, everything should be fine.
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension PersistentContainer {
 
     /// Migrate all the stores as necessary.  Must call `errorCallback` for all or none of the stores.

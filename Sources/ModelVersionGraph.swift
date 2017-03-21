@@ -13,6 +13,7 @@ import CoreData
 /// Class is a container + facade onto the nodes + edges classes, and
 /// does type-translation to the graph solver.
 ///
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 struct ModelVersionGraph: LogMessageEmitter {
     let logMessageHandler: LogMessage.Handler?
     
@@ -20,6 +21,7 @@ struct ModelVersionGraph: LogMessageEmitter {
     let edges: ModelVersionEdges
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension ModelVersionGraph {
 
     /// Initialize a new, empty graph
