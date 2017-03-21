@@ -193,10 +193,7 @@ open class TestCase: XCTestCase {
 
     /// Helper to delete files associated with a store.  Different to PSC.destroy().
     func deleteFilesForStore(name: String? = nil) {
-        guard let directoryURL = FileManager.default.urls(
-            for: .applicationSupportDirectory, in: .userDomainMask).last else {
-                fatalError("Can't find Application Support directory")
-        }
+        let directoryURL = NSPersistentContainer.defaultDirectoryURL()
 
         let storeFileName = name ?? TestCase.persistentStore1Name
 

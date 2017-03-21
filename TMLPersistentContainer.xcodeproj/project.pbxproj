@@ -1211,6 +1211,7 @@
 				INFOPLIST_FILE = Configs/TMLPersistentContainerTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-tvOS-Tests";
+				PRODUCT_MODULE_NAME = TMLPersistentContainerTests;
 				PRODUCT_NAME = "TMLPersistentContainer-tvOS Tests";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 3.0;
@@ -1226,6 +1227,7 @@
 				INFOPLIST_FILE = Configs/TMLPersistentContainerTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-tvOS-Tests";
+				PRODUCT_MODULE_NAME = TMLPersistentContainerTests;
 				PRODUCT_NAME = "TMLPersistentContainer-tvOS Tests";
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

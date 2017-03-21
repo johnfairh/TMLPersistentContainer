@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
     Your description here.
   DESC
-  s.homepage     = "https://github.com/johnfairh/TMLPersistentContainer.git"
+  s.homepage     = "https://github.com/johnfairh/TMLPersistentContainer"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "John Fairhurst" => "johnfairh@gmail.com" }
   s.social_media_url   = ""
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.12"
   s.watchos.deployment_target = "3.0"
   s.tvos.deployment_target = "10.0"
-  s.source       = { :git => "https://github.com/johnfairh/TMLPersistentContainer.git.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/johnfairh/TMLPersistentContainer.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "Foundation"
 end
