@@ -29,11 +29,13 @@ final class SimpleModel {
     private static func getAllObjects(context: NSManagedObjectContext) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: SimpleModel.entityName)
         var results: [NSManagedObject] = []
-        
-        doAlways("Fetch all \(SimpleModel.entityName)") {
+
+        do {
             try results = context.fetch(fetchRequest)
+        } catch {
+            fatalError("Unexpected error - \(error)")
         }
-        
+
         return results
     }
     

@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
-               BuildableName = "TMLPersistentContainer.framework"
-               BlueprintName = "TMLPersistentContainer-macOS"
-               ReferencedContainer = "container:TMLPersistentContainer.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
@@ -40,54 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "NO"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD7502791C68FCFC006590AF"
-               BuildableName = "TMLPersistentContainer-macOS Tests.xctest"
-               BlueprintName = "TMLPersistentContainer-macOS Tests"
-               ReferencedContainer = "container:TMLPersistentContainer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
-            BuildableName = "TMLPersistentContainer.framework"
-            BlueprintName = "TMLPersistentContainer-macOS"
+            BlueprintIdentifier = "02FE16041E82A03C00FF077C"
+            BuildableName = "TMLPersistentContainer-macOS TestCompat"
+            BlueprintName = "TMLPersistentContainer-macOS TestCompat"
             ReferencedContainer = "container:TMLPersistentContainer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.SQLDebug 2"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.Logging.oslog 1"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.Logging.stderr 1"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.MigrationDebug 1"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_DT_MODE"
-            value = "NO"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -120,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
-            BuildableName = "TMLPersistentContainer.framework"
-            BlueprintName = "TMLPersistentContainer-macOS"
+            BlueprintIdentifier = "02FE16041E82A03C00FF077C"
+            BuildableName = "TMLPersistentContainer-macOS TestCompat"
+            BlueprintName = "TMLPersistentContainer-macOS TestCompat"
             ReferencedContainer = "container:TMLPersistentContainer.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
