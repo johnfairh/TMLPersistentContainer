@@ -2,8 +2,7 @@
 //  ModelVersionOrder.swift
 //  TMLPersistentContainer
 //
-//  Created by John Fairhurst on 12/02/2017.
-//  Copyright © 2017 Too Many Ladybirds. All rights reserved.
+//  Distributed under the ISC license, see LICENSE.
 //
 
 import Foundation

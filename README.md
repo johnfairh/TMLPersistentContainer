@@ -1,3 +1,9 @@
+<!--
+TMLPersistentContainer
+README.md
+Distributed under the ISC license, see LICENSE.
+-->
+
 ## TMLPersistentContainer
 
 A Swift replacement for `NSPersistentContainer` providing automatic

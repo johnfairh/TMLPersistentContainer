@@ -2,17 +2,11 @@
 //  PersistentContainer.swift
 //  TMLPersistentContainer
 //
-//  Created by John Fairhurst on 05/01/2017.
-//  Copyright © 2017 Too Many Ladybirds. All rights reserved.
+//  Distributed under the ISC license, see LICENSE.
 //
 
 import Foundation
 import CoreData
-
-/// User callback for persistent store load completion, made on the main queue.
-//@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-//typealias StoreLoadCompletion = (NSPersistentStoreDescription, Error?) -> Void
-
 
 /// A container for a Core Data stack that provides automatic multi-step persistent store migration.
 ///
