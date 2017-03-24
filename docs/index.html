@@ -95,28 +95,80 @@
         <section>
           <section class="section">
             
-            <a href='#tmlpersistentcontainer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='tmlpersistentcontainer'>TMLPersistentContainer</h2>
+            <!--
+TMLPersistentContainer
+README.md
+Distributed under the ISC license, see LICENSE.
+-->
+<a href='#tmlpersistentcontainer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='tmlpersistentcontainer'>TMLPersistentContainer</h2>
 
-<p>A Swift replacement for <code>NSPersistentContainer</code> providing automatic
-multi-step store migration.</p>
-<a href='#about' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='about'>About</h2>
+<!--
+Badge thingies to get working:
+* travis -- https://docs.travis-ci.com/user/status-images/
+* coverage -- 
+![CocoaPod](https://cocoapod-badges.herokuapp.com/v/TMLPersistentContainer/badge.png)
+![Platforms](https://cocoapod-badges.herokuapp.com/p/TMLPersistentContainer/badge.png)
+![License](https://cocoapod-badges.herokuapp.com/l/TMLPersistentContainer/badge.png)
+-->
+
+<p>Automatic shortest-path Core Data migrations.</p>
+
+<!-- pic -->
+
+<p>A Swift extension to Core Data&rsquo;s <code>NSPersistentContainer</code> that automatically
+detects and performs multi-step store migration using the shortest valid
+sequence of migrations.  The library supports both light-weight and
+heavy-weight migrations, multiple stores, progress reporting, and configurable
+logging.</p>
+<a href='#example' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='example'>Example</h2>
+
+<p>Minimally replace the call to <code>NSPersistentContainer.init</code>.  The library is
+API compatible:</p>
+<pre class="highlight plaintext"><code>container = PersistentContainer(name: "MyStore",
+                                managedObjectModel: model)
+</code></pre>
+
+<p>Additional parameters optionally enable more features:</p>
+<pre class="highlight plaintext"><code>container =
+    PersistentContainer(name: "MyStore",
+                        managedObjectModel: model,
+                        bundles: [Bundle.main, myResBundle],
+                        modelVersionOrder: .list("ModelV1", "ModelV2", "ModelV6"),
+                        logMessageHandler: myLogHandler)
+container.migrationDelegate = self
+</code></pre>
+
+<p>All migrations happen as part of <code>NSPersistentContainer.loadPersistentStores</code>.</p>
+<a href='#documentation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='documentation'>Documentation</h2>
 
 <ul>
-<li>drop-in</li>
-<li>simple projects</li>
-<li>API-compatible
-
-<ul>
-<li>Example</li>
-<li>xref to docs</li>
-</ul></li>
+<li>To figure out a URL!</li>
+<li>Full docs in the docs/ folder.</li>
+<li>User guide in SourceDocs/Usage.md</li>
 </ul>
+<a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='requirements'>Requirements</h2>
+
+<p>Swift 3.  Because the library is based on <code>NSPersistentContainer</code> it requires
+a minimum deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS
+3.0.</p>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
 
-<p>no idea actually! cocoapods?  spm for library?</p>
+<p>CocoaPods:</p>
+
+<p>Swift package manager:</p>
+<a href='#limitations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='limitations'>Limitations</h2>
+
+<ul>
+<li>No support for merged models.</li>
+<li>Untested with custom stores.</li>
+<li>Testing on tvOS and watchOS has been simulator only!</li>
+</ul>
+<a href='#contributions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='contributions'>Contributions</h2>
+
+<p>Welcome - open an issue or <twitter></p>
 <a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
 
-<p>??</p>
+<p>Distributed under the ISC license.</p>
 
           </section>
         </section>

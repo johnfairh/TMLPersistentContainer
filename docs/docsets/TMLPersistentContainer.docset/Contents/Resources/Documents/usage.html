@@ -95,41 +95,39 @@
         <section>
           <section class="section">
             
-            <a href='#tmlpersistentcontainer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='tmlpersistentcontainer'>TMLPersistentContainer</h1>
-<a href='#background' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='background'>background</h2>
+            <!--
+TMLPersistentContainer
+Usage.md
+Distributed under the ISC license, see LICENSE.
+-->
+<a href='#tmlpersistentcontainer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='tmlpersistentcontainer'>TMLPersistentContainer</h1>
+<a href='#overview' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='overview'>Overview</h2>
 
-<p>What is the problem + what is the solution, briefly</p>
-<a href='#getting-started' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='getting-started'>getting started</h2>
+<p>What is the problem + what is the solution.
+Explain shortest-path algorithm and E vs I.
+Pictures.</p>
+
+<p>The rest of this document covers&hellip;</p>
+<a href='#creating-the-container' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='creating-the-container'>Creating the container</h2>
 
 <p>To start using the library replace references to <code>NSPersistentContainer</code>
 with <code>PersistentContainer</code>.</p>
+<a href='#describing-the-valid-migrations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='describing-the-valid-migrations'>Describing the valid migrations</h3>
+<a href='#finding-data-and-mapping-models' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='finding-data-and-mapping-models'>Finding data and mapping models</h3>
+<a href='#registering-for-logging' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='registering-for-logging'>Registering for logging</h3>
+<a href='#loading-the-stores' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='loading-the-stores'>Loading the stores</h2>
+<a href='#setting-the-storedescription-flags' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='setting-the-storedescription-flags'>Setting the StoreDescription flags</h3>
 
 <p>The multi-step migration behaviour is enabled automatically for pcs with
 the wossit flags set these are the default, if you are not explicitly
 turning them off then they are set.</p>
-
-<ul>
-<li>ordering of model versions
-
-<ul>
-<li>xref to enum dox for details</li>
-</ul></li>
-</ul>
-<a href='#other-features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='other-features'>other features</h2>
-
-<ul>
-<li>logging</li>
-<li>events</li>
-<li>store deletion</li>
-</ul>
+<a href='#using-the-delegate-to-track-migrations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='using-the-delegate-to-track-migrations'>Using the delegate to track migrations</h3>
+<a href='#working-with-multiple-stores' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='working-with-multiple-stores'>Working with multiple stores</h3>
 <a href='#limitations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='limitations'>Limitations</h2>
 
 <ul>
-<li>atomicity guarantees</li>
-<li>multiple stores</li>
 <li>merged models</li>
 <li>multiple mapping models</li>
-<li>model version confusion with configs + frs?</li>
 </ul>
 
           </section>

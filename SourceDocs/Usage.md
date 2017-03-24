@@ -5,32 +5,40 @@ Distributed under the ISC license, see LICENSE.
 -->
 # TMLPersistentContainer
 
-## background
+## Overview
 
-What is the problem + what is the solution, briefly
+What is the problem + what is the solution.
+Explain shortest-path algorithm and E vs I.
+Pictures.
 
-## getting started
+The rest of this document covers...
+
+## Creating the container
 
 To start using the library replace references to `NSPersistentContainer`
 with `PersistentContainer`.
+
+### Describing the valid migrations
+
+### Finding data and mapping models
+
+### Registering for logging
+
+## Loading the stores
+
+### Setting the StoreDescription flags
 
 The multi-step migration behaviour is enabled automatically for pcs with
 the wossit flags set these are the default, if you are not explicitly
 turning them off then they are set.
 
-* ordering of model versions
-    * xref to enum dox for details
+### Using the delegate to track migrations
 
-## other features
+### Working with multiple stores
 
-* logging
-* events
-* store deletion
+(tn2350)
 
 ## Limitations
 
-* atomicity guarantees
-* multiple stores
 * merged models
 * multiple mapping models
-* model version confusion with configs + frs?
