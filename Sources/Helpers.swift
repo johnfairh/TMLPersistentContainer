@@ -104,7 +104,7 @@ extension Dictionary {
         seq.forEach { self[$0.0] = $0.1 }
     }
 
-    /// Return a new dictionary including just those (Key,Value) pairs incldued by the filter function
+    /// Return a new dictionary including just those (Key,Value) pairs included by the filter function
     func filtered(_ isIncluded: (Key, Value) throws -> Bool) rethrows -> Dictionary<Key, Value> {
         let filteredTuples: [(Key, Value)] = try filter(isIncluded)
 

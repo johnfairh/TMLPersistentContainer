@@ -149,7 +149,7 @@ final class ModelVersionNodes: LogMessageEmitter {
         return modelVersionNodes
     }
 
-    /// Deduplicate and santize the list of discovered models.
+    /// Deduplicate and sanitize the list of discovered models.
     ///
     /// We need to end up with a list of models having unique names *and* unique entity
     /// versions (EVs).  The EV matching is painful so we rather rely on not having too many models

@@ -45,7 +45,7 @@ extension ModelVersionGraph {
         log(.info, "Starting model discovery from bundles \(bundles)")
         nodes.discover(from: bundles)
         edges.discover(from: bundles, between: nodes.nodes)
-        logAll(.info, "Model graph discovery complete:")
+        logAll(.info, "Model graph discovery complete.")
     }
 
     /// Log the summary contents of the graph

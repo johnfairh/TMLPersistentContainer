@@ -28,7 +28,7 @@ import Foundation
 //     because we may discover a further path of (e:1 i:4) which is "shorter"
 //     than (e:0 i:3)
 //
-// This code is factored out from the core-data depenent classes for easier
+// This code is factored out from the core-data dependent classes for easier
 // testing.
 //
 // (not a generically useful graph library!)
