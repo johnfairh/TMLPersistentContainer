@@ -18,7 +18,7 @@ import CoreData
 /// inferred mapping models when there is a choice.  Progress and status can be reported
 /// back to the client code.
 ///
-/// See [the user guide](https://some/url) for more details.
+/// See [the user guide](../Usage.html) for more details.
 ///
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
@@ -157,6 +157,9 @@ open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
     /// up the stack for use.
     ///
     /// These flags are both on by default.
+    ///
+    /// If *any* of the store descriptions have `shouldAddStoreAsynchronously` set then this routine returns
+    /// immediately and *all* migrations occur on a background queue.  This flag is off by default.
     ///
     /// If the container has multiple stores then the container tries very hard to ensure either all stores
     /// are migrated successfully or none are -- leaving all stores at the original version.

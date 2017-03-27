@@ -4,7 +4,7 @@ README.md
 Distributed under the ISC license, see LICENSE.
 -->
 
-## TMLPersistentContainer
+# TMLPersistentContainer
 
 <!--
 Badge thingies to get working:
@@ -15,7 +15,7 @@ Badge thingies to get working:
 ![License](https://cocoapod-badges.herokuapp.com/l/TMLPersistentContainer/badge.png)
 -->
 
-Automatic shortest-path Core Data migrations.
+Automatic shortest-path multi-step Core Data migrations.
 
 <!-- pic -->
 
@@ -27,8 +27,7 @@ logging.
 
 ## Example
 
-Minimally replace the call to `NSPersistentContainer.init`.  The library is
-API compatible:
+Minimally replace the call to `NSPersistentContainer.init`:
 
     container = PersistentContainer(name: "MyStore",
                                     managedObjectModel: model)
@@ -57,6 +56,8 @@ Swift 3.  Because the library is based on `NSPersistentContainer` it requires
 a minimum deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS
 3.0.
 
+No additional software dependencies.
+
 ## Installation
 
 CocoaPods:
@@ -71,7 +72,8 @@ Swift package manager:
 
 ## Contributions
 
-Contributions and feedback welcome - open an issue or <twitter> / email
+Contributions and feedback welcome - open an issue / johnfairh@gmail.com /
+@johnfairh.
 
 ## License
 

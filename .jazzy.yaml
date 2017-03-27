@@ -1,7 +1,7 @@
 author: John Fairhurst
 author_url: https://toomanyladybirds.com/
 module: TMLPersistentContainer
-copyright: © 2017 John Fairhurst. All rights reserved.
+copyright: Distributed under the ISC license.  Maintained by John Fairhurst.
 readme: README.md
 github_url: https://github.com/johnfairh/TMLPersistentContainer
-documentation: SourceDocs/Usage.md
+documentation: SourceDocs/*md

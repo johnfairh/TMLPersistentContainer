@@ -303,8 +303,8 @@
 		02FE15321E80382700FF077C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				02FE15331E80384A00FF077C /* PersistentContainer+Migration.swift */,
 				02FE15341E80384A00FF077C /* PersistentContainer.swift */,
+				02FE15331E80384A00FF077C /* PersistentContainer+Migration.swift */,
 				02FE15351E80384A00FF077C /* NSPersistentStoreDescription+Metadata.swift */,
 				02FE15361E80384A00FF077C /* ModelVersionOrder.swift */,
 				02FE15371E80384A00FF077C /* ModelVersionNode.swift */,
@@ -1368,6 +1368,7 @@
 				02FE160B1E82A03D00FF077C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52D6D9761BEFF229002C0205 /* Build configuration list for PBXProject "TMLPersistentContainer" */ = {
 			isa = XCConfigurationList;
