@@ -116,7 +116,9 @@ Badge thingies to get working:
 
 <p>Automatic shortest-path multi-step Core Data migrations.</p>
 
-<!-- pic -->
+<p><center>
+<img src="logo.png" alt="logo">
+</center></p>
 
 <p>A Swift extension to Core Data&rsquo;s <code>NSPersistentContainer</code> that automatically
 detects and performs multi-step store migration using the shortest valid
@@ -126,18 +128,17 @@ logging.</p>
 <a href='#example' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='example'>Example</h2>
 
 <p>Minimally replace the call to <code>NSPersistentContainer.init</code>:</p>
-<pre class="highlight plaintext"><code>container = PersistentContainer(name: "MyStore",
-                                managedObjectModel: model)
+<pre class="highlight swift"><code><span class="n">container</span> <span class="o">=</span> <span class="kt">PersistentContainer</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"MyStore"</span><span class="p">,</span>
+                                <span class="nv">managedObjectModel</span><span class="p">:</span> <span class="n">model</span><span class="p">)</span>
 </code></pre>
 
 <p>Additional parameters optionally enable more features:</p>
-<pre class="highlight plaintext"><code>container =
-    PersistentContainer(name: "MyStore",
-                        managedObjectModel: model,
-                        bundles: [Bundle.main, myResBundle],
-                        modelVersionOrder: .list("ModelV1", "ModelV2", "ModelV6"),
-                        logMessageHandler: myLogHandler)
-container.migrationDelegate = self
+<pre class="highlight swift"><code><span class="n">container</span> <span class="o">=</span> <span class="kt">PersistentContainer</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"MyStore"</span><span class="p">,</span>
+                                <span class="nv">managedObjectModel</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span>
+                                <span class="nv">bundles</span><span class="p">:</span> <span class="p">[</span><span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="n">myResBundle</span><span class="p">],</span>
+                                <span class="nv">modelVersionOrder</span><span class="p">:</span> <span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="s">"V_One"</span><span class="p">,</span> <span class="s">"V_Two"</span><span class="p">,</span> <span class="s">"V_Six"</span><span class="p">),</span>
+                                <span class="nv">logMessageHandler</span><span class="p">:</span> <span class="n">myLogHandler</span><span class="p">)</span>
+<span class="n">container</span><span class="o">.</span><span class="n">migrationDelegate</span> <span class="o">=</span> <span class="k">self</span>
 </code></pre>
 
 <p>All migrations happen as part of <code>NSPersistentContainer.loadPersistentStores</code>.</p>
@@ -169,7 +170,8 @@ a minimum deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS
 </ul>
 <a href='#contributions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='contributions'>Contributions</h2>
 
-<p>Contributions and feedback welcome - open an issue or <twitter> / email</p>
+<p>Contributions and feedback welcome - open an issue / <a href="mailto:johnfairh@gmail.com">johnfairh@gmail.com</a> /
+@johnfairh.</p>
 <a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
 
 <p>Distributed under the ISC license.</p>

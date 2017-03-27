@@ -131,9 +131,9 @@ means &lsquo;prefer explicit mappings to inferred ones, even if the path is long
 <ul>
 <li>V1: V1-ex-V2, V2-ex-V3, V3-inf-V5</li>
 <li>V2: V2-ex-V3, V3-inf-V5
-(even though V2-inf-V5, is not taken because would skip an explicit mapping)</li>
+(even though V2-inf-V5 exists, it is not taken because that skips an explicit mapping)</li>
 <li>V3: V3-inf-V5
-(no reason to go V3-V4; V4-V5)</li>
+(no reason not to skip V4)</li>
 <li>V4: V4-inf-V5</li>
 </ul>
 

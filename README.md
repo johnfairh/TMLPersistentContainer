@@ -17,7 +17,9 @@ Badge thingies to get working:
 
 Automatic shortest-path multi-step Core Data migrations.
 
-<!-- pic -->
+<center>
+![logo](logo.png)
+</center>
 
 A Swift extension to Core Data's `NSPersistentContainer` that automatically
 detects and performs multi-step store migration using the shortest valid
@@ -29,18 +31,21 @@ logging.
 
 Minimally replace the call to `NSPersistentContainer.init`:
 
-    container = PersistentContainer(name: "MyStore",
-                                    managedObjectModel: model)
+```swift
+container = PersistentContainer(name: "MyStore",
+                                managedObjectModel: model)
+```
 
 Additional parameters optionally enable more features:
 
-    container =
-        PersistentContainer(name: "MyStore",
-                            managedObjectModel: model,
-                            bundles: [Bundle.main, myResBundle],
-                            modelVersionOrder: .list("ModelV1", "ModelV2", "ModelV6"),
-                            logMessageHandler: myLogHandler)
-    container.migrationDelegate = self
+```swift
+container = PersistentContainer(name: "MyStore",
+                                managedObjectModel: model,
+                                bundles: [Bundle.main, myResBundle],
+                                modelVersionOrder: .list("V_One", "V_Two", "V_Six"),
+                                logMessageHandler: myLogHandler)
+container.migrationDelegate = self
+```
 
 All migrations happen as part of `NSPersistentContainer.loadPersistentStores`.
 
