@@ -67,7 +67,8 @@ open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
 
         // This is all pretty messy, don't want to be doing this stuff in initializer but
         // can't see how to avoid.  No self so logging ugly too :(
-
+        //
+        // Investigation does show that NSPC.init(string) searches for .momds and NOT .moms.
         for bundle in bundles {
             if let url = bundle.url(forResource: name, withExtension: "momd") {
                 if let model = NSManagedObjectModel(contentsOf: url) {
