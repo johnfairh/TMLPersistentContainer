@@ -17,9 +17,7 @@ Badge thingies to get working:
 
 Automatic shortest-path multi-step Core Data migrations in Swift.
 
-<center>
 ![logo](SourceDocs/logo.png)
-</center>
 
 A Swift extension to Core Data's `NSPersistentContainer` that automatically
 detects and performs multi-step store migration using the shortest valid
