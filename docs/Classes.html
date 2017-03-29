@@ -117,15 +117,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A container for a Core Data stack that provides automatic multi-step persistent store migration.</p>
+                        <p>A container for a Core Data stack that provides automatic multi-step shortest-path
+persistent store migration.</p>
 
 <p>This is a drop-in replacement for <code>NSPersistentContainer</code> that automatically detects
 and performs multi-step store migration as part of the <code>loadPersistentStores</code> method.</p>
 
-<p>The container searches for models and mapping models, and constructs the
-best sequence in which to migrate stores.  It prefers to use explicit mapping models over
-inferred mapping models when there is a choice.  Progress and status can be reported
-back to the client code.</p>
+<p>The container searches for models and mapping models, then constructs the
+best sequence in which to migrate stores. It prefers to use explicit mapping models
+over inferred mapping models when there is a choice. Progress and status can be
+reported back to the client code.</p>
 
 <p>See <a href="../Usage.html">the user guide</a> for more details.</p>
 

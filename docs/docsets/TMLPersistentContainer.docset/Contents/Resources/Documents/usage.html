@@ -109,7 +109,7 @@ Distributed under the ISC license, see LICENSE.
 interested in supporting store migration from different model versions.
 If that&rsquo;s not you, <a href="background.html">read some more background information</a>.</em></p>
 
-<p>This library provides optimal multi-step Core Data store migration.  Here&rsquo;s
+<p>This library provides optimal multi-step Core Data store migration. Here&rsquo;s
 an example diagram of an app&rsquo;s model version history, where each circle is a
 deployed model version:</p>
 
@@ -118,13 +118,13 @@ deployed model version:</p>
 <p>V5 is our latest version; the user could have any of V1-V4 on their device when
 they install V5.</p>
 
-<p>The <em>inf</em> lines show where Core Data can infer a mapping.  The <em>ex</em> lines show
-where the developer has supplied an explicit mapping model.  Note the migration
+<p>The <em>inf</em> lines show where Core Data can infer a mapping. The <em>ex</em> lines show
+where the developer has supplied an explicit mapping model. Note the migration
 from V2 to V3 is inferrable and the developer has <em>also</em> supplied an explicit
 mapping model.</p>
 
 <p>This library builds the graph of data and mapping models, then analyzes it to
-find the shortest valid path.  <em>Shortest</em> means the fewest migrations.  <em>Valid</em>
+find the shortest valid path. <em>Shortest</em> means the fewest migrations. <em>Valid</em>
 means &lsquo;prefer explicit mappings to inferred ones, even if the path is longer&rsquo;.</p>
 
 <p>So the migration paths generated for each possible starting point are:</p>
@@ -139,7 +139,7 @@ means &lsquo;prefer explicit mappings to inferred ones, even if the path is long
 </ul>
 
 <p>In the next version of our example app, V6, the developer writes an explicit
-mapping model to upgrade the stores from V5.  To improve the experience of the
+mapping model to upgrade the stores from V5. To improve the experience of the
 large number of users running V2 of the app the developer provides a further
 mapping model from V2 to V6:</p>
 
@@ -165,31 +165,31 @@ other explicit mappings.</p>
 <a href='#creating-the-container' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='creating-the-container'>Creating the container</h1>
 
 <p>To start using the library replace references to <code>NSPersistentContainer</code>
-with <a href="Classes/PersistentContainer.html"><code>PersistentContainer</code></a>.  The
+with <a href="Classes/PersistentContainer.html"><code>PersistentContainer</code></a>. The
 initializers are compatible though they have additional optional parameters.<br>
 <a href="Classes/PersistentContainer.html">See the API</a>.</p>
 <a href='#describing-the-valid-migrations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='describing-the-valid-migrations'>Describing the valid migrations</h2>
 
 <p>The <code>modelVersionOrder</code> parameter tells the library what migrations are valid
-by reference to the names of each model version.  The <em>name</em> of a model version
-refers to the part of the model filename before &lsquo;.xcdatamodeld&rsquo;.  The main
+by reference to the names of each model version. The <em>name</em> of a model version
+refers to the part of the model filename before &lsquo;.xcdatamodeld&rsquo;. The main
 options to describe the order are: </p>
 
 <p><strong>compare</strong> establishes an order of versions by simply comparing their names,
-interpreting numbers like a human.  This means that <code>MyModel_V2</code> precedes
-<code>MyModel_V10</code>.  A migration is permitted if the source version name precedes
-that of the destination.  This is the default option.</p>
+interpreting numbers like a human. This means that <code>MyModel_V2</code> precedes
+<code>MyModel_V10</code>. A migration is permitted if the source version name precedes
+that of the destination. This is the default option.</p>
 
 <p><strong>patternMatchCompare</strong> matches each version name against a regular expression
-pattern and interprets the result using the <em>compare</em> algorithm.  For example if
+pattern and interprets the result using the <em>compare</em> algorithm. For example if
 your model versions are <em>Mod_812_V1</em>, <em>Mod_118_V2</em>, and <em>Mod_21_V3</em> then you can
 use <code>.patternMatchCompare(&quot;_V.*$&quot;)</code> to get the right result.</p>
 
-<p><strong>list</strong> supplies an explicit order of model versions.  A migration is
+<p><strong>list</strong> supplies an explicit order of model versions. A migration is
 permitted if the source version occurs earlier in the list than the destination.
 For example <code>.list([&quot;FirstVer&quot;, &quot;SecondVer&quot;, &quot;ThirdVer&quot;])</code>.</p>
 
-<p><strong>pairList</strong> supplies an explicit list of migrations that are permitted.  For
+<p><strong>pairList</strong> supplies an explicit list of migrations that are permitted. For
 example <code>.pairList([(&quot;FirstVer&quot;, &quot;SecondVer&quot;), (&quot;SecondVer&quot;, &quot;ThirdVer&quot;)])</code>.
 Note that this has a different meaning to the <code>list</code> example which permits a
 migration from &lsquo;FirstVer&rsquo; directly to &lsquo;ThirdVer&rsquo;.</p>
@@ -198,7 +198,7 @@ migration from &lsquo;FirstVer&rsquo; directly to &lsquo;ThirdVer&rsquo;.</p>
 <a href='#finding-data-and-mapping-models' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='finding-data-and-mapping-models'>Finding data and mapping models</h2>
 
 <p>The <code>bundles</code> parameter controls the set of bundles searched for data models
-and mapping models.  The default is &lsquo;just the main bundle&rsquo;.</p>
+and mapping models. The default is &lsquo;just the main bundle&rsquo;.</p>
 
 <p>The library looks for data models anywhere in the supplied bundles, but it only
 finds mapping models that are in the top level of a bundle &ndash; will address this
@@ -206,9 +206,9 @@ at some point.</p>
 <a href='#registering-for-logging' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='registering-for-logging'>Registering for logging</h2>
 
 <p>The <code>logMessageHandler</code> parameter is an optional closure that if set is passed
-logging messages from the library.  If your app maintains a text log as part of
-its debug strategy then you may wish to include messages of at least level
-<code>error</code> and <code>warning</code>.</p>
+logging messages from the library on any queue. If your app maintains a text
+log as part of its debug strategy then you may wish to include messages of at
+least level <code>error</code> and <code>warning</code>.</p>
 
 <p>As long as you are not too pressed for space it would be worth including the
 <code>info</code> level as well &ndash; somewhat verbose during actual migrations but these are
@@ -220,19 +220,19 @@ rare.</p>
 <a href='#loading-the-stores' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='loading-the-stores'>Loading the stores</h1>
 
 <p>This section describes what happens during
-<code>PersistentStore.loadPersistentStores</code>.  Briefly, the library attempts the
-migration work, one store at a time.  If this all succeeds then it invokes
-real Core Data to load the migrated stores and return control to the client.</p>
+<code>PersistentStore.loadPersistentStores</code>. Briefly, the library attempts the
+migration work, one store at a time. If this all succeeds then it invokes
+Core Data to load the migrated stores and return control to the client.</p>
 <a href='#store-types' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='store-types'>Store types</h2>
 
 <p>Stores without a URL in their <code>NSPersistentStoreDescription</code> are ignored, as
-are stores with a URL that is not a <code>file://</code> URL.  All other store types are
-processed.  The library has been tested extensively with <code>NSSQLiteStoreType</code>
+are stores with a URL that is not a <code>file://</code> URL. All other store types are
+processed. The library has been tested extensively with <code>NSSQLiteStoreType</code>
 and somewhat with <code>NSBinaryStoreType</code>.</p>
 <a href='#nspersistentstoredescription-flags' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='nspersistentstoredescription-flags'>NSPersistentStoreDescription flags</h2>
 
 <p>These flags are present in the Apple implementation but are undocumented as far
-as I can tell.  In this library:</p>
+as I can tell. In this library:</p>
 
 <p><strong>shouldAddStoreAsynchronously</strong> &ndash; if any of the stores being added have this
 set to <code>true</code> then all store loading proceeds asynchronously: the routine
@@ -242,7 +242,7 @@ returns immediately and store migration and loading occur on a background queue.
 not attempt to process the store at all.</p>
 
 <p><strong>shouldInferMappingModelAutomatically</strong> &ndash; if this is <code>true</code> then the library
-allows inferred mappings to be used during migration.  Otherwise only explicit
+allows inferred mappings to be used during migration. Otherwise only explicit
 mapping models created in Xcode are used.</p>
 <a href='#using-the-delegate-to-track-migrations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='using-the-delegate-to-track-migrations'>Using the delegate to track migrations</h2>
 
@@ -250,7 +250,7 @@ mapping models created in Xcode are used.</p>
 protocol</a> may be assigned to
 <code>PersistentContainer.migrationDelegate</code>.</p>
 
-<p>Delegate calls are used to inform the client of migration progress.  This can be
+<p>Delegate calls are used to inform the client of migration progress. This can be
 used for debug or to update some user-visible progress indicator.</p>
 
 <p>In particular <code>persistentContainer(_:willMigrateStore)</code> indicates how many
@@ -266,17 +266,17 @@ see <a href="#nspersistentstoredescription-flags">above</a>.</p>
 <a href='#error-reporting' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='error-reporting'>Error reporting</h2>
 
 <p>If the library finds a problem during migration then it invokes the client
-completion handler passed to <code>loadPersistentStores</code>.  The errors that can be
+completion handler passed to <code>loadPersistentStores</code>. The errors that can be
 reported include various from Foundation and Core Data, as well as several
 specific to this library <a href="Enums/MigrationError.html">that are described here</a>.</p>
 <a href='#working-with-multiple-stores' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='working-with-multiple-stores'>Working with multiple stores</h2>
 
-<p>The library attempts to migrate multiple stores atomically.  Specifically, all
-stores are first migrated into temporary files.  Only when all the stores have
+<p>The library attempts to migrate multiple stores atomically. Specifically, all
+stores are first migrated into temporary files. Only when all the stores have
 been migrated successfully are they allowed to replace the &lsquo;real&rsquo; stores.</p>
 
 <p>This means that if there is a problem with migration for a particular store,
-then all stores are left at a consistent old version.  In theory this makes it
+then all stores are left at a consistent old version. In theory this makes it
 easier to retain access to user data.</p>
 
 <p>The library does not do anything special to deal with application crashes,
@@ -284,9 +284,9 @@ device power loss, or filesystem errors during store replacement so does not
 guarantee atomicity.</p>
 
 <p>A consequence of this approach is that a store may fail to load with an error
-of <code>MigrationError.coreqMigrationFailed</code>.  This means that although this
+of <code>MigrationError.coreqMigrationFailed</code>. This means that although this
 particular store went through its migration process without problem, the
-migration of another store in the same container did have a problem.  To keep
+migration of another store in the same container did have a problem. To keep
 all the stores at a consistent version, neither store has been allowed to
 upgrade.</p>
 <a href='#limitations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='limitations'>Limitations</h1>
@@ -294,11 +294,11 @@ upgrade.</p>
 <p>The main ones of which I am aware at any rate&hellip;.</p>
 
 <ul>
-<li><p>Mapping models are limited to just one per migration.  Need to support
-multiple as a way of limiting footprint.  In the same vein need to permit
+<li><p>Mapping models are limited to just one per migration. Need to support
+multiple as a way of limiting footprint. In the same vein need to permit
 user-managed migrations as well.</p></li>
 <li><p>No support for <em>merged models</em> &ndash; that is an <code>NSManagedObjectModel</code> that has
-been created by merging together several on-disk data models.  I have a
+been created by merging together several on-disk data models. I have a
 scheme for supporting this, just not sure how much real-world use this sees.</p></li>
 <li><p>Untested with custom stores; testing on tvOS and watchOS has been
 simulator-only.</p></li>

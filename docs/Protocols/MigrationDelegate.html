@@ -106,12 +106,12 @@
                 </div>
               </div>
             <p>A delegate that can be provided to <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> to receive events describing the
-progress of migrations.  These events can be used to update a user interface or for app
+progress of migrations. These events can be used to update a user interface or for app
 internal logging.</p>
 
 <p>All methods are called while <code>PersistentContainer.loadPersistentStores</code> is active.
 If <em>any</em> of the <code>NSPersistentStoreDescription</code>s have the <code>shouldAddStoreAsynchronously</code> flag
-set to <code>true</code> then all methods are called on a private background queue.  If all of the store
+set to <code>true</code> then all methods are called on a private background queue. If all of the store
 descriptions have the flag set to <code>false</code> then the methods are called on the same queue on which
 <code>PersistentContainer.loadPersistentStores</code> was called.</p>
 
@@ -192,7 +192,7 @@ migrate it.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+                                  <p>The <code>PersistentContainer</code> asked to load the store.</p>
 
                                 </div>
                               </td>
@@ -205,7 +205,7 @@ migrate it.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The store that may be migrated</p>
+                                  <p>The store that may be migrated.</p>
 
                                 </div>
                               </td>
@@ -260,7 +260,7 @@ migrate it.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+                                  <p>The <code>PersistentContainer</code> asked to load the store.</p>
 
                                 </div>
                               </td>
@@ -273,7 +273,7 @@ migrate it.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The store that will be migrated</p>
+                                  <p>The store that will be migrated.</p>
 
                                 </div>
                               </td>
@@ -286,7 +286,7 @@ migrate it.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The model version that the store currently has</p>
+                                  <p>The model version that the store currently has.</p>
 
                                 </div>
                               </td>
@@ -299,7 +299,7 @@ migrate it.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The model version that the store will have after all migrations</p>
+                                  <p>The model version that the store will have after all migrations.</p>
 
                                 </div>
                               </td>
@@ -312,7 +312,7 @@ migrate it.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The number of separate migration steps that will be executed on the store</p>
+                                  <p>The number of separate migration steps that will be executed on the store.</p>
 
                                 </div>
                               </td>
@@ -339,8 +339,8 @@ migrate it.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Called for each store that will <em>not</em> be migrated because either it does not exist or
-it is already at the latest version.</p>
+                        <p>Called for each store that will <em>not</em> be migrated either because it does not exist or
+because it is already at the latest version.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -368,7 +368,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+                                  <p>The <code>PersistentContainer</code> asked to load the store.</p>
 
                                 </div>
                               </td>
@@ -381,7 +381,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The store that will not be migrated</p>
+                                  <p>The store that will not be migrated.</p>
 
                                 </div>
                               </td>
@@ -394,7 +394,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p><code>true</code> if the store exists on disk at the right version</p>
+                                  <p><code>true</code> if the store exists on disk at the right version.</p>
 
                                 </div>
                               </td>
@@ -449,7 +449,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+                                  <p>The <code>PersistentContainer</code> asked to load the store.</p>
 
                                 </div>
                               </td>
@@ -462,7 +462,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The store that will be migrated</p>
+                                  <p>The store that will be migrated.</p>
 
                                 </div>
                               </td>
@@ -475,7 +475,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The model version this step will be from</p>
+                                  <p>The model version this step will be from.</p>
 
                                 </div>
                               </td>
@@ -488,7 +488,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The model version this step will be to</p>
+                                  <p>The model version this step will be to.</p>
 
                                 </div>
                               </td>
@@ -501,7 +501,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p><code>true</code> if the mapping model for the step has been inferred</p>
+                                  <p><code>true</code> if the mapping model for the step has been inferred.</p>
 
                                 </div>
                               </td>
@@ -514,7 +514,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>NSMigrationManager</code> that will be used</p>
+                                  <p>The <code>NSMigrationManager</code> that will be used.</p>
 
                                 </div>
                               </td>
@@ -527,7 +527,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The location on disk of the migrated version of the store</p>
+                                  <p>The location on disk of the migrated version of the store.</p>
 
                                 </div>
                               </td>
@@ -553,7 +553,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The total number of migration steps for this store</p>
+                                  <p>The total number of migration steps for this store.</p>
 
                                 </div>
                               </td>
@@ -608,7 +608,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+                                  <p>The <code>PersistentContainer</code> asked to load the store.</p>
 
                                 </div>
                               </td>
@@ -621,7 +621,7 @@ it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The store that has been migrated</p>
+                                  <p>The store that has been migrated.</p>
 
                                 </div>
                               </td>
@@ -677,7 +677,7 @@ The <code>PersistentContainer.loadPersistentStores</code> error callback will be
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>PersistentContainer</code> asked to load the store</p>
+                                  <p>The <code>PersistentContainer</code> asked to load the store.</p>
 
                                 </div>
                               </td>
@@ -690,7 +690,7 @@ The <code>PersistentContainer.loadPersistentStores</code> error callback will be
                               </td>
                               <td>
                                 <div>
-                                  <p>The store that could not be migrated</p>
+                                  <p>The store that could not be migrated.</p>
 
                                 </div>
                               </td>
@@ -703,7 +703,7 @@ The <code>PersistentContainer.loadPersistentStores</code> error callback will be
                               </td>
                               <td>
                                 <div>
-                                  <p>The reason the store could not be migrated, could be from <code>MigrationError</code></p>
+                                  <p>The reason the store could not be migrated, could be from <code>MigrationError</code>.</p>
 
                                 </div>
                               </td>

@@ -109,7 +109,7 @@
 <code>PersistentContainer.loadPersistentStores</code>.</p>
 
 <p>When any of these unusual conditions occurs, the persistent container provides a lot of
-human-readable (-ish) information to the logging interface.  The first step to debugging
+human-readable (-ish) information to the logging interface. The first step to debugging
 one of these errors is to read that text and try to make sense of it.</p>
 
           </section>
@@ -130,8 +130,8 @@ one of these errors is to read that text and try to make sense of it.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The persistent store has not been loaded because another store associated with the persistent
-container required migration but there was an error attempting to migrate it.  To avoid leaving
-the application with stores having a mixture of versions all store loading is prevented.</p>
+container required migration but there was an error attempting to migrate it. To avoid leaving
+the app&rsquo;s stores with a mixture of versions this store load has been abandoned.</p>
 
                       </div>
                       <div class="declaration">
@@ -166,9 +166,9 @@ the application with stores having a mixture of versions all store loading is pr
 This could mean:</p>
 
 <ul>
-<li><code>.patternMatchCompare</code> - not a valid regular expression (according to <code>NSRegularExpression</code>);</li>
-<li><code>.list</code> - empty list, or list contains repeated elements;</li>
-<li><code>.pairList</code> - there is a cycle in the list of migrations.</li>
+<li><code>.patternMatchCompare</code> &ndash; not a valid regular expression (according to <code>NSRegularExpression</code>);</li>
+<li><code>.list</code> &ndash; empty list, or list contains repeated elements;</li>
+<li><code>.pairList</code> &ndash; there is a cycle in the list of migrations.</li>
 </ul>
 
                       </div>
@@ -211,7 +211,7 @@ store that cannot be matched to a model.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cannotFindSourceModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:22TMLPersistentContainer23PersistentStoreMetadata">PersistentStoreMetadata</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cannotFindSourceModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Any</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -235,11 +235,11 @@ store that cannot be matched to a model.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Migration cannot proceed because the persistent container cannot find a managed object model
+                        <p>Migration cannot proceed because the persistent container cannot find an object model
 that matches the <code>NSManagedObjectModel</code> passed to <code>PersistentContainer.init(name:managedObjectModel:bundles:modelVersionOrder)</code>
 in the list of bundles.
 This means either a bundle is missing from the list or the <code>NSManagedObjectModel</code> has been
-created by merging several models &ndash; this second use case is not currently supported by this library. Sorry.</p>
+created by merging several models &ndash; this second use case is not currently supported by the library. Sorry.</p>
 
                       </div>
                       <div class="declaration">
@@ -273,7 +273,7 @@ created by merging several models &ndash; this second use case is not currently 
                         <p>Migration cannot proceed because the persistent container cannot find a migration path
 from the source model version (first string parameter) to the destination model version (second string
 parameter) using mapping models from the bundles passed to <code>PersistentContainer.init</code> combined
-with inferred mappings if enabled.  Possible reasons include:</p>
+with inferred mappings if enabled. Possible reasons include:</p>
 
 <ul>
 <li>The <code><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></code> given to the container is too strict/incorrect;</li>
@@ -312,7 +312,7 @@ with inferred mappings if enabled.  Possible reasons include:</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Migration cannot proceed because the persistent container has got confused: after examining
+                        <p>Migration cannot proceed because the persistent container is confused: after examining
 all the model versions and mapping models it has not been able to understand the fastest way
 of migrating between the two model versions named in the string parameters.
 This probably means there are cycles in the persistent container&rsquo;s <code><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></code>.</p>
@@ -415,8 +415,8 @@ This ALSO probably means there are cycles in the persistent container&rsquo;s <c
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Migration has failed due to what seems to be a bug in the library code or, less likely, its
-dependencies.  Sorry about that.  A bug report including as full a log output as possible would
-be welcome.  The string parameter is a brief explanation of the problem.</p>
+dependencies. Sorry about that. A bug report including as full a log output as possible would
+be welcome. The string parameter is a brief explanation of the problem.</p>
 
                       </div>
                       <div class="declaration">
@@ -447,7 +447,7 @@ be welcome.  The string parameter is a brief explanation of the problem.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A human-readable description of the error</p>
+                        <p>A human-readable description of the error.</p>
 
                       </div>
                       <div class="declaration">

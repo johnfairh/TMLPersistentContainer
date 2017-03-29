@@ -105,15 +105,16 @@
 
                 </div>
               </div>
-            <p>A container for a Core Data stack that provides automatic multi-step persistent store migration.</p>
+            <p>A container for a Core Data stack that provides automatic multi-step shortest-path
+persistent store migration.</p>
 
 <p>This is a drop-in replacement for <code>NSPersistentContainer</code> that automatically detects
 and performs multi-step store migration as part of the <code>loadPersistentStores</code> method.</p>
 
-<p>The container searches for models and mapping models, and constructs the
-best sequence in which to migrate stores.  It prefers to use explicit mapping models over
-inferred mapping models when there is a choice.  Progress and status can be reported
-back to the client code.</p>
+<p>The container searches for models and mapping models, then constructs the
+best sequence in which to migrate stores. It prefers to use explicit mapping models
+over inferred mapping models when there is a choice. Progress and status can be
+reported back to the client code.</p>
 
 <p>See <a href="../Usage.html">the user guide</a> for more details.</p>
 
@@ -134,7 +135,7 @@ back to the client code.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Optional delegate to receive migration progress notifications</p>
+                        <p>Optional delegate to receive migration progress notifications.</p>
 
                       </div>
                       <div class="declaration">
@@ -187,7 +188,7 @@ back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The name of the managed object model to use with the container. This name is the default name for the first persistent store.</p>
+                                  <p>The name of the managed object model to use with the container. This name is used as the default name for the first persistent store.</p>
 
                                 </div>
                               </td>
@@ -200,7 +201,7 @@ back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>An array of bundles to search for the model, by default only the app’s main bundle. If the model exists in multiple bundles then the first one in the array is used. If the model exists more than once in the same bundle then it is undefined which is used. These bundles are also used to search for data and mapping models during automatic multi-step store migration.</p>
+                                  <p>An array of bundles to search for the container’s model. By default only the app’s main bundle. If the model exists in multiple bundles then the first one in the array is used. If the model exists more than once in the same bundle then it is undefined which is used. These bundles are also used to search for data and mapping models during automatic multi-step store migration.</p>
 
                                 </div>
                               </td>
@@ -213,7 +214,7 @@ back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The ordering algorithm of data model versions used to guide automatic multi-step store migration. The default is a numeric string comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes <code>MyModel10</code>.</p>
+                                  <p>The ordering algorithm of model versions used to guide automatic multi-step store migration. The default is a numeric string comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes <code>MyModel10</code>.</p>
 
                                 </div>
                               </td>
@@ -226,7 +227,7 @@ back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>A callback to receive log messages from the library suitable for helping debug applications.  Calls can occur on any queue. The default performs no logging.</p>
+                                  <p>A callback to receive log messages from the library suitable for helping debug applications. Calls can occur on any queue. The default performs no logging.</p>
 
                                 </div>
                               </td>
@@ -250,7 +251,7 @@ back to the client code.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializes a persistent container using a managed object model</p>
+                        <p>Initializes a persistent container using a managed object model.</p>
 
                       </div>
                       <div class="declaration">
@@ -277,7 +278,7 @@ back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The defaut name for the first persistent store</p>
+                                  <p>The defaut name for the first persistent store.</p>
 
                                 </div>
                               </td>
@@ -290,7 +291,7 @@ back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The managed object model to be used by the persistent container</p>
+                                  <p>The managed object model to be used by the persistent container.</p>
 
                                 </div>
                               </td>
@@ -303,7 +304,7 @@ back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>An array of bundles used to search for data models and mapping models as part of automatic multi-step store migration.</p>
+                                  <p>An array of bundles used to search for data models and mapping models during automatic multi-step store migration.</p>
 
                                 </div>
                               </td>
@@ -316,7 +317,7 @@ back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The ordering algorithm of data model versions used to guide automatic multi-step store migration.  The default is a numeric string comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes <code>MyModel10</code>.</p>
+                                  <p>The ordering algorithm of model versions used to guide automatic multi-step store migration. The default is a numeric string comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes <code>MyModel10</code>.</p>
 
                                 </div>
                               </td>
@@ -329,7 +330,7 @@ back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>A callback to receive log messages from the library suitable for helping debug applications.  Calls can occur on any queue. The default performs no logging.</p>
+                                  <p>A callback to receive log messages from the library suitable for helping debug applications. Calls can occur on any queue. The default performs no logging.</p>
 
                                 </div>
                               </td>
@@ -353,36 +354,36 @@ back to the client code.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Cleanly empty out all persistent stores described by <code>persistentStoreDescriptions</code>.
+                        <p>Cleanly empty all the persistent stores described by <code>persistentStoreDescriptions</code>.
 Typically useful to reset the app to a fresh state before loading the stores.</p>
 
 <div class="aside aside-attention">
     <p class="aside-title">Attention</p>
-    <p>May not remove files from disk.  In the case of SQLite3 stores, database files
-         making up an empty store are left behind.</p>
+    <p>May not remove files from disk. In the case of SQLite3 stores, database files
+         making up an empty store are left.</p>
 
 </div>
 
 <div class="aside aside-attention">
     <p class="aside-title">Attention</p>
-    <p>Goodness knows what this will do with custom stores.  There does not appear to be
+    <p>Goodness knows what this will do with custom stores. There does not appear to be
          an API into the <code>NSPersistentStore</code> tree to implement this operation.</p>
 
 </div>
 
 <div class="aside aside-attention">
     <p class="aside-title">Attention</p>
-    <p>This is not atomic with respect to multiple stores.  The routine attempts to
-         destroy each store one by one; the first destroy operation to fail causes the
-         entire routine to fail.</p>
+    <p>Not atomic with respect to multiple stores. The routine attempts to destroy
+         each store one by one; the first destroy operation to fail causes the entire
+         routine to fail.</p>
 
 </div>
 
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     <p>Errors thrown by <code>NSPersistentStoreCoordinator.destroyPersistentStore(at:ofType:options:)</code> which
-      is undocumented &ndash; assumed to be filesystem access errors that the app should probably consider as
-      fatal.  Does <em>not</em> throw an error if a persistent store does not currently exist.</p>
+      is undocumented: assumed to be filesystem access errors that the app should probably consider as
+      fatal. Does <em>not</em> throw an error if a persistent store does not currently exist.</p>
 
 </div>
 
@@ -412,8 +413,8 @@ Typically useful to reset the app to a fresh state before loading the stores.</p
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Begin loading and migrating the persistent stores mentioned in <code>persistentStoreDescriptions</code> that have
-not already been loaded.  The completion handler is called once for each such store on the main queue
-indicating whether the store has been loaded successfully or not.</p>
+not already been loaded. The completion handler is called once for each such store on the main queue
+indicating whether the store has been loaded successfully.</p>
 
 <p>If the store description has <code>shouldMigrateStoreAutomatically</code> set then the container automatically
 attempts multi-step migration.  If the store description also has <code>shouldInferMappingModelAutomatically</code>
@@ -427,7 +428,7 @@ up the stack for use.</p>
 immediately and <em>all</em> migrations occur on a background queue.  This flag is off by default.</p>
 
 <p>If the container has multiple stores then the container tries very hard to ensure either all stores
-are migrated successfully or none are &ndash; leaving all stores at the original version.</p>
+are migrated successfully or none are.</p>
 
                       </div>
                       <div class="declaration">

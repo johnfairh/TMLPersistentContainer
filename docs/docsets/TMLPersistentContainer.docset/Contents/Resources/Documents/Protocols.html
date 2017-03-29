@@ -118,12 +118,12 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>A delegate that can be provided to <code><a href="Classes/PersistentContainer.html">PersistentContainer</a></code> to receive events describing the
-progress of migrations.  These events can be used to update a user interface or for app
+progress of migrations. These events can be used to update a user interface or for app
 internal logging.</p>
 
 <p>All methods are called while <code>PersistentContainer.loadPersistentStores</code> is active.
 If <em>any</em> of the <code>NSPersistentStoreDescription</code>s have the <code>shouldAddStoreAsynchronously</code> flag
-set to <code>true</code> then all methods are called on a private background queue.  If all of the store
+set to <code>true</code> then all methods are called on a private background queue. If all of the store
 descriptions have the flag set to <code>false</code> then the methods are called on the same queue on which
 <code>PersistentContainer.loadPersistentStores</code> was called.</p>
 

@@ -36,7 +36,7 @@ public enum MigrationError: Error {
     /// `PersistentContainer.init`.
     /// The enum parameters are the particular store with the problem and the metadata of that
     /// store that cannot be matched to a model.
-    case cannotFindSourceModel(NSPersistentStoreDescription, PersistentStoreMetadata)
+    case cannotFindSourceModel(NSPersistentStoreDescription, [String:Any])
 
     /// Migration cannot proceed because the persistent container cannot find an object model
     /// that matches the `NSManagedObjectModel` passed to `PersistentContainer.init(name:managedObjectModel:bundles:modelVersionOrder)`

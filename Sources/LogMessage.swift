@@ -46,7 +46,7 @@ public struct LogMessage: CustomStringConvertible {
     public let body: () -> String
 
     /// Create a new instance of a log messge.
-    public init(_ level: LogLevel, _ body: @autoclosure @escaping () -> String) {
+    init(_ level: LogLevel, _ body: @autoclosure @escaping () -> String) {
         self.level = level
         self.body  = body
     }
