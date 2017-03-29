@@ -49,9 +49,10 @@ All migrations happen as part of `NSPersistentContainer.loadPersistentStores`.
 
 ## Documentation
 
-* [User guide](???) and [API documentation](???) online.
+* [User guide](https://johnfairh.github.io/TMLPersistentContainer/usage.html) and
+[API documentation](https://johnfairh.github.io/TMLPersistentContainer/) online.
 * Or in the docs/ folder of a local copy of the project.
-* Docset for Dash etc. at docs/docsets/TMLPersistentContainer.tgz
+* Docset for Dash etc. at [docs/docsets/TMLPersistentContainer.tgz](https://johnfairh.github.io/TMLPersistentContainer/docsets/TMLPersistentContainer.tgz)
 * Read `TestSimpleMigrate.testCanMigrateV1toV3inTwoSteps` for an end-to-end
   example.
 

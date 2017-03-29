@@ -19,7 +19,7 @@ import CoreData
 /// over inferred mapping models when there is a choice. Progress and status can be
 /// reported back to the client code.
 ///
-/// See [the user guide](../Usage.html) for more details.
+/// See [the user guide](https://johnfairh.github.io/TMLPersistentContainer/usage.html) for more details.
 ///
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
