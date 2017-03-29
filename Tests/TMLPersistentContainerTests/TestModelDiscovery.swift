@@ -149,7 +149,7 @@ class TestModelDiscovery: TestCase {
         let node = graph.nodeForStoreMetadata(storeMetadata, configuration: nil)
 
         XCTAssertNotNil(node, "Couldn't find node for store")
-        XCTAssertEqual(node!.name, ModelName.TestModel_Simple_1.rawValue, "Found wrong node! \(node)")
+        XCTAssertEqual(node!.name, ModelName.TestModel_Simple_1.rawValue, "Found wrong node! \(node!)")
 
         // -ve test
         var badVersions = storeMetadata[NSStoreModelVersionHashesKey] as! EntityVersions
@@ -171,6 +171,6 @@ class TestModelDiscovery: TestCase {
         let node = graph.nodeForObjectModel(container.managedObjectModel)
 
         XCTAssertNotNil(node, "Couldn't find node for model")
-        XCTAssertEqual(node!.name, ModelName.TestModel_Simple_1.rawValue, "Found wrong node! \(node)")
+        XCTAssertEqual(node!.name, ModelName.TestModel_Simple_1.rawValue, "Found wrong node! \(node!)")
     }
 }

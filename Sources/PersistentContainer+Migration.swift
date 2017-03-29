@@ -88,7 +88,7 @@ extension PersistentContainer {
                 log(.debug, "Got store metadata \(storeMetadata)")
                 log(.debug, "Model total metadata \(self.managedObjectModel.entityHashDescription)")
                 if description.configuration != nil {
-                    log(.debug, "Model metadata for config \(description.configuration) \(self.managedObjectModel.entityHashDescription(forConfigurationName: description.configuration))")
+                    log(.debug, "Model metadata for config \(description.configuration!) \(self.managedObjectModel.entityHashDescription(forConfigurationName: description.configuration))")
                 }
 
                 // First check for awful special case - see comment on describesDestroyedStore()...
@@ -166,7 +166,7 @@ extension PersistentContainer {
 
         // Clean up any temporary info
         if tempDirectory.exists {
-            log(.info, "Deleting temp files from \(tempDirectory.directoryURL)")
+            log(.info, "Deleting temp files from \(tempDirectory.directoryURL!)")
             tempDirectory.deleteAll()
         }
     }
@@ -268,7 +268,7 @@ extension PersistentContainer {
                                                  graph: ModelVersionGraph) throws -> [ModelVersionEdge] {
 
         guard let startNode = graph.nodeForStoreMetadata(storeMetadata, configuration: description.configuration) else {
-            log(.error, "Can't find model for store metadata \(storeMetadata) with configuration \(description.configuration)")
+            log(.error, "Can't find model for store metadata \(storeMetadata) with configuration \(String(describing: description.configuration))")
             graph.logNodeMetadata(.error)
             throw MigrationError.cannotFindSourceModel(description, storeMetadata)
         }
@@ -295,7 +295,7 @@ extension PersistentContainer {
                                                 compatibleWithStoreMetadata: newStoreMetadata!) {
             log(.error, "Completed all migrations but resulting store is not compatible with the model.")
             log(.error, "Model metadata is \(self.managedObjectModel.entityHashDescription)")
-            log(.error, "Store metadata is \(newStoreMetadata)")
+            log(.error, "Store metadata is \(String(describing: newStoreMetadata))")
             throw MigrationError.logicFailure("Migrated store incompatible with MOM.")
         }
     }

@@ -80,7 +80,7 @@ class TestBugs: XCTestCase {
             if error == nil {
                 XCTFail("Persistent store unexpectedly loaded!")
             } else {
-                print("Got error on store-load: \(error)")
+                print("Got error on store-load: \(String(describing: error))")
             }
             doneExpectation.fulfill()
         }

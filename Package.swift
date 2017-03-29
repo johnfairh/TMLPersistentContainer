@@ -1,7 +1,7 @@
 import PackageDescription
 
 #if os(Linux)
-// No CoreData on Linux
+// No Core Data on Linux
 let targets = []
 #else
 let targets = [Target(name: "TMLPersistentContainer")]
