@@ -70,9 +70,8 @@ No additional software dependencies.
 CocoaPods:
 
 Swift package manager:
-<!--
- .Package(url: "https://github.com/johnfairh/TMLPersistentContainer/")
--->
+
+    .Package(url: "https://github.com/johnfairh/TMLPersistentContainer/", majorVersion: 0)
 
 ## Contributions
 

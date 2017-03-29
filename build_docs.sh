@@ -1,4 +1,4 @@
 #!/bin/bash
 jazzy
-mkdir docs/SourceDocs
+mkdir -p docs/SourceDocs
 cp -f SourceDocs/*png docs/SourceDocs/
