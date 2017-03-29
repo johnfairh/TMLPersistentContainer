@@ -322,7 +322,7 @@
 		02FE156F1E80391D00FF077C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				02FE160D1E82E55900FF077C /* TestCompat */,
+				02FE160D1E82E55900FF077C /* TestCompatTests */,
 				02FE15701E80394200FF077C /* TestSimpleMigrate.swift */,
 				02FE15711E80394200FF077C /* TestNodeUniqueness.swift */,
 				02FE15721E80394200FF077C /* TestMultiConfigMigrate.swift */,
@@ -351,13 +351,13 @@
 			name = Tests;
 			sourceTree = "<group>";
 		};
-		02FE160D1E82E55900FF077C /* TestCompat */ = {
+		02FE160D1E82E55900FF077C /* TestCompatTests */ = {
 			isa = PBXGroup;
 			children = (
 				02FE160E1E82E55900FF077C /* main.swift */,
 			);
-			name = TestCompat;
-			path = Tests/TestCompat;
+			name = TestCompatTests;
+			path = Tests/TestCompatTests;
 			sourceTree = "<group>";
 		};
 		52D6D9721BEFF229002C0205 = {
