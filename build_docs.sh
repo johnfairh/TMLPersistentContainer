@@ -1,3 +1,4 @@
 #!/bin/bash
 jazzy
-cp -f SourceDocs/*png docs/
+mkdir docs/SourceDocs
+cp -f SourceDocs/*png docs/SourceDocs/

@@ -13,7 +13,7 @@ This library provides optimal multi-step Core Data store migration. Here's
 an example diagram of an app's model version history, where each circle is a
 deployed model version:
 
-![A model version history](usage1.png)
+![A model version history](SourceDocs/usage1.png)
 
 V5 is our latest version; the user could have any of V1-V4 on their device when
 they install V5.
@@ -41,7 +41,7 @@ mapping model to upgrade the stores from V5. To improve the experience of the
 large number of users running V2 of the app the developer provides a further
 mapping model from V2 to V6:
 
-![Another model version history](usage2.png)
+![Another model version history](SourceDocs/usage2.png)
 
 The library now generates migration paths:
 
