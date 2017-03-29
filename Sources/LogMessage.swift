@@ -39,19 +39,19 @@ public enum LogLevel: String {
 /// app developers; these are not intended for end users.
 public struct LogMessage: CustomStringConvertible {
 
-    /// The category of the log message
+    /// The category of the log message.
     public let level: LogLevel
 
-    /// A closure that vends the text of the log message
+    /// A closure that vends the text of the log message.
     public let body: () -> String
 
-    /// Create a new instance of a log messge
+    /// Create a new instance of a log messge.
     public init(_ level: LogLevel, _ body: @autoclosure @escaping () -> String) {
         self.level = level
         self.body  = body
     }
 
-    /// A string combining `level` and `body`
+    /// A string combining `level` and `body`.
     public var description: String {
         return level.rawValue + ": " + body()
     }
@@ -61,12 +61,12 @@ public struct LogMessage: CustomStringConvertible {
     public typealias Handler = (LogMessage) -> Void
 }
 
-/// Identifies a type that is able to send log messages
+/// Identifies a type that is able to send log messages.
 protocol LogMessageEmitter {
     var logMessageHandler: LogMessage.Handler? { get }
 }
 
-/// Provide a low-typing routine to log a message
+/// Provide a low-typing routine to log a message.
 extension LogMessageEmitter {
     func log(_ level: LogLevel, _ body: @autoclosure @escaping () -> String) {
         logMessageHandler?(LogMessage(level, body))

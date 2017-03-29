@@ -12,23 +12,23 @@ import CoreData
 /// `PersistentContainer.loadPersistentStores`.
 ///
 /// When any of these unusual conditions occurs, the persistent container provides a lot of
-/// human-readable (-ish) information to the logging interface.  The first step to debugging
+/// human-readable (-ish) information to the logging interface. The first step to debugging
 /// one of these errors is to read that text and try to make sense of it.
 ///
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public enum MigrationError: Error {
 
     /// The persistent store has not been loaded because another store associated with the persistent
-    /// container required migration but there was an error attempting to migrate it.  To avoid leaving
-    /// the application with stores having a mixture of versions all store loading is prevented.
+    /// container required migration but there was an error attempting to migrate it. To avoid leaving
+    /// the app's stores with a mixture of versions this store load has been abandoned.
     case coreqMigrationFailed(NSPersistentStoreDescription)
 
     /// Migration cannot precede because the `ModelVersionOrder` for the store is invalid.
     /// This could mean:
     ///
-    ///  * `.patternMatchCompare` - not a valid regular expression (according to `NSRegularExpression`);
-    ///  * `.list` - empty list, or list contains repeated elements;
-    ///  * `.pairList` - there is a cycle in the list of migrations.
+    ///  * `.patternMatchCompare` -- not a valid regular expression (according to `NSRegularExpression`);
+    ///  * `.list` -- empty list, or list contains repeated elements;
+    ///  * `.pairList` -- there is a cycle in the list of migrations.
     case badModelVersionOrder(NSPersistentStoreDescription, ModelVersionOrder)
 
     /// Migration cannot proceed because the persistent container cannot find a managed object model
@@ -38,17 +38,17 @@ public enum MigrationError: Error {
     /// store that cannot be matched to a model.
     case cannotFindSourceModel(NSPersistentStoreDescription, PersistentStoreMetadata)
 
-    /// Migration cannot proceed because the persistent container cannot find a managed object model
+    /// Migration cannot proceed because the persistent container cannot find an object model
     /// that matches the `NSManagedObjectModel` passed to `PersistentContainer.init(name:managedObjectModel:bundles:modelVersionOrder)`
     /// in the list of bundles.
     /// This means either a bundle is missing from the list or the `NSManagedObjectModel` has been
-    /// created by merging several models -- this second use case is not currently supported by this library. Sorry.
+    /// created by merging several models -- this second use case is not currently supported by the library. Sorry.
     case cannotFindDestinationModel(NSPersistentStoreDescription, NSManagedObjectModel)
 
     /// Migration cannot proceed because the persistent container cannot find a migration path
     /// from the source model version (first string parameter) to the destination model version (second string
     /// parameter) using mapping models from the bundles passed to `PersistentContainer.init` combined
-    /// with inferred mappings if enabled.  Possible reasons include:
+    /// with inferred mappings if enabled. Possible reasons include:
     ///
     ///  * The `ModelVersionOrder` given to the container is too strict/incorrect;
     ///  * Intermediate data model versions have been incorrectly deleted from the app's bundles;
@@ -57,7 +57,7 @@ public enum MigrationError: Error {
     ///  * The bundles given to the persistent container to search are wrong.
     case noRouteBetweenModels(String, String)
 
-    /// Migration cannot proceed because the persistent container has got confused: after examining
+    /// Migration cannot proceed because the persistent container is confused: after examining
     /// all the model versions and mapping models it has not been able to understand the fastest way
     /// of migrating between the two model versions named in the string parameters.
     /// This probably means there are cycles in the persistent container's `ModelVersionOrder`.
@@ -76,14 +76,14 @@ public enum MigrationError: Error {
     case cyclicRoute3(String, String)
 
     /// Migration has failed due to what seems to be a bug in the library code or, less likely, its
-    /// dependencies.  Sorry about that.  A bug report including as full a log output as possible would
-    /// be welcome.  The string parameter is a brief explanation of the problem.
+    /// dependencies. Sorry about that. A bug report including as full a log output as possible would
+    /// be welcome. The string parameter is a brief explanation of the problem.
     case logicFailure(String)
 }
 
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension MigrationError: CustomStringConvertible {
-    /// A human-readable description of the error
+    /// A human-readable description of the error.
     public var description: String {
         switch self {
         case .coreqMigrationFailed:

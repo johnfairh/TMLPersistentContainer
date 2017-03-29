@@ -106,9 +106,9 @@ Distributed under the ISC license, see LICENSE.
 <a href='#background' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='background'>Background</h1>
 
 <p><em>This document is background on the Core Data
-migration-from-multiple-model-versions problem.  If you are a Core Data
-developer and know all about this then you should probably <a href="usage.html">read the user guide
-instead</a>.</em></p>
+migration-from-multiple-model-versions problem.  If you are a developer who
+uses Core Data and knows all about this then you should probably <a href="usage.html">read the user
+guide instead</a>.</em></p>
 
 <p>Developers change their Core Data models over time to support new requirements.
 If a user upgrades the app on their device and the new version of the app has a
@@ -118,30 +118,32 @@ new version of the Core Data model then the app&rsquo;s Core Data stores have to
 <p>A Core Data <em>mapping model</em> contains rules to migrate a store from one version
 of a model to another.  Developers create explicit mapping models in Xcode
 or can rely on inferred mapping models created at run-time by Core Data for
-simple model changes.  These inferred mapping models are usually more efficient
-at run-time.</p>
+simple model changes.  These inferred mapping models are usually faster and use
+less memory.</p>
 
-<p>Apps have to support migration from all possible installed model versions up to
-the latest version otherwise users will be upset.  Vanilla Core Data allows for
-a single mapping model to be used when loading a store.  This leaves developers
-with a problem deploying model version 5, for example, that has to support
-migration from any of model versions 1 to 4.</p>
+<p>Apps have to support migration from all possible installed model versions
+otherwise users are stuck unable to upgrade.  The standard
+<code>NSPersistentContainer</code> API allows for a single mapping model to be used when a
+store is loaded.  This leaves developers with a problem when, for example, they
+want to deploy model version 5 that has to support migration from any of the
+previous versions 1-4.</p>
 
 <p><strong>Option 1</strong> is to consider all the possible migrations from versions 1-4 to 5.
-If the inferred mapping model is OK then great, otherwise we have to create a
-mapping model in Xcode to perform the necessary transformations.  </p>
+If the inferred mapping model is sufficient then great, no problem.  If it is
+not then the developer has to create a mapping model in Xcode to perform the
+necessary transformations.  </p>
 
 <p><strong>Option 2</strong> is to use multiple sequential migrations at run-time.  So if the
-user&rsquo;s store happens to be at version 2, it would be migrated from 2-&gt;3 then
-3-&gt;4 and finally 4-&gt;5.</p>
+user&rsquo;s store happens to be at version 2 then it would first be migrated from
+2-&gt;3, then 3-&gt;4, and finally 4-&gt;5.</p>
 
 <p>Option 1 requires more mapping models to be created, tested, and maintained.
-It can require more actual code to be written, tested, and maintained depending
+It can need more actual code to be written, tested, and maintained depending
 on the requirements for custom entity mappings.  The benefit is that users see
 a single migration step and so the speediest app launch possible.</p>
 
 <p>Option 2 requires some one-off app code to perform the sequential migrations.
-Users who have been tardy updating their device will see a one-off longer app
+Users who have been tardy updating their device see a one-time longer app
 launch time after the update as their stores are migrated multiple times.</p>
 
 <p>Option 2 is generally the best choice and several libraries exist to assist

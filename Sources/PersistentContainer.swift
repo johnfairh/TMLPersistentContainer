@@ -8,34 +8,35 @@
 import Foundation
 import CoreData
 
-/// A container for a Core Data stack that provides automatic multi-step persistent store migration.
+/// A container for a Core Data stack that provides automatic multi-step shortest-path
+/// persistent store migration.
 ///
 /// This is a drop-in replacement for `NSPersistentContainer` that automatically detects
 /// and performs multi-step store migration as part of the `loadPersistentStores` method.
 ///
-/// The container searches for models and mapping models, and constructs the
-/// best sequence in which to migrate stores.  It prefers to use explicit mapping models over
-/// inferred mapping models when there is a choice.  Progress and status can be reported
-/// back to the client code.
+/// The container searches for models and mapping models, then constructs the
+/// best sequence in which to migrate stores. It prefers to use explicit mapping models
+/// over inferred mapping models when there is a choice. Progress and status can be
+/// reported back to the client code.
 ///
 /// See [the user guide](../Usage.html) for more details.
 ///
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
 
-    /// Background queue for running store operations
+    /// Background queue for running store operations.
     private let dispatchQueue = DispatchQueue(label: "PersistentContainer", qos: .utility)
 
-    /// User's model version order
+    /// User's model version order.
     let modelVersionOrder: ModelVersionOrder
 
-    /// List of bundles to search for Core Data models
+    /// List of bundles to search for Core Data models.
     let bundles: [Bundle]
 
-    /// Core Data model version graph discovered from the bundles
+    /// Core Data model version graph discovered from the bundles.
     var modelVersionGraph: ModelVersionGraph?
 
-    /// Optional delegate to receive migration progress notifications
+    /// Optional delegate to receive migration progress notifications.
     public weak var migrationDelegate: MigrationDelegate?
 
     /// Log message handler
@@ -45,20 +46,22 @@ open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
     ///
     /// - Parameters:
     ///   - name: The name of the managed object model to use with the container.
-    ///           This name is the default name for the first persistent store.
+    ///           This name is used as the default name for the first persistent store.
     ///
-    ///   - bundles: An array of bundles to search for the model, by default only the app's
-    ///              main bundle. If the model exists in multiple bundles then the first one
-    ///              in the array is used. If the model exists more than once in the same bundle
-    ///              then it is undefined which is used. These bundles are also used to search for
-    ///              data and mapping models during automatic multi-step store migration.
+    ///   - bundles: An array of bundles to search for the container's model. By default
+    ///              only the app's main bundle. If the model exists in multiple bundles then
+    ///              the first one in the array is used. If the model exists more than once
+    ///              in the same bundle then it is undefined which is used. These bundles are
+    ///              also used to search for data and mapping models during automatic multi-step
+    ///              store migration.
     ///
-    ///   - modelVersionOrder: The ordering algorithm of data model versions used to guide
-    ///                        automatic multi-step store migration. The default is a numeric string
-    ///                        comparison, meaning that `MyModel1` precedes `MyModel2` precedes `MyModel10`.
+    ///   - modelVersionOrder: The ordering algorithm of model versions used to guide automatic
+    ///                        multi-step store migration. The default is a numeric string
+    ///                        comparison, meaning that `MyModel1` precedes `MyModel2` precedes
+    ///                        `MyModel10`.
     ///
     ///   - logMessageHandler: A callback to receive log messages from the library suitable for
-    ///                        helping debug applications.  Calls can occur on any queue.
+    ///                        helping debug applications. Calls can occur on any queue.
     ///                        The default performs no logging.
     public convenience init(name: String,
                             bundles: [Bundle] = [Bundle.main],
@@ -95,22 +98,23 @@ open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
                   logMessageHandler: logMessageHandler)
     }
 
-    /// Initializes a persistent container using a managed object model
+    /// Initializes a persistent container using a managed object model.
     ///
     /// - Parameters:
-    ///   - name: The defaut name for the first persistent store
+    ///   - name: The defaut name for the first persistent store.
     ///
-    ///   - model: The managed object model to be used by the persistent container
+    ///   - model: The managed object model to be used by the persistent container.
     ///
     ///   - bundles: An array of bundles used to search for data models and mapping models
-    ///              as part of automatic multi-step store migration.
+    ///              during automatic multi-step store migration.
     ///
-    ///   - modelVersionOrder: The ordering algorithm of data model versions used to guide
-    ///                        automatic multi-step store migration.  The default is a numeric string
-    ///                        comparison, meaning that `MyModel1` precedes `MyModel2` precedes `MyModel10`.
+    ///   - modelVersionOrder: The ordering algorithm of model versions used to guide automatic
+    ///                        multi-step store migration. The default is a numeric string
+    ///                        comparison, meaning that `MyModel1` precedes `MyModel2` precedes
+    ///                        `MyModel10`.
     ///
     ///   - logMessageHandler: A callback to receive log messages from the library suitable for
-    ///                        helping debug applications.  Calls can occur on any queue.
+    ///                        helping debug applications. Calls can occur on any queue.
     ///                        The default performs no logging.
     public init(name: String,
                 managedObjectModel model: NSManagedObjectModel,
@@ -123,22 +127,22 @@ open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
         super.init(name: name, managedObjectModel: model)
     }
 
-    /// Cleanly empty out all persistent stores described by `persistentStoreDescriptions`.
+    /// Cleanly empty all the persistent stores described by `persistentStoreDescriptions`.
     /// Typically useful to reset the app to a fresh state before loading the stores.
     ///
-    /// - Attention: May not remove files from disk.  In the case of SQLite3 stores, database files
-    ///              making up an empty store are left behind.
+    /// - Attention: May not remove files from disk. In the case of SQLite3 stores, database files
+    ///              making up an empty store are left.
     ///
-    /// - Attention: Goodness knows what this will do with custom stores.  There does not appear to be
+    /// - Attention: Goodness knows what this will do with custom stores. There does not appear to be
     ///              an API into the `NSPersistentStore` tree to implement this operation.
     ///
-    /// - Attention: This is not atomic with respect to multiple stores.  The routine attempts to
-    ///              destroy each store one by one; the first destroy operation to fail causes the
-    ///              entire routine to fail.
+    /// - Attention: Not atomic with respect to multiple stores. The routine attempts to destroy
+    ///              each store one by one; the first destroy operation to fail causes the entire
+    ///              routine to fail.
     ///
     /// - Throws: Errors thrown by `NSPersistentStoreCoordinator.destroyPersistentStore(at:ofType:options:)` which
-    ///           is undocumented -- assumed to be filesystem access errors that the app should probably consider as
-    ///           fatal.  Does *not* throw an error if a persistent store does not currently exist.
+    ///           is undocumented: assumed to be filesystem access errors that the app should probably consider as
+    ///           fatal. Does *not* throw an error if a persistent store does not currently exist.
     ///
     open func destroyStores() throws {
         try persistentStoreDescriptions.forEach { description in
@@ -148,8 +152,8 @@ open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
     }
 
     /// Begin loading and migrating the persistent stores mentioned in `persistentStoreDescriptions` that have
-    /// not already been loaded.  The completion handler is called once for each such store on the main queue
-    /// indicating whether the store has been loaded successfully or not.
+    /// not already been loaded. The completion handler is called once for each such store on the main queue
+    /// indicating whether the store has been loaded successfully.
     ///
     /// If the store description has `shouldMigrateStoreAutomatically` set then the container automatically
     /// attempts multi-step migration.  If the store description also has `shouldInferMappingModelAutomatically`
@@ -163,11 +167,12 @@ open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
     /// immediately and *all* migrations occur on a background queue.  This flag is off by default.
     ///
     /// If the container has multiple stores then the container tries very hard to ensure either all stores
-    /// are migrated successfully or none are -- leaving all stores at the original version.
+    /// are migrated successfully or none are.
     ///
     /// - Parameter block: Callback made on the main queue for each store when it has either been loaded successfully
-    ///                    or failed to load.  The `Error` here can be anything provided by `NSPersistentContainer.loadPersistentStores`
-    ///                    as well as anything from `MigrationError` in this package.
+    ///                    or failed to load.  The `Error` here can be anything provided by
+    ///                    `NSPersistentContainer.loadPersistentStores` as well as anything from `MigrationError`
+    ///                    in this package.
     ///
     open override func loadPersistentStores(completionHandler block: @escaping (NSPersistentStoreDescription, Error?) -> ()) {
         // Filter out the stores that need loading to replicate the superclass API

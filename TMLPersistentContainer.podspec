@@ -6,13 +6,13 @@ Pod::Spec.new do |s|
   s.license      = { :type => "ISC", :file => "LICENSE" }
   s.homepage     = "https://github.com/johnfairh/TMLPersistentContainer"
   s.source       = { :git => "https://github.com/johnfairh/TMLPersistentContainer.git", :tag => s.version.to_s }
-  s.summary      = "A Swift NSPersistentContainer with automatic multi-step store migration."
+  s.summary      = "Automatic shortest-path multi-step Core Data migrations in Swift."
   s.description = <<-EDESC
-                    A drop-in extension of CoreData's NSPersistentContainer
+                    A Swift extension to Core Data's NSPersistentContainer
                     that automatically detects and performs multi-step store
-                    migration.  Supports light-weight and heavy-weight
-                    migrations, multiple stores, progress reporting and
-                    logging.
+                    migration using the shortested valid sequence.  Supports
+                    light-weight and heavy-weight migrations, multiple stores,
+                    progress reporting and configurable logging.
                   EDESC
 #  s.documentation_url = "???"
   s.ios.deployment_target = "10.0"

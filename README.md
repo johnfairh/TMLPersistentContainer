@@ -15,7 +15,7 @@ Badge thingies to get working:
 ![License](https://cocoapod-badges.herokuapp.com/l/TMLPersistentContainer/badge.png)
 -->
 
-Automatic shortest-path multi-step Core Data migrations.
+Automatic shortest-path multi-step Core Data migrations in Swift.
 
 <center>
 ![logo](logo.png)
@@ -23,7 +23,7 @@ Automatic shortest-path multi-step Core Data migrations.
 
 A Swift extension to Core Data's `NSPersistentContainer` that automatically
 detects and performs multi-step store migration using the shortest valid
-sequence of migrations.  The library supports both light-weight and
+sequence of migrations. The library supports both light-weight and
 heavy-weight migrations, multiple stores, progress reporting, and configurable
 logging.
 
@@ -51,15 +51,19 @@ All migrations happen as part of `NSPersistentContainer.loadPersistentStores`.
 
 ## Documentation
 
- * To figure out a URL!
- * Full docs in the docs/ folder.
- * User guide in SourceDocs/Usage.md
+* [User guide](???) and [API documentation](???) online.
+* Or in the docs/ folder of a local copy of the project.
+* Docset for Dash etc. at docs/docsets/TMLPersistentContainer.tgz
+* Read `TestSimpleMigrate.testCanMigrateV1toV3inTwoSteps` for an end-to-end
+  example.
+
 
 ## Requirements
 
-Swift 3.  Because the library is based on `NSPersistentContainer` it requires
-a minimum deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS
-3.0.
+Swift 3.
+
+The library is based on `NSPersistentContainer` so requires a minimum
+deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS 3.0.
 
 No additional software dependencies.
 
@@ -69,16 +73,9 @@ CocoaPods:
 
 Swift package manager:
 
-## Limitations
-
- * No support for merged models.
- * Untested with custom stores.
- * Testing on tvOS and watchOS has been simulator only!
-
 ## Contributions
 
-Contributions and feedback welcome - open an issue / johnfairh@gmail.com /
-@johnfairh.
+Contributions and feedback welcome - open an issue / johnfairh@gmail.com
 
 ## License
 
