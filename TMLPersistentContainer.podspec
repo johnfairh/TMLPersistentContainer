@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "TMLPersistentContainer"
   s.version      = "0.1.0"
   s.authors      = { "John Fairhurst" => "johnfairh@gmail.com" }
-  s.social_media_url   = "https://twitter.com/johnfairh"
+#  s.social_media_url   = "https://twitter.com/johnfairh"
   s.license      = { :type => "ISC", :file => "LICENSE" }
   s.homepage     = "https://github.com/johnfairh/TMLPersistentContainer"
   s.source       = { :git => "https://github.com/johnfairh/TMLPersistentContainer.git", :tag => s.version.to_s }
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
                     light-weight and heavy-weight migrations, multiple stores,
                     progress reporting and configurable logging.
                   EDESC
-#  s.documentation_url = "???"
+  s.documentation_url = "https://johnfairh.github.io/TMLPersistentContainer/"
   s.ios.deployment_target = "10.0"
   s.osx.deployment_target = "10.12"
   s.watchos.deployment_target = "3.0"
