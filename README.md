@@ -75,7 +75,7 @@ CocoaPods:
 
 Swift package manager:
 
-    .Package(url: "https://github.com/johnfairh/TMLPersistentContainer/", majorVersion: 0)
+    .Package(url: "https://github.com/johnfairh/TMLPersistentContainer/", majorVersion: 1)
 
 ## Contributions
 
