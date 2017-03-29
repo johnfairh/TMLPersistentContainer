@@ -18,7 +18,7 @@ Badge thingies to get working:
 Automatic shortest-path multi-step Core Data migrations in Swift.
 
 <center>
-![logo](logo.png)
+![logo](SourceDocs/logo.png)
 </center>
 
 A Swift extension to Core Data's `NSPersistentContainer` that automatically
