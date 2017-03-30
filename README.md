@@ -6,14 +6,10 @@ Distributed under the ISC license, see LICENSE.
 
 # TMLPersistentContainer
 
-<!--
-Badge thingies to get working:
-* travis -- https://docs.travis-ci.com/user/status-images/
-* coverage -- 
-![CocoaPod](https://cocoapod-badges.herokuapp.com/v/TMLPersistentContainer/badge.png)
+![CI](https://travis-ci.org/johnfairh/TMLPersistentContainer.svg?branch=master)
+![Pod](https://cocoapod-badges.herokuapp.com/v/TMLPersistentContainer/badge.png)
 ![Platforms](https://cocoapod-badges.herokuapp.com/p/TMLPersistentContainer/badge.png)
 ![License](https://cocoapod-badges.herokuapp.com/l/TMLPersistentContainer/badge.png)
--->
 
 Automatic shortest-path multi-step Core Data migrations in Swift.
 
