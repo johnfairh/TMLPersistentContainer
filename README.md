@@ -75,7 +75,7 @@ Swift package manager:
 
 ## Contributions
 
-Contributions and feedback welcome - open an issue / johnfairh@gmail.com
+Contributions and feedback welcome: open an issue / johnfairh@gmail.com / twitter @johnfairh
 
 ## License
 
