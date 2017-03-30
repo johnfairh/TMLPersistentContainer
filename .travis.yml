@@ -1,4 +1,4 @@
 language: objective-c
-osx_image: xcode8.3
-xcode_project: TMLPersistentContainer.xcodeproj
-xcode_scheme: TMLPersistentContainer-iOS
+script:
+    - xcodebuild clean build -sdk iphonesimulator -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-iOS CODE_SIGNING_REQUIRED=NO
+    - xcodebuild test -sdk iphonesimulator -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-iOS CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 5s'
