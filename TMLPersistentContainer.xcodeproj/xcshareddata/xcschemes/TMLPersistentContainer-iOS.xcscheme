@@ -51,7 +51,7 @@
       </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-com.apple.CoreData.SQLDebug 2&#10;-com.apple.CoreData.Logging.oslog 1&#10;-com.apple.CoreData.Logging.stderr 1&#10;-com.apple.CoreData.MigrationDebug 1"
+            argument = "-com.apple.CoreData.SQLDebug 1&#10;-com.apple.CoreData.Logging.oslog 1&#10;-com.apple.CoreData.Logging.stderr 1&#10;-com.apple.CoreData.MigrationDebug 1"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -60,10 +60,6 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-com.apple.CoreData.Logging.stderr 1"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.MigrationDebug 1"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
