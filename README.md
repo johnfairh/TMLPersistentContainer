@@ -6,7 +6,8 @@ Distributed under the ISC license, see LICENSE.
 
 # TMLPersistentContainer
 
-![CI](https://travis-ci.org/johnfairh/TMLPersistentContainer.svg?branch=master)
+[![CI](https://travis-ci.org/johnfairh/TMLPersistentContainer.svg?branch=master)](https://travis-ci.org/johnfairh/TMLPersistentContainer)
+[![codecov](https://codecov.io/gh/johnfairh/TMLPersistentContainer/branch/master/graph/badge.svg)](https://codecov.io/gh/johnfairh/TMLPersistentContainer)
 ![Pod](https://cocoapod-badges.herokuapp.com/v/TMLPersistentContainer/badge.png)
 ![Platforms](https://cocoapod-badges.herokuapp.com/p/TMLPersistentContainer/badge.png)
 ![License](https://cocoapod-badges.herokuapp.com/l/TMLPersistentContainer/badge.png)

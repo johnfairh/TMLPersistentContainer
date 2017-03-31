@@ -1,5 +1,6 @@
 language: objective-c
 osx_image: xcode8.3
 script:
-    - xcodebuild clean build -sdk iphonesimulator -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-iOS CODE_SIGNING_REQUIRED=NO
-    - xcodebuild test -sdk iphonesimulator -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-iOS CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 5s'
+    - xcodebuild build test -sdk iphonesimulator -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-iOS CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 5s' -enableCodeCoverage YES VALID_ARCHS=x86_64
+after_success:
+    - bash <(curl -s https://codecov.io/bash) -J 'TMLPersistentContainer$' -X gcov -X coveragepy
