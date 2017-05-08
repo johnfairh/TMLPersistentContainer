@@ -77,22 +77,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="../Subscripts.html">Subscripts</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Subscripts.html#/s:iE22TMLPersistentContainerSS9subscriptFVSC8_NSRangeSS">subscript(_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Typealiases.html">Typealiases</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:22TMLPersistentContainer23PersistentStoreMetadata">PersistentStoreMetadata</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -188,8 +172,8 @@ reported back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The name of the managed object model to use with the container. This name is used as the default name for the first persistent store.</p>
-
+                                  <p>The name of the managed object model to use with the container.
+  This name is used as the default name for the first persistent store.</p>
                                 </div>
                               </td>
                             </tr>
@@ -201,8 +185,12 @@ reported back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>An array of bundles to search for the container’s model. By default only the app’s main bundle. If the model exists in multiple bundles then the first one in the array is used. If the model exists more than once in the same bundle then it is undefined which is used. These bundles are also used to search for data and mapping models during automatic multi-step store migration.</p>
-
+                                  <p>An array of bundles to search for the container&rsquo;s model. By default
+     only the app&rsquo;s main bundle. If the model exists in multiple bundles then
+     the first one in the array is used. If the model exists more than once
+     in the same bundle then it is undefined which is used. These bundles are
+     also used to search for data and mapping models during automatic multi-step
+     store migration.</p>
                                 </div>
                               </td>
                             </tr>
@@ -214,8 +202,10 @@ reported back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The ordering algorithm of model versions used to guide automatic multi-step store migration. The default is a numeric string comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes <code>MyModel10</code>.</p>
-
+                                  <p>The ordering algorithm of model versions used to guide automatic
+               multi-step store migration. The default is a numeric string
+               comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes
+               <code>MyModel10</code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -227,8 +217,9 @@ reported back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>A callback to receive log messages from the library suitable for helping debug applications. Calls can occur on any queue. The default performs no logging.</p>
-
+                                  <p>A callback to receive log messages from the library suitable for
+               helping debug applications. Calls can occur on any queue.
+               The default performs no logging.</p>
                                 </div>
                               </td>
                             </tr>
@@ -279,7 +270,6 @@ reported back to the client code.</p>
                               <td>
                                 <div>
                                   <p>The defaut name for the first persistent store.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -292,7 +282,6 @@ reported back to the client code.</p>
                               <td>
                                 <div>
                                   <p>The managed object model to be used by the persistent container.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -304,8 +293,8 @@ reported back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>An array of bundles used to search for data models and mapping models during automatic multi-step store migration.</p>
-
+                                  <p>An array of bundles used to search for data models and mapping models
+     during automatic multi-step store migration.</p>
                                 </div>
                               </td>
                             </tr>
@@ -317,8 +306,10 @@ reported back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The ordering algorithm of model versions used to guide automatic multi-step store migration. The default is a numeric string comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes <code>MyModel10</code>.</p>
-
+                                  <p>The ordering algorithm of model versions used to guide automatic
+               multi-step store migration. The default is a numeric string
+               comparison, meaning that <code>MyModel1</code> precedes <code>MyModel2</code> precedes
+               <code>MyModel10</code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -330,8 +321,9 @@ reported back to the client code.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>A callback to receive log messages from the library suitable for helping debug applications. Calls can occur on any queue. The default performs no logging.</p>
-
+                                  <p>A callback to receive log messages from the library suitable for
+               helping debug applications. Calls can occur on any queue.
+               The default performs no logging.</p>
                                 </div>
                               </td>
                             </tr>
@@ -356,21 +348,18 @@ reported back to the client code.</p>
                       <div class="abstract">
                         <p>Cleanly empty all the persistent stores described by <code>persistentStoreDescriptions</code>.
 Typically useful to reset the app to a fresh state before loading the stores.</p>
-
 <div class="aside aside-attention">
     <p class="aside-title">Attention</p>
     <p>May not remove files from disk. In the case of SQLite3 stores, database files
          making up an empty store are left.</p>
 
 </div>
-
 <div class="aside aside-attention">
     <p class="aside-title">Attention</p>
     <p>Goodness knows what this will do with custom stores. There does not appear to be
          an API into the <code>NSPersistentStore</code> tree to implement this operation.</p>
 
 </div>
-
 <div class="aside aside-attention">
     <p class="aside-title">Attention</p>
     <p>Not atomic with respect to multiple stores. The routine attempts to destroy
@@ -378,7 +367,6 @@ Typically useful to reset the app to a fresh state before loading the stores.</p
          routine to fail.</p>
 
 </div>
-
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     <p>Errors thrown by <code>NSPersistentStoreCoordinator.destroyPersistentStore(at:ofType:options:)</code> which
@@ -451,8 +439,10 @@ are migrated successfully or none are.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Callback made on the main queue for each store when it has either been loaded successfully or failed to load.  The <code>Error</code> here can be anything provided by <code>NSPersistentContainer.loadPersistentStores</code> as well as anything from <code>MigrationError</code> in this package.</p>
-
+                                  <p>Callback made on the main queue for each store when it has either been loaded successfully
+               or failed to load.  The <code>Error</code> here can be anything provided by
+               <code>NSPersistentContainer.loadPersistentStores</code> as well as anything from <code>MigrationError</code>
+               in this package.</p>
                                 </div>
                               </td>
                             </tr>
@@ -468,7 +458,7 @@ are migrated successfully or none are.</p>
         </section>
         <section id="footer">
           <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

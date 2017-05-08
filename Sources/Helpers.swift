@@ -68,7 +68,7 @@ extension String {
     }
 
     /// Return the string corresponding to an NSRange, or empty if none
-    subscript(nsRange: NSRange) -> String {
+    internal subscript(nsRange: NSRange) -> String {
         let strLower = String.UTF16Index(nsRange.location)
         let strUpper = String.UTF16Index(nsRange.location + nsRange.length)
 

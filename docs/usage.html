@@ -76,22 +76,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="Subscripts.html">Subscripts</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Subscripts.html#/s:iE22TMLPersistentContainerSS9subscriptFVSC8_NSRangeSS">subscript(_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Typealiases.html">Typealiases</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:22TMLPersistentContainer23PersistentStoreMetadata">PersistentStoreMetadata</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -103,7 +87,7 @@ TMLPersistentContainer
 Usage.md
 Distributed under the ISC license, see LICENSE.
 -->
-<a href='#user-guide' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='user-guide'>User Guide</h1>
+<h1 id='user-guide' class='heading'>User Guide</h1>
 
 <p><em>This document assumes you are a developer using Core Data and you are
 interested in supporting store migration from different model versions.
@@ -162,13 +146,13 @@ other explicit mappings.</p>
 <a href="#creating-the-container">how to configure the container</a>,
 <a href="#loading-the-stores">what happens during store load</a>, and
 <a href="#limitations">some limitations</a>.</p>
-<a href='#creating-the-container' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='creating-the-container'>Creating the container</h1>
+<h1 id='creating-the-container' class='heading'>Creating the container</h1>
 
 <p>To start using the library replace references to <code>NSPersistentContainer</code>
 with <a href="Classes/PersistentContainer.html"><code>PersistentContainer</code></a>. The
 initializers are compatible though they have additional optional parameters.<br>
 <a href="Classes/PersistentContainer.html">See the API</a>.</p>
-<a href='#describing-the-valid-migrations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='describing-the-valid-migrations'>Describing the valid migrations</h2>
+<h2 id='describing-the-valid-migrations' class='heading'>Describing the valid migrations</h2>
 
 <p>The <code>modelVersionOrder</code> parameter tells the library what migrations are valid
 by reference to the names of each model version. The <em>name</em> of a model version
@@ -195,7 +179,7 @@ Note that this has a different meaning to the <code>list</code> example which pe
 migration from &lsquo;FirstVer&rsquo; directly to &lsquo;ThirdVer&rsquo;.</p>
 
 <p><a href="Enums/ModelVersionOrder.html">Jump to the API reference for ModelVersionOrder</a>.</p>
-<a href='#finding-data-and-mapping-models' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='finding-data-and-mapping-models'>Finding data and mapping models</h2>
+<h2 id='finding-data-and-mapping-models' class='heading'>Finding data and mapping models</h2>
 
 <p>The <code>bundles</code> parameter controls the set of bundles searched for data models
 and mapping models. The default is &lsquo;just the main bundle&rsquo;.</p>
@@ -203,7 +187,7 @@ and mapping models. The default is &lsquo;just the main bundle&rsquo;.</p>
 <p>The library looks for data models anywhere in the supplied bundles, but it only
 finds mapping models that are in the top level of a bundle &ndash; will address this
 at some point.</p>
-<a href='#registering-for-logging' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='registering-for-logging'>Registering for logging</h2>
+<h2 id='registering-for-logging' class='heading'>Registering for logging</h2>
 
 <p>The <code>logMessageHandler</code> parameter is an optional closure that if set is passed
 logging messages from the library on any queue. If your app maintains a text
@@ -217,19 +201,19 @@ rare.</p>
 <p>The <code>debug</code> level is for interest/library debugging/problem reporting.</p>
 
 <p><a href="Structs/LogMessage.html">Jump to the API reference for LogMessage</a>.</p>
-<a href='#loading-the-stores' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='loading-the-stores'>Loading the stores</h1>
+<h1 id='loading-the-stores' class='heading'>Loading the stores</h1>
 
 <p>This section describes what happens during
 <code>PersistentStore.loadPersistentStores</code>. Briefly, the library attempts the
 migration work, one store at a time. If this all succeeds then it invokes
 Core Data to load the migrated stores and return control to the client.</p>
-<a href='#store-types' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='store-types'>Store types</h2>
+<h2 id='store-types' class='heading'>Store types</h2>
 
 <p>Stores without a URL in their <code>NSPersistentStoreDescription</code> are ignored, as
 are stores with a URL that is not a <code>file://</code> URL. All other store types are
 processed. The library has been tested extensively with <code>NSSQLiteStoreType</code>
 and somewhat with <code>NSBinaryStoreType</code>.</p>
-<a href='#nspersistentstoredescription-flags' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='nspersistentstoredescription-flags'>NSPersistentStoreDescription flags</h2>
+<h2 id='nspersistentstoredescription-flags' class='heading'>NSPersistentStoreDescription flags</h2>
 
 <p>These flags are present in the Apple implementation but are undocumented as far
 as I can tell. In this library:</p>
@@ -244,7 +228,7 @@ not attempt to process the store at all.</p>
 <p><strong>shouldInferMappingModelAutomatically</strong> &ndash; if this is <code>true</code> then the library
 allows inferred mappings to be used during migration. Otherwise only explicit
 mapping models created in Xcode are used.</p>
-<a href='#using-the-delegate-to-track-migrations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='using-the-delegate-to-track-migrations'>Using the delegate to track migrations</h2>
+<h2 id='using-the-delegate-to-track-migrations' class='heading'>Using the delegate to track migrations</h2>
 
 <p>An implementation of the <a href="Protocols/MigrationDelegate.html"><code>MigrationDelegate</code>
 protocol</a> may be assigned to
@@ -263,13 +247,13 @@ This depends on <code>NSPersistentStoreDescription.shouldAddStoreAsynchronously<
 see <a href="#nspersistentstoredescription-flags">above</a>.</p>
 
 <p><a href="Protocols/MigrationDelegate.html">Jump to the API reference for MigrationDelegate</a>.</p>
-<a href='#error-reporting' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='error-reporting'>Error reporting</h2>
+<h2 id='error-reporting' class='heading'>Error reporting</h2>
 
 <p>If the library finds a problem during migration then it invokes the client
 completion handler passed to <code>loadPersistentStores</code>. The errors that can be
 reported include various from Foundation and Core Data, as well as several
 specific to this library <a href="Enums/MigrationError.html">that are described here</a>.</p>
-<a href='#working-with-multiple-stores' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='working-with-multiple-stores'>Working with multiple stores</h2>
+<h2 id='working-with-multiple-stores' class='heading'>Working with multiple stores</h2>
 
 <p>The library attempts to migrate multiple stores atomically. Specifically, all
 stores are first migrated into temporary files. Only when all the stores have
@@ -289,7 +273,7 @@ particular store went through its migration process without problem, the
 migration of another store in the same container did have a problem. To keep
 all the stores at a consistent version, neither store has been allowed to
 upgrade.</p>
-<a href='#limitations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='limitations'>Limitations</h1>
+<h1 id='limitations' class='heading'>Limitations</h1>
 
 <p>The main ones of which I am aware at any rate&hellip;.</p>
 
@@ -308,7 +292,7 @@ simulator-only.</p></li>
         </section>
         <section id="footer">
           <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
