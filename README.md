@@ -74,6 +74,10 @@ Swift package manager:
 
     .Package(url: "https://github.com/johnfairh/TMLPersistentContainer/", majorVersion: 1)
 
+Carthage:
+
+    github "johnfairh/TMLPersistentContainer"
+
 ## Contributions
 
 Contributions and feedback welcome: open an issue / johnfairh@gmail.com / twitter @johnfairh
