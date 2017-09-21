@@ -9,6 +9,7 @@ Distributed under the ISC license, see LICENSE.
 [![CI](https://travis-ci.org/johnfairh/TMLPersistentContainer.svg?branch=master)](https://travis-ci.org/johnfairh/TMLPersistentContainer)
 [![codecov](https://codecov.io/gh/johnfairh/TMLPersistentContainer/branch/master/graph/badge.svg)](https://codecov.io/gh/johnfairh/TMLPersistentContainer)
 ![Pod](https://cocoapod-badges.herokuapp.com/v/TMLPersistentContainer/badge.png)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Platforms](https://cocoapod-badges.herokuapp.com/p/TMLPersistentContainer/badge.png)
 ![License](https://cocoapod-badges.herokuapp.com/l/TMLPersistentContainer/badge.png)
 
