@@ -94,6 +94,19 @@ extension Collection where Iterator.Element: Hashable {
     }
 }
 
+extension Collection where Iterator.Element: Equatable {
+    func commonPrefix(with: Self) -> Int {
+        var prefix = 0
+        for (a, b) in zip(self, with) {
+            guard a == b else {
+                break
+            }
+            prefix += 1
+        }
+        return prefix
+    }
+}
+
 // MARK: Additions to Swift.Dictionary
 
 extension Dictionary {

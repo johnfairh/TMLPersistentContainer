@@ -14,7 +14,7 @@ import XCTest
 class TestGraphSolving: TestCase {
 
     // An edge in our test model graph
-    struct Edge: GraphEdge {
+    struct Edge: GraphEdge, CustomStringConvertible {
         let source: String
         let destination: String
         let isInferred: Bool
@@ -23,6 +23,16 @@ class TestGraphSolving: TestCase {
             self.source = source
             self.destination = destination
             self.isInferred = isInferred
+        }
+
+        static func ==(lhs: Edge, rhs: Edge) -> Bool {
+            return lhs.source == rhs.source &&
+                lhs.destination == rhs.destination &&
+                lhs.isInferred == rhs.isInferred
+        }
+
+        public var description: String {
+            return "\(source)-\(isInferred ? "i" : "e")-\(destination)"
         }
     }
 
@@ -115,21 +125,21 @@ class TestGraphSolving: TestCase {
         }
     }
 
-    // I'm too stupid to create a Type1Cycle OR prove it is impossible
-
-    func testCanReportType2Cycle() {
+    func testCanReportType1Cycle() {
         do {
             try tryExecuteTest(GraphTest(3, [Edge(SOURCE, INTER1, true),
                                              Edge(INTER1, TARGET, true),
                                              Edge(TARGET, INTER1, false)],
                                          []))
             XCTFail("Unexpected path found!")
-        } catch MigrationError.cyclicRoute2(let source, let target) {
+        } catch MigrationError.cyclicRoute1(let source, let target) {
             print("Cyclic route detected between \(source) and \(target)")
         } catch {
             XCTFail("Unexpected error caught \(error)")
         }
     }
+
+    // I'm too stupid to create a Type2Cycle OR prove it is impossible
 
     func testCanReportType3Cycle() {
         do {
@@ -171,5 +181,18 @@ class TestGraphSolving: TestCase {
         executeTest(GraphTest(largerGraphNodeCount, largerGraphEdges,
                               [INTER2, TARGET]),
                     source: INTER2)
+    }
+
+    var issue5GraphEdges: [Edge] { return [Edge(SOURCE, INTER1, false),
+                                           Edge(SOURCE, INTER2, true),
+                                           Edge(SOURCE, TARGET, true),
+                                           Edge(INTER1, INTER2, true),
+                                           Edge(INTER1, TARGET, true),
+                                           Edge(INTER2, TARGET, false)] }
+    let issue5GraphNodeCount = 4
+
+    func testIssue5() {
+        executeTest(GraphTest(issue5GraphNodeCount, issue5GraphEdges,
+                              [SOURCE, INTER1, INTER2, TARGET]))
     }
 }
