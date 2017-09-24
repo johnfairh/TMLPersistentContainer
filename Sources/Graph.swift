@@ -18,10 +18,12 @@ import Foundation
 //   even if inferred path has fewer edges
 // - given two paths both with mapping models, choose the one with fewer
 //   edges.
+// - when comparing two paths, compare only the parts that differ: in practice
+//   this means discarding any common prefix.
 //
 // Path 'distance' is modelled by the Distance struct that describes how many
-// of each type of edge it contains.  The < relation on it implements the
-// requirements above.
+// of each type of edge it contains.  The < relation on it implements the first
+// two requirements above.  The third requirement is handled by `Path.isBetter(than:)`.
 //
 // [1] ie. 'things can get better' - if we have a path (e:0 i:3) and discover
 //     a new path of (e:0 i:4) we cannot prune that search (as in Dijkstra)
@@ -30,26 +32,22 @@ import Foundation
 //
 // This code is factored out from the core-data dependent classes for easier
 // testing.
-//
-// (not a generically useful graph library!)
+
+// TODO
+// * Optimize path distance counters - bit tricky though.
 
 /// Edge in the graph.  Implemented concretely in product by ModelVersionEdge.
-protocol GraphEdge {
+protocol GraphEdge: Equatable {
     var source: String { get }
     var destination: String { get }
     var isInferred: Bool { get }
 }
 
-/// Used during finding of shortest path to model path progress
+/// Summary of a migration path in terms of the number of explicit and inferred
+/// migrations on it.  Knows how to compare two such.
 fileprivate struct Distance: CustomStringConvertible {
     let inferredEdges: Int
     let explicitEdges: Int
-
-    // (can't bring myself to use operator + for completely different types!)
-    func addEdge(_ edge: GraphEdge) -> Distance {
-        return Distance(inferredEdges: inferredEdges + (edge.isInferred ? 1 : 0),
-                        explicitEdges: explicitEdges + (edge.isInferred ? 0 : 1))
-    }
 
     static func <(lhs: Distance, rhs: Distance) -> Bool {
         if lhs.explicitEdges == rhs.explicitEdges {
@@ -72,18 +70,55 @@ fileprivate struct Distance: CustomStringConvertible {
     }
 }
 
-/// Wrapper structure for shortest-path algorithm
+/// A path -- ordered list of edges -- through a graph.
+/// Used as per-node workspace during solving to track the current
+/// shortest path to the node.
+fileprivate struct Path<Edge: GraphEdge>: CustomStringConvertible {
+    let edges: [Edge]
 
-// First, workspace for Bellman-Ford.  Swift is Great so we can't nest this inside Graph yet ;)
-fileprivate struct NodeState<Edge> where Edge: GraphEdge {
-    let distance: Distance
-    let viaEdge: Edge?
+    init(edges: [Edge] = []) {
+        self.edges = edges
+    }
 
-    init(distance: Distance, viaEdge: Edge? = nil) {
-        self.distance = distance
-        self.viaEdge = viaEdge
+    private var distance: Distance {
+        let inferred = edges.reduce(0) { result, edge in
+            result + (edge.isInferred ? 1 : 0)
+        }
+        return Distance(inferredEdges: inferred, explicitEdges: edges.count - inferred)
+    }
+
+    /// Create a new path by appending `edge` to our path.
+    func pathWith(edge: Edge) -> Path {
+        var newEdges = edges
+        newEdges.append(edge)
+        return Path(edges: newEdges)
+    }
+
+    private func pathAfterPrefix(_ count: Int) -> Path {
+        return Path(edges: Array(edges.suffix(from: count)))
+    }
+
+    /// A path is better if its distance is less, AFTER
+    /// discarding any common shared path prefix.
+    func isBetter(than: Path<Edge>) -> Bool {
+        let prefix = edges.commonPrefix(with: than.edges)
+        let uncommonSelfPath = pathAfterPrefix(prefix)
+        let uncommonThanPath = than.pathAfterPrefix(prefix)
+        return uncommonSelfPath.distance < uncommonThanPath.distance
+    }
+
+    var description: String {
+        var desc = distance.description + "[" + edges.map { edge in
+            "\(edge.source)|\(edge.isInferred ? "i" : "e")"
+        }.joined(separator: ",")
+        if let end = edges.last {
+            desc += ",\(end.destination)"
+        }
+        return "\(desc)]"
     }
 }
+
+/// Wrapper structure for shortest-path algorithm
 
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 struct Graph<Edge>: LogMessageEmitter where Edge: GraphEdge {
@@ -99,6 +134,7 @@ struct Graph<Edge>: LogMessageEmitter where Edge: GraphEdge {
 
     /// Returns the shortest path from source to destination.
     /// - Complexity: O(number of edges * number of nodes)
+    ///   Although probably more given updated path-comparison calculations
     func findPath(source: String, destination: String) throws -> [Edge] {
         log(.info, "Looking for path from \(source) to \(destination)")
         guard source != destination else {
@@ -106,11 +142,11 @@ struct Graph<Edge>: LogMessageEmitter where Edge: GraphEdge {
             return []
         }
 
-        var nodeStates: [String:NodeState<Edge>] = [:]
+        var nodePaths: [String:Path<Edge>] = [:]
 
         // Solve
 
-        nodeStates[source] = NodeState(distance: Distance(inferredEdges: 0, explicitEdges: 0))
+        nodePaths[source] = Path()
 
         for _ in 1..<nodeCount {
             var changed = false
@@ -118,22 +154,22 @@ struct Graph<Edge>: LogMessageEmitter where Edge: GraphEdge {
 
             try edges.forEach { edge in
                 log(.debug, " Consider \(edge)")
-                guard let edgeSourceState = nodeStates[edge.source] else {
-                    log(.debug, "  No route to source, skipping.")
+                guard let edgeSourcePath = nodePaths[edge.source] else {
+                    log(.debug, "  No path to source, skipping.")
                     return
                 }
 
-                let distanceToDestinationViaSource = edgeSourceState.distance.addEdge(edge)
+                let pathToDestinationViaSource = edgeSourcePath.pathWith(edge: edge)
                 var better = false
 
-                log(.debug, "  Distance to \(edge.destination) via edge is \(distanceToDestinationViaSource)")
+                log(.debug, "  Path to \(edge.destination) via edge is \(pathToDestinationViaSource)")
 
-                if let edgeDestinationState = nodeStates[edge.destination] {
-                    if distanceToDestinationViaSource < edgeDestinationState.distance {
-                        log(.debug, "  Better than current distance \(edgeDestinationState.distance), keeping.")
+                if let edgeDestinationState = nodePaths[edge.destination] {
+                    if pathToDestinationViaSource.isBetter(than: edgeDestinationState) {
+                        log(.debug, "  Better than current path \(edgeDestinationState), keeping.")
                         better = true
                     } else {
-                        log(.debug, "  Not better than current distance \(edgeDestinationState.distance)")
+                        log(.debug, "  Not better than current path \(edgeDestinationState)")
                     }
                 } else {
                     log(.debug, "  First route to \(edge.destination), keeping.")
@@ -149,8 +185,7 @@ struct Graph<Edge>: LogMessageEmitter where Edge: GraphEdge {
                         log(.error, "Graph problem, found low-cost route to \(source) via \(edge)")
                         throw MigrationError.cyclicRoute3(edge.source, source)
                     }
-                    nodeStates[edge.destination] = NodeState(distance: distanceToDestinationViaSource,
-                                                             viaEdge: edge)
+                    nodePaths[edge.destination] = pathToDestinationViaSource
                     changed = true
                 }
             }
@@ -164,43 +199,41 @@ struct Graph<Edge>: LogMessageEmitter where Edge: GraphEdge {
 
         log(.debug, "All b-f iterations complete.")
 
-        // Negacycle check (should not be possible but belt+braces...)
+        // Negacycle check
 
         try edges.forEach { edge in
-            if let edgeSourceState = nodeStates[edge.source],
-                let edgeDestinationState = nodeStates[edge.destination],
-                edgeSourceState.distance.addEdge(edge) < edgeDestinationState.distance {
-                log(.error, "Graph problem, cheaper to take \(edge) from \(edgeSourceState.distance) than \(edgeDestinationState.distance)")
+            if let edgeSourceState = nodePaths[edge.source],
+                let edgeDestinationState = nodePaths[edge.destination],
+                edgeSourceState.pathWith(edge: edge).isBetter(than: edgeDestinationState) {
+                log(.error, "Graph problem, cheaper to take \(edge) than use existing path.")
+                log(.error, " Source path \(edgeSourceState)")
+                log(.error, " Dest path \(edgeDestinationState)")
                 throw MigrationError.cyclicRoute1(source, destination)
             }
         }
 
-        log(.debug, "No negative cycles detected, forming path.")
+        log(.debug, "No negative cycles detected, checking for path.")
 
-        // Build the path - from target back to source, then reverse it
-
-        var path: [Edge]           = []
-        var nextNodeName           = destination
-        var nodesUsed: Set<String> = [destination]
-
-        while nextNodeName != source {
-            log(.debug, "Looking for edge leading to \(nextNodeName)")
-            guard let nextEdge = nodeStates[nextNodeName]?.viaEdge else {
-                log(.error, "No path exists from \(source) to \(destination), cannot find edge to \(nextNodeName)")
-                throw MigrationError.noRouteBetweenModels(source, destination)
-            }
-            guard !nodesUsed.contains(nextEdge.source) else { // this guarantees loop termination
-                log(.error, "No path exists from \(source) to \(destination), cycle involving \(nextEdge.source)")
-                throw MigrationError.cyclicRoute2(source, destination)
-            }
-            log(.debug, "Found \(nextEdge)")
-            nodesUsed.insert(nextEdge.source)
-            nextNodeName = nextEdge.source
-            path.append(nextEdge)
+        guard let path = nodePaths[destination] else {
+            log(.error, "No path exists from \(source) to \(destination)")
+            throw MigrationError.noRouteBetweenModels(source, destination)
         }
 
-        let actualPath = Array(path.reversed())
-        log(.info, "Found path \(actualPath)")
-        return actualPath
+        // Sanity checks the path is valid -- in the absence of code bugs these are probably
+        // not required.
+        if let firstEdge = path.edges.first, let lastEdge = path.edges.last {
+            guard firstEdge.source == source, lastEdge.destination == destination else {
+                let errorMsg = "Unexpected path found between \(firstEdge.source) and \(lastEdge.destination)"
+                log(.error, errorMsg)
+                throw MigrationError.logicFailure(errorMsg)
+            }
+            if !path.edges.map({ $0.source }).hasUniqueElements {
+                log(.error, "Path \(path) contains cycles")
+                throw MigrationError.cyclicRoute2(source, destination)
+            }
+        }
+
+        log(.info, "Found path \(path.edges)")
+        return path.edges
     }
 }

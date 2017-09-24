@@ -50,6 +50,12 @@ struct ModelVersionEdge: GraphEdge, CustomStringConvertible {
         let letter = isInferred ? "i" : "e"
         return "\(source)-(\(letter))->\(destination)"
     }
+
+    static func ==(lhs: ModelVersionEdge, rhs: ModelVersionEdge) -> Bool {
+        return lhs.source == rhs.source &&
+               lhs.destination == rhs.destination &&
+               lhs.isInferred == rhs.isInferred
+    }
 }
 
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
