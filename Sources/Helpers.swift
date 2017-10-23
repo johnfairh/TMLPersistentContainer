@@ -69,10 +69,10 @@ extension String {
 
     /// Return the string corresponding to an NSRange, or empty if none
     internal subscript(nsRange: NSRange) -> String {
-        let strLower = String.UTF16Index(nsRange.location)
-        let strUpper = String.UTF16Index(nsRange.location + nsRange.length)
-
-        return String(utf16[strLower..<strUpper]) ?? ""
+        guard let range = Range(nsRange, in: self) else {
+            return ""
+        }
+        return String(self[range])
     }
 }
 
@@ -165,10 +165,10 @@ extension NSRegularExpression {
 
         if results[0].numberOfRanges == 1 {
             // entire match
-            matchRange = results[0].rangeAt(0)
+            matchRange = results[0].range(at: 0)
         } else {
             // first capture group
-            matchRange = results[0].rangeAt(1)
+            matchRange = results[0].range(at: 1)
         }
 
         return str[matchRange]
