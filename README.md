@@ -57,7 +57,7 @@ All migrations happen as part of `NSPersistentContainer.loadPersistentStores`.
 
 ## Requirements
 
-Swift 3.
+Swift 4, Xcode 9.  See the *swift31* branch for a Swift 31 version.
 
 The library is based on `NSPersistentContainer` so requires a minimum
 deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS 3.0.

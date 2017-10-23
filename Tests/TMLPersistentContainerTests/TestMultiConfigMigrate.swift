@@ -208,14 +208,14 @@ class MultiItemXMigrationPolicy1to2: NSEntityMigrationPolicy {
 }
 
 class MultiItem1MigrationPolicy1to2: MultiItemXMigrationPolicy1to2 {
-    init() {
+    @objc init() {
         super.init(v1StringIdKeyPath: #keyPath(MultiItem1_1.id1),
                    v2Int32IdKeyPath: #keyPath(MultiItem1_2.id1))
     }
 }
 
 class MultiItem2MigrationPolicy1to2: MultiItemXMigrationPolicy1to2 {
-    init() {
+    @objc init() {
         super.init(v1StringIdKeyPath: #keyPath(MultiItem2_1.id2),
                    v2Int32IdKeyPath: #keyPath(MultiItem2_2.id2))
     }
