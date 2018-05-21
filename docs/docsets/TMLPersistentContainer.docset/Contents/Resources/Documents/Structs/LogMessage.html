@@ -4,88 +4,101 @@
     <title>LogMessage Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
+
     <a name="//apple_ref/swift/Struct/LogMessage" class="dashAnchor"></a>
+
     <a title="LogMessage Structure Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p><a href="../index.html">TMLPersistentContainer Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/johnfairh/TMLPersistentContainer"><img src="../img/gh.png"/>View on GitHub</a></p>
-      </div>
-    </header>
-    <div class="content-wrapper">
-      <p id="breadcrumbs">
-        <a href="../index.html">TMLPersistentContainer Reference</a>
-        <img id="carat" src="../img/carat.png" />
-        LogMessage Structure Reference
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          TMLPersistentContainer Docs
+        </a>
+         (100% documented)
       </p>
-    </div>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/johnfairh/TMLPersistentContainer">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">TMLPersistentContainer Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      LogMessage Structure Reference
+    </p>
+
     <div class="content-wrapper">
-      <nav class="sidebar">
+      <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="../Guides.html">Guides</a>
+            <a class="nav-group-name-link" href="../Guides.html">Guides</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../background.html">Background</a>
+                <a class="nav-group-task-link" href="../background.html">Background</a>
               </li>
               <li class="nav-group-task">
-                <a href="../usage.html">Usage</a>
+                <a class="nav-group-task-link" href="../usage.html">Usage</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Classes.html">Classes</a>
+            <a class="nav-group-name-link" href="../Main APIs.html">Main APIs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/PersistentContainer.html">PersistentContainer</a>
+                <a class="nav-group-task-link" href="../Classes/PersistentContainer.html">PersistentContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MigrationError.html">MigrationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enumerations</a>
+            <a class="nav-group-name-link" href="../Logging APIs.html">Logging APIs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Enums/LogLevel.html">LogLevel</a>
+                <a class="nav-group-task-link" href="../Structs/LogMessage.html">LogMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/MigrationError.html">MigrationError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Protocols.html">Protocols</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Structs.html">Structures</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Structs/LogMessage.html">LogMessage</a>
+                <a class="nav-group-task-link" href="../Enums/LogLevel.html">LogLevel</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
       <article class="main-content">
-        <section>
-          <section class="section">
+
+        <section class="section">
+          <div class="section-content">
             <h1>LogMessage</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">LogMessage</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">LogMessage</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
 
                 </div>
               </div>
@@ -93,16 +106,19 @@
 These messages are intended to be human-readable although the audience is primarily
 app developers; these are not intended for end users.</p>
 
-          </section>
-          <section class="section task-group-section">
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
             <div class="task-group">
-              <ul>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOv"></a>
+                    <a name="/s:22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp"></a>
                     <a name="//apple_ref/swift/Property/level" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOv">level</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp">level</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -117,9 +133,12 @@ app developers; these are not intended for end users.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">level</span><span class="p">:</span> <span class="kt"><a href="../Enums/LogLevel.html">LogLevel</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">level</span><span class="p">:</span> <span class="kt"><a href="../Enums/LogLevel.html">LogLevel</a></span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -127,9 +146,9 @@ app developers; these are not intended for end users.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer10LogMessageV4bodySSycv"></a>
+                    <a name="/s:22TMLPersistentContainer10LogMessageV4bodySSycvp"></a>
                     <a name="//apple_ref/swift/Property/body" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV4bodySSycv">body</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV4bodySSycvp">body</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -144,9 +163,12 @@ app developers; these are not intended for end users.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">body</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">body</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L46">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -154,9 +176,9 @@ app developers; these are not intended for end users.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer10LogMessageV11descriptionSSv"></a>
+                    <a name="/s:22TMLPersistentContainer10LogMessageV11descriptionSSvp"></a>
                     <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV11descriptionSSv">description</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV11descriptionSSvp">description</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -164,16 +186,19 @@ app developers; these are not intended for end users.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A string combining <code><a href="../Structs/LogMessage.html#/s:22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOv">level</a></code> and <code><a href="../Structs/LogMessage.html#/s:22TMLPersistentContainer10LogMessageV4bodySSycv">body</a></code>.</p>
+                        <p>A string combining <code><a href="../Structs/LogMessage.html#/s:22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp">level</a></code> and <code><a href="../Structs/LogMessage.html#/s:22TMLPersistentContainer10LogMessageV4bodySSycvp">body</a></code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L55-L57">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -199,23 +224,27 @@ various informational messages that may be of interest to clients for their own 
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Handler</span> <span class="o">=</span> <span class="p">(</span><span class="kt">LogMessage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Handler</span> <span class="o">=</span> <span class="p">(</span><span class="kt">LogMessage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L61">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
               </ul>
             </div>
-          </section>
+          </div>
         </section>
-        <section id="footer">
-          <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-        </section>
+
       </article>
     </div>
+    <section class="footer">
+      <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>

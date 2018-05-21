@@ -4,88 +4,102 @@
     <title>MigrationError Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
+
     <a name="//apple_ref/swift/Enum/MigrationError" class="dashAnchor"></a>
+
     <a title="MigrationError Enumeration Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p><a href="../index.html">TMLPersistentContainer Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/johnfairh/TMLPersistentContainer"><img src="../img/gh.png"/>View on GitHub</a></p>
-      </div>
-    </header>
-    <div class="content-wrapper">
-      <p id="breadcrumbs">
-        <a href="../index.html">TMLPersistentContainer Reference</a>
-        <img id="carat" src="../img/carat.png" />
-        MigrationError Enumeration Reference
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          TMLPersistentContainer Docs
+        </a>
+         (100% documented)
       </p>
-    </div>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/johnfairh/TMLPersistentContainer">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">TMLPersistentContainer Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      MigrationError Enumeration Reference
+    </p>
+
     <div class="content-wrapper">
-      <nav class="sidebar">
+      <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="../Guides.html">Guides</a>
+            <a class="nav-group-name-link" href="../Guides.html">Guides</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../background.html">Background</a>
+                <a class="nav-group-task-link" href="../background.html">Background</a>
               </li>
               <li class="nav-group-task">
-                <a href="../usage.html">Usage</a>
+                <a class="nav-group-task-link" href="../usage.html">Usage</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Classes.html">Classes</a>
+            <a class="nav-group-name-link" href="../Main APIs.html">Main APIs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/PersistentContainer.html">PersistentContainer</a>
+                <a class="nav-group-task-link" href="../Classes/PersistentContainer.html">PersistentContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MigrationError.html">MigrationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enumerations</a>
+            <a class="nav-group-name-link" href="../Logging APIs.html">Logging APIs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Enums/LogLevel.html">LogLevel</a>
+                <a class="nav-group-task-link" href="../Structs/LogMessage.html">LogMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/MigrationError.html">MigrationError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Protocols.html">Protocols</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Structs.html">Structures</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Structs/LogMessage.html">LogMessage</a>
+                <a class="nav-group-task-link" href="../Enums/LogLevel.html">LogLevel</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
       <article class="main-content">
-        <section>
-          <section class="section">
+
+        <section class="section">
+          <div class="section-content">
             <h1>MigrationError</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MigrationError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MigrationError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
 
                 </div>
               </div>
@@ -96,10 +110,13 @@
 human-readable (-ish) information to the logging interface. The first step to debugging
 one of these errors is to read that text and try to make sense of it.</p>
 
-          </section>
-          <section class="section task-group-section">
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
             <div class="task-group">
-              <ul>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -122,17 +139,16 @@ the app&rsquo;s stores with a mixture of versions this store load has been aband
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">coreqMigrationFailed</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">coreqMigrationFailed</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -160,17 +176,16 @@ This could mean:</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">badModelVersionOrder</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt"><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">badModelVersionOrder</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt"><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L32">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -195,17 +210,16 @@ store that cannot be matched to a model.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cannotFindSourceModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Any</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cannotFindSourceModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L39">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -230,17 +244,16 @@ created by merging several models &ndash; this second use case is not currently 
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cannotFindDestinationModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt">NSManagedObjectModel</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cannotFindDestinationModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt">NSManagedObjectModel</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L46">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -272,17 +285,16 @@ with inferred mappings if enabled. Possible reasons include:</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">noRouteBetweenModels</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">noRouteBetweenModels</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L58">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -306,17 +318,16 @@ This probably means there are cycles in the persistent container&rsquo;s <code><
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cyclicRoute1</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cyclicRoute1</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L64">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -340,17 +351,16 @@ This also probably means there are cycles in the persistent container&rsquo;s <c
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cyclicRoute2</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cyclicRoute2</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L70">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -374,17 +384,16 @@ This ALSO probably means there are cycles in the persistent container&rsquo;s <c
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">cyclicRoute3</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cyclicRoute3</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L76">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -407,9 +416,12 @@ be welcome. The string parameter is a brief explanation of the problem.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">logicFailure</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">logicFailure</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L81">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -417,13 +429,13 @@ be welcome. The string parameter is a brief explanation of the problem.</p>
               </ul>
             </div>
             <div class="task-group">
-              <ul>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO11descriptionSSv"></a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO11descriptionSSvp"></a>
                     <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO11descriptionSSv">description</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO11descriptionSSvp">description</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -438,23 +450,27 @@ be welcome. The string parameter is a brief explanation of the problem.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L87-L108">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
               </ul>
             </div>
-          </section>
+          </div>
         </section>
-        <section id="footer">
-          <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-        </section>
+
       </article>
     </div>
+    <section class="footer">
+      <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>

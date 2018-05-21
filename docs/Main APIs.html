@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Main APIs  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Section/Main APIs" class="dashAnchor"></a>
+
+    <a title="Main APIs  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          TMLPersistentContainer Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/johnfairh/TMLPersistentContainer">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">TMLPersistentContainer Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Main APIs  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="background.html">Background</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="usage.html">Usage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Main APIs.html">Main APIs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/PersistentContainer.html">PersistentContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/ModelVersionOrder.html">ModelVersionOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MigrationError.html">MigrationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MigrationDelegate.html">MigrationDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Logging APIs.html">Logging APIs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/LogMessage.html">LogMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/LogLevel.html">LogLevel</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>Main APIs</h1>
+            <p>These types form the main API.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@TMLPersistentContainer@objc(cs)PersistentContainer"></a>
+                    <a name="//apple_ref/swift/Class/PersistentContainer" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@TMLPersistentContainer@objc(cs)PersistentContainer">PersistentContainer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A container for a Core Data stack that provides automatic multi-step shortest-path
+persistent store migration.</p>
+
+<p>This is a drop-in replacement for <code>NSPersistentContainer</code> that automatically detects
+and performs multi-step store migration as part of the <code>loadPersistentStores</code> method.</p>
+
+<p>The container searches for models and mapping models, then constructs the
+best sequence in which to migrate stores. It prefers to use explicit mapping models
+over inferred mapping models when there is a choice. Progress and status can be
+reported back to the client code.</p>
+
+<p>See <a href="https://johnfairh.github.io/TMLPersistentContainer/usage.html">the user guide</a> for more details.</p>
+
+                        <a href="Classes/PersistentContainer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">PersistentContainer</span> <span class="p">:</span> <span class="kt">NSPersistentContainer</span><span class="p">,</span> <span class="kt">LogMessageEmitter</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L25-L257">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22TMLPersistentContainer17ModelVersionOrderO"></a>
+                    <a name="//apple_ref/swift/Enum/ModelVersionOrder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer17ModelVersionOrderO">ModelVersionOrder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A rule for ordering model versions.  The persistent container performs automatic multi-step
+migration in the direction defined by this rule, which operates on the names of the model
+version.
+Note that the <em>model version</em> here is the part of its filename before &lsquo;.xcdatamodel&rsquo; &ndash;
+<em>not</em> the optional &lsquo;Model Version Identifier&rsquo; that you can set in the model&rsquo;s properties panel.</p>
+
+                        <a href="Enums/ModelVersionOrder.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ModelVersionOrder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/ModelVersionOrder.swift#L17-L45">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO"></a>
+                    <a name="//apple_ref/swift/Enum/MigrationError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO">MigrationError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Errors that can occur preventing persistent store loading, passed into the callback given to
+<code>PersistentContainer.loadPersistentStores</code>.</p>
+
+<p>When any of these unusual conditions occurs, the persistent container provides a lot of
+human-readable (-ish) information to the logging interface. The first step to debugging
+one of these errors is to read that text and try to make sense of it.</p>
+
+                        <a href="Enums/MigrationError.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MigrationError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L19-L82">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP"></a>
+                    <a name="//apple_ref/swift/Protocol/MigrationDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP">MigrationDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A delegate that can be provided to <code><a href="Classes/PersistentContainer.html">PersistentContainer</a></code> to receive events describing the
+progress of migrations. These events can be used to update a user interface or for app
+internal logging.</p>
+
+<p>All methods are called while <code>PersistentContainer.loadPersistentStores</code> is active.
+If <em>any</em> of the <code>NSPersistentStoreDescription</code>s have the <code>shouldAddStoreAsynchronously</code> flag
+set to <code>true</code> then all methods are called on a private background queue. If all of the store
+descriptions have the flag set to <code>false</code> then the methods are called on the same queue on which
+<code>PersistentContainer.loadPersistentStores</code> was called.</p>
+
+<p>The stores in <code>PersistentContainer.persistentStoreDescriptions</code> are processed sequentially.
+Stores that are not migratable (not on disk) are ignored and do not represent in this delegate.</p>
+
+<p>A store that does not require migration (the normal case!) sees the sequence:</p>
+
+<ol>
+<li>willConsiderStore</li>
+<li>willNotMigrateStore</li>
+</ol>
+
+<p>A store requiring a 2-step migration sees the sequence:</p>
+
+<ol>
+<li>willConsiderStore</li>
+<li>willMigrateStore - totalSteps=2</li>
+<li>willSingleMigrateStore - stepsRemaining=2</li>
+<li>willSingleMigrateStore - stepsRemaining=1</li>
+<li>didMigrateStore</li>
+</ol>
+
+<p>Errors can occur at any point following <code>willConsiderStore</code> for example:</p>
+
+<ol>
+<li>willConsiderStore</li>
+<li>willMigrateStore - totalSteps=8</li>
+<li>didFailToMigrateStore</li>
+</ol>
+
+                        <a href="Protocols/MigrationDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MigrationDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationDelegate.swift#L44-L120">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

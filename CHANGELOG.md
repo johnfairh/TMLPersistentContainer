@@ -12,6 +12,13 @@
 
 * None.
 
+## 3.0.0
+
+##### Breaking
+
+* Port to Swift 4.1, Xcode 9.3.1  
+  [John Fairhurst](https://github.com/johnfairh)
+
 ## 2.0.0
 
 ##### Breaking
@@ -19,23 +26,7 @@
 * Port to Swift 4, Xcode 9.  
   [John Fairhurst](https://github.com/johnfairh)
 
-##### Enhancements
-
-* None.
-
-##### Bug Fixes
-
-* None.
-
 ## 1.0.1
-
-##### Breaking
-
-* None.
-
-##### Enhancements
-
-* None.
 
 ##### Bug Fixes
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TMLPersistentContainer"
-  s.version      = "2.0.0"
+  s.version      = "3.0.0"
   s.authors      = { "John Fairhurst" => "johnfairh@gmail.com" }
 #  s.social_media_url   = "https://twitter.com/johnfairh"
   s.license      = { :type => "ISC", :file => "LICENSE" }
