@@ -4,83 +4,96 @@
     <title>Background  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
+
+
     <a title="Background  Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p><a href="index.html">TMLPersistentContainer Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/johnfairh/TMLPersistentContainer"><img src="img/gh.png"/>View on GitHub</a></p>
-      </div>
-    </header>
-    <div class="content-wrapper">
-      <p id="breadcrumbs">
-        <a href="index.html">TMLPersistentContainer Reference</a>
-        <img id="carat" src="img/carat.png" />
-        Background  Reference
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          TMLPersistentContainer Docs
+        </a>
+         (100% documented)
       </p>
-    </div>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/johnfairh/TMLPersistentContainer">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">TMLPersistentContainer Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Background  Reference
+    </p>
+
     <div class="content-wrapper">
-      <nav class="sidebar">
+      <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Guides.html">Guides</a>
+            <a class="nav-group-name-link" href="Guides.html">Guides</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="background.html">Background</a>
+                <a class="nav-group-task-link" href="background.html">Background</a>
               </li>
               <li class="nav-group-task">
-                <a href="usage.html">Usage</a>
+                <a class="nav-group-task-link" href="usage.html">Usage</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Classes.html">Classes</a>
+            <a class="nav-group-name-link" href="Main APIs.html">Main APIs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/PersistentContainer.html">PersistentContainer</a>
+                <a class="nav-group-task-link" href="Classes/PersistentContainer.html">PersistentContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/ModelVersionOrder.html">ModelVersionOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MigrationError.html">MigrationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MigrationDelegate.html">MigrationDelegate</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Enums.html">Enumerations</a>
+            <a class="nav-group-name-link" href="Logging APIs.html">Logging APIs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Enums/LogLevel.html">LogLevel</a>
+                <a class="nav-group-task-link" href="Structs/LogMessage.html">LogMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/MigrationError.html">MigrationError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/ModelVersionOrder.html">ModelVersionOrder</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Protocols.html">Protocols</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/MigrationDelegate.html">MigrationDelegate</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Structs.html">Structures</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/LogMessage.html">LogMessage</a>
+                <a class="nav-group-task-link" href="Enums/LogLevel.html">LogLevel</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
       <article class="main-content">
-        <section>
-          <section class="section">
+
+        <section class="section">
+          <div class="section-content">
             
             <!--
 TMLPersistentContainer
@@ -140,14 +153,16 @@ mapping models.</p>
 
 <p><a href="usage.html">Read the user guide to find out how</a>.</p>
 
-          </section>
+          </div>
         </section>
-        <section id="footer">
-          <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-        </section>
+
+
       </article>
     </div>
+    <section class="footer">
+      <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>

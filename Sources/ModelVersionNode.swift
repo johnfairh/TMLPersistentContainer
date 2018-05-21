@@ -118,7 +118,7 @@ final class ModelVersionNodes: LogMessageEmitter {
         log(.info, "Found model directories: \(modelDirURLs)")
 
         // Load + deserialize the important part of their version plist
-        let modelEntityVersions = modelDirURLs.flatMap { modelDirURL -> (URL, ModelEntityVersions)? in
+        let modelEntityVersions = modelDirURLs.compactMap { modelDirURL -> (URL, ModelEntityVersions)? in
             let infoURL = modelDirURL.appendingPathComponent(Constants.versionInfoFilename, isDirectory: false)
 
             guard let versions = NSDictionary(contentsOf: infoURL)?[Constants.modelVersionsKey] as? ModelEntityVersions else {
@@ -133,7 +133,7 @@ final class ModelVersionNodes: LogMessageEmitter {
 
         modelEntityVersions.forEach { modelDirURL, modelEntityVersions in
 
-            let modelDirNodes = modelEntityVersions.flatMap { versionName, entityVersions -> ModelVersionNode? in
+            let modelDirNodes = modelEntityVersions.compactMap { versionName, entityVersions -> ModelVersionNode? in
                 let modelURL = modelDirURL.appendingPathComponent(versionName + "." + Constants.modelExtension)
                 guard let model = NSManagedObjectModel(contentsOf: modelURL) else {
                     log(.warning, "Could not load \(modelURL) as NSManagedObjectModel.")

@@ -4,4 +4,27 @@ module: TMLPersistentContainer
 copyright: Distributed under the ISC license.  Maintained by John Fairhurst.
 readme: README.md
 github_url: https://github.com/johnfairh/TMLPersistentContainer
+github_file_prefix: https://github.com/johnfairh/TMLPersistentContainer/tree/master
 documentation: SourceDocs/*md
+clean: true
+theme: fullwidth
+
+custom_categories:
+    - name: Guides
+      children:
+          - Background
+          - Usage
+
+    - name: Main APIs
+      abstract: These types form the main API.
+      children:
+          - PersistentContainer
+          - ModelVersionOrder
+          - MigrationError
+          - MigrationDelegate
+
+    - name: Logging APIs
+      abstract: These types are used for logging.
+      children:
+          - LogMessage
+          - LogLevel

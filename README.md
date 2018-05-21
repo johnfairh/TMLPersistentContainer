@@ -57,7 +57,9 @@ All migrations happen as part of `NSPersistentContainer.loadPersistentStores`.
 
 ## Requirements
 
-Swift 4, Xcode 9.  See the *swift31* branch for a Swift 31 version.
+Swift 4.1, Xcode 9.3.1
+* See the *swift31* branch for a Swift 31 version.
+* See the *swift4* branch for a Swift 4 version.
 
 The library is based on `NSPersistentContainer` so requires a minimum
 deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS 3.0.
@@ -68,12 +70,11 @@ No additional software dependencies.
 
 CocoaPods:
 
-    use_frameworks!
     pod 'TMLPersistentContainer'
 
 Swift package manager:
 
-    .Package(url: "https://github.com/johnfairh/TMLPersistentContainer/", majorVersion: 1)
+    .Package(url: "https://github.com/johnfairh/TMLPersistentContainer/", majorVersion: 3)
 
 Carthage:
 

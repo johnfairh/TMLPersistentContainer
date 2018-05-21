@@ -122,10 +122,12 @@ public protocol MigrationDelegate: class {
 /// Do nothing.
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public extension MigrationDelegate {
+    /// Do nothing.
     func persistentContainer(_ container: PersistentContainer,
                              willConsiderStore: NSPersistentStoreDescription) {
     }
 
+    /// Do nothing.
     func persistentContainer(_ container: PersistentContainer,
                              willMigrateStore: NSPersistentStoreDescription,
                              sourceModelVersion: String,
@@ -133,11 +135,13 @@ public extension MigrationDelegate {
                              totalSteps: Int) {
     }
 
+    /// Do nothing.
     func persistentContainer(_ container: PersistentContainer,
                              willNotMigrateStore: NSPersistentStoreDescription,
                              storeExists: Bool) {
     }
 
+    /// Do nothing.
     func persistentContainer(_ container: PersistentContainer,
                              willSingleMigrateStore: NSPersistentStoreDescription,
                              sourceModelVersion: String,
@@ -149,10 +153,12 @@ public extension MigrationDelegate {
                              totalSteps: Int) {
     }
 
+    /// Do nothing.
     func persistentContainer(_ container: PersistentContainer,
                              didMigrateStore: NSPersistentStoreDescription) {
     }
 
+    /// Do nothing.
     func persistentContainer(_ container: PersistentContainer,
                              didFailToMigrateStore: NSPersistentStoreDescription,
                              error: Error) {
