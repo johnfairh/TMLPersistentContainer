@@ -177,7 +177,7 @@ open class PersistentContainer: NSPersistentContainer, LogMessageEmitter {
     open override func loadPersistentStores(completionHandler block: @escaping (NSPersistentStoreDescription, Error?) -> ()) {
         // Filter out the stores that need loading to replicate the superclass API
         // There are probably only a handful at most of these so no need to be terribly efficient
-        let storeURLs = persistentStoreCoordinator.persistentStores.flatMap { $0.url }
+        let storeURLs = persistentStoreCoordinator.persistentStores.compactMap { $0.url }
 
         if storeURLs.count > 0 {
             log(.info, "Already have loaded stores associated with container: \(storeURLs)")
