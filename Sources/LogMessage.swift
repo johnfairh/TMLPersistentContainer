@@ -69,6 +69,6 @@ protocol LogMessageEmitter {
 /// Provide a low-typing routine to log a message.
 extension LogMessageEmitter {
     func log(_ level: LogLevel, _ body: @autoclosure @escaping () -> String) {
-        logMessageHandler?(LogMessage(level, body))
+        logMessageHandler?(LogMessage(level, body()))
     }
 }

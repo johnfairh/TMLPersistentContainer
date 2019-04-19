@@ -121,8 +121,8 @@ extension ModelVersionOrder {
             return lhsValue.precedesByNumericComparison(rhsValue)
 
         case .list(let versions):
-            guard let lhsIndex = versions.index(of: lhs),
-                  let rhsIndex = versions.index(of: rhs) else {
+            guard let lhsIndex = versions.firstIndex(of: lhs),
+                  let rhsIndex = versions.firstIndex(of: rhs) else {
                 return false // should have been filtered out by 'valid' -- return false rather than panicking
             }
             return lhsIndex < rhsIndex
