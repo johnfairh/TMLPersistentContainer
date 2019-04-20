@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TMLPersistentContainer"
-  s.version      = "3.0.0"
+  s.version      = "4.0.0"
   s.authors      = { "John Fairhurst" => "johnfairh@gmail.com" }
 #  s.social_media_url   = "https://twitter.com/johnfairh"
   s.license      = { :type => "ISC", :file => "LICENSE" }
@@ -21,4 +21,5 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "10.0"
   s.source_files  = "Sources/*swift"
   s.frameworks  = "Foundation", "CoreData"
+  s.swift_version = '5.0'
 end
