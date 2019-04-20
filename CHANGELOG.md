@@ -2,7 +2,8 @@
 
 ##### Breaking
 
-* None.
+* Port to Swift 5, Xcode 10.2  
+  [John Fairhurst](https://github.com/johnfairh)
 
 ##### Enhancements
 
