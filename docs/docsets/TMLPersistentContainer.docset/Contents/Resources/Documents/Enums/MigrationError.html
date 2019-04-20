@@ -99,7 +99,7 @@
               <div class="declaration">
                 <div class="language">
                   <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MigrationError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MigrationError</span> <span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/applemusicapi/error/">Error</a></span></code></pre>
 
                 </div>
               </div>
@@ -120,9 +120,9 @@ one of these errors is to read that text and try to make sense of it.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO05coreqC6FailedACSo28NSPersistentStoreDescriptionCcACmF"></a>
-                    <a name="//apple_ref/swift/Element/coreqMigrationFailed" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO05coreqC6FailedACSo28NSPersistentStoreDescriptionCcACmF">coreqMigrationFailed</a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO05coreqC6FailedyACSo28NSPersistentStoreDescriptionCcACmF"></a>
+                    <a name="//apple_ref/swift/Element/coreqMigrationFailed(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO05coreqC6FailedyACSo28NSPersistentStoreDescriptionCcACmF">coreqMigrationFailed(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -139,7 +139,7 @@ the app&rsquo;s stores with a mixture of versions this store load has been aband
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">coreqMigrationFailed</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">coreqMigrationFailed</span><span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -152,9 +152,9 @@ the app&rsquo;s stores with a mixture of versions this store load has been aband
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO20badModelVersionOrderACSo28NSPersistentStoreDescriptionC_AA0fgH0OtcACmF"></a>
-                    <a name="//apple_ref/swift/Element/badModelVersionOrder" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO20badModelVersionOrderACSo28NSPersistentStoreDescriptionC_AA0fgH0OtcACmF">badModelVersionOrder</a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO20badModelVersionOrderyACSo28NSPersistentStoreDescriptionC_AA0fgH0OtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/badModelVersionOrder(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO20badModelVersionOrderyACSo28NSPersistentStoreDescriptionC_AA0fgH0OtcACmF">badModelVersionOrder(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -166,7 +166,7 @@ the app&rsquo;s stores with a mixture of versions this store load has been aband
 This could mean:</p>
 
 <ul>
-<li><code>.patternMatchCompare</code> &ndash; not a valid regular expression (according to <code>NSRegularExpression</code>);</li>
+<li><code>.patternMatchCompare</code> &ndash; not a valid regular expression (according to <code><a href="https://developer.apple.com/documentation/foundation/nsregularexpression/">NSRegularExpression</a></code>);</li>
 <li><code>.list</code> &ndash; empty list, or list contains repeated elements;</li>
 <li><code>.pairList</code> &ndash; there is a cycle in the list of migrations.</li>
 </ul>
@@ -176,7 +176,7 @@ This could mean:</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">badModelVersionOrder</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt"><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">badModelVersionOrder</span><span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">,</span> <span class="kt"><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -189,9 +189,9 @@ This could mean:</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO21cannotFindSourceModelACSo28NSPersistentStoreDescriptionC_s10DictionaryVySSypGtcACmF"></a>
-                    <a name="//apple_ref/swift/Element/cannotFindSourceModel" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO21cannotFindSourceModelACSo28NSPersistentStoreDescriptionC_s10DictionaryVySSypGtcACmF">cannotFindSourceModel</a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO21cannotFindSourceModelyACSo28NSPersistentStoreDescriptionC_SDySSypGtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/cannotFindSourceModel(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO21cannotFindSourceModelyACSo28NSPersistentStoreDescriptionC_SDySSypGtcACmF">cannotFindSourceModel(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -210,7 +210,7 @@ store that cannot be matched to a model.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cannotFindSourceModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cannotFindSourceModel</span><span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">,</span> <span class="p">[</span><span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -223,9 +223,9 @@ store that cannot be matched to a model.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO26cannotFindDestinationModelACSo28NSPersistentStoreDescriptionC_So015NSManagedObjectH0CtcACmF"></a>
-                    <a name="//apple_ref/swift/Element/cannotFindDestinationModel" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO26cannotFindDestinationModelACSo28NSPersistentStoreDescriptionC_So015NSManagedObjectH0CtcACmF">cannotFindDestinationModel</a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO26cannotFindDestinationModelyACSo28NSPersistentStoreDescriptionC_So015NSManagedObjectH0CtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/cannotFindDestinationModel(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO26cannotFindDestinationModelyACSo28NSPersistentStoreDescriptionC_So015NSManagedObjectH0CtcACmF">cannotFindDestinationModel(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -234,9 +234,9 @@ store that cannot be matched to a model.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Migration cannot proceed because the persistent container cannot find an object model
-that matches the <code>NSManagedObjectModel</code> passed to <code>PersistentContainer.init(name:managedObjectModel:bundles:modelVersionOrder)</code>
+that matches the <code><a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectmodel/">NSManagedObjectModel</a></code> passed to <code>PersistentContainer.init(name:managedObjectModel:bundles:modelVersionOrder)</code>
 in the list of bundles.
-This means either a bundle is missing from the list or the <code>NSManagedObjectModel</code> has been
+This means either a bundle is missing from the list or the <code><a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectmodel/">NSManagedObjectModel</a></code> has been
 created by merging several models &ndash; this second use case is not currently supported by the library. Sorry.</p>
 
                       </div>
@@ -244,7 +244,7 @@ created by merging several models &ndash; this second use case is not currently 
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cannotFindDestinationModel</span><span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt">NSManagedObjectModel</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cannotFindDestinationModel</span><span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">,</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectmodel/">NSManagedObjectModel</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -257,9 +257,9 @@ created by merging several models &ndash; this second use case is not currently 
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO20noRouteBetweenModelsACSS_SStcACmF"></a>
-                    <a name="//apple_ref/swift/Element/noRouteBetweenModels" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO20noRouteBetweenModelsACSS_SStcACmF">noRouteBetweenModels</a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO20noRouteBetweenModelsyACSS_SStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/noRouteBetweenModels(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO20noRouteBetweenModelsyACSS_SStcACmF">noRouteBetweenModels(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -285,7 +285,7 @@ with inferred mappings if enabled. Possible reasons include:</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">noRouteBetweenModels</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">noRouteBetweenModels</span><span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -298,9 +298,9 @@ with inferred mappings if enabled. Possible reasons include:</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute1ACSS_SStcACmF"></a>
-                    <a name="//apple_ref/swift/Element/cyclicRoute1" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute1ACSS_SStcACmF">cyclicRoute1</a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute1yACSS_SStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/cyclicRoute1(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute1yACSS_SStcACmF">cyclicRoute1(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -318,7 +318,7 @@ This probably means there are cycles in the persistent container&rsquo;s <code><
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cyclicRoute1</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cyclicRoute1</span><span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -331,9 +331,9 @@ This probably means there are cycles in the persistent container&rsquo;s <code><
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute2ACSS_SStcACmF"></a>
-                    <a name="//apple_ref/swift/Element/cyclicRoute2" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute2ACSS_SStcACmF">cyclicRoute2</a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute2yACSS_SStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/cyclicRoute2(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute2yACSS_SStcACmF">cyclicRoute2(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -351,7 +351,7 @@ This also probably means there are cycles in the persistent container&rsquo;s <c
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cyclicRoute2</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cyclicRoute2</span><span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -364,9 +364,9 @@ This also probably means there are cycles in the persistent container&rsquo;s <c
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute3ACSS_SStcACmF"></a>
-                    <a name="//apple_ref/swift/Element/cyclicRoute3" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute3ACSS_SStcACmF">cyclicRoute3</a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute3yACSS_SStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/cyclicRoute3(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO12cyclicRoute3yACSS_SStcACmF">cyclicRoute3(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -384,7 +384,7 @@ This ALSO probably means there are cycles in the persistent container&rsquo;s <c
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cyclicRoute3</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">cyclicRoute3</span><span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -397,9 +397,9 @@ This ALSO probably means there are cycles in the persistent container&rsquo;s <c
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer14MigrationErrorO12logicFailureACSScACmF"></a>
-                    <a name="//apple_ref/swift/Element/logicFailure" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO12logicFailureACSScACmF">logicFailure</a>
+                    <a name="/s:22TMLPersistentContainer14MigrationErrorO12logicFailureyACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/logicFailure(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22TMLPersistentContainer14MigrationErrorO12logicFailureyACSScACmF">logicFailure(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -416,7 +416,7 @@ be welcome. The string parameter is a brief explanation of the problem.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">logicFailure</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">logicFailure</span><span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -450,7 +450,7 @@ be welcome. The string parameter is a brief explanation of the problem.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -469,7 +469,7 @@ be welcome. The string parameter is a brief explanation of the problem.</p>
     </div>
     <section class="footer">
       <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

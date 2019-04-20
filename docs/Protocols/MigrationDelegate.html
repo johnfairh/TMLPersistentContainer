@@ -108,7 +108,7 @@ progress of migrations. These events can be used to update a user interface or f
 internal logging.</p>
 
 <p>All methods are called while <code>PersistentContainer.loadPersistentStores</code> is active.
-If <em>any</em> of the <code>NSPersistentStoreDescription</code>s have the <code>shouldAddStoreAsynchronously</code> flag
+If <em>any</em> of the <code><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></code>s have the <code>shouldAddStoreAsynchronously</code> flag
 set to <code>true</code> then all methods are called on a private background queue. If all of the store
 descriptions have the flag set to <code>false</code> then the methods are called on the same queue on which
 <code>PersistentContainer.loadPersistentStores</code> was called.</p>
@@ -151,9 +151,9 @@ Stores that are not migratable (not on disk) are ignored and do not represent in
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC012willConsiderH0tF"></a>
+                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF"></a>
                     <a name="//apple_ref/swift/Method/persistentContainer(_:willConsiderStore:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC012willConsiderH0tF">persistentContainer(_:willConsiderStore:)</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF">persistentContainer(_:willConsiderStore:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -177,7 +177,7 @@ migrate it.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">willConsiderStore</span><span class="p">:</span> <span class="kt">NSPersistentStoreDescription</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">willConsiderStore</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -221,9 +221,9 @@ migrate it.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC011willMigrateH0SS18sourceModelVersionSS011destinationmN0Si10totalStepstF"></a>
+                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsyAA010PersistentB0C_So012NSPersistentH11DescriptionCS2SSitF"></a>
                     <a name="//apple_ref/swift/Method/persistentContainer(_:willMigrateStore:sourceModelVersion:destinationModelVersion:totalSteps:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC011willMigrateH0SS18sourceModelVersionSS011destinationmN0Si10totalStepstF">persistentContainer(_:willMigrateStore:sourceModelVersion:destinationModelVersion:totalSteps:)</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsyAA010PersistentB0C_So012NSPersistentH11DescriptionCS2SSitF">persistentContainer(_:willMigrateStore:sourceModelVersion:destinationModelVersion:totalSteps:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -246,7 +246,7 @@ migrate it.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">willMigrateStore</span><span class="p">:</span> <span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="nv">sourceModelVersion</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">destinationModelVersion</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">totalSteps</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">willMigrateStore</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">,</span> <span class="nv">sourceModelVersion</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span> <span class="nv">destinationModelVersion</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span> <span class="nv">totalSteps</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/int/">Int</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -326,9 +326,9 @@ migrate it.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC014willNotMigrateH0Sb11storeExiststF"></a>
+                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsyAA010PersistentB0C_So012NSPersistentI11DescriptionCSbtF"></a>
                     <a name="//apple_ref/swift/Method/persistentContainer(_:willNotMigrateStore:storeExists:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC014willNotMigrateH0Sb11storeExiststF">persistentContainer(_:willNotMigrateStore:storeExists:)</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsyAA010PersistentB0C_So012NSPersistentI11DescriptionCSbtF">persistentContainer(_:willNotMigrateStore:storeExists:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -352,7 +352,7 @@ because it is already at the latest version.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">willNotMigrateStore</span><span class="p">:</span> <span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="nv">storeExists</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">willNotMigrateStore</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">,</span> <span class="nv">storeExists</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/bool/">Bool</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -408,9 +408,9 @@ because it is already at the latest version.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC017willSingleMigrateH0SS18sourceModelVersionSS011destinationnO0Sb20usingInferredMappingSo18NSMigrationManagerC04withcU010Foundation3URLV19toTemporaryLocationSi14stepsRemainingSi10totalStepstF"></a>
+                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsyAA010PersistentB0C_So012NSPersistentI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF"></a>
                     <a name="//apple_ref/swift/Method/persistentContainer(_:willSingleMigrateStore:sourceModelVersion:destinationModelVersion:usingInferredMapping:withMigrationManager:toTemporaryLocation:stepsRemaining:totalSteps:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC017willSingleMigrateH0SS18sourceModelVersionSS011destinationnO0Sb20usingInferredMappingSo18NSMigrationManagerC04withcU010Foundation3URLV19toTemporaryLocationSi14stepsRemainingSi10totalStepstF">persistentContainer(_:willSingleMigrateStore:sourceModelVersion:destinationModelVersion:usingInferredMapping:withMigrationManager:toTemporaryLocation:stepsRemaining:totalSteps:)</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsyAA010PersistentB0C_So012NSPersistentI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF">persistentContainer(_:willSingleMigrateStore:sourceModelVersion:destinationModelVersion:usingInferredMapping:withMigrationManager:toTemporaryLocation:stepsRemaining:totalSteps:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -433,7 +433,7 @@ because it is already at the latest version.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">willSingleMigrateStore</span><span class="p">:</span> <span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="nv">sourceModelVersion</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">destinationModelVersion</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">usingInferredMapping</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">withMigrationManager</span><span class="p">:</span> <span class="kt">NSMigrationManager</span><span class="p">,</span> <span class="nv">toTemporaryLocation</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">stepsRemaining</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">totalSteps</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">willSingleMigrateStore</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">,</span> <span class="nv">sourceModelVersion</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span> <span class="nv">destinationModelVersion</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span> <span class="nv">usingInferredMapping</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/bool/">Bool</a></span><span class="p">,</span> <span class="nv">withMigrationManager</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nsmigrationmanager/">NSMigrationManager</a></span><span class="p">,</span> <span class="nv">toTemporaryLocation</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/foundation/url/">URL</a></span><span class="p">,</span> <span class="nv">stepsRemaining</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/int/">Int</a></span><span class="p">,</span> <span class="nv">totalSteps</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/int/">Int</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -509,7 +509,7 @@ because it is already at the latest version.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>NSMigrationManager</code> that will be used.</p>
+                                  <p>The <code><a href="https://developer.apple.com/documentation/coredata/nsmigrationmanager/">NSMigrationManager</a></code> that will be used.</p>
                                 </div>
                               </td>
                             </tr>
@@ -561,9 +561,9 @@ because it is already at the latest version.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC010didMigrateH0tF"></a>
+                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF"></a>
                     <a name="//apple_ref/swift/Method/persistentContainer(_:didMigrateStore:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC010didMigrateH0tF">persistentContainer(_:didMigrateStore:)</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF">persistentContainer(_:didMigrateStore:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -586,7 +586,7 @@ because it is already at the latest version.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">didMigrateStore</span><span class="p">:</span> <span class="kt">NSPersistentStoreDescription</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">didMigrateStore</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -630,9 +630,9 @@ because it is already at the latest version.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC016didFailToMigrateH0s5Error_p5errortF"></a>
+                    <a name="/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5erroryAA010PersistentB0C_So012NSPersistentJ11DescriptionCs5Error_ptF"></a>
                     <a name="//apple_ref/swift/Method/persistentContainer(_:didFailToMigrateStore:error:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0yAA010PersistentB0C_So28NSPersistentStoreDescriptionC016didFailToMigrateH0s5Error_p5errortF">persistentContainer(_:didFailToMigrateStore:error:)</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5erroryAA010PersistentB0C_So012NSPersistentJ11DescriptionCs5Error_ptF">persistentContainer(_:didFailToMigrateStore:error:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -656,7 +656,7 @@ The <code>PersistentContainer.loadPersistentStores</code> error callback will be
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">didFailToMigrateStore</span><span class="p">:</span> <span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">persistentContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">container</span><span class="p">:</span> <span class="kt"><a href="../Classes/PersistentContainer.html">PersistentContainer</a></span><span class="p">,</span> <span class="nv">didFailToMigrateStore</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/applemusicapi/error/">Error</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -718,7 +718,7 @@ The <code>PersistentContainer.loadPersistentStores</code> error callback will be
     </div>
     <section class="footer">
       <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
