@@ -99,14 +99,14 @@
               <div class="declaration">
                 <div class="language">
                   <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
-<span class="kd">open</span> <span class="kd">class</span> <span class="kt">PersistentContainer</span> <span class="p">:</span> <span class="kt">NSPersistentContainer</span><span class="p">,</span> <span class="kt">LogMessageEmitter</span></code></pre>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">PersistentContainer</span> <span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></span><span class="p">,</span> <span class="kt">LogMessageEmitter</span></code></pre>
 
                 </div>
               </div>
             <p>A container for a Core Data stack that provides automatic multi-step shortest-path
 persistent store migration.</p>
 
-<p>This is a drop-in replacement for <code>NSPersistentContainer</code> that automatically detects
+<p>This is a drop-in replacement for <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> that automatically detects
 and performs multi-step store migration as part of the <code>loadPersistentStores</code> method.</p>
 
 <p>The container searches for models and mapping models, then constructs the
@@ -126,9 +126,9 @@ reported back to the client code.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgXwvp"></a>
+                    <a name="/s:22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgvp"></a>
                     <a name="//apple_ref/swift/Property/migrationDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgXwvp">migrationDelegate</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgvp">migrationDelegate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -156,9 +156,9 @@ reported back to the client code.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer010PersistentB0CACSS4name_SaySo6BundleCG7bundlesAA17ModelVersionOrderO05modelhI0yAA10LogMessageVcSg03logL7Handlertcfc"></a>
+                    <a name="/s:22TMLPersistentContainer010PersistentB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModelgH0OyAA03LogJ0VcSgtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(name:bundles:modelVersionOrder:logMessageHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer010PersistentB0CACSS4name_SaySo6BundleCG7bundlesAA17ModelVersionOrderO05modelhI0yAA10LogMessageVcSg03logL7Handlertcfc">init(name:bundles:modelVersionOrder:logMessageHandler:)</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer010PersistentB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModelgH0OyAA03LogJ0VcSgtcfc">init(name:bundles:modelVersionOrder:logMessageHandler:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -173,8 +173,8 @@ reported back to the client code.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                        <span class="nv">bundles</span><span class="p">:</span> <span class="p">[</span><span class="kt">Bundle</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">],</span>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span>
+                        <span class="nv">bundles</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="https://developer.apple.com/documentation/foundation/bundle/">Bundle</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="https://developer.apple.com/documentation/foundation/bundle/">Bundle</a></span><span class="o">.</span><span class="n">main</span><span class="p">],</span>
                         <span class="nv">modelVersionOrder</span><span class="p">:</span> <span class="kt"><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">compare</span><span class="p">,</span>
                         <span class="nv">logMessageHandler</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogMessage.html">LogMessage</a></span><span class="o">.</span><span class="kt">Handler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
@@ -255,9 +255,9 @@ reported back to the client code.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22TMLPersistentContainer010PersistentB0CACSS4name_So20NSManagedObjectModelC07managedfG0SaySo6BundleCG7bundlesAA0G12VersionOrderO05modelkL0yAA10LogMessageVcSg03logO7Handlertcfc"></a>
+                    <a name="/s:22TMLPersistentContainer010PersistentB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedfG0CSaySo8NSBundleCGAA0gjK0OyAA03LogM0VcSgtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(name:managedObjectModel:bundles:modelVersionOrder:logMessageHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer010PersistentB0CACSS4name_So20NSManagedObjectModelC07managedfG0SaySo6BundleCG7bundlesAA0G12VersionOrderO05modelkL0yAA10LogMessageVcSg03logO7Handlertcfc">init(name:managedObjectModel:bundles:modelVersionOrder:logMessageHandler:)</a>
+                    <a class="token" href="#/s:22TMLPersistentContainer010PersistentB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedfG0CSaySo8NSBundleCGAA0gjK0OyAA03LogM0VcSgtcfc">init(name:managedObjectModel:bundles:modelVersionOrder:logMessageHandler:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -272,9 +272,9 @@ reported back to the client code.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-            <span class="n">managedObjectModel</span> <span class="nv">model</span><span class="p">:</span> <span class="kt">NSManagedObjectModel</span><span class="p">,</span>
-            <span class="nv">bundles</span><span class="p">:</span> <span class="p">[</span><span class="kt">Bundle</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">],</span>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span><span class="p">,</span>
+            <span class="n">managedObjectModel</span> <span class="nv">model</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectmodel/">NSManagedObjectModel</a></span><span class="p">,</span>
+            <span class="nv">bundles</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="https://developer.apple.com/documentation/foundation/bundle/">Bundle</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="https://developer.apple.com/documentation/foundation/bundle/">Bundle</a></span><span class="o">.</span><span class="n">main</span><span class="p">],</span>
             <span class="nv">modelVersionOrder</span><span class="p">:</span> <span class="kt"><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">compare</span><span class="p">,</span>
             <span class="nv">logMessageHandler</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogMessage.html">LogMessage</a></span><span class="o">.</span><span class="kt">Handler</span><span class="p">?)</span></code></pre>
 
@@ -383,7 +383,7 @@ Typically useful to reset the app to a fresh state before loading the stores.</p
 <div class="aside aside-attention">
     <p class="aside-title">Attention</p>
     <p>Goodness knows what this will do with custom stores. There does not appear to be
-         an API into the <code>NSPersistentStore</code> tree to implement this operation.</p>
+         an API into the <code><a href="https://developer.apple.com/documentation/coredata/nspersistentstore/">NSPersistentStore</a></code> tree to implement this operation.</p>
 
 </div>
 <div class="aside aside-attention">
@@ -452,7 +452,7 @@ are migrated successfully or none are.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">loadPersistentStores</span><span class="p">(</span><span class="n">completionHandler</span> <span class="nv">block</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">NSPersistentStoreDescription</span><span class="p">,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">loadPersistentStores</span><span class="p">(</span><span class="n">completionHandler</span> <span class="nv">block</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></span><span class="p">,</span> <span class="kt"><a href="https://developer.apple.com/documentation/applemusicapi/error/">Error</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
 
                         </div>
                       </div>
@@ -469,7 +469,7 @@ are migrated successfully or none are.</p>
                               <td>
                                 <div>
                                   <p>Callback made on the main queue for each store when it has either been loaded successfully
-               or failed to load.  The <code>Error</code> here can be anything provided by
+               or failed to load.  The <code><a href="https://developer.apple.com/documentation/applemusicapi/error/">Error</a></code> here can be anything provided by
                <code>NSPersistentContainer.loadPersistentStores</code> as well as anything from <code><a href="../Enums/MigrationError.html">MigrationError</a></code>
                in this package.</p>
                                 </div>
@@ -493,7 +493,7 @@ are migrated successfully or none are.</p>
     </div>
     <section class="footer">
       <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

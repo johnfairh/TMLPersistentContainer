@@ -21,7 +21,7 @@ class TestLogging: TestCase {
         let source = "SOURCE"
         let destination = "DESTINATION"
 
-        let e1 = MigrationError.coreqMigrationFailed
+        let e1 = MigrationError.coreqMigrationFailed(description)
         let e2 = MigrationError.badModelVersionOrder(description, order)
         let e3 = MigrationError.cannotFindSourceModel(description, [:])
         let e4 = MigrationError.cannotFindDestinationModel(description, managedObjectModel)

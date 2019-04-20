@@ -161,7 +161,7 @@ other explicit mappings.</p>
 <a href="#limitations">some limitations</a>.</p>
 <h1 id='creating-the-container' class='heading'>Creating the container</h1>
 
-<p>To start using the library replace references to <code>NSPersistentContainer</code>
+<p>To start using the library replace references to <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code>
 with <a href="Classes/PersistentContainer.html"><code><a href="Classes/PersistentContainer.html">PersistentContainer</a></code></a>. The
 initializers are compatible though they have additional optional parameters.<br>
 <a href="Classes/PersistentContainer.html">See the API</a>.</p>
@@ -188,7 +188,7 @@ For example <code>.list([&quot;FirstVer&quot;, &quot;SecondVer&quot;, &quot;Thir
 
 <p><strong>pairList</strong> supplies an explicit list of migrations that are permitted. For
 example <code>.pairList([(&quot;FirstVer&quot;, &quot;SecondVer&quot;), (&quot;SecondVer&quot;, &quot;ThirdVer&quot;)])</code>.
-Note that this has a different meaning to the <code>list</code> example which permits a
+Note that this has a different meaning to the <code><a href="https://developer.apple.com/documentation/objectivec/list/">list</a></code> example which permits a
 migration from &lsquo;FirstVer&rsquo; directly to &lsquo;ThirdVer&rsquo;.</p>
 
 <p><a href="Enums/ModelVersionOrder.html">Jump to the API reference for ModelVersionOrder</a>.</p>
@@ -205,10 +205,10 @@ at some point.</p>
 <p>The <code>logMessageHandler</code> parameter is an optional closure that if set is passed
 logging messages from the library on any queue. If your app maintains a text
 log as part of its debug strategy then you may wish to include messages of at
-least level <code>error</code> and <code>warning</code>.</p>
+least level <code><a href="https://developer.apple.com/documentation/applemusicapi/error/">error</a></code> and <code>warning</code>.</p>
 
 <p>As long as you are not too pressed for space it would be worth including the
-<code>info</code> level as well &ndash; somewhat verbose during actual migrations but these are
+<code><a href="https://developer.apple.com/documentation/tvml/information_elements/info/">info</a></code> level as well &ndash; somewhat verbose during actual migrations but these are
 rare.</p>
 
 <p>The <code>debug</code> level is for interest/library debugging/problem reporting.</p>
@@ -222,7 +222,7 @@ migration work, one store at a time. If this all succeeds then it invokes
 Core Data to load the migrated stores and return control to the client.</p>
 <h2 id='store-types' class='heading'>Store types</h2>
 
-<p>Stores without a URL in their <code>NSPersistentStoreDescription</code> are ignored, as
+<p>Stores without a URL in their <code><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></code> are ignored, as
 are stores with a URL that is not a <code>file://</code> URL. All other store types are
 processed. The library has been tested extensively with <code>NSSQLiteStoreType</code>
 and somewhat with <code>NSBinaryStoreType</code>.</p>
@@ -245,7 +245,7 @@ mapping models created in Xcode are used.</p>
 
 <p>An implementation of the <a href="Protocols/MigrationDelegate.html"><code><a href="Protocols/MigrationDelegate.html">MigrationDelegate</a></code>
 protocol</a> may be assigned to
-<code><a href="Classes/PersistentContainer.html#/s:22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgXwvp">PersistentContainer.migrationDelegate</a></code>.</p>
+<code><a href="Classes/PersistentContainer.html#/s:22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgvp">PersistentContainer.migrationDelegate</a></code>.</p>
 
 <p>Delegate calls are used to inform the client of migration progress. This can be
 used for debug or to update some user-visible progress indicator.</p>
@@ -253,7 +253,7 @@ used for debug or to update some user-visible progress indicator.</p>
 <p>In particular <code>persistentContainer(_:willMigrateStore)</code> indicates how many
 single migrations will be performed, and
 <code>persistentContainer(_:willSingleMigrateStore)</code> indicates progress through these
-as well as supplying the <code>NSMigrationManager</code> for client use.</p>
+as well as supplying the <code><a href="https://developer.apple.com/documentation/coredata/nsmigrationmanager/">NSMigrationManager</a></code> for client use.</p>
 
 <p>Delegate method calls are made on the queue that is performing the migration.
 This depends on <code>NSPersistentStoreDescription.shouldAddStoreAsynchronously</code>,
@@ -281,7 +281,7 @@ device power loss, or filesystem errors during store replacement so does not
 guarantee atomicity.</p>
 
 <p>A consequence of this approach is that a store may fail to load with an error
-of <code><a href="Enums/MigrationError.html#/s:22TMLPersistentContainer14MigrationErrorO05coreqC6FailedACSo28NSPersistentStoreDescriptionCcACmF">MigrationError.coreqMigrationFailed</a></code>. This means that although this
+of <code>MigrationError.coreqMigrationFailed</code>. This means that although this
 particular store went through its migration process without problem, the
 migration of another store in the same container did have a problem. To keep
 all the stores at a consistent version, neither store has been allowed to
@@ -294,7 +294,7 @@ upgrade.</p>
 <li><p>Mapping models are limited to just one per migration. Need to support
 multiple as a way of limiting footprint. In the same vein need to permit
 user-managed migrations as well.</p></li>
-<li><p>No support for <em>merged models</em> &ndash; that is an <code>NSManagedObjectModel</code> that has
+<li><p>No support for <em>merged models</em> &ndash; that is an <code><a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectmodel/">NSManagedObjectModel</a></code> that has
 been created by merging together several on-disk data models. I have a
 scheme for supporting this, just not sure how much real-world use this sees.</p></li>
 <li><p>Untested with custom stores; testing on tvOS and watchOS has been
@@ -309,7 +309,7 @@ simulator-only.</p></li>
     </div>
     <section class="footer">
       <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
