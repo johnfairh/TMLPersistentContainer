@@ -175,10 +175,12 @@ final class ModelVersionNodes: LogMessageEmitter {
 
         candidateNodes.forEach { candidate in
             if blackListedNodeNames.contains(candidate.name) {
+                log(.warning, "Ignoring model \(candidate.name) because of a previous conflict with its name.")
                 // candidate's name is already bad -- propagate badness to its EV
                 blackListedEntityVersions.insert(candidate.entityVersionDescription)
                 uniqueNodes = uniqueNodes.filter { $0.entityVersionDescription != candidate.entityVersionDescription }
             } else if blackListedEntityVersions.contains(candidate.entityVersionDescription) {
+                log(.warning, "Ignoring model \(candidate.name) because of a previous conflict with its version.")
                 // candidate's EV is already bad -- propagate badness to its name
                 blackListedNodeNames.insert(candidate.name)
                 uniqueNodes = uniqueNodes.filter { $0.name != candidate.name }
@@ -200,6 +202,9 @@ final class ModelVersionNodes: LogMessageEmitter {
                         newUniqueNodes.append(unique)
                     } else {
                         // overlap - blacklist everything including `unique` + `candidate`
+                        log(.warning, "Found two models with conflicting names or versions, ignoring both.")
+                        log(.warning, "  First model \(unique.name) \(unique.entityVersionDescription)")
+                        log(.warning, "  Second model \(candidate.name) \(candidate.entityVersionDescription)")
                         canAdd = false
                         blackListedNodeNames.insert(candidate.name)
                         blackListedNodeNames.insert(unique.name)
