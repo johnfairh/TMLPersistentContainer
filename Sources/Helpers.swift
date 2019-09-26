@@ -177,6 +177,12 @@ extension NSRegularExpression {
 
 // MARK: Additions to CoreData.NSManagedObjectModel
 
+private extension NSEntityDescription {
+    var reliableName: String {
+        return name ?? "(unnamed)" // gee thanks
+    }
+}
+
 // NSData prints its bytes out, Data does not.  When debugging core data we want the bytes.
 // See SR-2514.
 extension NSManagedObjectModel {
@@ -184,7 +190,8 @@ extension NSManagedObjectModel {
     var entityHashDescription: String {
         var str = ""
         var first = true
-        entityVersionHashesByName.forEach { name, data in
+        entityVersionHashesByName.sorted(by: { $0.0 > $1.0 })
+                                 .forEach { name, data in
             if !first { str = str + ", " }
             str = str + "(\(name): \(data as NSData))"
             first = false
@@ -194,13 +201,17 @@ extension NSManagedObjectModel {
 
     /// Return a string of the entity version hashes for a particular config
     func entityHashDescription(forConfigurationName configuration: String?) -> String {
+        guard let entities = entities(forConfigurationName: configuration) else {
+            return "[]"
+        }
+
         var str = ""
         var first = true
 
-        entities(forConfigurationName: configuration)?.forEach { ent in
+        entities.sorted(by: { $0.reliableName > $1.reliableName})
+                .forEach { ent in
             if !first { str = str + ", " }
-            let entityName = ent.name ?? "(unnamed)" // gee thanks
-            str = str + "(\(entityName): \(ent.versionHash as NSData))"
+            str = str + "(\(ent.reliableName): \(ent.versionHash as NSData))"
             first = false
         }
         return "[\(str)]"

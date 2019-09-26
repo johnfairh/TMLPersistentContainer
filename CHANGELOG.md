@@ -10,7 +10,9 @@
 
 #### Bug Fixes
 
-* None.
+* Fix intermittent ignoring of a model that contains multiple
+  entities and appears more than once in the bundles.  
+  [John Fairhurst](https://github.com/johnfairh)
 
 ## 4.0.0
 
