@@ -10,6 +10,22 @@
 
 #### Bug Fixes
 
+* None.
+
+## 4.1.0
+
+#### Breaking
+
+* None.
+
+#### Enhancements
+
+* Add `warning` log messages when models are ignored due to
+  conflicting names or entity metadata.  
+  [John Fairhurst](https://github.com/johnfairh)
+
+#### Bug Fixes
+
 * Fix intermittent ignoring of a model that contains multiple
   entities and appears more than once in the bundles.  
   [John Fairhurst](https://github.com/johnfairh)
