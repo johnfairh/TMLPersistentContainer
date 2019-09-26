@@ -62,7 +62,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Main APIs.html">Main APIs</a>
+            <a class="nav-group-name-link" href="Main%20APIs.html">Main APIs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/PersistentContainer.html">PersistentContainer</a>
@@ -79,7 +79,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Logging APIs.html">Logging APIs</a>
+            <a class="nav-group-name-link" href="Logging%20APIs.html">Logging APIs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/LogMessage.html">LogMessage</a>
@@ -94,7 +94,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>Main APIs</h1>
             <p>These types form the main API.</p>
 
@@ -137,7 +137,7 @@ reported back to the client code.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="kt">OSX</span> <span class="mf">10.12</span><span class="p">,</span> <span class="n">iOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">tvOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">watchOS</span> <span class="mf">3.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
 <span class="kd">open</span> <span class="kd">class</span> <span class="kt">PersistentContainer</span> <span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></span><span class="p">,</span> <span class="kt">LogMessageEmitter</span></code></pre>
 
                         </div>
@@ -148,10 +148,6 @@ reported back to the client code.</p>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -177,8 +173,10 @@ Note that the <em>model version</em> here is the part of its filename before &ls
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="kt">OSX</span> <span class="mf">10.12</span><span class="p">,</span> <span class="n">iOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">tvOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">watchOS</span> <span class="mf">3.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ModelVersionOrder</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="kt">OSX</span> <span class="mf">10.12</span><span class="p">,</span> <span class="n">iOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">tvOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">watchOS</span> <span class="mf">3.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">extension</span> <span class="kt">ModelVersionOrder</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/customstringconvertible/">CustomStringConvertible</a></span></code></pre>
 
                         </div>
                       </div>
@@ -188,10 +186,6 @@ Note that the <em>model version</em> here is the part of its filename before &ls
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -218,8 +212,10 @@ one of these errors is to read that text and try to make sense of it.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MigrationError</span> <span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/applemusicapi/error/">Error</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="kt">OSX</span> <span class="mf">10.12</span><span class="p">,</span> <span class="n">iOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">tvOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">watchOS</span> <span class="mf">3.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MigrationError</span> <span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/accelerate/quadrature/error/">Error</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="kt">OSX</span> <span class="mf">10.12</span><span class="p">,</span> <span class="n">iOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">tvOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">watchOS</span> <span class="mf">3.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">extension</span> <span class="kt">MigrationError</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/customstringconvertible/">CustomStringConvertible</a></span></code></pre>
 
                         </div>
                       </div>
@@ -229,10 +225,6 @@ one of these errors is to read that text and try to make sense of it.</p>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -290,7 +282,7 @@ Stores that are not migratable (not on disk) are ignored and do not represent in
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="kt">OSX</span> <span class="mf">10.12</span><span class="p">,</span> <span class="n">iOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">tvOS</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">watchOS</span> <span class="mf">3.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MigrationDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
@@ -310,7 +302,7 @@ Stores that are not migratable (not on disk) are ignored and do not represent in
     </div>
     <section class="footer">
       <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

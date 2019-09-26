@@ -57,7 +57,7 @@ All migrations happen as part of `NSPersistentContainer.loadPersistentStores`.
 
 ## Requirements
 
-Swift 5, Xcode 10.2
+Swift 5 or later, Xcode 10.2 or later.
 * See the *swift31* branch for a Swift 31 version.
 * See the *swift4* branch for a Swift 4 version.
 * See the *swift41* branch for a Swift 4.1 version.
