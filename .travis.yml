@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode11
+osx_image: xcode11.2
 script:
     - xcodebuild build test -sdk iphonesimulator -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-iOS CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 8' -enableCodeCoverage YES VALID_ARCHS=x86_64
 after_success:
