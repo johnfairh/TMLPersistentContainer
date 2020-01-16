@@ -1,106 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <title>TMLPersistentContainer  Reference</title>
-    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
-    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
-    <script src="js/jquery.min.js" defer></script>
-    <script src="js/jazzy.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <link rel="stylesheet" href="css/fw2020.css">
     
-    <script src="js/lunr.min.js" defer></script>
-    <script src="js/typeahead.jquery.js" defer></script>
-    <script src="js/jazzy.search.js" defer></script>
+    <title>TMLPersistentContainer  Reference</title>
+    
   </head>
-  <body>
+  <body data-root-path="./">
 
-
-    <a title="TMLPersistentContainer  Reference"></a>
-
-    <header class="header">
-      <p class="header-col header-col--primary">
-        <a class="header-link" href="index.html">
-          TMLPersistentContainer Docs
-        </a>
-         (100% documented)
-      </p>
-    
-      <p class="header-col--secondary">
-        <form role="search" action="search.json">
-          <input type="text" placeholder="Search documentation" data-typeahead>
+  <header class="j2-header">
+  <div class="navbar navbar-expand navbar-dark j2-titlebar">
+    <a class="sr-only-focusable sr-only font-weight-slightly-bold pr-2" href="#main-content">Skip to main content</a>
+    <a class="nav-item nav-link pl-0 pt-1 pr-2 d-md-none" id="nav-toggle-button" role="button" aria-controls="nav-column" aria-expanded="false" aria-label="Toggle navigation" href="#">
+      <span class="navbar-toggler-icon"></span>
+    </a>
+  
+    <div style="align-items-baseline">
+      <div class="navbar-brand mr-1 font-weight-slightly-bold">
+        <a href="index.html">TMLPersistentContainer Docs</a>
+      </div>
+      <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
+    </div>
+  
+    <div class="navbar-nav ml-auto justify-content-end flex-fill">
+  
+      <form class="form-inline d-none d-md-flex" role="search">
+        <input class="form-control form-control-sm w-100" type="search" placeHolder="Search" aria-label="Search" aria-keyshortcuts="/" data-search-format="span">
+      </form>
+  
+      <a class="nav-item nav-link d-none d-sm-inline" rel="external" href="https://github.com/johnfairh/TMLPersistentContainer">
+        <svg class="j2-title-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16"><title>Open on GitHub</title><path fill="currentcolor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+  
+    </div>
+  </div>
+  
+  <!-- narrow-style searchbar -->
+  
+  <div class="container-fluid j2-titlebar d-md-none">
+    <div class="row">
+      <div class="col">
+        <form class="pb-2">
+          <input class="form-control form-control-sm" type="search" placeHolder="Search" aria-label="Search" aria-keyshortcuts="/" data-search-format="div">
         </form>
-      </p>
-    
-        <p class="header-col header-col--secondary">
-          <a class="header-link" href="https://github.com/johnfairh/TMLPersistentContainer">
-            <img class="header-icon" src="img/gh.png"/>
-            View on GitHub
-          </a>
-        </p>
-    
-    </header>
+      </div>
+    </div>
+  </div>
 
-    <p class="breadcrumbs">
-      <a class="breadcrumb" href="index.html">TMLPersistentContainer Reference</a>
-      <img class="carat" src="img/carat.png" />
-      TMLPersistentContainer  Reference
-    </p>
+  <!-- breadcrumb bar, jazzy doesn't really support -->
 
-    <div class="content-wrapper">
-      <nav class="navigation">
-        <ul class="nav-groups">
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Guides.html">Guides</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="background.html">Background</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="usage.html">Usage</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Main%20APIs.html">Main APIs</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/PersistentContainer.html">PersistentContainer</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/ModelVersionOrder.html">ModelVersionOrder</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/MigrationError.html">MigrationError</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/MigrationDelegate.html">MigrationDelegate</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Logging%20APIs.html">Logging APIs</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/LogMessage.html">LogMessage</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/LogLevel.html">LogLevel</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <article class="main-content">
+  <nav aria-label="breadcrumb" class="small">
+    <ol class="breadcrumb j2-breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">TMLPersistentContainer Reference</a></li>
+      <li class="breadcrumb-item" aria-current="page">TMLPersistentContainer  Reference</li>
+    </ol>
+  </nav>
 
-        <section class="section">
-          <div class="section-content top-matter">
-            
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-auto d-none d-md-flex flex-column j2-nav" id="nav-column">
+        <nav aria-label="swift" class="j2-swift">
+          <ul class="j2-nav-list">
+            <li class="j2-nav-group">
+              <a class="j2-nav-item" href="Guides.html">Guides</a>
+              <ul class="j2-nav-sublist">
+                <li>
+                  <a class="j2-nav-item" href="background.html">Background</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="usage.html">Usage</a>
+                </li>
+              </ul>
+            </li>
+            <li class="j2-nav-group">
+              <a class="j2-nav-item" href="Main%20APIs.html">Main APIs</a>
+              <ul class="j2-nav-sublist">
+                <li>
+                  <a class="j2-nav-item" href="Classes/PersistentContainer.html">PersistentContainer</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="Enums/ModelVersionOrder.html">ModelVersionOrder</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="Enums/MigrationError.html">MigrationError</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="Protocols/MigrationDelegate.html">MigrationDelegate</a>
+                </li>
+              </ul>
+            </li>
+            <li class="j2-nav-group">
+              <a class="j2-nav-item" href="Logging%20APIs.html">Logging APIs</a>
+              <ul class="j2-nav-sublist">
+                <li>
+                  <a class="j2-nav-item" href="Structs/LogMessage.html">LogMessage</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="Enums/LogLevel.html">LogLevel</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <main class="col col-xl-8 j2-article px-lg-4 px-xl-5" id="article-column">
+        <article class="j2-article-wrapper" id="main-content">
+
+        <!-- todo top of article.... -->
+
+        <section>
+
+          <div class="clearfix">
             <!--
 TMLPersistentContainer
 README.md
 Distributed under the ISC license, see LICENSE.
 -->
-<h1 id='tmlpersistentcontainer' class='heading'>TMLPersistentContainer</h1>
+<h1 id='tmlpersistentcontainer' class='j2-anchor heading'><span data-anchor-id=tmlpersistentcontainer>TMLPersistentContainer</span></h1>
 
 <p><a href="https://travis-ci.org/johnfairh/TMLPersistentContainer"><img src="https://travis-ci.org/johnfairh/TMLPersistentContainer.svg?branch=master" alt="CI"></a>
 <a href="https://codecov.io/gh/johnfairh/TMLPersistentContainer"><img src="https://codecov.io/gh/johnfairh/TMLPersistentContainer/branch/master/graph/badge.svg" alt="codecov"></a>
@@ -118,24 +140,22 @@ detects and performs multi-step store migration using the shortest valid
 sequence of migrations. The library supports both light-weight and
 heavy-weight migrations, multiple stores, progress reporting, and configurable
 logging.</p>
-<h2 id='example' class='heading'>Example</h2>
+<h2 id='example' class='j2-anchor heading'><span data-anchor-id=example>Example</span></h2>
 
 <p>Minimally replace the call to <code>NSPersistentContainer.init</code>:</p>
-<pre class="highlight swift"><code><span class="n">container</span> <span class="o">=</span> <span class="kt">PersistentContainer</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"MyStore"</span><span class="p">,</span>
-                                <span class="nv">managedObjectModel</span><span class="p">:</span> <span class="n">model</span><span class="p">)</span>
+<pre><code class="language-swift">container = PersistentContainer(name: &quot;MyStore&quot;,
+                                managedObjectModel: model)
 </code></pre>
-
 <p>Additional parameters optionally enable more features:</p>
-<pre class="highlight swift"><code><span class="n">container</span> <span class="o">=</span> <span class="kt">PersistentContainer</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"MyStore"</span><span class="p">,</span>
-                                <span class="nv">managedObjectModel</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span>
-                                <span class="nv">bundles</span><span class="p">:</span> <span class="p">[</span><span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="n">myResBundle</span><span class="p">],</span>
-                                <span class="nv">modelVersionOrder</span><span class="p">:</span> <span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="s">"V_One"</span><span class="p">,</span> <span class="s">"V_Two"</span><span class="p">,</span> <span class="s">"V_Six"</span><span class="p">),</span>
-                                <span class="nv">logMessageHandler</span><span class="p">:</span> <span class="n">myLogHandler</span><span class="p">)</span>
-<span class="n">container</span><span class="o">.</span><span class="n">migrationDelegate</span> <span class="o">=</span> <span class="k">self</span>
+<pre><code class="language-swift">container = PersistentContainer(name: &quot;MyStore&quot;,
+                                managedObjectModel: model,
+                                bundles: [Bundle.main, myResBundle],
+                                modelVersionOrder: .list(&quot;V_One&quot;, &quot;V_Two&quot;, &quot;V_Six&quot;),
+                                logMessageHandler: myLogHandler)
+container.migrationDelegate = self
 </code></pre>
-
 <p>All migrations happen as part of <code>NSPersistentContainer.loadPersistentStores</code>.</p>
-<h2 id='documentation' class='heading'>Documentation</h2>
+<h2 id='documentation' class='j2-anchor heading'><span data-anchor-id=documentation>Documentation</span></h2>
 
 <ul>
 <li><a href="https://johnfairh.github.io/TMLPersistentContainer/usage.html">User guide</a> and
@@ -145,21 +165,19 @@ logging.</p>
 <li>Read <code>TestSimpleMigrate.testCanMigrateV1toV3inTwoSteps</code> for an end-to-end
 example.</li>
 </ul>
-<h2 id='requirements' class='heading'>Requirements</h2>
+<h2 id='requirements' class='j2-anchor heading'><span data-anchor-id=requirements>Requirements</span></h2>
 
 <p>Swift 5 or later, Xcode 10.2 or later.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
+<div class="j2-callout j2-callout-see">
+    <p class="j2-callout-title">See</p>
     See the <em>swift31</em> branch for a Swift 31 version.
 
-</div>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
+</div><div class="j2-callout j2-callout-see">
+    <p class="j2-callout-title">See</p>
     See the <em>swift4</em> branch for a Swift 4 version.
 
-</div>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
+</div><div class="j2-callout j2-callout-see">
+    <p class="j2-callout-title">See</p>
     See the <em>swift41</em> branch for a Swift 4.1 version.
 
 </div>
@@ -168,23 +186,20 @@ example.</li>
 deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS 3.0.</p>
 
 <p>No additional software dependencies.</p>
-<h2 id='installation' class='heading'>Installation</h2>
+<h2 id='installation' class='j2-anchor heading'><span data-anchor-id=installation>Installation</span></h2>
 
 <p>CocoaPods:</p>
-<pre class="highlight plaintext"><code>pod 'TMLPersistentContainer'
+<pre><code class="language-">pod &#39;TMLPersistentContainer&#39;
 </code></pre>
-
 <p>Swift package manager:</p>
-<pre class="highlight plaintext"><code>.Package(url: "https://github.com/johnfairh/TMLPersistentContainer/", majorVersion: 3)
+<pre><code class="language-">.Package(url: &quot;https://github.com/johnfairh/TMLPersistentContainer/&quot;, majorVersion: 3)
 </code></pre>
-
 <p>Carthage:</p>
-<pre class="highlight plaintext"><code>github "johnfairh/TMLPersistentContainer"
-</code></pre>
-<h2 id='contributions' class='heading'>Contributions</h2>
+<pre><code class="language-">github &quot;johnfairh/TMLPersistentContainer&quot;
+</code></pre><h2 id='contributions' class='j2-anchor heading'><span data-anchor-id=contributions>Contributions</span></h2>
 
 <p>Contributions and feedback welcome: open an issue / <a href="mailto:johnfairh@gmail.com">johnfairh@gmail.com</a> / twitter @johnfairh</p>
-<h2 id='license' class='heading'>License</h2>
+<h2 id='license' class='j2-anchor heading'><span data-anchor-id=license>License</span></h2>
 
 <p>Distributed under the ISC license.</p>
 
@@ -192,12 +207,42 @@ deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS 3.0.</p>
         </section>
 
 
-      </article>
-    </div>
-    <section class="footer">
-      <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-    </section>
+        </article>
+      </main>
+
+      <!-- aux nav -->
+
+      <div class="col-xl d-none d-xl-block j2-aux-nav" id="aux-nav-column">
+        <div class="j2-aux-nav-wrapper">
+          <h6 class="j2-inline-heading">Topics</h6>
+          <nav aria-label="page">
+            <ul class="j2-aux-group">
+              <li><a href="#">Declaration</a></li>
+            </ul>
+          </nav>
+          <h6 class="j2-inline-heading">Actions</h6>
+          <ul class="j2-aux-group">
+            <li><a class="j2-aux-action" id="action-search" href="#" role="button" aria-keyshortcuts="/">Search (/)</a></li>
+            <li><a class="j2-aux-action" id="action-collapse" href="#" role="button" aria-keyshortcuts="a">
+              <span id="action-collapse-expand">Open all (a)</span>
+              <span id="action-collapse-collapse" class="d-none">Close all (a)</span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div> <!-- end row -->
+
+    <footer class="row">
+      <div class="col j2-footer small pt-2">
+        <p><p>Distributed under the ISC license.  Maintained by John Fairhurst.</p></p>
+        <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.  Theme from <a href="https://github.com/johnfairh/J2">J2</a>.</p>
+      </div>
+    </footer>
+  </div> <!-- container -->
+
+  <script src="js/dependencies.min.js"></script>
+  <script src="js/fw2020.js"></script>
   </body>
-</div>
+
 </html>

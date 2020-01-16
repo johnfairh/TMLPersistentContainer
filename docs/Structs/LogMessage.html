@@ -1,107 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <title>LogMessage Structure Reference</title>
-    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
-    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
-    <script src="../js/jquery.min.js" defer></script>
-    <script src="../js/jazzy.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <link rel="stylesheet" href="../css/fw2020.css">
     
-    <script src="../js/lunr.min.js" defer></script>
-    <script src="../js/typeahead.jquery.js" defer></script>
-    <script src="../js/jazzy.search.js" defer></script>
+    <title>LogMessage Structure Reference</title>
+    
   </head>
-  <body>
+  <body data-root-path="./../">
 
-    <a name="//apple_ref/swift/Struct/LogMessage" class="dashAnchor"></a>
-
-    <a title="LogMessage Structure Reference"></a>
-
-    <header class="header">
-      <p class="header-col header-col--primary">
-        <a class="header-link" href="../index.html">
-          TMLPersistentContainer Docs
-        </a>
-         (100% documented)
-      </p>
-    
-      <p class="header-col--secondary">
-        <form role="search" action="../search.json">
-          <input type="text" placeholder="Search documentation" data-typeahead>
+  <header class="j2-header">
+  <div class="navbar navbar-expand navbar-dark j2-titlebar">
+    <a class="sr-only-focusable sr-only font-weight-slightly-bold pr-2" href="#main-content">Skip to main content</a>
+    <a class="nav-item nav-link pl-0 pt-1 pr-2 d-md-none" id="nav-toggle-button" role="button" aria-controls="nav-column" aria-expanded="false" aria-label="Toggle navigation" href="#">
+      <span class="navbar-toggler-icon"></span>
+    </a>
+  
+    <div style="align-items-baseline">
+      <div class="navbar-brand mr-1 font-weight-slightly-bold">
+        <a href="../index.html">TMLPersistentContainer Docs</a>
+      </div>
+      <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
+    </div>
+  
+    <div class="navbar-nav ml-auto justify-content-end flex-fill">
+  
+      <form class="form-inline d-none d-md-flex" role="search">
+        <input class="form-control form-control-sm w-100" type="search" placeHolder="Search" aria-label="Search" aria-keyshortcuts="/" data-search-format="span">
+      </form>
+  
+      <a class="nav-item nav-link d-none d-sm-inline" rel="external" href="https://github.com/johnfairh/TMLPersistentContainer">
+        <svg class="j2-title-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16"><title>Open on GitHub</title><path fill="currentcolor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+  
+    </div>
+  </div>
+  
+  <!-- narrow-style searchbar -->
+  
+  <div class="container-fluid j2-titlebar d-md-none">
+    <div class="row">
+      <div class="col">
+        <form class="pb-2">
+          <input class="form-control form-control-sm" type="search" placeHolder="Search" aria-label="Search" aria-keyshortcuts="/" data-search-format="div">
         </form>
-      </p>
-    
-        <p class="header-col header-col--secondary">
-          <a class="header-link" href="https://github.com/johnfairh/TMLPersistentContainer">
-            <img class="header-icon" src="../img/gh.png"/>
-            View on GitHub
-          </a>
-        </p>
-    
-    </header>
+      </div>
+    </div>
+  </div>
 
-    <p class="breadcrumbs">
-      <a class="breadcrumb" href="../index.html">TMLPersistentContainer Reference</a>
-      <img class="carat" src="../img/carat.png" />
-      LogMessage Structure Reference
-    </p>
+  <!-- breadcrumb bar, jazzy doesn't really support -->
 
-    <div class="content-wrapper">
-      <nav class="navigation">
-        <ul class="nav-groups">
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Guides.html">Guides</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../background.html">Background</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../usage.html">Usage</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Main%20APIs.html">Main APIs</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/PersistentContainer.html">PersistentContainer</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/MigrationError.html">MigrationError</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Logging%20APIs.html">Logging APIs</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/LogMessage.html">LogMessage</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/LogLevel.html">LogLevel</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <article class="main-content">
+  <nav aria-label="breadcrumb" class="small">
+    <ol class="breadcrumb j2-breadcrumb">
+      <li class="breadcrumb-item"><a href="../index.html">TMLPersistentContainer Reference</a></li>
+      <li class="breadcrumb-item" aria-current="page">LogMessage Structure Reference</li>
+    </ol>
+  </nav>
 
-        <section class="section">
-          <div class="section-content top-matter">
-            <h1>LogMessage</h1>
-              <div class="declaration">
-                <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">LogMessage</span> <span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/customstringconvertible/">CustomStringConvertible</a></span></code></pre>
+  </header>
 
-                </div>
-              </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-auto d-none d-md-flex flex-column j2-nav" id="nav-column">
+        <nav aria-label="swift" class="j2-swift">
+          <ul class="j2-nav-list">
+            <li class="j2-nav-group">
+              <a class="j2-nav-item" href="../Guides.html">Guides</a>
+              <ul class="j2-nav-sublist">
+                <li>
+                  <a class="j2-nav-item" href="../background.html">Background</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="../usage.html">Usage</a>
+                </li>
+              </ul>
+            </li>
+            <li class="j2-nav-group">
+              <a class="j2-nav-item" href="../Main%20APIs.html">Main APIs</a>
+              <ul class="j2-nav-sublist">
+                <li>
+                  <a class="j2-nav-item" href="../Classes/PersistentContainer.html">PersistentContainer</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="../Enums/MigrationError.html">MigrationError</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>
+                </li>
+              </ul>
+            </li>
+            <li class="j2-nav-group">
+              <a class="j2-nav-item" href="../Logging%20APIs.html">Logging APIs</a>
+              <ul class="j2-nav-sublist">
+                <li>
+                  <a class="j2-nav-item" href="../Structs/LogMessage.html">LogMessage</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="../Enums/LogLevel.html">LogLevel</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <main class="col col-xl-8 j2-article px-lg-4 px-xl-5" id="article-column">
+        <article class="j2-article-wrapper" id="main-content">
+
+        <!-- todo top of article.... -->
+
+        <section>
+          <header>
+            <h1 class="j2-anchor">
+              <span>LogMessage</span>
+            </h1>
+          </header>
+          <div class="j2-callout j2-callout-declaration">
+            <div class="j2-callout-title" role="heading" aria-level="5">Swift?</div>
+            <pre><code class="language-swift">public struct LogMessage : <a href="https://developer.apple.com/documentation/swift/customstringconvertible/">CustomStringConvertible</a></code></pre>
+          </div>
+
+          <div class="clearfix">
             <p>A log message generated by the library for the client to include in their logs.
 These messages are intended to be human-readable although the audience is primarily
 app developers; these are not intended for end users.</p>
@@ -109,142 +133,146 @@ app developers; these are not intended for end users.</p>
           </div>
         </section>
 
-        <section class="section">
-          <div class="section-content">
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp"></a>
-                    <a name="//apple_ref/swift/Property/level" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp">level</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The category of the log message.</p>
+        <hr/>
+        <section>
+          <h1 class="sr-only">Topics</h1>
+          <section>
+            <section id="s22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp" class="j2-item">
+              <a name="//apple_ref/cpp/Property/level" class="dashAnchor"></a>
+              <h4 class="sr-only">level</h4>
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp"><code>level</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp">
+                <div class="j2-item-popopen">
+                  <div class="j2-item-popopen-pointer" role="none"></div>
+                  <div class="j2-item-popopen-body">
+                    <div class="clearfix">
+                      <p>The category of the log message.</p>
 
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">level</span><span class="p">:</span> <span class="kt"><a href="../Enums/LogLevel.html">LogLevel</a></span></code></pre>
+                    </div>
+                    <h5>Declaration</h5>
+                    <div class="j2-item-declaration">
+                    <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
+                    <pre><code class="language-swift">public let level: <a href="../Enums/LogLevel.html">LogLevel</a></code></pre>
+                    </div>
+                    <nav class="j2-item-nav" aria-label="item details">
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L43">Show on GitHub</a></span>
+                    </nav>
+                  </div>
+                <div>
+              </div>
+            </section>
+            <section id="s22TMLPersistentContainer10LogMessageV4bodySSycvp" class="j2-item">
+              <a name="//apple_ref/cpp/Property/body" class="dashAnchor"></a>
+              <h4 class="sr-only">body</h4>
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer10LogMessageV4bodySSycvp" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer10LogMessageV4bodySSycvp"><code>body</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer10LogMessageV4bodySSycvp">
+                <div class="j2-item-popopen">
+                  <div class="j2-item-popopen-pointer" role="none"></div>
+                  <div class="j2-item-popopen-body">
+                    <div class="clearfix">
+                      <p>A closure that vends the text of the log message.</p>
 
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L43">Show on GitHub</a>
-                      </div>
-                    </section>
+                    </div>
+                    <h5>Declaration</h5>
+                    <div class="j2-item-declaration">
+                    <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
+                    <pre><code class="language-swift">public let body: () -&gt; <a href="https://developer.apple.com/documentation/swift/string/">String</a></code></pre>
+                    </div>
+                    <nav class="j2-item-nav" aria-label="item details">
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L46">Show on GitHub</a></span>
+                    </nav>
                   </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:22TMLPersistentContainer10LogMessageV4bodySSycvp"></a>
-                    <a name="//apple_ref/swift/Property/body" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV4bodySSycvp">body</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A closure that vends the text of the log message.</p>
+                <div>
+              </div>
+            </section>
+            <section id="s22TMLPersistentContainer10LogMessageV11descriptionSSvp" class="j2-item">
+              <a name="//apple_ref/cpp/Property/description" class="dashAnchor"></a>
+              <h4 class="sr-only">description</h4>
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer10LogMessageV11descriptionSSvp" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer10LogMessageV11descriptionSSvp"><code>description</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer10LogMessageV11descriptionSSvp">
+                <div class="j2-item-popopen">
+                  <div class="j2-item-popopen-pointer" role="none"></div>
+                  <div class="j2-item-popopen-body">
+                    <div class="clearfix">
+                      <p>A string combining <code><a href="../Structs/LogMessage.html#s22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp">level</a></code> and <code><a href="../Structs/LogMessage.html#s22TMLPersistentContainer10LogMessageV4bodySSycvp">body</a></code>.</p>
 
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">body</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L46">Show on GitHub</a>
-                      </div>
-                    </section>
+                    </div>
+                    <h5>Declaration</h5>
+                    <div class="j2-item-declaration">
+                    <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
+                    <pre><code class="language-swift">public var description: <a href="https://developer.apple.com/documentation/swift/string/">String</a> { get }</code></pre>
+                    </div>
+                    <nav class="j2-item-nav" aria-label="item details">
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L55-L57">Show on GitHub</a></span>
+                    </nav>
                   </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:22TMLPersistentContainer10LogMessageV11descriptionSSvp"></a>
-                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV11descriptionSSvp">description</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A string combining <code><a href="../Structs/LogMessage.html#/s:22TMLPersistentContainer10LogMessageV5levelAA0C5LevelOvp">level</a></code> and <code><a href="../Structs/LogMessage.html#/s:22TMLPersistentContainer10LogMessageV4bodySSycvp">body</a></code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt"><a href="https://developer.apple.com/documentation/swift/string/">String</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L55-L57">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:22TMLPersistentContainer10LogMessageV7Handlera"></a>
-                    <a name="//apple_ref/swift/Alias/Handler" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22TMLPersistentContainer10LogMessageV7Handlera">Handler</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A log message handler callback that can be passed to <code>PersistentContainer.init</code> to receive
+                <div>
+              </div>
+            </section>
+            <section id="s22TMLPersistentContainer10LogMessageV7Handlera" class="j2-item">
+              <a name="//apple_ref/cpp/Alias/Handler" class="dashAnchor"></a>
+              <h4 class="sr-only">Handler</h4>
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer10LogMessageV7Handlera" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer10LogMessageV7Handlera"><code>Handler</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer10LogMessageV7Handlera">
+                <div class="j2-item-popopen">
+                  <div class="j2-item-popopen-pointer" role="none"></div>
+                  <div class="j2-item-popopen-body">
+                    <div class="clearfix">
+                      <p>A log message handler callback that can be passed to <code>PersistentContainer.init</code> to receive
 various informational messages that may be of interest to clients for their own logs.</p>
 
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Handler</span> <span class="o">=</span> <span class="p">(</span><span class="kt">LogMessage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L61">Show on GitHub</a>
-                      </div>
-                    </section>
+                    </div>
+                    <h5>Declaration</h5>
+                    <div class="j2-item-declaration">
+                    <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
+                    <pre><code class="language-swift">public typealias Handler = (LogMessage) -&gt; Void</code></pre>
+                    </div>
+                    <nav class="j2-item-nav" aria-label="item details">
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/LogMessage.swift#L61">Show on GitHub</a></span>
+                    </nav>
                   </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+                <div>
+              </div>
+            </section>
+          </section>
         </section>
 
-      </article>
-    </div>
-    <section class="footer">
-      <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-    </section>
+        </article>
+      </main>
+
+      <!-- aux nav -->
+
+      <div class="col-xl d-none d-xl-block j2-aux-nav" id="aux-nav-column">
+        <div class="j2-aux-nav-wrapper">
+          <h6 class="j2-inline-heading">Topics</h6>
+          <nav aria-label="page">
+            <ul class="j2-aux-group">
+              <li><a href="#">Declaration</a></li>
+            </ul>
+          </nav>
+          <h6 class="j2-inline-heading">Actions</h6>
+          <ul class="j2-aux-group">
+            <li><a class="j2-aux-action" id="action-search" href="#" role="button" aria-keyshortcuts="/">Search (/)</a></li>
+            <li><a class="j2-aux-action" id="action-collapse" href="#" role="button" aria-keyshortcuts="a">
+              <span id="action-collapse-expand">Open all (a)</span>
+              <span id="action-collapse-collapse" class="d-none">Close all (a)</span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div> <!-- end row -->
+
+    <footer class="row">
+      <div class="col j2-footer small pt-2">
+        <p><p>Distributed under the ISC license.  Maintained by John Fairhurst.</p></p>
+        <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>-<a class="link" href="https://github.com/johnfairh/jazzy" target="_blank" rel="external">bebop</a>, originally a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.  Theme from <a href="https://github.com/johnfairh/J2">J2</a>.</p>
+      </div>
+    </footer>
+  </div> <!-- container -->
+
+  <script src="../js/dependencies.min.js"></script>
+  <script src="../js/fw2020.js"></script>
   </body>
-</div>
+
 </html>
