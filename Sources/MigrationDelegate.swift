@@ -49,7 +49,7 @@ public protocol MigrationDelegate: class {
     /// - Parameters:
     ///   - container: The `PersistentContainer` asked to load the store.
     ///   - willConsiderStore: The store that may be migrated.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willConsiderStore: NSPersistentStoreDescription)
 
     /// Called for each store that will be migrated, before any migrations start for the store.
@@ -60,7 +60,7 @@ public protocol MigrationDelegate: class {
     ///   - sourceModelVersion: The model version that the store currently has.
     ///   - destinationModelVersion: The model version that the store will have after all migrations.
     ///   - totalSteps: The number of separate migration steps that will be executed on the store.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willMigrateStore: NSPersistentStoreDescription,
                              sourceModelVersion: String,
                              destinationModelVersion: String,
@@ -73,7 +73,7 @@ public protocol MigrationDelegate: class {
     ///   - container: The `PersistentContainer` asked to load the store.
     ///   - willNotMigrateStore: The store that will not be migrated.
     ///   - storeExists: `true` if the store exists on disk at the right version.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willNotMigrateStore: NSPersistentStoreDescription,
                              storeExists: Bool)
 
@@ -89,7 +89,7 @@ public protocol MigrationDelegate: class {
     ///   - toTemporaryLocation: The location on disk of the migrated version of the store.
     ///   - stepsRemaining: The number of migration steps remaining for the store, **including** this step!
     ///   - totalSteps: The total number of migration steps for this store.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willSingleMigrateStore: NSPersistentStoreDescription,
                              sourceModelVersion: String,
                              destinationModelVersion: String,
@@ -104,7 +104,7 @@ public protocol MigrationDelegate: class {
     /// - Parameters:
     ///   - container: The `PersistentContainer` asked to load the store.
     ///   - didMigrateStore: The store that has been migrated.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              didMigrateStore: NSPersistentStoreDescription)
 
     /// Called after an error has occurred during or before migrating a store.
@@ -114,7 +114,7 @@ public protocol MigrationDelegate: class {
     ///   - container: The `PersistentContainer` asked to load the store.
     ///   - didFailToMigrateStore: The store that could not be migrated.
     ///   - error: The reason the store could not be migrated, could be from `MigrationError`.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              didFailToMigrateStore: NSPersistentStoreDescription,
                              error: Error)
 }
@@ -123,12 +123,12 @@ public protocol MigrationDelegate: class {
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public extension MigrationDelegate {
     /// Do nothing.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willConsiderStore: NSPersistentStoreDescription) {
     }
 
     /// Do nothing.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willMigrateStore: NSPersistentStoreDescription,
                              sourceModelVersion: String,
                              destinationModelVersion: String,
@@ -136,13 +136,13 @@ public extension MigrationDelegate {
     }
 
     /// Do nothing.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willNotMigrateStore: NSPersistentStoreDescription,
                              storeExists: Bool) {
     }
 
     /// Do nothing.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willSingleMigrateStore: NSPersistentStoreDescription,
                              sourceModelVersion: String,
                              destinationModelVersion: String,
@@ -154,12 +154,12 @@ public extension MigrationDelegate {
     }
 
     /// Do nothing.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              didMigrateStore: NSPersistentStoreDescription) {
     }
 
     /// Do nothing.
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              didFailToMigrateStore: NSPersistentStoreDescription,
                              error: Error) {
     }

@@ -86,12 +86,12 @@ class Delegate: MigrationDelegate {
         }
     }
 
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willConsiderStore: NSPersistentStoreDescription) {
         checkCall(.willConsider)
     }
 
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willMigrateStore: NSPersistentStoreDescription,
                              sourceModelVersion: String,
                              destinationModelVersion: String,
@@ -99,13 +99,13 @@ class Delegate: MigrationDelegate {
         checkCall(.willMigrate(sourceModelVersion, destinationModelVersion, totalSteps))
     }
 
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willNotMigrateStore: NSPersistentStoreDescription,
                              storeExists: Bool) {
         checkCall(.willNotMigrate(storeExists))
     }
 
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              willSingleMigrateStore: NSPersistentStoreDescription,
                              sourceModelVersion: String,
                              destinationModelVersion: String,
@@ -117,12 +117,12 @@ class Delegate: MigrationDelegate {
         checkCall(.willSingleMigrate(sourceModelVersion, destinationModelVersion, usingInferredMapping, stepsRemaining, totalSteps))
     }
 
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              didMigrateStore: NSPersistentStoreDescription) {
         checkCall(.didMigrate)
     }
 
-    func persistentContainer(_ container: PersistentContainer,
+    func persistentContainer(_ container: NSPersistentContainer,
                              didFailToMigrateStore: NSPersistentStoreDescription,
                              error: Error) {
         checkCall(.didFailToMigrate)
