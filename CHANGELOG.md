@@ -2,7 +2,13 @@
 
 #### Breaking
 
-* None.
+* Add `NSPersistentCloudKitContainer`.
+  This is breaking because the signature of the `MigrationDelegate` methods
+  have changed to take a `NSPersistentContainer` instead of a
+  `PersistentContainer` so that it can be shared between the two types of
+  container.  
+  [Jonas Reichert](https://github.com/jonnybeegod)
+  [#11](https://github.com/johnfairh/TMLPersistentContainer/issues/11)
 
 #### Enhancements
 
