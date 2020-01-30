@@ -1,11 +1,19 @@
+//
+//  PersistentContainer.swift
+//  TMLPersistentContainer
+//
+//  Distributed under the ISC license, see LICENSE.
+//
+
 import Foundation
 import CoreData
 
 /// A container for a Core Data stack that provides automatic multi-step shortest-path
-/// persistent store migration.
+/// persistent store migration, capable of managing both CloudKit-backed and non-cloud stores.
 ///
-/// This is a drop-in replacement for `NSPersistentContainer` that automatically detects
-/// and performs multi-step store migration as part of the `loadPersistentStores` method.
+/// This is a drop-in replacement for `NSPersistentCloudKitContainer` that
+/// automatically detects and performs multi-step store migration as part of the
+/// `loadPersistentStores` method.
 ///
 /// The container searches for models and mapping models, then constructs the
 /// best sequence in which to migrate stores. It prefers to use explicit mapping models
@@ -13,6 +21,8 @@ import CoreData
 /// reported back to the client code.
 ///
 /// See [the user guide](https://johnfairh.github.io/TMLPersistentContainer/usage.html) for more details.
+///
+/// See `PersistentContainer` for a version that does not support CloudKit-backed stores.
 ///
 @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 open class PersistentCloudKitContainer: NSPersistentCloudKitContainer, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter {
@@ -60,11 +70,6 @@ open class PersistentCloudKitContainer: NSPersistentCloudKitContainer, Persisten
                             bundles: [Bundle] = [Bundle.main],
                             modelVersionOrder: ModelVersionOrder = .compare,
                             logMessageHandler: LogMessage.Handler? = nil) {
-
-        // No self so logging is ugly :(
-        //
-        // Investigation does show that NSPC.init(string) searches for .momds and NOT .moms.
-        
         let firstModelFromBundles = bundles.managedObjectModels(with: name).first
         
         if firstModelFromBundles == nil {

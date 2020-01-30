@@ -10,8 +10,7 @@ import CoreData
 
 /// A store that has been migrated -- its description and the file URL of its temporary location
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-struct MigratedStore
-{
+struct MigratedStore {
     let description: NSPersistentStoreDescription
     let tempURL: URL
 }

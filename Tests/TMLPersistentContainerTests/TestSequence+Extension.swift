@@ -1,6 +1,8 @@
 //
-//  TestSequence+Extension.swift
-//  
+//  TestBugs.swift
+//  TMLPersistentContainer
+//
+//  Distributed under the ISC license, see LICENSE.
 //
 //  Created by Jonas Reichert on 25.01.20.
 //

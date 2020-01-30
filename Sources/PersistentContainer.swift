@@ -16,6 +16,7 @@ protocol PersistentContainerProtocol: PersistentContainerMigratable {
     func destroyStores() throws
 }
 
+/// Pull out the front-end code shared between `PersistentContainer` and `PersistentCloudKitContainer`.
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension PersistentContainerProtocol {
     /// Cleanly empty all the persistent stores described by `persistentStoreDescriptions`.
@@ -136,6 +137,9 @@ extension PersistentContainerProtocol {
 /// reported back to the client code.
 ///
 /// See [the user guide](https://johnfairh.github.io/TMLPersistentContainer/usage.html) for more details.
+///
+/// See `PersistentCloudKitContainer` for a version capable of managing both
+/// CloudKit-backed and non-cloud stores..
 ///
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 open class PersistentContainer: NSPersistentContainer, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter {
