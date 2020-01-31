@@ -1,5 +1,19 @@
 ## Master
 
+### Breaking
+
+* None.
+
+### Enhancements
+
+* None.
+
+### Bug Fixes
+
+* None.
+
+## 5.0.0
+
 #### Breaking
 
 * Add `NSPersistentCloudKitContainer`.
