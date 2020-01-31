@@ -6778,6 +6778,7 @@ body {
   color: var(--navigation-color);
   background-color: var(--navigation-bg);
   -webkit-font-smoothing: antialiased;
+  word-break: break-word;
 }
 
 body a {
@@ -6849,6 +6850,7 @@ pre {
 
 .j2-param-table td:first-of-type {
   text-align: right;
+  word-break: normal;
 }
 
 .j2-param-table td:last-of-type {
@@ -7270,8 +7272,6 @@ pre {
   display: inline-block;
   margin-left: .6rem;
   text-indent: -.6rem;
-  word-break: break-word;
-  word-wrap: break-word;
 }
 
 .j2-aux-nav .j2-aux-group {
@@ -7281,7 +7281,7 @@ pre {
 
 .j2-aux-nav .j2-aux-action {
   color: var(--article-color) !important;
-  opacity: .8;
+  opacity: .9;
 }
 
 .j2-aux-nav .j2-aux-action:hover {

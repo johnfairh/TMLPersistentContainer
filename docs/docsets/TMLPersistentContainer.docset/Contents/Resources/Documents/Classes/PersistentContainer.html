@@ -20,7 +20,7 @@
   
     <div style="align-items-baseline">
       <div class="navbar-brand mr-1 font-weight-slightly-bold">
-        <a href="../index.html">TMLPersistentContainer Docs</a>
+        <a href="../index.html">TMLPersistentContainer 5.0.0</a>
       </div>
       <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
     </div>
@@ -85,6 +85,9 @@
                   <a class="j2-nav-item" href="../Classes/PersistentContainer.html">PersistentContainer</a>
                 </li>
                 <li>
+                  <a class="j2-nav-item" href="../Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a>
+                </li>
+                <li>
                   <a class="j2-nav-item" href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
                 </li>
                 <li>
@@ -123,7 +126,7 @@
           <div class="j2-callout j2-callout-declaration">
             <div class="j2-callout-title" role="heading" aria-level="5">Swift?</div>
             <pre><code class="language-swift">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-open class PersistentContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>, LogMessageEmitter</code></pre>
+open class PersistentContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter</code></pre>
           </div>
 
           <div class="clearfix">
@@ -139,6 +142,9 @@ over inferred mapping models when there is a choice. Progress and status can be
 reported back to the client code.</p>
 
 <p>See <a href="https://johnfairh.github.io/TMLPersistentContainer/usage.html">the user guide</a> for more details.</p>
+
+<p>See <code><a href="../Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a></code> for a version capable of managing both
+CloudKit-backed and non-cloud stores..</p>
 
           </div>
         </section>
@@ -165,7 +171,7 @@ reported back to the client code.</p>
                     <pre><code class="language-swift">public weak var migrationDelegate: <a href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>?</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L40">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L160">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -256,7 +262,7 @@ reported back to the client code.</p>
                       </tbody>
                     </table>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L66-L99">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L186-L210">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -355,55 +361,7 @@ reported back to the client code.</p>
                       </tbody>
                     </table>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L119-L128">Show on GitHub</a></span>
-                    </nav>
-                  </div>
-                <div>
-              </div>
-            </section>
-            <section id="s22TMLPersistentContainer010PersistentB0C13destroyStoresyyKF" class="j2-item">
-              <a name="//apple_ref/cpp/Method/destroyStores()" class="dashAnchor"></a>
-              <h4 class="sr-only">destroyStores()</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer010PersistentB0C13destroyStoresyyKF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer010PersistentB0C13destroyStoresyyKF"><code>destroyStores()</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer010PersistentB0C13destroyStoresyyKF">
-                <div class="j2-item-popopen">
-                  <div class="j2-item-popopen-pointer" role="none"></div>
-                  <div class="j2-item-popopen-body">
-                    <div class="clearfix">
-                      <p>Cleanly empty all the persistent stores described by <code>persistentStoreDescriptions</code>.
-Typically useful to reset the app to a fresh state before loading the stores.</p>
-<div class="j2-callout j2-callout-attention">
-    <p class="j2-callout-title">Attention</p>
-    <p>May not remove files from disk. In the case of SQLite3 stores, database files
-         making up an empty store are left.</p>
-
-</div><div class="j2-callout j2-callout-attention">
-    <p class="j2-callout-title">Attention</p>
-    <p>Goodness knows what this will do with custom stores. There does not appear to be
-         an API into the <code><a href="https://developer.apple.com/documentation/coredata/nspersistentstore/">NSPersistentStore</a></code> tree to implement this operation.</p>
-
-</div><div class="j2-callout j2-callout-attention">
-    <p class="j2-callout-title">Attention</p>
-    <p>Not atomic with respect to multiple stores. The routine attempts to destroy
-         each store one by one; the first destroy operation to fail causes the entire
-         routine to fail.</p>
-
-</div><div class="j2-callout j2-callout-throws">
-    <p class="j2-callout-title">Throws</p>
-    <p>Errors thrown by <code>NSPersistentStoreCoordinator.destroyPersistentStore(at:ofType:options:)</code> which
-      is undocumented: assumed to be filesystem access errors that the app should probably consider as
-      fatal. Does <em>not</em> throw an error if a persistent store does not currently exist.</p>
-
-</div>
-
-                    </div>
-                    <h5>Declaration</h5>
-                    <div class="j2-item-declaration">
-                    <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
-                    <pre><code class="language-swift">open func destroyStores() throws</code></pre>
-                    </div>
-                    <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L147-L152">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L230-L239">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -463,7 +421,7 @@ are migrated successfully or none are.</p>
                       </tbody>
                     </table>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L177-L256">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L264-L270">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>

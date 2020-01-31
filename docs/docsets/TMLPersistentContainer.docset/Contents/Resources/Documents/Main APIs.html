@@ -20,7 +20,7 @@
   
     <div style="align-items-baseline">
       <div class="navbar-brand mr-1 font-weight-slightly-bold">
-        <a href="index.html">TMLPersistentContainer Docs</a>
+        <a href="index.html">TMLPersistentContainer 5.0.0</a>
       </div>
       <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
     </div>
@@ -83,6 +83,9 @@
               <ul class="j2-nav-sublist">
                 <li>
                   <a class="j2-nav-item" href="Classes/PersistentContainer.html">PersistentContainer</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a>
                 </li>
                 <li>
                   <a class="j2-nav-item" href="Enums/ModelVersionOrder.html">ModelVersionOrder</a>
@@ -153,16 +156,59 @@ reported back to the client code.</p>
 
 <p>See <a href="https://johnfairh.github.io/TMLPersistentContainer/usage.html">the user guide</a> for more details.</p>
 
+<p>See <code><a href="Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a></code> for a version capable of managing both
+CloudKit-backed and non-cloud stores..</p>
+
                     </div>
                     <h5>Declaration</h5>
                     <div class="j2-item-declaration">
                     <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
                     <pre><code class="language-swift">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-open class PersistentContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>, LogMessageEmitter</code></pre>
+open class PersistentContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
                       <span class="j2-item-nav-item"><a href="Classes/PersistentContainer.html">Show members</a></span>
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L25-L257">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L145-L271">Show on GitHub</a></span>
+                    </nav>
+                  </div>
+                <div>
+              </div>
+            </section>
+            <section id="cMTMLPersistentContainerobjccsPersistentCloudKitContainer" class="j2-item">
+              <a name="//apple_ref/cpp/Class/PersistentCloudKitContainer" class="dashAnchor"></a>
+              <h4 class="sr-only">PersistentCloudKitContainer</h4>
+              <a class="j2-item-title" data-toggle="collapse" href="#_cMTMLPersistentContainerobjccsPersistentCloudKitContainer" role="button" aria-expanded="false" aria-controls="_cMTMLPersistentContainerobjccsPersistentCloudKitContainer"><code>PersistentCloudKitContainer</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_cMTMLPersistentContainerobjccsPersistentCloudKitContainer">
+                <div class="j2-item-popopen">
+                  <div class="j2-item-popopen-pointer" role="none"></div>
+                  <div class="j2-item-popopen-body">
+                    <div class="clearfix">
+                      <p>A container for a Core Data stack that provides automatic multi-step shortest-path
+persistent store migration, capable of managing both CloudKit-backed and non-cloud stores.</p>
+
+<p>This is a drop-in replacement for <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer/">NSPersistentCloudKitContainer</a></code> that
+automatically detects and performs multi-step store migration as part of the
+<code>loadPersistentStores</code> method.</p>
+
+<p>The container searches for models and mapping models, then constructs the
+best sequence in which to migrate stores. It prefers to use explicit mapping models
+over inferred mapping models when there is a choice. Progress and status can be
+reported back to the client code.</p>
+
+<p>See <a href="https://johnfairh.github.io/TMLPersistentContainer/usage.html">the user guide</a> for more details.</p>
+
+<p>See <code><a href="Classes/PersistentContainer.html">PersistentContainer</a></code> for a version that does not support CloudKit-backed stores.</p>
+
+                    </div>
+                    <h5>Declaration</h5>
+                    <div class="j2-item-declaration">
+                    <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
+                    <pre><code class="language-swift">@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+open class PersistentCloudKitContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer/">NSPersistentCloudKitContainer</a>, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter</code></pre>
+                    </div>
+                    <nav class="j2-item-nav" aria-label="item details">
+                      <span class="j2-item-nav-item"><a href="Classes/PersistentCloudKitContainer.html">Show members</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentCloudKitContainer.swift#L28-L149">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -208,7 +254,8 @@ public enum ModelVersionOrder</code></pre><pre><code class="language-swift">exte
                   <div class="j2-item-popopen-body">
                     <div class="clearfix">
                       <p>Errors that can occur preventing persistent store loading, passed into the callback given to
-<code>PersistentContainer.loadPersistentStores</code>.</p>
+<code><a href="Classes/PersistentContainer.html#cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler">PersistentContainer.loadPersistentStores(...)</a></code> or
+<code><a href="Classes/PersistentCloudKitContainer.html#cMTMLPersistentContainerobjccsPersistentCloudKitContainerimloadPersistentStoresWithCompletionHandler">PersistentCloudKitContainer.loadPersistentStores(...)</a></code>.</p>
 
 <p>When any of these unusual conditions occurs, the persistent container provides a lot of
 human-readable (-ish) information to the logging interface. The first step to debugging
@@ -223,7 +270,7 @@ public enum MigrationError : <a href="https://developer.apple.com/documentation/
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
                       <span class="j2-item-nav-item"><a href="Enums/MigrationError.html">Show members</a></span>
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L19-L82">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L20-L84">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -238,15 +285,15 @@ public enum MigrationError : <a href="https://developer.apple.com/documentation/
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
                     <div class="clearfix">
-                      <p>A delegate that can be provided to <code><a href="Classes/PersistentContainer.html">PersistentContainer</a></code> to receive events describing the
-progress of migrations. These events can be used to update a user interface or for app
-internal logging.</p>
+                      <p>A delegate that can be provided to <code><a href="Classes/PersistentContainer.html">PersistentContainer</a></code> or <code><a href="Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a></code>
+to receive events describing the progress of migrations. These events can be used to update a user
+interface or for app internal logging.</p>
 
-<p>All methods are called while <code>PersistentContainer.loadPersistentStores</code> is active.
+<p>All methods are called while <code><a href="Classes/PersistentContainer.html#cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler">PersistentContainer.loadPersistentStores(...)</a></code> is active.
 If <em>any</em> of the <code><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></code>s have the <code>shouldAddStoreAsynchronously</code> flag
 set to <code>true</code> then all methods are called on a private background queue. If all of the store
 descriptions have the flag set to <code>false</code> then the methods are called on the same queue on which
-<code>PersistentContainer.loadPersistentStores</code> was called.</p>
+<code><a href="Classes/PersistentContainer.html#cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler">PersistentContainer.loadPersistentStores(...)</a></code> was called.</p>
 
 <p>The stores in <code>PersistentContainer.persistentStoreDescriptions</code> are processed sequentially.
 Stores that are not migratable (not on disk) are ignored and do not represent in this delegate.</p>

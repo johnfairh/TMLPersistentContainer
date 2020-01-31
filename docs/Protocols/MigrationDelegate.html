@@ -20,7 +20,7 @@
   
     <div style="align-items-baseline">
       <div class="navbar-brand mr-1 font-weight-slightly-bold">
-        <a href="../index.html">TMLPersistentContainer Docs</a>
+        <a href="../index.html">TMLPersistentContainer 5.0.0</a>
       </div>
       <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
     </div>
@@ -85,6 +85,9 @@
                   <a class="j2-nav-item" href="../Classes/PersistentContainer.html">PersistentContainer</a>
                 </li>
                 <li>
+                  <a class="j2-nav-item" href="../Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a>
+                </li>
+                <li>
                   <a class="j2-nav-item" href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
                 </li>
                 <li>
@@ -127,15 +130,15 @@ public protocol MigrationDelegate : AnyObject</code></pre>
           </div>
 
           <div class="clearfix">
-            <p>A delegate that can be provided to <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> to receive events describing the
-progress of migrations. These events can be used to update a user interface or for app
-internal logging.</p>
+            <p>A delegate that can be provided to <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> or <code><a href="../Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a></code>
+to receive events describing the progress of migrations. These events can be used to update a user
+interface or for app internal logging.</p>
 
-<p>All methods are called while <code>PersistentContainer.loadPersistentStores</code> is active.
+<p>All methods are called while <code><a href="../Classes/PersistentContainer.html#cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler">PersistentContainer.loadPersistentStores(...)</a></code> is active.
 If <em>any</em> of the <code><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a></code>s have the <code>shouldAddStoreAsynchronously</code> flag
 set to <code>true</code> then all methods are called on a private background queue. If all of the store
 descriptions have the flag set to <code>false</code> then the methods are called on the same queue on which
-<code>PersistentContainer.loadPersistentStores</code> was called.</p>
+<code><a href="../Classes/PersistentContainer.html#cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler">PersistentContainer.loadPersistentStores(...)</a></code> was called.</p>
 
 <p>The stores in <code>PersistentContainer.persistentStoreDescriptions</code> are processed sequentially.
 Stores that are not migratable (not on disk) are ignored and do not represent in this delegate.</p>
@@ -172,11 +175,11 @@ Stores that are not migratable (not on disk) are ignored and do not represent in
         <section>
           <h1 class="sr-only">Topics</h1>
           <section>
-            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF" class="j2-item">
+            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreySo012NSPersistentB0C_So0iH11DescriptionCtF" class="j2-item">
               <a name="//apple_ref/cpp/Method/persistentContainer(_:willConsiderStore:)" class="dashAnchor"></a>
               <h4 class="sr-only">persistentContainer(_:willConsiderStore:)</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF"><code>persistentContainer(_:<wbr>willConsiderStore:<wbr>)</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF">
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreySo012NSPersistentB0C_So0iH11DescriptionCtF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreySo012NSPersistentB0C_So0iH11DescriptionCtF"><code>persistentContainer(_:<wbr>willConsiderStore:<wbr>)</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_17willConsiderStoreySo012NSPersistentB0C_So0iH11DescriptionCtF">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -195,7 +198,8 @@ migrate it.</p>
                     <h5>Declaration</h5>
                     <div class="j2-item-declaration">
                     <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
-                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="../Classes/PersistentContainer.html">PersistentContainer</a>, willConsiderStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>)</code></pre>
+                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>,
+                         willConsiderStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>)</code></pre>
                     </div>
                     <h5>Parameters</h5>
                     <table class="j2-param-table">
@@ -208,7 +212,7 @@ migrate it.</p>
                          </td>
                          <td>
                            <div>
-                             <p>The <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> asked to load the store.</p>
+                             <p>The <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> asked to load the store.</p>
                            </div>
                          </td>
                        </tr>
@@ -233,11 +237,11 @@ migrate it.</p>
                 <div>
               </div>
             </section>
-            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsyAA010PersistentB0C_So012NSPersistentH11DescriptionCS2SSitF" class="j2-item">
+            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsySo012NSPersistentB0C_So0oH11DescriptionCS2SSitF" class="j2-item">
               <a name="//apple_ref/cpp/Method/persistentContainer(_:willMigrateStore:sourceModelVersion:destinationModelVersion:totalSteps:)" class="dashAnchor"></a>
               <h4 class="sr-only">persistentContainer(_:willMigrateStore:sourceModelVersion:destinationModelVersion:totalSteps:)</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsyAA010PersistentB0C_So012NSPersistentH11DescriptionCS2SSitF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsyAA010PersistentB0C_So012NSPersistentH11DescriptionCS2SSitF"><code>persistentContainer(_:<wbr>willMigrateStore:<wbr>sourceModelVersion:<wbr>destinationModelVersion:<wbr>totalSteps:<wbr>)</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsyAA010PersistentB0C_So012NSPersistentH11DescriptionCS2SSitF">
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsySo012NSPersistentB0C_So0oH11DescriptionCS2SSitF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsySo012NSPersistentB0C_So0oH11DescriptionCS2SSitF"><code>persistentContainer(_:<wbr>willMigrateStore:<wbr>sourceModelVersion:<wbr>destinationModelVersion:<wbr>totalSteps:<wbr>)</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_16willMigrateStore18sourceModelVersion011destinationjK010totalStepsySo012NSPersistentB0C_So0oH11DescriptionCS2SSitF">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -255,7 +259,11 @@ migrate it.</p>
                     <h5>Declaration</h5>
                     <div class="j2-item-declaration">
                     <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
-                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="../Classes/PersistentContainer.html">PersistentContainer</a>, willMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>, sourceModelVersion: <a href="https://developer.apple.com/documentation/swift/string/">String</a>, destinationModelVersion: <a href="https://developer.apple.com/documentation/swift/string/">String</a>, totalSteps: <a href="https://developer.apple.com/documentation/swift/int/">Int</a>)</code></pre>
+                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>,
+                         willMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>,
+                         sourceModelVersion: <a href="https://developer.apple.com/documentation/swift/string/">String</a>,
+                         destinationModelVersion: <a href="https://developer.apple.com/documentation/swift/string/">String</a>,
+                         totalSteps: <a href="https://developer.apple.com/documentation/swift/int/">Int</a>)</code></pre>
                     </div>
                     <h5>Parameters</h5>
                     <table class="j2-param-table">
@@ -268,7 +276,7 @@ migrate it.</p>
                          </td>
                          <td>
                            <div>
-                             <p>The <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> asked to load the store.</p>
+                             <p>The <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> asked to load the store.</p>
                            </div>
                          </td>
                        </tr>
@@ -329,11 +337,11 @@ migrate it.</p>
                 <div>
               </div>
             </section>
-            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsyAA010PersistentB0C_So012NSPersistentI11DescriptionCSbtF" class="j2-item">
+            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsySo012NSPersistentB0C_So0lI11DescriptionCSbtF" class="j2-item">
               <a name="//apple_ref/cpp/Method/persistentContainer(_:willNotMigrateStore:storeExists:)" class="dashAnchor"></a>
               <h4 class="sr-only">persistentContainer(_:willNotMigrateStore:storeExists:)</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsyAA010PersistentB0C_So012NSPersistentI11DescriptionCSbtF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsyAA010PersistentB0C_So012NSPersistentI11DescriptionCSbtF"><code>persistentContainer(_:<wbr>willNotMigrateStore:<wbr>storeExists:<wbr>)</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsyAA010PersistentB0C_So012NSPersistentI11DescriptionCSbtF">
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsySo012NSPersistentB0C_So0lI11DescriptionCSbtF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsySo012NSPersistentB0C_So0lI11DescriptionCSbtF"><code>persistentContainer(_:<wbr>willNotMigrateStore:<wbr>storeExists:<wbr>)</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_19willNotMigrateStore11storeExistsySo012NSPersistentB0C_So0lI11DescriptionCSbtF">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -352,7 +360,9 @@ because it is already at the latest version.</p>
                     <h5>Declaration</h5>
                     <div class="j2-item-declaration">
                     <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
-                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="../Classes/PersistentContainer.html">PersistentContainer</a>, willNotMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>, storeExists: <a href="https://developer.apple.com/documentation/swift/bool/">Bool</a>)</code></pre>
+                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>,
+                         willNotMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>,
+                         storeExists: <a href="https://developer.apple.com/documentation/swift/bool/">Bool</a>)</code></pre>
                     </div>
                     <h5>Parameters</h5>
                     <table class="j2-param-table">
@@ -365,7 +375,7 @@ because it is already at the latest version.</p>
                          </td>
                          <td>
                            <div>
-                             <p>The <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> asked to load the store.</p>
+                             <p>The <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> asked to load the store.</p>
                            </div>
                          </td>
                        </tr>
@@ -402,11 +412,11 @@ because it is already at the latest version.</p>
                 <div>
               </div>
             </section>
-            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsyAA010PersistentB0C_So012NSPersistentI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF" class="j2-item">
+            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsySo012NSPersistentB0C_So0zI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF" class="j2-item">
               <a name="//apple_ref/cpp/Method/persistentContainer(_:willSingleMigrateStore:sourceModelVersion:destinationModelVersion:usingInferredMapping:withMigrationManager:toTemporaryLocation:stepsRemaining:totalSteps:)" class="dashAnchor"></a>
               <h4 class="sr-only">persistentContainer(_:willSingleMigrateStore:sourceModelVersion:destinationModelVersion:usingInferredMapping:withMigrationManager:toTemporaryLocation:stepsRemaining:totalSteps:)</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsyAA010PersistentB0C_So012NSPersistentI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsyAA010PersistentB0C_So012NSPersistentI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF"><code>persistentContainer(_:<wbr>willSingleMigrateStore:<wbr>sourceModelVersion:<wbr>destinationModelVersion:<wbr>usingInferredMapping:<wbr>withMigrationManager:<wbr>toTemporaryLocation:<wbr>stepsRemaining:<wbr>totalSteps:<wbr>)</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsyAA010PersistentB0C_So012NSPersistentI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF">
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsySo012NSPersistentB0C_So0zI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsySo012NSPersistentB0C_So0zI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF"><code>persistentContainer(_:<wbr>willSingleMigrateStore:<wbr>sourceModelVersion:<wbr>destinationModelVersion:<wbr>usingInferredMapping:<wbr>withMigrationManager:<wbr>toTemporaryLocation:<wbr>stepsRemaining:<wbr>totalSteps:<wbr>)</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_22willSingleMigrateStore18sourceModelVersion011destinationkL020usingInferredMapping04withC7Manager19toTemporaryLocation14stepsRemaining10totalStepsySo012NSPersistentB0C_So0zI11DescriptionCS2SSbSo011NSMigrationR0C10Foundation3URLVS2itF">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -424,7 +434,15 @@ because it is already at the latest version.</p>
                     <h5>Declaration</h5>
                     <div class="j2-item-declaration">
                     <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
-                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="../Classes/PersistentContainer.html">PersistentContainer</a>, willSingleMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>, sourceModelVersion: <a href="https://developer.apple.com/documentation/swift/string/">String</a>, destinationModelVersion: <a href="https://developer.apple.com/documentation/swift/string/">String</a>, usingInferredMapping: <a href="https://developer.apple.com/documentation/swift/bool/">Bool</a>, withMigrationManager: <a href="https://developer.apple.com/documentation/coredata/nsmigrationmanager/">NSMigrationManager</a>, toTemporaryLocation: <a href="https://developer.apple.com/documentation/foundation/url/">URL</a>, stepsRemaining: <a href="https://developer.apple.com/documentation/swift/int/">Int</a>, totalSteps: <a href="https://developer.apple.com/documentation/swift/int/">Int</a>)</code></pre>
+                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>,
+                         willSingleMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>,
+                         sourceModelVersion: <a href="https://developer.apple.com/documentation/swift/string/">String</a>,
+                         destinationModelVersion: <a href="https://developer.apple.com/documentation/swift/string/">String</a>,
+                         usingInferredMapping: <a href="https://developer.apple.com/documentation/swift/bool/">Bool</a>,
+                         withMigrationManager: <a href="https://developer.apple.com/documentation/coredata/nsmigrationmanager/">NSMigrationManager</a>,
+                         toTemporaryLocation: <a href="https://developer.apple.com/documentation/foundation/url/">URL</a>,
+                         stepsRemaining: <a href="https://developer.apple.com/documentation/swift/int/">Int</a>,
+                         totalSteps: <a href="https://developer.apple.com/documentation/swift/int/">Int</a>)</code></pre>
                     </div>
                     <h5>Parameters</h5>
                     <table class="j2-param-table">
@@ -437,7 +455,7 @@ because it is already at the latest version.</p>
                          </td>
                          <td>
                            <div>
-                             <p>The <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> asked to load the store.</p>
+                             <p>The <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> asked to load the store.</p>
                            </div>
                          </td>
                        </tr>
@@ -546,11 +564,11 @@ because it is already at the latest version.</p>
                 <div>
               </div>
             </section>
-            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF" class="j2-item">
+            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreySo012NSPersistentB0C_So0iH11DescriptionCtF" class="j2-item">
               <a name="//apple_ref/cpp/Method/persistentContainer(_:didMigrateStore:)" class="dashAnchor"></a>
               <h4 class="sr-only">persistentContainer(_:didMigrateStore:)</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF"><code>persistentContainer(_:<wbr>didMigrateStore:<wbr>)</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreyAA010PersistentB0C_So012NSPersistentH11DescriptionCtF">
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreySo012NSPersistentB0C_So0iH11DescriptionCtF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreySo012NSPersistentB0C_So0iH11DescriptionCtF"><code>persistentContainer(_:<wbr>didMigrateStore:<wbr>)</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_15didMigrateStoreySo012NSPersistentB0C_So0iH11DescriptionCtF">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -568,7 +586,8 @@ because it is already at the latest version.</p>
                     <h5>Declaration</h5>
                     <div class="j2-item-declaration">
                     <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
-                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="../Classes/PersistentContainer.html">PersistentContainer</a>, didMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>)</code></pre>
+                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>,
+                         didMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>)</code></pre>
                     </div>
                     <h5>Parameters</h5>
                     <table class="j2-param-table">
@@ -581,7 +600,7 @@ because it is already at the latest version.</p>
                          </td>
                          <td>
                            <div>
-                             <p>The <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> asked to load the store.</p>
+                             <p>The <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> asked to load the store.</p>
                            </div>
                          </td>
                        </tr>
@@ -606,11 +625,11 @@ because it is already at the latest version.</p>
                 <div>
               </div>
             </section>
-            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5erroryAA010PersistentB0C_So012NSPersistentJ11DescriptionCs5Error_ptF" class="j2-item">
+            <section id="s22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5errorySo012NSPersistentB0C_So0lJ11DescriptionCs5Error_ptF" class="j2-item">
               <a name="//apple_ref/cpp/Method/persistentContainer(_:didFailToMigrateStore:error:)" class="dashAnchor"></a>
               <h4 class="sr-only">persistentContainer(_:didFailToMigrateStore:error:)</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5erroryAA010PersistentB0C_So012NSPersistentJ11DescriptionCs5Error_ptF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5erroryAA010PersistentB0C_So012NSPersistentJ11DescriptionCs5Error_ptF"><code>persistentContainer(_:<wbr>didFailToMigrateStore:<wbr>error:<wbr>)</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5erroryAA010PersistentB0C_So012NSPersistentJ11DescriptionCs5Error_ptF">
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5errorySo012NSPersistentB0C_So0lJ11DescriptionCs5Error_ptF" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5errorySo012NSPersistentB0C_So0lJ11DescriptionCs5Error_ptF"><code>persistentContainer(_:<wbr>didFailToMigrateStore:<wbr>error:<wbr>)</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer17MigrationDelegateP010persistentB0_21didFailToMigrateStore5errorySo012NSPersistentB0C_So0lJ11DescriptionCs5Error_ptF">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -629,7 +648,9 @@ The <code>PersistentContainer.loadPersistentStores</code> error callback will be
                     <h5>Declaration</h5>
                     <div class="j2-item-declaration">
                     <div class="j2-callout-title" role="heading" aria-level="6">Swift</div>
-                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="../Classes/PersistentContainer.html">PersistentContainer</a>, didFailToMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>, error: <a href="https://developer.apple.com/documentation/accelerate/quadrature/error/">Error</a>)</code></pre>
+                    <pre><code class="language-swift">func persistent<a href="https://developer.apple.com/documentation/cloudkitjs/cloudkit/container/">Container</a>(_ container: <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>,
+                         didFailToMigrateStore: <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>,
+                         error: <a href="https://developer.apple.com/documentation/accelerate/quadrature/error/">Error</a>)</code></pre>
                     </div>
                     <h5>Parameters</h5>
                     <table class="j2-param-table">
@@ -642,7 +663,7 @@ The <code>PersistentContainer.loadPersistentStores</code> error callback will be
                          </td>
                          <td>
                            <div>
-                             <p>The <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> asked to load the store.</p>
+                             <p>The <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> asked to load the store.</p>
                            </div>
                          </td>
                        </tr>

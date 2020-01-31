@@ -20,7 +20,7 @@
   
     <div style="align-items-baseline">
       <div class="navbar-brand mr-1 font-weight-slightly-bold">
-        <a href="index.html">TMLPersistentContainer Docs</a>
+        <a href="index.html">TMLPersistentContainer 5.0.0</a>
       </div>
       <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
     </div>
@@ -85,6 +85,9 @@
                   <a class="j2-nav-item" href="Classes/PersistentContainer.html">PersistentContainer</a>
                 </li>
                 <li>
+                  <a class="j2-nav-item" href="Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a>
+                </li>
+                <li>
                   <a class="j2-nav-item" href="Enums/ModelVersionOrder.html">ModelVersionOrder</a>
                 </li>
                 <li>
@@ -135,16 +138,17 @@ Distributed under the ISC license, see LICENSE.
 
 <p><img src="SourceDocs/logo.png" alt="logo"></p>
 
-<p>A Swift extension to Core Data&rsquo;s <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> that automatically
-detects and performs multi-step store migration using the shortest valid
-sequence of migrations. The library supports both light-weight and
-heavy-weight migrations, multiple stores, progress reporting, and configurable
-logging.</p>
+<p>A set of Swift extensions to Core Data&rsquo;s <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> and
+<code><a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer/">NSPersistentCloudKitContainer</a></code> that automatically detect and perform
+multi-step store migration using the shortest valid sequence of migrations.
+The library supports both light-weight and heavy-weight migrations, multiple
+stores, progress reporting, and configurable logging.</p>
 <h2 id='example' class='j2-anchor heading'><span data-anchor-id=example>Example</span></h2>
 
-<p>Minimally replace the call to <code>NSPersistentContainer.init</code>:</p>
-<pre><code class="language-swift">container = PersistentContainer(name: &quot;MyStore&quot;,
-                                managedObjectModel: model)
+<p>Minimally replace the call to <code>NSPersistentContainer.init</code> or
+<code><a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer/">NSPersistentCloudKitContainer</a></code>:</p>
+<pre><code class="language-swift">container = PersistentCloudKitContainer(name: &quot;MyStore&quot;,
+                                        managedObjectModel: model)
 </code></pre>
 <p>Additional parameters optionally enable more features:</p>
 <pre><code class="language-swift">container = PersistentContainer(name: &quot;MyStore&quot;,
@@ -185,6 +189,10 @@ example.</li>
 <p>The library is based on <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> so requires a minimum
 deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS 3.0.</p>
 
+<p>The <code><a href="Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a></code> class is based on
+<code><a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer/">NSPersistentCloudKitContainer</a></code> so further requires a minimum deployment target
+of iOS 13.0, macOS 10.15, tvOS 13.0, or watchOS 6.0.`</p>
+
 <p>No additional software dependencies.</p>
 <h2 id='installation' class='j2-anchor heading'><span data-anchor-id=installation>Installation</span></h2>
 
@@ -192,7 +200,7 @@ deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS 3.0.</p>
 <pre><code class="language-">pod &#39;TMLPersistentContainer&#39;
 </code></pre>
 <p>Swift package manager:</p>
-<pre><code class="language-">.Package(url: &quot;https://github.com/johnfairh/TMLPersistentContainer/&quot;, majorVersion: 3)
+<pre><code class="language-">.Package(url: &quot;https://github.com/johnfairh/TMLPersistentContainer/&quot;, majorVersion: 5)
 </code></pre>
 <p>Carthage:</p>
 <pre><code class="language-">github &quot;johnfairh/TMLPersistentContainer&quot;

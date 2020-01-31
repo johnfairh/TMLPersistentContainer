@@ -20,7 +20,7 @@
   
     <div style="align-items-baseline">
       <div class="navbar-brand mr-1 font-weight-slightly-bold">
-        <a href="index.html">TMLPersistentContainer Docs</a>
+        <a href="index.html">TMLPersistentContainer 5.0.0</a>
       </div>
       <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
     </div>
@@ -83,6 +83,9 @@
               <ul class="j2-nav-sublist">
                 <li>
                   <a class="j2-nav-item" href="Classes/PersistentContainer.html">PersistentContainer</a>
+                </li>
+                <li>
+                  <a class="j2-nav-item" href="Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a>
                 </li>
                 <li>
                   <a class="j2-nav-item" href="Enums/ModelVersionOrder.html">ModelVersionOrder</a>
@@ -184,8 +187,9 @@ other explicit mappings.</p>
 <h1 id='creating-the-container' class='j2-anchor heading'><span data-anchor-id=creating-the-container>Creating the container</span></h1>
 
 <p>To start using the library replace references to <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code>
-with <a href="Classes/PersistentContainer.html"><code><a href="Classes/PersistentContainer.html">PersistentContainer</a></code></a>. The
-initializers are compatible though they have additional optional parameters.<br>
+with <code><a href="Classes/PersistentContainer.html">PersistentContainer</a></code> and references to <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer/">NSPersistentCloudKitContainer</a></code>
+with <code><a href="Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a></code>. The initializers are compatible though they
+have additional optional parameters.
 <a href="Classes/PersistentContainer.html">See the API</a>.</p>
 <h2 id='describing-the-valid-migrations' class='j2-anchor heading'><span data-anchor-id=describing-the-valid-migrations>Describing the valid migrations</span></h2>
 
@@ -239,8 +243,8 @@ rare.</p>
 <h1 id='loading-the-stores' class='j2-anchor heading'><span data-anchor-id=loading-the-stores>Loading the stores</span></h1>
 
 <p>This section describes what happens during
-<code>PersistentStore.loadPersistentStores</code>. Briefly, the library attempts the
-migration work, one store at a time. If this all succeeds then it invokes
+<code><a href="Classes/PersistentContainer.html#cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler">PersistentContainer.loadPersistentStores(...)</a></code>. Briefly, the library attempts
+the migration work, one store at a time. If this all succeeds then it invokes
 Core Data to load the migrated stores and return control to the client.</p>
 <h2 id='store-types' class='j2-anchor heading'><span data-anchor-id=store-types>Store types</span></h2>
 

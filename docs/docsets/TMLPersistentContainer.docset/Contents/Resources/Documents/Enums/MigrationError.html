@@ -20,7 +20,7 @@
   
     <div style="align-items-baseline">
       <div class="navbar-brand mr-1 font-weight-slightly-bold">
-        <a href="../index.html">TMLPersistentContainer Docs</a>
+        <a href="../index.html">TMLPersistentContainer 5.0.0</a>
       </div>
       <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
     </div>
@@ -85,6 +85,9 @@
                   <a class="j2-nav-item" href="../Classes/PersistentContainer.html">PersistentContainer</a>
                 </li>
                 <li>
+                  <a class="j2-nav-item" href="../Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a>
+                </li>
+                <li>
                   <a class="j2-nav-item" href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>
                 </li>
                 <li>
@@ -128,7 +131,8 @@ public enum MigrationError : <a href="https://developer.apple.com/documentation/
 
           <div class="clearfix">
             <p>Errors that can occur preventing persistent store loading, passed into the callback given to
-<code>PersistentContainer.loadPersistentStores</code>.</p>
+<code><a href="../Classes/PersistentContainer.html#cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler">PersistentContainer.loadPersistentStores(...)</a></code> or
+<code><a href="../Classes/PersistentCloudKitContainer.html#cMTMLPersistentContainerobjccsPersistentCloudKitContainerimloadPersistentStoresWithCompletionHandler">PersistentCloudKitContainer.loadPersistentStores(...)</a></code>.</p>
 
 <p>When any of these unusual conditions occurs, the persistent container provides a lot of
 human-readable (-ish) information to the logging interface. The first step to debugging
@@ -161,7 +165,7 @@ the app&rsquo;s stores with a mixture of versions this store load has been aband
                     <pre><code class="language-swift">case coreqMigrationFailed(<a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>)</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L24">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L25">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -192,7 +196,7 @@ This could mean:</p>
                     <pre><code class="language-swift">case bad<a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>(<a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>, <a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a>)</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L32">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L33">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -209,7 +213,7 @@ This could mean:</p>
                     <div class="clearfix">
                       <p>Migration cannot proceed because the persistent container cannot find a managed object model
 that is compatible with the persistent store&rsquo;s metadata in the bundles passed to
-<code>PersistentContainer.init</code>.
+<code><a href="../Classes/PersistentContainer.html#s22TMLPersistentContainer010PersistentB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModelgH0OyAA03LogJ0VcSgtcfc">PersistentContainer.init(...)</a></code> or <code><a href="../Classes/PersistentCloudKitContainer.html#s22TMLPersistentContainer018PersistentCloudKitB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModeliJ0OyAA03LogL0VcSgtcfc">PersistentCloudKitContainer.init(...)</a></code>.
 The enum parameters are the particular store with the problem and the metadata of that
 store that cannot be matched to a model.</p>
 
@@ -220,7 +224,7 @@ store that cannot be matched to a model.</p>
                     <pre><code class="language-swift">case cannotFindSourceModel(<a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>, [<a href="https://developer.apple.com/documentation/swift/string/">String</a> : Any])</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L39">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L40">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -236,8 +240,8 @@ store that cannot be matched to a model.</p>
                   <div class="j2-item-popopen-body">
                     <div class="clearfix">
                       <p>Migration cannot proceed because the persistent container cannot find an object model
-that matches the <code><a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectmodel/">NSManagedObjectModel</a></code> passed to <code>PersistentContainer.init(name:managedObjectModel:bundles:modelVersionOrder)</code>
-in the list of bundles.
+that matches the <code><a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectmodel/">NSManagedObjectModel</a></code> passed to <code><a href="../Classes/PersistentContainer.html#s22TMLPersistentContainer010PersistentB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModelgH0OyAA03LogJ0VcSgtcfc">PersistentContainer.init(...)</a></code>
+or <code><a href="../Classes/PersistentCloudKitContainer.html#s22TMLPersistentContainer018PersistentCloudKitB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModeliJ0OyAA03LogL0VcSgtcfc">PersistentCloudKitContainer.init(...)</a></code> in the list of bundles.
 This means either a bundle is missing from the list or the <code><a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectmodel/">NSManagedObjectModel</a></code> has been
 created by merging several models &ndash; this second use case is not currently supported by the library. Sorry.</p>
 
@@ -248,7 +252,7 @@ created by merging several models &ndash; this second use case is not currently 
                     <pre><code class="language-swift">case cannotFindDestinationModel(<a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/">NSPersistentStoreDescription</a>, <a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectmodel/">NSManagedObjectModel</a>)</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L46">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L47">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -265,8 +269,9 @@ created by merging several models &ndash; this second use case is not currently 
                     <div class="clearfix">
                       <p>Migration cannot proceed because the persistent container cannot find a migration path
 from the source model version (first string parameter) to the destination model version (second string
-parameter) using mapping models from the bundles passed to <code>PersistentContainer.init</code> combined
-with inferred mappings if enabled. Possible reasons include:</p>
+parameter) using mapping models from the bundles passed to <code><a href="../Classes/PersistentContainer.html#s22TMLPersistentContainer010PersistentB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModelgH0OyAA03LogJ0VcSgtcfc">PersistentContainer.init(...)</a></code>
+or <code><a href="../Classes/PersistentCloudKitContainer.html#s22TMLPersistentContainer018PersistentCloudKitB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModeliJ0OyAA03LogL0VcSgtcfc">PersistentCloudKitContainer.init(...)</a></code> combined with inferred mappings if enabled.
+Possible reasons include:</p>
 
 <ul>
 <li>The <code><a href="../Enums/ModelVersionOrder.html">ModelVersionOrder</a></code> given to the container is too strict/incorrect;</li>
@@ -283,7 +288,7 @@ with inferred mappings if enabled. Possible reasons include:</p>
                     <pre><code class="language-swift">case noRouteBetweenModels(<a href="https://developer.apple.com/documentation/swift/string/">String</a>, <a href="https://developer.apple.com/documentation/swift/string/">String</a>)</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L58">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L60">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -310,7 +315,7 @@ This probably means there are cycles in the persistent container&rsquo;s <code><
                     <pre><code class="language-swift">case cyclicRoute1(<a href="https://developer.apple.com/documentation/swift/string/">String</a>, <a href="https://developer.apple.com/documentation/swift/string/">String</a>)</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L64">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L66">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -337,7 +342,7 @@ This also probably means there are cycles in the persistent container&rsquo;s <c
                     <pre><code class="language-swift">case cyclicRoute2(<a href="https://developer.apple.com/documentation/swift/string/">String</a>, <a href="https://developer.apple.com/documentation/swift/string/">String</a>)</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L70">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L72">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -364,7 +369,7 @@ This ALSO probably means there are cycles in the persistent container&rsquo;s <c
                     <pre><code class="language-swift">case cyclicRoute3(<a href="https://developer.apple.com/documentation/swift/string/">String</a>, <a href="https://developer.apple.com/documentation/swift/string/">String</a>)</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L76">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L78">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -390,7 +395,7 @@ be welcome. The string parameter is a brief explanation of the problem.</p>
                     <pre><code class="language-swift">case logicFailure(<a href="https://developer.apple.com/documentation/swift/string/">String</a>)</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L81">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L83">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
@@ -414,7 +419,7 @@ be welcome. The string parameter is a brief explanation of the problem.</p>
                     <pre><code class="language-swift">public var description: <a href="https://developer.apple.com/documentation/swift/string/">String</a> { get }</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L87-L108">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/MigrationError.swift#L89-L110">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>

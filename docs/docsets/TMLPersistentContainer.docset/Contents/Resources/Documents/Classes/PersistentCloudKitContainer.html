@@ -6,7 +6,7 @@
  
     <link rel="stylesheet" href="../css/fw2020.css">
     
-    <title>PersistentContainer Class Reference</title>
+    <title>PersistentCloudKitContainer Class Reference</title>
     
   </head>
   <body data-root-path="./../">
@@ -56,7 +56,7 @@
   <nav aria-label="breadcrumb" class="small">
     <ol class="breadcrumb j2-breadcrumb">
       <li class="breadcrumb-item"><a href="../index.html">TMLPersistentContainer Reference</a></li>
-      <li class="breadcrumb-item" aria-current="page">PersistentContainer Class Reference</li>
+      <li class="breadcrumb-item" aria-current="page">PersistentCloudKitContainer Class Reference</li>
     </ol>
   </nav>
 
@@ -120,21 +120,22 @@
         <section>
           <header>
             <h1 class="j2-anchor">
-              <span>PersistentContainer</span>
+              <span>PersistentCloudKitContainer</span>
             </h1>
           </header>
           <div class="j2-callout j2-callout-declaration">
             <div class="j2-callout-title" role="heading" aria-level="5">Swift?</div>
-            <pre><code class="language-swift">@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-open class PersistentContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a>, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter</code></pre>
+            <pre><code class="language-swift">@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+open class PersistentCloudKitContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer/">NSPersistentCloudKitContainer</a>, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter</code></pre>
           </div>
 
           <div class="clearfix">
             <p>A container for a Core Data stack that provides automatic multi-step shortest-path
-persistent store migration.</p>
+persistent store migration, capable of managing both CloudKit-backed and non-cloud stores.</p>
 
-<p>This is a drop-in replacement for <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/">NSPersistentContainer</a></code> that automatically detects
-and performs multi-step store migration as part of the <code>loadPersistentStores</code> method.</p>
+<p>This is a drop-in replacement for <code><a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer/">NSPersistentCloudKitContainer</a></code> that
+automatically detects and performs multi-step store migration as part of the
+<code>loadPersistentStores</code> method.</p>
 
 <p>The container searches for models and mapping models, then constructs the
 best sequence in which to migrate stores. It prefers to use explicit mapping models
@@ -143,8 +144,7 @@ reported back to the client code.</p>
 
 <p>See <a href="https://johnfairh.github.io/TMLPersistentContainer/usage.html">the user guide</a> for more details.</p>
 
-<p>See <code><a href="../Classes/PersistentCloudKitContainer.html">PersistentCloudKitContainer</a></code> for a version capable of managing both
-CloudKit-backed and non-cloud stores..</p>
+<p>See <code><a href="../Classes/PersistentContainer.html">PersistentContainer</a></code> for a version that does not support CloudKit-backed stores.</p>
 
           </div>
         </section>
@@ -153,11 +153,11 @@ CloudKit-backed and non-cloud stores..</p>
         <section>
           <h1 class="sr-only">Topics</h1>
           <section>
-            <section id="s22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgvp" class="j2-item">
+            <section id="s22TMLPersistentContainer018PersistentCloudKitB0C17migrationDelegateAA09MigrationG0_pSgvp" class="j2-item">
               <a name="//apple_ref/cpp/Property/migrationDelegate" class="dashAnchor"></a>
               <h4 class="sr-only">migrationDelegate</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgvp" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgvp"><code>migrationDelegate</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer010PersistentB0C17migrationDelegateAA09MigrationE0_pSgvp">
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer018PersistentCloudKitB0C17migrationDelegateAA09MigrationG0_pSgvp" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer018PersistentCloudKitB0C17migrationDelegateAA09MigrationG0_pSgvp"><code>migrationDelegate</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer018PersistentCloudKitB0C17migrationDelegateAA09MigrationG0_pSgvp">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -171,17 +171,17 @@ CloudKit-backed and non-cloud stores..</p>
                     <pre><code class="language-swift">public weak var migrationDelegate: <a href="../Protocols/MigrationDelegate.html">MigrationDelegate</a>?</code></pre>
                     </div>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L160">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentCloudKitContainer.swift#L43">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
               </div>
             </section>
-            <section id="s22TMLPersistentContainer010PersistentB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModelgH0OyAA03LogJ0VcSgtcfc" class="j2-item">
+            <section id="s22TMLPersistentContainer018PersistentCloudKitB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModeliJ0OyAA03LogL0VcSgtcfc" class="j2-item">
               <a name="//apple_ref/cpp/Method/init(name:bundles:modelVersionOrder:logMessageHandler:)" class="dashAnchor"></a>
               <h4 class="sr-only">init(name:bundles:modelVersionOrder:logMessageHandler:)</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer010PersistentB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModelgH0OyAA03LogJ0VcSgtcfc" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer010PersistentB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModelgH0OyAA03LogJ0VcSgtcfc"><code>init(name:<wbr>bundles:<wbr>modelVersionOrder:<wbr>logMessageHandler:<wbr>)</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer010PersistentB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModelgH0OyAA03LogJ0VcSgtcfc">
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer018PersistentCloudKitB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModeliJ0OyAA03LogL0VcSgtcfc" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer018PersistentCloudKitB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModeliJ0OyAA03LogL0VcSgtcfc"><code>init(name:<wbr>bundles:<wbr>modelVersionOrder:<wbr>logMessageHandler:<wbr>)</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer018PersistentCloudKitB0C4name7bundles17modelVersionOrder17logMessageHandlerACSS_SaySo8NSBundleCGAA05ModeliJ0OyAA03LogL0VcSgtcfc">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -262,17 +262,17 @@ CloudKit-backed and non-cloud stores..</p>
                       </tbody>
                     </table>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L186-L210">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentCloudKitContainer.swift#L69-L88">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
               </div>
             </section>
-            <section id="s22TMLPersistentContainer010PersistentB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedfG0CSaySo8NSBundleCGAA0gjK0OyAA03LogM0VcSgtcfc" class="j2-item">
+            <section id="s22TMLPersistentContainer018PersistentCloudKitB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedhI0CSaySo8NSBundleCGAA0ilM0OyAA03LogO0VcSgtcfc" class="j2-item">
               <a name="//apple_ref/cpp/Method/init(name:managedObjectModel:bundles:modelVersionOrder:logMessageHandler:)" class="dashAnchor"></a>
               <h4 class="sr-only">init(name:managedObjectModel:bundles:modelVersionOrder:logMessageHandler:)</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer010PersistentB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedfG0CSaySo8NSBundleCGAA0gjK0OyAA03LogM0VcSgtcfc" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer010PersistentB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedfG0CSaySo8NSBundleCGAA0gjK0OyAA03LogM0VcSgtcfc"><code>init(name:<wbr>managedObjectModel:<wbr>bundles:<wbr>modelVersionOrder:<wbr>logMessageHandler:<wbr>)</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer010PersistentB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedfG0CSaySo8NSBundleCGAA0gjK0OyAA03LogM0VcSgtcfc">
+              <a class="j2-item-title" data-toggle="collapse" href="#_s22TMLPersistentContainer018PersistentCloudKitB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedhI0CSaySo8NSBundleCGAA0ilM0OyAA03LogO0VcSgtcfc" role="button" aria-expanded="false" aria-controls="_s22TMLPersistentContainer018PersistentCloudKitB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedhI0CSaySo8NSBundleCGAA0ilM0OyAA03LogO0VcSgtcfc"><code>init(name:<wbr>managedObjectModel:<wbr>bundles:<wbr>modelVersionOrder:<wbr>logMessageHandler:<wbr>)</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_s22TMLPersistentContainer018PersistentCloudKitB0C4name18managedObjectModel7bundles17modelVersionOrder17logMessageHandlerACSS_So09NSManagedhI0CSaySo8NSBundleCGAA0ilM0OyAA03LogO0VcSgtcfc">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -361,17 +361,17 @@ CloudKit-backed and non-cloud stores..</p>
                       </tbody>
                     </table>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L230-L239">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentCloudKitContainer.swift#L108-L117">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
               </div>
             </section>
-            <section id="cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler" class="j2-item">
+            <section id="cMTMLPersistentContainerobjccsPersistentCloudKitContainerimloadPersistentStoresWithCompletionHandler" class="j2-item">
               <a name="//apple_ref/cpp/Method/loadPersistentStores(completionHandler:)" class="dashAnchor"></a>
               <h4 class="sr-only">loadPersistentStores(completionHandler:)</h4>
-              <a class="j2-item-title" data-toggle="collapse" href="#_cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler" role="button" aria-expanded="false" aria-controls="_cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler"><code>loadPersistentStores(completionHandler:<wbr>)</code></a>
-              <div class="collapse j2-item-popopen-wrapper" id="_cMTMLPersistentContainerobjccsPersistentContainerimloadPersistentStoresWithCompletionHandler">
+              <a class="j2-item-title" data-toggle="collapse" href="#_cMTMLPersistentContainerobjccsPersistentCloudKitContainerimloadPersistentStoresWithCompletionHandler" role="button" aria-expanded="false" aria-controls="_cMTMLPersistentContainerobjccsPersistentCloudKitContainerimloadPersistentStoresWithCompletionHandler"><code>loadPersistentStores(completionHandler:<wbr>)</code></a>
+              <div class="collapse j2-item-popopen-wrapper" id="_cMTMLPersistentContainerobjccsPersistentCloudKitContainerimloadPersistentStoresWithCompletionHandler">
                 <div class="j2-item-popopen">
                   <div class="j2-item-popopen-pointer" role="none"></div>
                   <div class="j2-item-popopen-body">
@@ -421,7 +421,7 @@ are migrated successfully or none are.</p>
                       </tbody>
                     </table>
                     <nav class="j2-item-nav" aria-label="item details">
-                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentContainer.swift#L264-L270">Show on GitHub</a></span>
+                      <span class="j2-item-nav-item"><a href="https://github.com/johnfairh/TMLPersistentContainer/tree/master/Sources/PersistentCloudKitContainer.swift#L142-L148">Show on GitHub</a></span>
                     </nav>
                   </div>
                 <div>
