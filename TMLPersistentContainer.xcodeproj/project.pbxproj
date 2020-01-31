@@ -137,6 +137,13 @@
 		52D6D9871BEFF229002C0205 /* TMLPersistentContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* TMLPersistentContainer.framework */; };
 		DD7502881C68FEDE006590AF /* TMLPersistentContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* TMLPersistentContainer.framework */; };
 		DD7502921C690C7A006590AF /* TMLPersistentContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* TMLPersistentContainer.framework */; };
+		DD75716423DD7DBE00E825EC /* PersistentCloudKitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75716223DD7DBE00E825EC /* PersistentCloudKitContainer.swift */; };
+		DD75716523DD7DBE00E825EC /* PersistentCloudKitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75716223DD7DBE00E825EC /* PersistentCloudKitContainer.swift */; };
+		DD75716623DD7DBE00E825EC /* PersistentCloudKitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75716223DD7DBE00E825EC /* PersistentCloudKitContainer.swift */; };
+		DD75716723DD7DBE00E825EC /* PersistentCloudKitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75716223DD7DBE00E825EC /* PersistentCloudKitContainer.swift */; };
+		DD75716D23DD811800E825EC /* TestSequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75716C23DD811800E825EC /* TestSequence+Extension.swift */; };
+		DD75716E23DD812000E825EC /* TestSequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75716C23DD811800E825EC /* TestSequence+Extension.swift */; };
+		DD75716F23DD812100E825EC /* TestSequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75716C23DD811800E825EC /* TestSequence+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +241,8 @@
 		AD2FAA281CD0B6E100659CF4 /* TMLPersistentContainerTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TMLPersistentContainerTests.plist; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* TMLPersistentContainer-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMLPersistentContainer-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD75028D1C690C7A006590AF /* TMLPersistentContainer-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMLPersistentContainer-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD75716223DD7DBE00E825EC /* PersistentCloudKitContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentCloudKitContainer.swift; path = Sources/PersistentCloudKitContainer.swift; sourceTree = "<group>"; };
+		DD75716C23DD811800E825EC /* TestSequence+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TestSequence+Extension.swift"; path = "Tests/TMLPersistentContainerTests/TestSequence+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				02FE15341E80384A00FF077C /* PersistentContainer.swift */,
+				DD75716223DD7DBE00E825EC /* PersistentCloudKitContainer.swift */,
 				02FE15331E80384A00FF077C /* PersistentContainer+Migration.swift */,
 				02FE15351E80384A00FF077C /* NSPersistentStoreDescription+Metadata.swift */,
 				02FE15361E80384A00FF077C /* ModelVersionOrder.swift */,
@@ -334,6 +344,7 @@
 				02FE158C1E80394300FF077C /* TestCreateDelete.swift */,
 				02FE158E1E80394300FF077C /* TestCase.swift */,
 				02FE158F1E80394300FF077C /* TestBugs.swift */,
+				DD75716C23DD811800E825EC /* TestSequence+Extension.swift */,
 				02FE15901E80394300FF077C /* SimpleModel.swift */,
 				02FE15911E80394300FF077C /* MultiConfigModel.swift */,
 				02FE15921E80394300FF077C /* ModelNames.swift */,
@@ -611,7 +622,6 @@
 					};
 					52D6D9851BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = D243YH28Y6;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -749,6 +759,7 @@
 				02FE153F1E80384A00FF077C /* PersistentContainer+Migration.swift in Sources */,
 				02FE15481E80384A00FF077C /* LogMessage.swift in Sources */,
 				02FE15421E80384A00FF077C /* ModelVersionOrder.swift in Sources */,
+				DD75716423DD7DBE00E825EC /* PersistentCloudKitContainer.swift in Sources */,
 				02FE15471E80384A00FF077C /* MigrationDelegate.swift in Sources */,
 				02FE15491E80384A00FF077C /* Helpers.swift in Sources */,
 				02FE15451E80384A00FF077C /* ModelVersionEdge.swift in Sources */,
@@ -782,6 +793,7 @@
 				02FE15951E80394300FF077C /* TestSimpleMigrate.swift in Sources */,
 				02FE15C21E80394300FF077C /* TestLogging.swift in Sources */,
 				02FE159E1E80394300FF077C /* TestModelVersionOrder.swift in Sources */,
+				DD75716D23DD811800E825EC /* TestSequence+Extension.swift in Sources */,
 				02FE15A71E80394300FF077C /* TestModel_Simple_Mapping12.xcmappingmodel in Sources */,
 				02FE15D71E80394300FF077C /* MultiConfigModel.swift in Sources */,
 			);
@@ -797,6 +809,7 @@
 				02FE154C1E80385600FF077C /* PersistentContainer+Migration.swift in Sources */,
 				02FE15611E80385C00FF077C /* LogMessage.swift in Sources */,
 				02FE155B1E80385C00FF077C /* ModelVersionOrder.swift in Sources */,
+				DD75716623DD7DBE00E825EC /* PersistentCloudKitContainer.swift in Sources */,
 				02FE15601E80385C00FF077C /* MigrationDelegate.swift in Sources */,
 				02FE15621E80385C00FF077C /* Helpers.swift in Sources */,
 				02FE155E1E80385C00FF077C /* ModelVersionEdge.swift in Sources */,
@@ -816,6 +829,7 @@
 				02FE154D1E80385700FF077C /* PersistentContainer+Migration.swift in Sources */,
 				02FE156C1E80385D00FF077C /* LogMessage.swift in Sources */,
 				02FE15661E80385D00FF077C /* ModelVersionOrder.swift in Sources */,
+				DD75716723DD7DBE00E825EC /* PersistentCloudKitContainer.swift in Sources */,
 				02FE156B1E80385D00FF077C /* MigrationDelegate.swift in Sources */,
 				02FE156D1E80385D00FF077C /* Helpers.swift in Sources */,
 				02FE15691E80385D00FF077C /* ModelVersionEdge.swift in Sources */,
@@ -835,6 +849,7 @@
 				02FE154B1E80385500FF077C /* PersistentContainer+Migration.swift in Sources */,
 				02FE15561E80385B00FF077C /* LogMessage.swift in Sources */,
 				02FE15501E80385B00FF077C /* ModelVersionOrder.swift in Sources */,
+				DD75716523DD7DBE00E825EC /* PersistentCloudKitContainer.swift in Sources */,
 				02FE15551E80385B00FF077C /* MigrationDelegate.swift in Sources */,
 				02FE15571E80385B00FF077C /* Helpers.swift in Sources */,
 				02FE15531E80385B00FF077C /* ModelVersionEdge.swift in Sources */,
@@ -868,6 +883,7 @@
 				02FE15961E80394300FF077C /* TestSimpleMigrate.swift in Sources */,
 				02FE15C31E80394300FF077C /* TestLogging.swift in Sources */,
 				02FE159F1E80394300FF077C /* TestModelVersionOrder.swift in Sources */,
+				DD75716E23DD812000E825EC /* TestSequence+Extension.swift in Sources */,
 				02FE15A81E80394300FF077C /* TestModel_Simple_Mapping12.xcmappingmodel in Sources */,
 				02FE15D81E80394300FF077C /* MultiConfigModel.swift in Sources */,
 			);
@@ -897,6 +913,7 @@
 				02FE15971E80394300FF077C /* TestSimpleMigrate.swift in Sources */,
 				02FE15C41E80394300FF077C /* TestLogging.swift in Sources */,
 				02FE15A01E80394300FF077C /* TestModelVersionOrder.swift in Sources */,
+				DD75716F23DD812100E825EC /* TestSequence+Extension.swift in Sources */,
 				02FE15A91E80394300FF077C /* TestModel_Simple_Mapping12.xcmappingmodel in Sources */,
 				02FE15D91E80394300FF077C /* MultiConfigModel.swift in Sources */,
 			);
@@ -939,6 +956,7 @@
 				OTHER_LDFLAGS = (
 					"-rpath",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx,
+					"-fprofile-instr-generate",
 				);
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -960,6 +978,7 @@
 				OTHER_LDFLAGS = (
 					"-rpath",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx,
+					"-fprofile-instr-generate",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1144,7 +1163,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = D243YH28Y6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Configs/TMLPersistentContainerTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-iOS-Tests";
@@ -1160,7 +1179,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = D243YH28Y6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Configs/TMLPersistentContainerTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-iOS-Tests";

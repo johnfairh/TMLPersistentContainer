@@ -17,19 +17,20 @@ Automatic shortest-path multi-step Core Data migrations in Swift.
 
 ![logo](SourceDocs/logo.png)
 
-A Swift extension to Core Data's `NSPersistentContainer` that automatically
-detects and performs multi-step store migration using the shortest valid
-sequence of migrations. The library supports both light-weight and
-heavy-weight migrations, multiple stores, progress reporting, and configurable
-logging.
+A set of Swift extensions to Core Data's `NSPersistentContainer` and
+`NSPersistentCloudKitContainer` that automatically detect and perform
+multi-step store migration using the shortest valid sequence of migrations.
+The library supports both light-weight and heavy-weight migrations, multiple
+stores, progress reporting, and configurable logging.
 
 ## Example
 
-Minimally replace the call to `NSPersistentContainer.init`:
+Minimally replace the call to `NSPersistentContainer.init` or
+`NSPersistentCloudKitContainer`:
 
 ```swift
-container = PersistentContainer(name: "MyStore",
-                                managedObjectModel: model)
+container = PersistentCloudKitContainer(name: "MyStore",
+                                        managedObjectModel: model)
 ```
 
 Additional parameters optionally enable more features:
@@ -65,6 +66,10 @@ Swift 5 or later, Xcode 10.2 or later.
 The library is based on `NSPersistentContainer` so requires a minimum
 deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS 3.0.
 
+The `PersistentCloudKitContainer` class is based on
+`NSPersistentCloudKitContainer` so further requires a minimum deployment target
+of iOS 13.0, macOS 10.15, tvOS 13.0, or watchOS 6.0.`
+
 No additional software dependencies.
 
 ## Installation
@@ -75,7 +80,7 @@ CocoaPods:
 
 Swift package manager:
 
-    .Package(url: "https://github.com/johnfairh/TMLPersistentContainer/", majorVersion: 3)
+    .Package(url: "https://github.com/johnfairh/TMLPersistentContainer/", majorVersion: 5)
 
 Carthage:
 

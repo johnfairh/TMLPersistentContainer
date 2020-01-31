@@ -62,8 +62,9 @@ The rest of this document describes
 # Creating the container
 
 To start using the library replace references to `NSPersistentContainer`
-with [`PersistentContainer`](Classes/PersistentContainer.html). The
-initializers are compatible though they have additional optional parameters.  
+with `PersistentContainer` and references to `NSPersistentCloudKitContainer`
+with `PersistentCloudKitContainer`. The initializers are compatible though they
+have additional optional parameters.
 [See the API](Classes/PersistentContainer.html).
 
 ## Describing the valid migrations
@@ -121,8 +122,8 @@ The `debug` level is for interest/library debugging/problem reporting.
 # Loading the stores
 
 This section describes what happens during
-`PersistentStore.loadPersistentStores`. Briefly, the library attempts the
-migration work, one store at a time. If this all succeeds then it invokes
+`PersistentContainer.loadPersistentStores(...)`. Briefly, the library attempts
+the migration work, one store at a time. If this all succeeds then it invokes
 Core Data to load the migrated stores and return control to the client.
 
 ## Store types

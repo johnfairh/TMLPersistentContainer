@@ -19,6 +19,7 @@ custom_categories:
       abstract: These types form the main API.
       children:
           - PersistentContainer
+          - PersistentCloudKitContainer
           - ModelVersionOrder
           - MigrationError
           - MigrationDelegate

@@ -56,8 +56,9 @@ public struct LogMessage: CustomStringConvertible {
         return level.rawValue + ": " + body()
     }
 
-    /// A log message handler callback that can be passed to `PersistentContainer.init` to receive
-    /// various informational messages that may be of interest to clients for their own logs.
+    /// A log message handler callback that can be passed to `PersistentContainer.init(...)`
+    /// or `PersistentCloudKitContainer.init(...)` to receive various informational messages
+    /// that may be of interest to clients for their own logs.
     public typealias Handler = (LogMessage) -> Void
 }
 

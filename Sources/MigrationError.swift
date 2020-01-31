@@ -9,7 +9,8 @@ import Foundation
 import CoreData
 
 /// Errors that can occur preventing persistent store loading, passed into the callback given to
-/// `PersistentContainer.loadPersistentStores`.
+/// `PersistentContainer.loadPersistentStores(...)` or
+/// `PersistentCloudKitContainer.loadPersistentStores(...)`.
 ///
 /// When any of these unusual conditions occurs, the persistent container provides a lot of
 /// human-readable (-ish) information to the logging interface. The first step to debugging
@@ -33,22 +34,23 @@ public enum MigrationError: Error {
 
     /// Migration cannot proceed because the persistent container cannot find a managed object model
     /// that is compatible with the persistent store's metadata in the bundles passed to
-    /// `PersistentContainer.init`.
+    /// `PersistentContainer.init(...)` or `PersistentCloudKitContainer.init(...)`.
     /// The enum parameters are the particular store with the problem and the metadata of that
     /// store that cannot be matched to a model.
     case cannotFindSourceModel(NSPersistentStoreDescription, [String:Any])
 
     /// Migration cannot proceed because the persistent container cannot find an object model
-    /// that matches the `NSManagedObjectModel` passed to `PersistentContainer.init(name:managedObjectModel:bundles:modelVersionOrder)`
-    /// in the list of bundles.
+    /// that matches the `NSManagedObjectModel` passed to `PersistentContainer.init(...)`
+    /// or `PersistentCloudKitContainer.init(...)` in the list of bundles.
     /// This means either a bundle is missing from the list or the `NSManagedObjectModel` has been
     /// created by merging several models -- this second use case is not currently supported by the library. Sorry.
     case cannotFindDestinationModel(NSPersistentStoreDescription, NSManagedObjectModel)
 
     /// Migration cannot proceed because the persistent container cannot find a migration path
     /// from the source model version (first string parameter) to the destination model version (second string
-    /// parameter) using mapping models from the bundles passed to `PersistentContainer.init` combined
-    /// with inferred mappings if enabled. Possible reasons include:
+    /// parameter) using mapping models from the bundles passed to `PersistentContainer.init(...)`
+    /// or `PersistentCloudKitContainer.init(...)` combined with inferred mappings if enabled.
+    /// Possible reasons include:
     ///
     ///  * The `ModelVersionOrder` given to the container is too strict/incorrect;
     ///  * Intermediate data model versions have been incorrectly deleted from the app's bundles;

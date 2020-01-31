@@ -10,10 +10,35 @@ import CoreData
 
 /// A store that has been migrated -- its description and the file URL of its temporary location
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-struct MigratedStore
-{
+struct MigratedStore {
     let description: NSPersistentStoreDescription
     let tempURL: URL
+}
+
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+protocol PersistentContainerMigratable: NSPersistentContainer, LogMessageEmitter {
+    
+    /// User's model version order.
+    var modelVersionOrder: ModelVersionOrder { get }
+
+    /// List of bundles to search for Core Data models.
+    var bundles: [Bundle] { get }
+    
+    var migrationDelegate: MigrationDelegate? { get }
+    
+    /// Core Data model version graph discovered from the bundles.
+    var modelVersionGraph: ModelVersionGraph? { get set }
+    
+    /// Migrate all the stores as necessary.  Must call `errorCallback` for all or none of the stores.
+    func migrateStores(descriptions: [NSPersistentStoreDescription],
+                       errorCallback: (NSPersistentStoreDescription,Error) -> Void)
+    
+    /// Migration of a single store.  Attempt to migrate the store described by 'description' that
+    /// currently has metadata 'storeMetadata' up to a model version compatible with the
+    /// 'managedObjectModel' property of the container.
+    func migrateStore(description: NSPersistentStoreDescription,
+                      storeMetadata: PersistentStoreMetadata,
+                      tempDirectory: TemporaryDirectory) throws -> MigratedStore
 }
 
 /// This file contains the top-level store migration code.
@@ -49,7 +74,7 @@ struct MigratedStore
 /// store marked with a filesystem error from `replacePersistentStore`.  When the user fixes their
 /// filesystem and retries this, everything should be fine.
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension PersistentContainer {
+extension PersistentContainerMigratable {
 
     /// Migrate all the stores as necessary.  Must call `errorCallback` for all or none of the stores.
     func migrateStores(descriptions: [NSPersistentStoreDescription],
