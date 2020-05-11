@@ -1,0 +1,6 @@
+{
+  "modules" : [
+    "TMLPersistentContainer"
+  ],
+  "version" : "1.0"
+}

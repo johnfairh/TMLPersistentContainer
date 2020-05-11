@@ -7,13 +7,13 @@ Distributed under the ISC license, see LICENSE.
 
 *This document assumes you are a developer using Core Data and you are
 interested in supporting store migration from different model versions.
-If that's not you, [read some more background information](background.html).*
+If that's not you, [read some more background information](Background.md).*
 
 This library provides optimal multi-step Core Data store migration. Here's
 an example diagram of an app's model version history, where each circle is a
 deployed model version:
 
-![A model version history](SourceDocs/usage1.png)
+![A model version history](usage1.png)
 
 V5 is our latest version; the user could have any of V1-V4 on their device when
 they install V5.
@@ -41,7 +41,7 @@ mapping model to upgrade the stores from V5. To improve the experience of the
 large number of users running V2 of the app the developer provides a further
 mapping model from V2 to V6:
 
-![Another model version history](SourceDocs/usage2.png)
+![Another model version history](usage2.png)
 
 The library now generates migration paths:
 
@@ -64,8 +64,7 @@ The rest of this document describes
 To start using the library replace references to `NSPersistentContainer`
 with `PersistentContainer` and references to `NSPersistentCloudKitContainer`
 with `PersistentCloudKitContainer`. The initializers are compatible though they
-have additional optional parameters.
-[See the API](Classes/PersistentContainer.html).
+have additional optional parameters.  See `PersistentContainer`.
 
 ## Describing the valid migrations
 
@@ -93,7 +92,7 @@ example `.pairList([("FirstVer", "SecondVer"), ("SecondVer", "ThirdVer")])`.
 Note that this has a different meaning to the `list` example which permits a
 migration from 'FirstVer' directly to 'ThirdVer'.
 
-[Jump to the API reference for ModelVersionOrder](Enums/ModelVersionOrder.html).
+See `ModelVersionOrder`.
 
 ## Finding data and mapping models
 
@@ -109,15 +108,15 @@ at some point.
 The `logMessageHandler` parameter is an optional closure that if set is passed
 logging messages from the library on any queue. If your app maintains a text
 log as part of its debug strategy then you may wish to include messages of at
-least level `error` and `warning`.
+least level `.error` and `.warning`.
 
 As long as you are not too pressed for space it would be worth including the
-`info` level as well -- somewhat verbose during actual migrations but these are
+`.info` level as well -- somewhat verbose during actual migrations but these are
 rare.
 
-The `debug` level is for interest/library debugging/problem reporting.
+The `.debug` level is for interest/library debugging/problem reporting.
 
-[Jump to the API reference for LogMessage](Structs/LogMessage.html).
+See `LogMessage`.
 
 # Loading the stores
 
@@ -151,8 +150,7 @@ mapping models created in Xcode are used.
 
 ## Using the delegate to track migrations
 
-An implementation of the [`MigrationDelegate`
-protocol](Protocols/MigrationDelegate.html) may be assigned to
+An implementation of the `MigrationDelegate` protocol may be assigned to
 `PersistentContainer.migrationDelegate`.
 
 Delegate calls are used to inform the client of migration progress. This can be
@@ -167,15 +165,14 @@ Delegate method calls are made on the queue that is performing the migration.
 This depends on `NSPersistentStoreDescription.shouldAddStoreAsynchronously`,
 see [above](#nspersistentstoredescription-flags).
 
-[Jump to the API reference for MigrationDelegate]
-(Protocols/MigrationDelegate.html).
+See `MigrationDelegate`.
 
 ## Error reporting
 
 If the library finds a problem during migration then it invokes the client
 completion handler passed to `loadPersistentStores`. The errors that can be
 reported include various from Foundation and Core Data, as well as several
-specific to this library [that are described here](Enums/MigrationError.html).
+specific to this library described in `MigrationError`.
 
 ## Working with multiple stores
 

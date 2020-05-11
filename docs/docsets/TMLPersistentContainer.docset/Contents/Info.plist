@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>CFBundleIdentifier</key>
-      <string>com.jazzy.tmlpersistentcontainer</string>
+      <string>com.bebop.tmlpersistentcontainer</string>
     <key>CFBundleName</key>
       <string>TMLPersistentContainer</string>
     <key>DocSetPlatformFamily</key>
@@ -16,5 +16,8 @@
       <true/>
     <key>DashDocSetFamily</key>
       <string>dashtoc</string>
+    
+    <key>DashDocSetFallbackURL</key>
+   <string>https://johnfairh.github.io/TMLPersistentContainer/</string>
   </dict>
 </plist>

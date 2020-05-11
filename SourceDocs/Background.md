@@ -8,7 +8,7 @@ Distributed under the ISC license, see LICENSE.
 *This document is background on the Core Data
 migration-from-multiple-model-versions problem. If you are a developer who
 uses Core Data and knows all about this then you should probably [read the user
-guide instead](usage.html).*
+guide instead](Usage.md).*
 
 Developers change their Core Data models over time to support new requirements.
 If a user upgrades the app on their device and the new version of the app has a
@@ -54,4 +54,4 @@ developers to minimize the long migration sequences that can occur in mature
 apps and to take advantage of the light-weight migrations enabled by inferred
 mapping models.
 
-[Read the user guide to find out how](usage.html).
+[Read the user guide to find out how](Usage.md).
