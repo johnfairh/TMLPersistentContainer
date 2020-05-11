@@ -8,8 +8,12 @@ readme: README.md
 github_url: https://github.com/johnfairh/TMLPersistentContainer
 github_file_prefix: https://github.com/johnfairh/TMLPersistentContainer/tree/master
 documentation: SourceDocs/*md
+media:
+  - SourceDocs/*svg
+  - SourceDocs/*png
 clean: true
-theme: fullwidth
+theme: fw2020
+deployment_url: https://johnfairh.github.io/TMLPersistentContainer/
 
 custom_categories:
     - name: Guides
