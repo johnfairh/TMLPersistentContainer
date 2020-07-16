@@ -12,6 +12,14 @@
 
 * None.
 
+## 5.0.1
+
+### Bug Fixes
+
+* Don't generate empty targets list on Linux.  
+  [John Fairhurst](https://github.com/johnfairh)
+  [#16](https://github.com/johnfairh/TMLPersistentContainer/issues/11)
+
 ## 5.0.0
 
 #### Breaking
