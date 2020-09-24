@@ -83,7 +83,7 @@ final class SimpleModel {
             fatalError("Cannot cast object to SimpleItem_1 -- wrong model loaded")
         }
         
-        v1.id = id
+        v1.id1 = id
         return v1
     }
 
@@ -93,7 +93,7 @@ final class SimpleModel {
             fatalError("Cannot cast object to SimpleItem_2 -- wrong model loaded")
         }
         
-        v2.id = Int32(id)
+        v2.id1 = Int32(id)
         return v2
     }
     
@@ -103,7 +103,7 @@ final class SimpleModel {
             fatalError("Cannot cast object to SimpleItem_3 -- wrong model loaded")
         }
         
-        v3.id = id
+        v3.id1 = id
         v3.count = id
         return v3
     }

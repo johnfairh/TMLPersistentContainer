@@ -68,7 +68,7 @@ func validateTMLStore() {
 
     let objects = SimpleModel.getAllObjectsV1(context: container.viewContext)
     precondition(objects.count == Constants.ObjectCount, "Wrong object count")
-    precondition(objects[0].id == Constants.ObjectName, "Wrong object contents!")
+    precondition(objects[0].id1 == Constants.ObjectName, "Wrong object contents!")
 }
 
 wipeStoreFiles()
