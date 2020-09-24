@@ -34,13 +34,13 @@ class SimpleItemMigrationPolicy1to2: NSEntityMigrationPolicy {
         }
         let dInstance = dInstances[0]
         
-        guard let v1id = sInstance.value(forKey: #keyPath(SimpleItem_1.id)) as? String else {
+        guard let v1id = sInstance.value(forKey: #keyPath(SimpleItem_1.id1)) as? String else {
             fatalError("Can't read V1 id string from \(sInstance)")
         }
             
         let v2id = Int32(v1id)!
         
-        dInstance.setValue(NSNumber(value: v2id), forKey: #keyPath(SimpleItem_2.id))
+        dInstance.setValue(NSNumber(value: v2id), forKey: #keyPath(SimpleItem_2.id1))
     }
 }
 
@@ -82,24 +82,24 @@ class TestSimpleMigrate: TestCase {
 
     /// Helper - verify the store at V2
     private func verifyStoreV2(container: PersistentContainer) {
-        let objects = SimpleModel.getAllObjectsV2(context: container.viewContext).sorted { $0.id < $1.id }
+        let objects = SimpleModel.getAllObjectsV2(context: container.viewContext).sorted { $0.id1 < $1.id1 }
         
         XCTAssertEqual(objects.count, Constants.OBJ_COUNT, "Bad number of objects in V2 store")
 
-        XCTAssertEqual(objects[0].id, Constants.OBJ1_V2_ID, "Object 1 has bad ID in V2 store")
-        XCTAssertEqual(objects[1].id, Constants.OBJ2_V2_ID, "Object 2 has bad ID in V2 store")
+        XCTAssertEqual(objects[0].id1, Constants.OBJ1_V2_ID, "Object 1 has bad ID in V2 store")
+        XCTAssertEqual(objects[1].id1, Constants.OBJ2_V2_ID, "Object 2 has bad ID in V2 store")
     }
     
     /// Helper - verify the store at V3
     private func verifyStoreV3(container: PersistentContainer) {
-        let objects = SimpleModel.getAllObjectsV3(context: container.viewContext).sorted { $0.id < $1.id }
+        let objects = SimpleModel.getAllObjectsV3(context: container.viewContext).sorted { $0.id1 < $1.id1 }
         
         XCTAssertEqual(objects.count, Constants.OBJ_COUNT, "Bad number of objects in V3 store")
 
-        XCTAssertEqual(objects[0].id, Constants.OBJ1_V2_ID, "Object 1 has bad ID in V3 store")
+        XCTAssertEqual(objects[0].id1, Constants.OBJ1_V2_ID, "Object 1 has bad ID in V3 store")
         XCTAssertEqual(objects[0].count, Constants.OBJ1_V3_COUNT, "Object 1 has bad count")
         
-        XCTAssertEqual(objects[1].id, Constants.OBJ2_V2_ID, "Object 2 has bad ID in V3 store")
+        XCTAssertEqual(objects[1].id1, Constants.OBJ2_V2_ID, "Object 2 has bad ID in V3 store")
         XCTAssertEqual(objects[1].count, Constants.OBJ2_V3_COUNT, "Object 2 has bad count")
     }
    
