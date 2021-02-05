@@ -1,0 +1,20 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  macos:
+    name: macOS 10.15 tests
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Tests
+        run: xcodebuild build test -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-macOS -enableCodeCoverage YES
+      - name: Upload coverage
+        run: bash <(curl -s https://codecov.io/bash) -J 'TMLPersistentContainer$' -X gcov -X coveragepy
