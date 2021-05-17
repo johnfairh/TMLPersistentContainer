@@ -129,7 +129,7 @@ extension PersistentContainerProtocol {
 /// persistent store migration.
 ///
 /// This is a drop-in replacement for `NSPersistentContainer` that automatically detects
-/// and performs multi-step store migration as part of the `loadPersistentStores` method.
+/// and performs multi-step store migration as part of the `loadPersistentStores(...)` method.
 ///
 /// The container searches for models and mapping models, then constructs the
 /// best sequence in which to migrate stores. It prefers to use explicit mapping models

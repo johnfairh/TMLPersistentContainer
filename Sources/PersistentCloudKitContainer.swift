@@ -13,7 +13,7 @@ import CoreData
 ///
 /// This is a drop-in replacement for `NSPersistentCloudKitContainer` that
 /// automatically detects and performs multi-step store migration as part of the
-/// `loadPersistentStores` method.
+/// `loadPersistentStores(...)` method.
 ///
 /// The container searches for models and mapping models, then constructs the
 /// best sequence in which to migrate stores. It prefers to use explicit mapping models

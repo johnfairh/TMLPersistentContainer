@@ -156,10 +156,11 @@ An implementation of the `MigrationDelegate` protocol may be assigned to
 Delegate calls are used to inform the client of migration progress. This can be
 used for debug or to update some user-visible progress indicator.
 
-In particular `persistentContainer(_:willMigrateStore)` indicates how many
-single migrations will be performed, and
-`persistentContainer(_:willSingleMigrateStore)` indicates progress through these
-as well as supplying the `NSMigrationManager` for client use.
+In particular `.persistentContainer(_:willMigrateStore:...)`
+indicates how many single migrations will be performed, and
+`.persistentContainer(_:willSingleMigrateStore:...)` indicates
+progress through these as well as supplying the `NSMigrationManager` for
+client use.
 
 Delegate method calls are made on the queue that is performing the migration.
 This depends on `NSPersistentStoreDescription.shouldAddStoreAsynchronously`,
@@ -189,7 +190,7 @@ device power loss, or filesystem errors during store replacement so does not
 guarantee atomicity.
 
 A consequence of this approach is that a store may fail to load with an error
-of `MigrationError.coreqMigrationFailed`. This means that although this
+of `MigrationError.coreqMigrationFailed(_)`. This means that although this
 particular store went through its migration process without problem, the
 migration of another store in the same container did have a problem. To keep
 all the stores at a consistent version, neither store has been allowed to

@@ -108,7 +108,7 @@ public protocol MigrationDelegate: AnyObject {
                              didMigrateStore: NSPersistentStoreDescription)
 
     /// Called after an error has occurred during or before migrating a store.
-    /// The `PersistentContainer.loadPersistentStores` error callback will be made later.
+    /// The `PersistentContainer.loadPersistentStores(...)` error callback will be made later.
     ///
     /// - Parameters:
     ///   - container: The `NSPersistentContainer` asked to load the store.
