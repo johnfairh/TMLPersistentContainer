@@ -52,7 +52,7 @@
     "name" : "MigrationDelegate"
   },
   "types\/migrationdelegate.html?swift#persistentcontainer_didfailtomigratestoreerror" : {
-    "abstract" : "Called after an error has occurred during or before migrating a store.\nThe PersistentContainer.loadPersistentStores error callback will be made later.",
+    "abstract" : "Called after an error has occurred during or before migrating a store.\nThe PersistentContainer.loadPersistentStores(...) error callback will be made later.",
     "name" : "persistentContainer(_:didFailToMigrateStore:error:)",
     "parent_name" : "MigrationDelegate"
   },

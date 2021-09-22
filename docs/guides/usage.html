@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/fw2020.css">
     
     
-   <title>Usage - TMLPersistentContainer 5.0.0</title>
+   <title>Usage - TMLPersistentContainer 5.0.1</title>
     
   </head>
   <body class="j2-swift " data-root-path="./../" data-doc-path="guides/usage.html" data-assets-path="../">
@@ -21,35 +21,34 @@
 
   <header class="j2-header">
   <div class="navbar navbar-expand navbar-dark j2-titlebar">
-  <a class="sr-only-focusable sr-only font-weight-slightly-bold pr-2" href="#main-content">Skip to main content</a>
-  <a class="nav-item nav-link pl-0 pt-1 pr-2 d-md-none" id="nav-toggle-button" role="button" aria-controls="nav-column" aria-expanded="false" aria-label="Toggle navigation" href="#">
+  <div class="container-fluid ps-0 pe-0">
+  <a class="visually-hidden-focusable visually-hidden fw-slightly-bold pe-2" href="#main-content">Skip to main content</a>
+  <a class="nav-item nav-link ps-0 pt-1 pe-2 d-md-none" id="nav-toggle-button" role="button" aria-controls="nav-column" aria-expanded="false" aria-label="Toggle navigation" href="#">
     <span class="navbar-toggler-icon"></span>
   </a>
 
-  <div style="align-items-baseline">
-    <div class="navbar-brand mr-1 font-weight-slightly-bold">
-      
-      <a href="../index.html">
-      
-      TMLPersistentContainer 5.0.0</a>
-    </div>
+  <div class="navbar-brand me-1 fw-slightly-bold">
     
-    <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
+    <a href="../index.html">
     
+    TMLPersistentContainer 5.0.1</a>
   </div>
+  
+  <span class="navbar-text j2-coverage fw-slightly-bold small d-none d-lg-inline-block me-2">(100% documented)</span>
+  
 
-  <div class="navbar-nav ml-auto justify-content-end flex-fill">
+  <div class="navbar-nav ms-auto justify-content-end flex-fill">
 
     
-    <form class="form-inline d-none d-md-flex" role="search">
+    <form class="d-none d-md-block my-auto pe-2 ps-2" role="search">
       <input class="form-control form-control-sm w-100" type="search" placeHolder="Search" aria-label="Search" aria-keyshortcuts="/" data-search-format="span">
     </form>
     
 
     
     <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="language-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Swift</a>
-      <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left" role="menu" aria-labelledby="language-menu">
+      <a class="nav-link dropdown-toggle" href="#" id="language-menu" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Swift</a>
+      <div class="dropdown-menu dropdown-menu-end dropdown-menu-md-start" role="menu" aria-labelledby="language-menu">
         <a class="dropdown-item" href="" id="language-menu-swift" role="menuitem">Swift</a>
         <a class="dropdown-item" href="" id="language-menu-objc" role="menuitem">ObjC</a>
       </div>
@@ -77,6 +76,7 @@
 
     
 
+  </div>
   </div>
 </div>
 
@@ -496,10 +496,10 @@ your model versions are <em>Mod_812_V1</em>, <em>Mod_118_V2</em>, and <em>Mod_21
 use <code>.patternMatchCompare(&quot;_V.*$&quot;)</code> to get the right result.</p>
 <p><strong>list</strong> supplies an explicit order of model versions. A migration is
 permitted if the source version occurs earlier in the list than the destination.
-For example <a href="https://developer.apple.com/documentation/swiftui/list?language=swift" class="j2-swift"><code>.list([&quot;FirstVer&quot;, &quot;SecondVer&quot;, &quot;ThirdVer&quot;])</code></a>.</p>
+For example <code>.list([&quot;FirstVer&quot;, &quot;SecondVer&quot;, &quot;ThirdVer&quot;])</code>.</p>
 <p><strong>pairList</strong> supplies an explicit list of migrations that are permitted. For
 example <code>.pairList([(&quot;FirstVer&quot;, &quot;SecondVer&quot;), (&quot;SecondVer&quot;, &quot;ThirdVer&quot;)])</code>.
-Note that this has a different meaning to the <a href="https://developer.apple.com/documentation/swiftui/list?language=swift" class="j2-swift"><code>list</code></a> example which permits a
+Note that this has a different meaning to the <code>list</code> example which permits a
 migration from ‘FirstVer’ directly to ‘ThirdVer’.</p>
 <p>See <a href="../types/modelversionorder.html?swift"><code>ModelVersionOrder</code></a>.</p>
 <h2 class="j2-anchor j2-heading heading" id="finding-data-and-mapping-models">
@@ -518,7 +518,7 @@ Registering for logging
 <p>The <code>logMessageHandler</code> parameter is an optional closure that if set is passed
 logging messages from the library on any queue. If your app maintains a text
 log as part of its debug strategy then you may wish to include messages of at
-least level <a href="https://developer.apple.com/documentation/swift/error?language=swift" class="j2-swift"><code>.error</code></a> and <code>.warning</code>.</p>
+least level <code>.error</code> and <code>.warning</code>.</p>
 <p>As long as you are not too pressed for space it would be worth including the
 <code>.info</code> level as well – somewhat verbose during actual migrations but these are
 rare.</p>
@@ -562,10 +562,11 @@ Using the delegate to track migrations
 <a href="../types/persistentcontainer.html?swift#migrationdelegate4"><code>PersistentContainer.migrationDelegate</code></a>.</p>
 <p>Delegate calls are used to inform the client of migration progress. This can be
 used for debug or to update some user-visible progress indicator.</p>
-<p>In particular <code>persistentContainer(_:willMigrateStore)</code> indicates how many
-single migrations will be performed, and
-<code>persistentContainer(_:willSingleMigrateStore)</code> indicates progress through these
-as well as supplying the <a href="https://developer.apple.com/documentation/coredata/nsmigrationmanager?language=swift" class="j2-swift"><code>NSMigrationManager</code></a><a href="https://developer.apple.com/documentation/coredata/nsmigrationmanager?language=objc" class="j2-objc j2-secondary"><code>NSMigrationManager</code></a> for client use.</p>
+<p>In particular <code>.persistentContainer(_:willMigrateStore:...)</code>
+indicates how many single migrations will be performed, and
+<code>.persistentContainer(_:willSingleMigrateStore:...)</code> indicates
+progress through these as well as supplying the <a href="https://developer.apple.com/documentation/coredata/nsmigrationmanager?language=swift" class="j2-swift"><code>NSMigrationManager</code></a><a href="https://developer.apple.com/documentation/coredata/nsmigrationmanager?language=objc" class="j2-objc j2-secondary"><code>NSMigrationManager</code></a> for
+client use.</p>
 <p>Delegate method calls are made on the queue that is performing the migration.
 This depends on <a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/1640599-shouldaddstoreasynchronously?language=swift" class="j2-swift"><code>NSPersistentStoreDescription.shouldAddStoreAsynchronously</code></a><a href="https://developer.apple.com/documentation/coredata/nspersistentstoredescription/1640599-shouldaddstoreasynchronously?language=objc" class="j2-objc j2-secondary"><code>NSPersistentStoreDescription.shouldAddStoreAsynchronously</code></a>,
 see <a href="#nspersistentstoredescription-flags">above</a>.</p>
@@ -592,7 +593,7 @@ easier to retain access to user data.</p>
 device power loss, or filesystem errors during store replacement so does not
 guarantee atomicity.</p>
 <p>A consequence of this approach is that a store may fail to load with an error
-of <code>MigrationError.coreqMigrationFailed</code>. This means that although this
+of <code>MigrationError.coreqMigrationFailed(_)</code>. This means that although this
 particular store went through its migration process without problem, the
 migration of another store in the same container did have a problem. To keep
 all the stores at a consistent version, neither store has been allowed to
@@ -639,7 +640,7 @@ simulator-only.</p>
   
   
   </div>
-  <div id="pagination-next" class="flex-fill text-right">
+  <div id="pagination-next" class="flex-fill text-end">
   
     <a class="j2-swift" href="../main-apis.html?swift" aria-keyshortcuts="n">
   Main APIs<span aria-hidden="true"> &raquo;</span>
@@ -751,9 +752,9 @@ simulator-only.</p>
 
     <footer class="row">
   <div class="col j2-footer small pt-2">
-    <p><p>Distributed under the ISC license.  Maintained by John Fairhurst.</p></p>
+    <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
     
-    <p>Generated by <a class="link" href="https://github.com/johnfairh/Bebop" target="_blank" rel="external">Bebop v1.0</a> using the FW2020 theme, based on technology from <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫</a>.</p>
+    <p>Generated by <a class="link" href="https://github.com/johnfairh/Bebop" target="_blank" rel="external noopener">Bebop v1.7.1</a> using the FW2020 theme, based on technology from <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫</a>.</p>
     
   </div>
 </footer>

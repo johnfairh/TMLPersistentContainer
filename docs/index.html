@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/fw2020.css">
     
     
-   <title>TMLPersistentContainer 5.0.0</title>
+   <title>TMLPersistentContainer 5.0.1</title>
     
   </head>
   <body class="j2-swift " data-root-path="./" data-doc-path="index.html" data-assets-path="">
@@ -21,35 +21,34 @@
 
   <header class="j2-header">
   <div class="navbar navbar-expand navbar-dark j2-titlebar">
-  <a class="sr-only-focusable sr-only font-weight-slightly-bold pr-2" href="#main-content">Skip to main content</a>
-  <a class="nav-item nav-link pl-0 pt-1 pr-2 d-md-none" id="nav-toggle-button" role="button" aria-controls="nav-column" aria-expanded="false" aria-label="Toggle navigation" href="#">
+  <div class="container-fluid ps-0 pe-0">
+  <a class="visually-hidden-focusable visually-hidden fw-slightly-bold pe-2" href="#main-content">Skip to main content</a>
+  <a class="nav-item nav-link ps-0 pt-1 pe-2 d-md-none" id="nav-toggle-button" role="button" aria-controls="nav-column" aria-expanded="false" aria-label="Toggle navigation" href="#">
     <span class="navbar-toggler-icon"></span>
   </a>
 
-  <div style="align-items-baseline">
-    <div class="navbar-brand mr-1 font-weight-slightly-bold">
-      
-      <a href="index.html">
-      
-      TMLPersistentContainer 5.0.0</a>
-    </div>
+  <div class="navbar-brand me-1 fw-slightly-bold">
     
-    <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
+    <a href="index.html">
     
+    TMLPersistentContainer 5.0.1</a>
   </div>
+  
+  <span class="navbar-text j2-coverage fw-slightly-bold small d-none d-lg-inline-block me-2">(100% documented)</span>
+  
 
-  <div class="navbar-nav ml-auto justify-content-end flex-fill">
+  <div class="navbar-nav ms-auto justify-content-end flex-fill">
 
     
-    <form class="form-inline d-none d-md-flex" role="search">
+    <form class="d-none d-md-block my-auto pe-2 ps-2" role="search">
       <input class="form-control form-control-sm w-100" type="search" placeHolder="Search" aria-label="Search" aria-keyshortcuts="/" data-search-format="span">
     </form>
     
 
     
     <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="language-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Swift</a>
-      <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left" role="menu" aria-labelledby="language-menu">
+      <a class="nav-link dropdown-toggle" href="#" id="language-menu" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Swift</a>
+      <div class="dropdown-menu dropdown-menu-end dropdown-menu-md-start" role="menu" aria-labelledby="language-menu">
         <a class="dropdown-item" href="" id="language-menu-swift" role="menuitem">Swift</a>
         <a class="dropdown-item" href="" id="language-menu-objc" role="menuitem">ObjC</a>
       </div>
@@ -77,6 +76,7 @@
 
     
 
+  </div>
   </div>
 </div>
 
@@ -417,7 +417,7 @@ stores, progress reporting, and configurable logging.</p>
 <span data-anchor-id="example">
 Example
 </span></h2>
-<p>Minimally replace the call to <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/1640557-init?language=swift" class="j2-swift"><code>NSPersistentContainer.init</code></a><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/1640557-initwithname?language=objc" class="j2-objc j2-secondary"><code>NSPersistentContainer.init</code></a> or
+<p>Minimally replace the call to <code>NSPersistentContainer.init</code> or
 <a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer?language=swift" class="j2-swift"><code>NSPersistentCloudKitContainer</code></a><a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer?language=objc" class="j2-objc j2-secondary"><code>NSPersistentCloudKitContainer</code></a>:</p>
 <pre><code class="language-swift">container = PersistentCloudKitContainer(name: &quot;MyStore&quot;,
                                         managedObjectModel: model)
@@ -430,7 +430,7 @@ Example
                                 logMessageHandler: myLogHandler)
 container.migrationDelegate = self
 </code></pre>
-<p>All migrations happen as part of <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/1640568-loadpersistentstores?language=swift" class="j2-swift"><code>NSPersistentContainer.loadPersistentStores</code></a><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer/1640568-loadpersistentstoreswithcompleti?language=objc" class="j2-objc j2-secondary"><code>NSPersistentContainer.loadPersistentStores</code></a>.</p>
+<p>All migrations happen as part of <code>NSPersistentContainer.loadPersistentStores</code>.</p>
 <h2 class="j2-anchor j2-heading heading" id="documentation">
 <span data-anchor-id="documentation">
 Documentation
@@ -503,7 +503,7 @@ License
   
   
   </div>
-  <div id="pagination-next" class="flex-fill text-right">
+  <div id="pagination-next" class="flex-fill text-end">
   
     <a class="j2-swift" href="guides.html?swift" aria-keyshortcuts="n">
   Guides<span aria-hidden="true"> &raquo;</span>
@@ -595,9 +595,9 @@ License
 
     <footer class="row">
   <div class="col j2-footer small pt-2">
-    <p><p>Distributed under the ISC license.  Maintained by John Fairhurst.</p></p>
+    <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
     
-    <p>Generated by <a class="link" href="https://github.com/johnfairh/Bebop" target="_blank" rel="external">Bebop v1.0</a> using the FW2020 theme, based on technology from <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫</a>.</p>
+    <p>Generated by <a class="link" href="https://github.com/johnfairh/Bebop" target="_blank" rel="external noopener">Bebop v1.7.1</a> using the FW2020 theme, based on technology from <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫</a>.</p>
     
   </div>
 </footer>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/fw2020.css">
     
     
-   <title>Main APIs - TMLPersistentContainer 5.0.0</title>
+   <title>Main APIs - TMLPersistentContainer 5.0.1</title>
     
   </head>
   <body class="j2-swift " data-root-path="./" data-doc-path="main-apis.html" data-assets-path="">
@@ -21,35 +21,34 @@
 
   <header class="j2-header">
   <div class="navbar navbar-expand navbar-dark j2-titlebar">
-  <a class="sr-only-focusable sr-only font-weight-slightly-bold pr-2" href="#main-content">Skip to main content</a>
-  <a class="nav-item nav-link pl-0 pt-1 pr-2 d-md-none" id="nav-toggle-button" role="button" aria-controls="nav-column" aria-expanded="false" aria-label="Toggle navigation" href="#">
+  <div class="container-fluid ps-0 pe-0">
+  <a class="visually-hidden-focusable visually-hidden fw-slightly-bold pe-2" href="#main-content">Skip to main content</a>
+  <a class="nav-item nav-link ps-0 pt-1 pe-2 d-md-none" id="nav-toggle-button" role="button" aria-controls="nav-column" aria-expanded="false" aria-label="Toggle navigation" href="#">
     <span class="navbar-toggler-icon"></span>
   </a>
 
-  <div style="align-items-baseline">
-    <div class="navbar-brand mr-1 font-weight-slightly-bold">
-      
-      <a href="index.html">
-      
-      TMLPersistentContainer 5.0.0</a>
-    </div>
+  <div class="navbar-brand me-1 fw-slightly-bold">
     
-    <span class="navbar-text j2-coverage font-weight-slightly-bold small d-none d-lg-inline-block mr-2">(100% documented)</span>
+    <a href="index.html">
     
+    TMLPersistentContainer 5.0.1</a>
   </div>
+  
+  <span class="navbar-text j2-coverage fw-slightly-bold small d-none d-lg-inline-block me-2">(100% documented)</span>
+  
 
-  <div class="navbar-nav ml-auto justify-content-end flex-fill">
+  <div class="navbar-nav ms-auto justify-content-end flex-fill">
 
     
-    <form class="form-inline d-none d-md-flex" role="search">
+    <form class="d-none d-md-block my-auto pe-2 ps-2" role="search">
       <input class="form-control form-control-sm w-100" type="search" placeHolder="Search" aria-label="Search" aria-keyshortcuts="/" data-search-format="span">
     </form>
     
 
     
     <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="language-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Swift</a>
-      <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left" role="menu" aria-labelledby="language-menu">
+      <a class="nav-link dropdown-toggle" href="#" id="language-menu" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Swift</a>
+      <div class="dropdown-menu dropdown-menu-end dropdown-menu-md-start" role="menu" aria-labelledby="language-menu">
         <a class="dropdown-item" href="" id="language-menu-swift" role="menuitem">Swift</a>
         <a class="dropdown-item" href="" id="language-menu-objc" role="menuitem">ObjC</a>
       </div>
@@ -77,6 +76,7 @@
 
     
 
+  </div>
   </div>
 </div>
 
@@ -423,7 +423,7 @@
 <div class=" j2-always">
 <hr/>
 <section>
-  <h1 class="sr-only">Topics</h1>
+  <h1 class="visually-hidden">Topics</h1>
   
   <section class=" j2-always">
   
@@ -433,10 +433,10 @@
   
     <section id="persistentcontainer" class="j2-item ">
     <a name="//apple_ref/cpp/Class/class%20PersistentContainer" class="dashAnchor j2-item-dash-anchor" data-item-id="persistentcontainer"></a>
-    <h4 class="sr-only">class PersistentContainer</h4>
+    <h4 class="visually-hidden">class PersistentContainer</h4>
     
     
-    <a class="j2-item-title" href="#_persistentcontainer" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="_persistentcontainer"><code>
+    <a class="j2-item-title" href="#_persistentcontainer" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="_persistentcontainer"><code>
         <span class="j2-swift"><span class="j2-item-secondary">class </span>PersistentContainer</span>
         
         <span class="j2-objc j2-secondary"><span class="j2-item-secondary">@interface </span>PersistentContainer</span>
@@ -444,7 +444,7 @@
       </code></a>
     <div class="collapse  j2-item-popopen-wrapper" id="_persistentcontainer">
       <div class="j2-item-popopen">
-        <div class="j2-item-popopen-pointer" role="none"></div>
+        <div class="j2-item-popopen-pointer" role="none presentation"></div>
         <div class="j2-item-popopen-body">
           
             <div class="clearfix">
@@ -473,7 +473,7 @@
 <p>A container for a Core Data stack that provides automatic multi-step shortest-path
 persistent store migration.</p>
 <p>This is a drop-in replacement for <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer?language=swift" class="j2-swift"><code>NSPersistentContainer</code></a><a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer?language=objc" class="j2-objc j2-secondary"><code>NSPersistentContainer</code></a> that automatically detects
-and performs multi-step store migration as part of the <code>loadPersistentStores</code> method.</p>
+and performs multi-step store migration as part of the <a href="types/persistentcontainer.html?swift#loadpersistentstorescompletionhandler1" class="j2-swift"><code>loadPersistentStores(...)</code></a><a href="types/persistentcontainer.html?objc#loadpersistentstorescompletionhandler1" class="j2-objc j2-secondary"><code>-[PersistentContainer loadPersistentStoresWithCompletionHandler:]</code></a> method.</p>
 <p>The container searches for models and mapping models, then constructs the
 best sequence in which to migrate stores. It prefers to use explicit mapping models
 over inferred mapping models when there is a choice. Progress and status can be
@@ -498,12 +498,13 @@ CloudKit-backed and non-cloud stores..</p>
 
   <div class="j2-objc">
     <div class="j2-callout-title" role="heading" aria-level="6">Objective-C</div>
-    <pre><code class="language-objectivec">@interface PersistentContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer?language=objc">NSPersistentContainer</a></code></pre>
+    <pre><code class="language-objectivec">@interface PersistentContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcontainer?language=swift">NSPersistentContainer</a></code></pre>
   </div>
 
 
             </div>
             
+
 
 
           
@@ -524,7 +525,7 @@ CloudKit-backed and non-cloud stores..</p>
             
           </nav>
         </div>
-      <div>
+      </div>
     </div>
     
   </section>
@@ -534,10 +535,10 @@ CloudKit-backed and non-cloud stores..</p>
   
     <section id="persistentcloudkitcontainer" class="j2-item ">
     <a name="//apple_ref/cpp/Class/class%20PersistentCloudKitContainer" class="dashAnchor j2-item-dash-anchor" data-item-id="persistentcloudkitcontainer"></a>
-    <h4 class="sr-only">class PersistentCloudKitContainer</h4>
+    <h4 class="visually-hidden">class PersistentCloudKitContainer</h4>
     
     
-    <a class="j2-item-title" href="#_persistentcloudkitcontainer" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="_persistentcloudkitcontainer"><code>
+    <a class="j2-item-title" href="#_persistentcloudkitcontainer" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="_persistentcloudkitcontainer"><code>
         <span class="j2-swift"><span class="j2-item-secondary">class </span>PersistentCloudKitContainer</span>
         
         <span class="j2-objc j2-secondary"><span class="j2-item-secondary">@interface </span>PersistentCloudKitContainer</span>
@@ -545,7 +546,7 @@ CloudKit-backed and non-cloud stores..</p>
       </code></a>
     <div class="collapse  j2-item-popopen-wrapper" id="_persistentcloudkitcontainer">
       <div class="j2-item-popopen">
-        <div class="j2-item-popopen-pointer" role="none"></div>
+        <div class="j2-item-popopen-pointer" role="none presentation"></div>
         <div class="j2-item-popopen-body">
           
             <div class="clearfix">
@@ -575,7 +576,7 @@ CloudKit-backed and non-cloud stores..</p>
 persistent store migration, capable of managing both CloudKit-backed and non-cloud stores.</p>
 <p>This is a drop-in replacement for <a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer?language=swift" class="j2-swift"><code>NSPersistentCloudKitContainer</code></a><a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer?language=objc" class="j2-objc j2-secondary"><code>NSPersistentCloudKitContainer</code></a> that
 automatically detects and performs multi-step store migration as part of the
-<code>loadPersistentStores</code> method.</p>
+<a href="types/persistentcloudkitcontainer.html?swift#loadpersistentstorescompletionhandler" class="j2-swift"><code>loadPersistentStores(...)</code></a><a href="types/persistentcloudkitcontainer.html?objc#loadpersistentstorescompletionhandler" class="j2-objc j2-secondary"><code>-[PersistentCloudKitContainer loadPersistentStoresWithCompletionHandler:]</code></a> method.</p>
 <p>The container searches for models and mapping models, then constructs the
 best sequence in which to migrate stores. It prefers to use explicit mapping models
 over inferred mapping models when there is a choice. Progress and status can be
@@ -599,12 +600,13 @@ reported back to the client code.</p>
 
   <div class="j2-objc">
     <div class="j2-callout-title" role="heading" aria-level="6">Objective-C</div>
-    <pre><code class="language-objectivec">@interface PersistentCloudKitContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer?language=objc">NSPersistentCloudKitContainer</a></code></pre>
+    <pre><code class="language-objectivec">@interface PersistentCloudKitContainer : <a href="https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer?language=swift">NSPersistentCloudKitContainer</a></code></pre>
   </div>
 
 
             </div>
             
+
 
 
           
@@ -625,7 +627,7 @@ reported back to the client code.</p>
             
           </nav>
         </div>
-      <div>
+      </div>
     </div>
     
   </section>
@@ -635,16 +637,16 @@ reported back to the client code.</p>
   
     <section id="modelversionorder" class="j2-item j2-swift j2-always">
     <a name="//apple_ref/cpp/enum/enum%20ModelVersionOrder" class="dashAnchor j2-item-dash-anchor" data-item-id="modelversionorder"></a>
-    <h4 class="sr-only">enum ModelVersionOrder</h4>
+    <h4 class="visually-hidden">enum ModelVersionOrder</h4>
     
     
-    <a class="j2-item-title" href="#_modelversionorder" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="_modelversionorder"><code>
+    <a class="j2-item-title" href="#_modelversionorder" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="_modelversionorder"><code>
         <span class="j2-swift j2-always"><span class="j2-item-secondary">enum </span>ModelVersionOrder</span>
         
       </code></a>
     <div class="collapse  j2-item-popopen-wrapper" id="_modelversionorder">
       <div class="j2-item-popopen">
-        <div class="j2-item-popopen-pointer" role="none"></div>
+        <div class="j2-item-popopen-pointer" role="none presentation"></div>
         <div class="j2-item-popopen-body">
           
             <div class="clearfix">
@@ -696,6 +698,7 @@ extension ModelVersionOrder: <a href="https://developer.apple.com/documentation/
             
 
 
+
           
 
           <nav class="j2-item-nav" aria-label="item details">
@@ -712,7 +715,7 @@ extension ModelVersionOrder: <a href="https://developer.apple.com/documentation/
             
           </nav>
         </div>
-      <div>
+      </div>
     </div>
     
   </section>
@@ -722,16 +725,16 @@ extension ModelVersionOrder: <a href="https://developer.apple.com/documentation/
   
     <section id="migrationerror" class="j2-item j2-swift j2-always">
     <a name="//apple_ref/cpp/enum/enum%20MigrationError" class="dashAnchor j2-item-dash-anchor" data-item-id="migrationerror"></a>
-    <h4 class="sr-only">enum MigrationError</h4>
+    <h4 class="visually-hidden">enum MigrationError</h4>
     
     
-    <a class="j2-item-title" href="#_migrationerror" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="_migrationerror"><code>
+    <a class="j2-item-title" href="#_migrationerror" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="_migrationerror"><code>
         <span class="j2-swift j2-always"><span class="j2-item-secondary">enum </span>MigrationError</span>
         
       </code></a>
     <div class="collapse  j2-item-popopen-wrapper" id="_migrationerror">
       <div class="j2-item-popopen">
-        <div class="j2-item-popopen-pointer" role="none"></div>
+        <div class="j2-item-popopen-pointer" role="none presentation"></div>
         <div class="j2-item-popopen-body">
           
             <div class="clearfix">
@@ -783,6 +786,7 @@ extension MigrationError: <a href="https://developer.apple.com/documentation/swi
             
 
 
+
           
 
           <nav class="j2-item-nav" aria-label="item details">
@@ -799,7 +803,7 @@ extension MigrationError: <a href="https://developer.apple.com/documentation/swi
             
           </nav>
         </div>
-      <div>
+      </div>
     </div>
     
   </section>
@@ -809,16 +813,16 @@ extension MigrationError: <a href="https://developer.apple.com/documentation/swi
   
     <section id="migrationdelegate" class="j2-item j2-swift j2-always">
     <a name="//apple_ref/cpp/Protocol/protocol%20MigrationDelegate" class="dashAnchor j2-item-dash-anchor" data-item-id="migrationdelegate"></a>
-    <h4 class="sr-only">protocol MigrationDelegate</h4>
+    <h4 class="visually-hidden">protocol MigrationDelegate</h4>
     
     
-    <a class="j2-item-title" href="#_migrationdelegate" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="_migrationdelegate"><code>
+    <a class="j2-item-title" href="#_migrationdelegate" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="_migrationdelegate"><code>
         <span class="j2-swift j2-always"><span class="j2-item-secondary">protocol </span>MigrationDelegate</span>
         
       </code></a>
     <div class="collapse  j2-item-popopen-wrapper" id="_migrationdelegate">
       <div class="j2-item-popopen">
-        <div class="j2-item-popopen-pointer" role="none"></div>
+        <div class="j2-item-popopen-pointer" role="none presentation"></div>
         <div class="j2-item-popopen-body">
           
             <div class="clearfix">
@@ -891,6 +895,7 @@ Stores that are not migratable (not on disk) are ignored and do not represent in
             
 
 
+
           
 
           <nav class="j2-item-nav" aria-label="item details">
@@ -907,7 +912,7 @@ Stores that are not migratable (not on disk) are ignored and do not represent in
             
           </nav>
         </div>
-      <div>
+      </div>
     </div>
     
   </section>
@@ -937,7 +942,7 @@ Stores that are not migratable (not on disk) are ignored and do not represent in
   
   
   </div>
-  <div id="pagination-next" class="flex-fill text-right">
+  <div id="pagination-next" class="flex-fill text-end">
   
     <a class="j2-swift" href="types/persistentcontainer.html?swift" aria-keyshortcuts="n">
   PersistentContainer<span aria-hidden="true"> &raquo;</span>
@@ -990,9 +995,9 @@ Stores that are not migratable (not on disk) are ignored and do not represent in
 
     <footer class="row">
   <div class="col j2-footer small pt-2">
-    <p><p>Distributed under the ISC license.  Maintained by John Fairhurst.</p></p>
+    <p>Distributed under the ISC license.  Maintained by John Fairhurst.</p>
     
-    <p>Generated by <a class="link" href="https://github.com/johnfairh/Bebop" target="_blank" rel="external">Bebop v1.0</a> using the FW2020 theme, based on technology from <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫</a>.</p>
+    <p>Generated by <a class="link" href="https://github.com/johnfairh/Bebop" target="_blank" rel="external noopener">Bebop v1.7.1</a> using the FW2020 theme, based on technology from <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫</a>.</p>
     
   </div>
 </footer>
