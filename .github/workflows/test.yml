@@ -16,5 +16,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Tests
         run: xcodebuild build test -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-macOS -enableCodeCoverage YES
+      - name: Generate coverage
+        uses: sersoft-gmbh/swift-coverage-action@v2
+        with:
+          format: lcov
       - name: Upload coverage
-        run: bash <(curl -s https://codecov.io/bash) -J 'TMLPersistentContainer$' -X gcov -X coveragepy
+        uses: codecov/codecov-action@v2
+        with:
+          files: .swiftcov/TMLPersistentContainer.framework.coverage.lcov
