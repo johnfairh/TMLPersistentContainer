@@ -10,8 +10,10 @@ on:
 
 jobs:
   macos:
-    name: macOS 10.15 tests
-    runs-on: macos-latest
+    name: Tests
+    runs-on: macos-11
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_13.2.app/Contents/Developer
     steps:
       - uses: actions/checkout@v2
       - name: Tests
