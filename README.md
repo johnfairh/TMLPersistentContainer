@@ -88,7 +88,7 @@ Carthage:
 
 ## Contributions
 
-Contributions and feedback welcome: open an issue / johnfairh@gmail.com / twitter @johnfairh
+Contributions and feedback welcome: open an issue / johnfairh@gmail.com / @johnfairh@mastodon.social
 
 ## License
 
