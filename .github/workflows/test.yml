@@ -11,18 +11,17 @@ on:
 jobs:
   macos:
     name: Tests
-    runs-on: macos-12
+    runs-on: macos-13
     env:
-      DEVELOPER_DIR: /Applications/Xcode_14.1.app/Contents/Developer
+      DEVELOPER_DIR: /Applications/Xcode_15.0.app/Contents/Developer
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Tests
         run: xcodebuild build test -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-macOS -enableCodeCoverage YES
       - name: Generate coverage
-        uses: sersoft-gmbh/swift-coverage-action@v2
-        with:
-          format: lcov
+        uses: sersoft-gmbh/swift-coverage-action@v4
+        id: coverage-files
       - name: Upload coverage
         uses: codecov/codecov-action@v2
         with:
-          files: .swiftcov/TMLPersistentContainer.framework.coverage.lcov
+          files: ${{ join(fromJSON(steps.coverage-files.outputs.files), ',') }}

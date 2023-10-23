@@ -63,8 +63,8 @@ Swift 5 or later, Xcode 10.2 or later.
 * See the *swift4* branch for a Swift 4 version.
 * See the *swift41* branch for a Swift 4.1 version.
 
-The library is based on `NSPersistentContainer` so requires a minimum
-deployment target of iOS 10.0, macOS 10.12, tvOS 10.0, or watchOS 3.0.
+The library is based on `NSPersistentContainer`.  The minimum deployment targets
+are iOS 12.0, macOS 10.14.6, tvOS 12.0, and watchOS 3.0.
 
 The `PersistentCloudKitContainer` class is based on
 `NSPersistentCloudKitContainer` so further requires a minimum deployment target
