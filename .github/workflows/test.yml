@@ -19,10 +19,9 @@ jobs:
       - name: Tests
         run: xcodebuild build test -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-macOS -enableCodeCoverage YES
       - name: Generate coverage
-        uses: sersoft-gmbh/swift-coverage-action@v2
-        with:
-          format: lcov
+        uses: sersoft-gmbh/swift-coverage-action@v4
+        id: coverage-files
       - name: Upload coverage
         uses: codecov/codecov-action@v2
         with:
-          files: .swiftcov/TMLPersistentContainer.framework.coverage.lcov
+          files: ${{ join(fromJSON(steps.coverage-files.outputs.files), ',') }}
