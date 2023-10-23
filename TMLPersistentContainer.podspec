@@ -2,7 +2,6 @@ Pod::Spec.new do |s|
   s.name         = "TMLPersistentContainer"
   s.version      = "5.0.1"
   s.authors      = { "John Fairhurst" => "johnfairh@gmail.com" }
-#  s.social_media_url   = "https://twitter.com/johnfairh"
   s.license      = { :type => "ISC", :file => "LICENSE" }
   s.homepage     = "https://github.com/johnfairh/TMLPersistentContainer"
   s.source       = { :git => "https://github.com/johnfairh/TMLPersistentContainer.git", :tag => s.version.to_s }
@@ -16,10 +15,10 @@ Pod::Spec.new do |s|
                     progress reporting and configurable logging.
                   EDESC
   s.documentation_url = "https://johnfairh.github.io/TMLPersistentContainer/"
-  s.ios.deployment_target = "10.0"
-  s.osx.deployment_target = "10.12"
+  s.ios.deployment_target = "12.0"
+  s.osx.deployment_target = "10.14.6"
   s.watchos.deployment_target = "3.0"
-  s.tvos.deployment_target = "10.0"
+  s.tvos.deployment_target = "12.0"
   s.source_files  = "Sources/*swift"
   s.frameworks  = "Foundation", "CoreData"
   s.swift_version = '5.0'

@@ -2,7 +2,8 @@
 
 ### Breaking
 
-* None.
+* Update macOS minimum deployment level to 10.14.6.  
+  [John Fairhurst](https://github.com/johnfairh)
 
 ### Enhancements
 
