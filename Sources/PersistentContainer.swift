@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreData
+@preconcurrency import CoreData
 
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 protocol PersistentContainerProtocol: PersistentContainerMigratable {
@@ -46,18 +46,16 @@ extension PersistentContainerProtocol {
     func loadPersistentStoresHelper(invokeCoreDataClosure: @escaping ((_ block: @escaping (NSPersistentStoreDescription, Error?) -> ()) -> Void), completionHandler block: @escaping (NSPersistentStoreDescription, Error?) -> ()) {
         // Filter out the stores that need loading to replicate the superclass API
         // There are probably only a handful at most of these so no need to be terribly efficient
-        let storeURLs = persistentStoreCoordinator.persistentStores.compactMap { $0.url }
+        let storeURLs = persistentStoreCoordinator.persistentStores.compactMap(\.url)
 
         if storeURLs.count > 0 {
             log(.info, "Already have loaded stores associated with container: \(storeURLs)")
         }
 
-        var storesToLoad: [NSPersistentStoreDescription] = []
-
-        persistentStoreDescriptions.forEach { description in
+        let storesToLoad = persistentStoreDescriptions.filter { description in
             guard let storeURL = description.url else {
                 log(.info, "Not migrating store \(description) because no URL present")
-                return
+                return false
             }
             if !storeURL.isFileURL {
                 log(.info, "Not migrating store \(description) because not a file:// URL")
@@ -66,8 +64,9 @@ extension PersistentContainerProtocol {
             } else if storeURLs.contains(description.fileURL) {
                 log(.info, "Not migrating store \(storeURL) because already loaded.")
             } else {
-                storesToLoad.append(description)
+                return true
             }
+            return false
         }
 
         guard storesToLoad.count > 0 else {
@@ -82,7 +81,7 @@ extension PersistentContainerProtocol {
         }
 
         // Helper to deal with the sync/async version....
-        func doStoreMigration() {
+        @Sendable func doStoreMigration() {
             var failures = false
 
             migrateStores(descriptions: storesToLoad) { desc, error in
