@@ -14,7 +14,7 @@ import CoreData
 /// Note that the *model version* here is the part of its filename before '.xcdatamodel' --
 /// *not* the optional 'Model Version Identifier' that you can set in the model's properties panel.
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-public enum ModelVersionOrder {
+public enum ModelVersionOrder: Sendable {
 
     /// Compare the model versions directly, but interpreting numbers like a human -- using
     /// the `NSString.CompareOptions.numeric` algorithm, meaning that for example `MyModel_v2`
@@ -41,7 +41,7 @@ public enum ModelVersionOrder {
     case pairList([(String,String)])
 
     /// Use a different order for different stores under the same container.
-    case perStore((NSPersistentStoreDescription) -> ModelVersionOrder)
+    case perStore(@Sendable (NSPersistentStoreDescription) -> ModelVersionOrder)
 }
 
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreData
+@preconcurrency import CoreData
 
 /// Errors that can occur preventing persistent store loading, passed into the callback given to
 /// `PersistentContainer.loadPersistentStores(...)` or
