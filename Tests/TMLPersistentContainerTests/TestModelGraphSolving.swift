@@ -15,7 +15,7 @@ import XCTest
 ///
 class TestModelGraphSolving: TestCase {
 
-    static var graph: ModelVersionGraph!
+    static nonisolated(unsafe) var graph: ModelVersionGraph!
 
     override class func setUp() {
         super.setUp()

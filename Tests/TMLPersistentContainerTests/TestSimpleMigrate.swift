@@ -60,24 +60,24 @@ class TestSimpleMigrate: TestCase {
     }
     
     /// Helper - populate the store at V1
-    private func populateStoreV1(storeType: String = NSSQLiteStoreType) {
-        let container = createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true, storeType: storeType)
+    private func populateStoreV1(storeType: String = NSSQLiteStoreType) async {
+        let container = await createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true, storeType: storeType)
         _ = SimpleModel.createV1(id: Constants.OBJ1_V1_ID, context: container.viewContext)
         _ = SimpleModel.createV1(id: Constants.OBJ2_V1_ID, context: container.viewContext)
         saveChanges(container: container)
     }
     
     /// Helper - populate the store at V2
-    private func populateStoreV2(storeType: String) -> PersistentContainer {
-        let container = createAndLoadStore(using: .TestModel_Simple_2, makeEmpty: true, storeType: storeType)
+    private func populateStoreV2(storeType: String) async -> PersistentContainer {
+        let container = await createAndLoadStore(using: .TestModel_Simple_2, makeEmpty: true, storeType: storeType)
         _ = SimpleModel.createV2(id: Constants.OBJ1_V2_ID, context: container.viewContext)
         _ = SimpleModel.createV2(id: Constants.OBJ2_V2_ID, context: container.viewContext)
         saveChanges(container: container)
         return container
     }
 
-    private func populateStoreV2() {
-        _ = populateStoreV2(storeType: NSSQLiteStoreType)
+    private func populateStoreV2() async {
+        _ = await populateStoreV2(storeType: NSSQLiteStoreType)
     }
 
     /// Helper - verify the store at V2
@@ -104,24 +104,24 @@ class TestSimpleMigrate: TestCase {
     }
    
     
-    func testCanMigrateV1toV2usingMappingModel() {
-        populateStoreV1()
-        
-        let v2container = createAndLoadStore(using: .TestModel_Simple_2)
-        
+    func testCanMigrateV1toV2usingMappingModel() async {
+        await populateStoreV1()
+
+        let v2container = await createAndLoadStore(using: .TestModel_Simple_2)
+
         verifyStoreV2(container: v2container)
     }
     
-    func testCanMigrateV2toV3automatically() {
-        populateStoreV2()
-        
-        let v3container = createAndLoadStore(using: .TestModel_Simple_3)
-        
+    func testCanMigrateV2toV3automatically() async {
+        await populateStoreV2()
+
+        let v3container = await createAndLoadStore(using: .TestModel_Simple_3)
+
         verifyStoreV3(container: v3container)
     }
 
-    func testCanMigrateV2toV3automaticallyNativeCoreData() {
-        populateStoreV2()
+    func testCanMigrateV2toV3automaticallyNativeCoreData() async {
+        await populateStoreV2()
 
         let v3container = createNsPersistentContainer(using: .TestModel_Simple_3)
 
@@ -134,11 +134,12 @@ class TestSimpleMigrate: TestCase {
             doneExpectation.fulfill()
         }
 
-        waitForExpectations(timeout: 1000) // sure
+        await fulfillment(of: [doneExpectation], timeout: 1000) // sure
+//        await waitForExpectations(timeout: 1000) // sure
     }
 
-    func testCanMigrateV1toV3inTwoSteps() {
-        populateStoreV1()
+    func testCanMigrateV1toV3inTwoSteps() async {
+        await populateStoreV1()
 
         let migDelegate = Delegate()
         migDelegate.expectCalls([.willConsider,
@@ -147,28 +148,28 @@ class TestSimpleMigrate: TestCase {
                                  .willSingleMigrate(ModelName.TestModel_Simple_2.rawValue, ModelName.TestModel_Simple_3.rawValue, true, 1, 2),
                                  .didMigrate])
         
-        let v3container = createAndLoadStore(using: .TestModel_Simple_3, delegate: migDelegate)
-        
+        let v3container = await createAndLoadStore(using: .TestModel_Simple_3, delegate: migDelegate)
+
         verifyStoreV3(container: v3container)
         migDelegate.verify()
     }
 
-    func testCanHonorDoNotMigrateAutomatically() {
-        populateStoreV2()
+    func testCanHonorDoNotMigrateAutomatically() async {
+        await populateStoreV2()
 
         let v3container = createPersistentContainer(using: .TestModel_Simple_3)
         v3container.persistentStoreDescriptions[0].shouldMigrateStoreAutomatically = false
 
         do {
-            try loadStores(for: v3container, shouldSucceed: false)
+            try await loadStores(for: v3container, shouldSucceed: false)
             XCTFail("Should not have been able to load this")
         } catch {
             print("\(error)")
         }
     }
 
-    func testCanDetectMissingSourceVersion() {
-        populateStoreV1()
+    func testCanDetectMissingSourceVersion() async {
+        await populateStoreV1()
 
         let v2container = createPersistentContainer(using: .TestModel_Simple_2, bundles: [])
 
@@ -178,7 +179,7 @@ class TestSimpleMigrate: TestCase {
         v2container.migrationDelegate = migDelegate
 
         do {
-            try loadStores(for: v2container, shouldSucceed: false)
+            try await loadStores(for: v2container, shouldSucceed: false)
             XCTFail("No error! Should have failed")
         } catch MigrationError.cannotFindSourceModel(_, _) {
             // OK
@@ -188,14 +189,14 @@ class TestSimpleMigrate: TestCase {
         }
     }
 
-    func testCanDetectMissingDestinationVersion() {
-        populateStoreV1()
+    func testCanDetectMissingDestinationVersion() async {
+        await populateStoreV1()
 
         let order           = ModelVersionOrder.patternMatchCompare("TestModel_Simple_.*")
         let vMultiContainer = createPersistentContainer(using: .TestModel_MultiConfig_1, order: order)
 
         do {
-            try loadStores(for: vMultiContainer, shouldSucceed: false)
+            try await loadStores(for: vMultiContainer, shouldSucceed: false)
             XCTFail("No error! Should have failed")
         } catch MigrationError.cannotFindDestinationModel(_, _) {
             // OK
@@ -204,13 +205,13 @@ class TestSimpleMigrate: TestCase {
         }
     }
 
-    func testCanDetectInvalidModelVersionOrderAsync() {
-        populateStoreV1()
+    func testCanDetectInvalidModelVersionOrderAsync() async {
+        await populateStoreV1()
 
         let v2container = createPersistentContainer(using: .TestModel_Simple_2, order: .list([]))
 
         do {
-            try loadStores(for: v2container, shouldSucceed: false)
+            try await loadStores(for: v2container, shouldSucceed: false)
             XCTFail("No error! Should have failed")
         } catch MigrationError.badModelVersionOrder(_, _) {
             // OK
@@ -219,13 +220,13 @@ class TestSimpleMigrate: TestCase {
         }
     }
 
-    func testCanDetectInvalidModelVersionOrderSync() {
-        populateStoreV1()
+    func testCanDetectInvalidModelVersionOrderSync() async {
+        await populateStoreV1()
 
         let v2container = createPersistentContainer(using: .TestModel_Simple_2, order: .list([]), addAsync: false)
 
         do {
-            try loadStores(for: v2container, shouldSucceed: false)
+            try await loadStores(for: v2container, shouldSucceed: false)
             XCTFail("No error! Should have failed")
         } catch MigrationError.badModelVersionOrder(_, _) {
             // OK
@@ -234,8 +235,8 @@ class TestSimpleMigrate: TestCase {
         }
     }
 
-    func do_testCanReportFailedStoreReplace(storeType: String) {
-        populateStoreV1(storeType: storeType)
+    func do_testCanReportFailedStoreReplace(storeType: String) async {
+        await populateStoreV1(storeType: storeType)
 
         // Apologize for this one.
         // Have a path reachable only if a filesystem operation fails - instead of inventing a programmably
@@ -259,7 +260,7 @@ class TestSimpleMigrate: TestCase {
                                      .didFailToMigrate])
             v2container.migrationDelegate = migDelegate
 
-            try loadStores(for: v2container, shouldSucceed: false)
+            try await loadStores(for: v2container, shouldSucceed: false)
             XCTFail("No error! Should have failed")
         } catch {
         }
@@ -267,37 +268,37 @@ class TestSimpleMigrate: TestCase {
         loggingWatcher = nil
     }
 
-    func testCanReportFailedStoreReplaceWithSQLite() {
-        do_testCanReportFailedStoreReplace(storeType: NSSQLiteStoreType)
+    func testCanReportFailedStoreReplaceWithSQLite() async {
+        await do_testCanReportFailedStoreReplace(storeType: NSSQLiteStoreType)
     }
 
-    func testCanReportFailedStoreReplaceWithBinaryStore() {
-        do_testCanReportFailedStoreReplace(storeType: NSBinaryStoreType)
+    func testCanReportFailedStoreReplaceWithBinaryStore() async {
+        await do_testCanReportFailedStoreReplace(storeType: NSBinaryStoreType)
     }
 
-    func testCanSurviveInMemoryStore() {
-        let container = populateStoreV2(storeType: NSInMemoryStoreType)
+    func testCanSurviveInMemoryStore() async {
+        let container = await populateStoreV2(storeType: NSInMemoryStoreType)
         verifyStoreV2(container: container)
     }
 
-    func testCanSurviveInMemoryStoreWithNoUrl() {
+    func testCanSurviveInMemoryStoreWithNoUrl() async {
         persistentStoreDescriptionEditCallback = { desc in
             desc.url = nil
         }
-        let container = populateStoreV2(storeType: NSInMemoryStoreType)
+        let container = await populateStoreV2(storeType: NSInMemoryStoreType)
         verifyStoreV2(container: container)
     }
 
-    func testCanSurviveInMemoryStoreWithWeirdUrl() {
+    func testCanSurviveInMemoryStoreWithWeirdUrl() async {
         persistentStoreDescriptionEditCallback = { desc in
             desc.url = URL(string: "http://www.google.com/")
         }
-        let container = populateStoreV2(storeType: NSInMemoryStoreType)
+        let container = await populateStoreV2(storeType: NSInMemoryStoreType)
         verifyStoreV2(container: container)
     }
 
-    func testCanGenerateLogicErrorAfterMigrate() {
-        let container = createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true)
+    func testCanGenerateLogicErrorAfterMigrate() async {
+        let container = await createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true)
 
         let migratedStore = MigratedStore(description: container.persistentStoreDescriptions[0],
                                           tempURL: container.persistentStoreDescriptions[0].fileURL)

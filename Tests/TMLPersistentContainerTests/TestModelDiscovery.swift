@@ -134,8 +134,8 @@ class TestModelDiscovery: TestCase {
         }
     }
 
-    func testCanMapStoreToNode() {
-        let container = createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true)
+    func testCanMapStoreToNode() async {
+        let container = await createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true)
 
         _ = SimpleModel.createV1(id: "100", context: container.viewContext)
         saveChanges(container: container)
@@ -162,8 +162,8 @@ class TestModelDiscovery: TestCase {
         XCTAssertNil(node2, "Managed to find a node for imaginary entity")
     }
 
-    func testCanMapModelToNode() {
-        let container = createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true)
+    func testCanMapModelToNode() async {
+        let container = await createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true)
 
         let graph = ModelVersionGraph(logMessageHandler: loggingCallback)
         graph.discover(from: Bundle.allBundles)

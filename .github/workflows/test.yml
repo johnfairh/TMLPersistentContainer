@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: 15.3
+          xcode-version: '16.0-beta'
       - uses: actions/checkout@v4
       - name: Tests
         run: xcodebuild build test -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-macOS -enableCodeCoverage YES

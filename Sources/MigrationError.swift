@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@preconcurrency import CoreData
+import CoreData
 
 /// Errors that can occur preventing persistent store loading, passed into the callback given to
 /// `PersistentContainer.loadPersistentStores(...)` or
@@ -17,7 +17,7 @@ import Foundation
 /// one of these errors is to read that text and try to make sense of it.
 ///
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-public enum MigrationError: Error {
+public enum MigrationError: Error, @unchecked Sendable {
 
     /// The persistent store has not been loaded because another store associated with the persistent
     /// container required migration but there was an error attempting to migrate it. To avoid leaving

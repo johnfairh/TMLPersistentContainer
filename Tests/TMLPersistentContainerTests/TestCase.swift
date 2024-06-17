@@ -84,7 +84,7 @@ open class TestCase: XCTestCase {
     func loadStores(for container: NSPersistentContainer,
                     shouldSucceed: Bool = true,
                     shouldFirstSucceed: Bool = true,
-                    shouldSecondSucceed: Bool = true) throws {
+                    shouldSecondSucceed: Bool = true) async throws {
         let doneExpectation = expectation(description: "Stores loaded")
 
         var storesToLoad = container.persistentStoreDescriptions.count
@@ -104,7 +104,7 @@ open class TestCase: XCTestCase {
             }
         }
         
-        waitForExpectations(timeout: 1000) // sure
+        await fulfillment(of: [doneExpectation], timeout: 1000) // sure
 
         var expectNoErrors = [shouldSucceed ? shouldFirstSucceed : false, shouldSecondSucceed]
 
@@ -135,7 +135,7 @@ open class TestCase: XCTestCase {
                             delegate: MigrationDelegate? = nil,
                             configuration: String? = nil,
                             storeType: String = NSSQLiteStoreType,
-                            addAsync: Bool = true) -> PersistentContainer {
+                            addAsync: Bool = true) async -> PersistentContainer {
         let container = createPersistentContainer(using: model,
                                                   bundles: bundles,
                                                   configuration: configuration,
@@ -147,8 +147,8 @@ open class TestCase: XCTestCase {
             destroyStore(for: container)
         }
         
-        _ = try! loadStores(for: container)
-        
+        _ = try! await loadStores(for: container)
+
         return container
     }
 
@@ -158,7 +158,7 @@ open class TestCase: XCTestCase {
                                   configuration2: String,
                                   makeEmpty: Bool = false,
                                   bundles: [Bundle] = Bundle.allBundles,
-                                  delegate: MigrationDelegate? = nil) -> PersistentContainer {
+                                  delegate: MigrationDelegate? = nil) async -> PersistentContainer {
         let container = createPersistentContainer(using: model, configuration: configuration1)
         container.migrationDelegate = delegate
         addSecondStoreToContainer(container, configuration: configuration2)
@@ -167,7 +167,7 @@ open class TestCase: XCTestCase {
             destroyStore(for: container)
         }
 
-        _ = try! loadStores(for: container)
+        _ = try! await loadStores(for: container)
 
         return container
     }
@@ -207,7 +207,7 @@ func doAlways(_ what: String, throwing: () throws -> Void) {
     }
 }
 
-var loggingWatcher: ((String) -> () )? = nil
+nonisolated(unsafe) var loggingWatcher: ((String) -> () )? = nil
 
 func loggingCallback(msg: LogMessage) {
     print("LOG: \(msg)")

@@ -100,8 +100,8 @@ class TestModelVersionOrder: TestCase {
     }
 
     func testCanUsePerStoreOrder() {
-        func descriptionToOrder(description: NSPersistentStoreDescription) -> ModelVersionOrder {
-            XCTAssertEqual(description, dummyDescription)
+        @Sendable func descriptionToOrder(description: NSPersistentStoreDescription) -> ModelVersionOrder {
+            XCTAssertEqual(description, NSPersistentStoreDescription()) // == dummyDescription
             return ModelVersionOrder.patternMatchCompare("\\d+")
         }
 
