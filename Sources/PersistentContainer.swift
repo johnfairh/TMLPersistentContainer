@@ -43,7 +43,7 @@ extension PersistentContainerProtocol {
         }
     }
     
-    func loadPersistentStoresHelper(invokeCoreDataClosure: @escaping ((_ block: @escaping (NSPersistentStoreDescription, Error?) -> ()) -> Void), completionHandler block: @escaping (NSPersistentStoreDescription, Error?) -> ()) {
+    func loadPersistentStoresHelper(invokeCoreDataClosure: @escaping @Sendable ((_ block: CompletionBox) -> Void), completionHandler block: CompletionBox) {
         // Filter out the stores that need loading to replicate the superclass API
         // There are probably only a handful at most of these so no need to be terribly efficient
         let storeURLs = persistentStoreCoordinator.persistentStores.compactMap(\.url)
@@ -80,6 +80,8 @@ extension PersistentContainerProtocol {
             async || description.shouldAddStoreAsynchronously
         }
 
+        let uncheckedInvokeCoreDataClosure = UncheckedSendable(invokeCoreDataClosure)
+
         // Helper to deal with the sync/async version....
         @Sendable func doStoreMigration() {
             var failures = false
@@ -89,10 +91,10 @@ extension PersistentContainerProtocol {
                 self.log(.error, "Migration of store \(desc.fileURL) failed, sending user callback - \(error)")
                 if asyncMode {
                     DispatchQueue.main.sync {
-                        block(desc, error)
+                        block.value(desc, error)
                     }
                 } else {
-                    block(desc, error)
+                    block.value(desc, error)
                 }
             }
 
@@ -101,10 +103,10 @@ extension PersistentContainerProtocol {
                 self.log(.info, "All store migration successful, invoking Core Data.")
                 if asyncMode {
                     DispatchQueue.main.async {
-                        invokeCoreDataClosure(block)
+                        uncheckedInvokeCoreDataClosure.value(block)
                     }
                 } else {
-                    invokeCoreDataClosure(block)
+                    uncheckedInvokeCoreDataClosure.value(block)
                 }
             }
         }
@@ -141,7 +143,7 @@ extension PersistentContainerProtocol {
 /// CloudKit-backed and non-cloud stores..
 ///
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-open class PersistentContainer: NSPersistentContainer, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter {
+open class PersistentContainer: NSPersistentContainer, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter, @unchecked Sendable {
 
     /// Background queue for running store operations.
     let dispatchQueue = DispatchQueue(label: "PersistentContainer", qos: .utility)
@@ -261,10 +263,19 @@ open class PersistentContainer: NSPersistentContainer, PersistentContainerMigrat
     ///                    in this package.
     ///
     open override func loadPersistentStores(completionHandler block: @escaping (NSPersistentStoreDescription, Error?) -> ()) {
-        let invokeCoreDataClosure = { block in
-            super.loadPersistentStores(completionHandler: block)
+        let invokeCoreDataClosure = { (box: CompletionBox) in
+            super.loadPersistentStores(completionHandler: box.value)
         }
         
-        loadPersistentStoresHelper(invokeCoreDataClosure: invokeCoreDataClosure, completionHandler: block)
+        loadPersistentStoresHelper(invokeCoreDataClosure: invokeCoreDataClosure, completionHandler: CompletionBox(block))
+    }
+}
+
+typealias CompletionBox = UncheckedSendable<(NSPersistentStoreDescription, Error?) -> ()>
+
+class UncheckedSendable<T>: @unchecked Sendable {
+    let value: T
+    init(_ value: T) {
+        self.value = value
     }
 }

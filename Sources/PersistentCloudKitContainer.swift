@@ -25,7 +25,7 @@ import CoreData
 /// See `PersistentContainer` for a version that does not support CloudKit-backed stores.
 ///
 @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-open class PersistentCloudKitContainer: NSPersistentCloudKitContainer, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter {
+open class PersistentCloudKitContainer: NSPersistentCloudKitContainer, PersistentContainerMigratable, PersistentContainerProtocol, LogMessageEmitter, @unchecked Sendable {
 
     /// Background queue for running store operations.
     let dispatchQueue = DispatchQueue(label: "CloudKitPersistentContainer", qos: .utility)
@@ -140,10 +140,10 @@ open class PersistentCloudKitContainer: NSPersistentCloudKitContainer, Persisten
     ///                    in this package.
     ///
     open override func loadPersistentStores(completionHandler block: @escaping (NSPersistentStoreDescription, Error?) -> ()) {
-        let invokeCoreDataClosure = { block in
-            super.loadPersistentStores(completionHandler: block)
+        let invokeCoreDataClosure = { (box: CompletionBox) in
+            super.loadPersistentStores(completionHandler: box.value)
         }
         
-        loadPersistentStoresHelper(invokeCoreDataClosure: invokeCoreDataClosure, completionHandler: block)
+        loadPersistentStoresHelper(invokeCoreDataClosure: invokeCoreDataClosure, completionHandler: CompletionBox(block))
     }
 }

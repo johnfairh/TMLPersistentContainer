@@ -22,9 +22,9 @@ class TestCreateDelete: TestCase {
     }
 
     /// Helper: put something in the on-disk store
-    private func makeStoreNonEmpty() {
-        let container = createAndLoadStore(using: Constants.ModelVersion, makeEmpty: true)
-        
+    private func makeStoreNonEmpty() async {
+        let container = await createAndLoadStore(using: Constants.ModelVersion, makeEmpty: true)
+
         _ = SimpleModel.createV2(id: Constants.V2_ID, context: container.viewContext)
         saveChanges(container: container)
     }
@@ -35,50 +35,50 @@ class TestCreateDelete: TestCase {
         XCTAssertEqual(actual, expected, "Store contains \(actual) objects expected \(expected)")
     }
 
-    func testCanCreateStoreAsync() {
+    func testCanCreateStoreAsync() async {
         deleteFilesForStore()
 
         let migDelegate = Delegate()
         migDelegate.expectCalls([.willConsider, .willNotMigrate(false)])
 
-        let container = createAndLoadStore(using: Constants.ModelVersion, delegate: migDelegate)
+        let container = await createAndLoadStore(using: Constants.ModelVersion, delegate: migDelegate)
         checkObjectCount(in: container, expected: 0)
     }
 
-    func testCanCreateStoreSync() {
+    func testCanCreateStoreSync() async {
         deleteFilesForStore()
 
         let migDelegate = Delegate()
         migDelegate.expectCalls([.willConsider, .willNotMigrate(false)])
 
-        let container = createAndLoadStore(using: Constants.ModelVersion, delegate: migDelegate, addAsync: false)
+        let container = await createAndLoadStore(using: Constants.ModelVersion, delegate: migDelegate, addAsync: false)
         checkObjectCount(in: container, expected: 0)
     }
 
-    func testCanLoadEmptyStore() {
+    func testCanLoadEmptyStore() async {
         let migDelegate = Delegate()
         migDelegate.expectCalls([.willConsider, .willNotMigrate(false)])
 
-        let container = createAndLoadStore(using: Constants.ModelVersion, makeEmpty: true, delegate: migDelegate)
+        let container = await createAndLoadStore(using: Constants.ModelVersion, makeEmpty: true, delegate: migDelegate)
         checkObjectCount(in: container, expected: 0)
         migDelegate.verify()
     }
     
-    func testCanLoadNonEmptyStore() {
-        makeStoreNonEmpty()
+    func testCanLoadNonEmptyStore() async {
+        await makeStoreNonEmpty()
 
         let migDelegate = Delegate()
         migDelegate.expectCalls([.willConsider, .willNotMigrate(true)])
 
-        let container = createAndLoadStore(using: Constants.ModelVersion, delegate: migDelegate)
+        let container = await createAndLoadStore(using: Constants.ModelVersion, delegate: migDelegate)
         checkObjectCount(in: container, expected: 1)
         migDelegate.verify()
     }
     
-    func testCanMakeStoreEmpty() {
-        makeStoreNonEmpty()
-        
-        let container = createAndLoadStore(using: Constants.ModelVersion, makeEmpty: true)
+    func testCanMakeStoreEmpty() async {
+        await makeStoreNonEmpty()
+
+        let container = await createAndLoadStore(using: Constants.ModelVersion, makeEmpty: true)
         checkObjectCount(in: container, expected: 0)
     }
 
@@ -91,7 +91,7 @@ class TestCreateDelete: TestCase {
         XCTAssertEqual(mom.entities.count, 0)
     }
 
-    func testCanAutomaticallyFindModel() {
+    func testCanAutomaticallyFindModel() async {
         deleteFilesForStore(name: Constants.ModelVersion.rawValue)
 
         let container = PersistentContainer(name: Constants.ModelVersion.rawValue,
@@ -101,7 +101,7 @@ class TestCreateDelete: TestCase {
         XCTAssertEqual(Constants.EntityCount, container.managedObjectModel.entities.count)
 
         do {
-            try loadStores(for: container)
+            try await loadStores(for: container)
         } catch {
             XCTFail("Unexpected error loading store \(error)")
         }
@@ -115,8 +115,8 @@ class TestCreateDelete: TestCase {
         XCTAssertEqual(container.managedObjectModel.entities.count, 0)
     }
 
-    func testCanHandleNoStoresToLoad() {
-        let container = createAndLoadStore(using: Constants.ModelVersion, makeEmpty: true)
+    func testCanHandleNoStoresToLoad() async {
+        let container = await createAndLoadStore(using: Constants.ModelVersion, makeEmpty: true)
 
         let doneExpectation = expectation(description: "Store loaded")
 
@@ -128,6 +128,6 @@ class TestCreateDelete: TestCase {
             doneExpectation.fulfill()
         }
 
-        waitForExpectations(timeout: 1000) // sure
+        await fulfillment(of: [doneExpectation], timeout: 1000) // sure
     }
 }

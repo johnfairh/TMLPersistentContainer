@@ -84,10 +84,10 @@ class TestMultiConfigMigrate: TestCase {
         static let ObjectCount = 1
     }
 
-    func testCanUseNonDefaultConfig() {
-        let container = createAndLoadStore(using: .TestModel_MultiConfig_1,
-                                           makeEmpty: true,
-                                           configuration: MultiConfigModel.config1Name)
+    func testCanUseNonDefaultConfig() async {
+        let container = await createAndLoadStore(using: .TestModel_MultiConfig_1,
+                                                 makeEmpty: true,
+                                                 configuration: MultiConfigModel.config1Name)
 
         let _ = MultiConfigModel.createItem1V1(id: Constants.Entity1_V1_ID, context: container.viewContext)
 
@@ -98,11 +98,11 @@ class TestMultiConfigMigrate: TestCase {
     }
 
     // Helper - set up fresh twin stores with some data at V1
-    private func populateStoresV1() {
-        let container = createAndLoadMultiStores(using: .TestModel_MultiConfig_1,
-                                                 configuration1: MultiConfigModel.config1Name,
-                                                 configuration2: MultiConfigModel.config2Name,
-                                                 makeEmpty: true)
+    private func populateStoresV1() async {
+        let container = await createAndLoadMultiStores(using: .TestModel_MultiConfig_1,
+                                                       configuration1: MultiConfigModel.config1Name,
+                                                       configuration2: MultiConfigModel.config2Name,
+                                                       makeEmpty: true)
 
         let _ = MultiConfigModel.createItem1V1(id: Constants.Entity1_V1_ID, context: container.viewContext)
         let _ = MultiConfigModel.createItem2V1(id: Constants.Entity2_V1_ID, context: container.viewContext)
@@ -122,26 +122,26 @@ class TestMultiConfigMigrate: TestCase {
         XCTAssertEqual(object2s[0].id2, Constants.Entity2_V2_ID, "Object type 2 has bad ID in V2 store")
     }
 
-    func testCanCreateMultipleStores() {
-        populateStoresV1()
+    func testCanCreateMultipleStores() async {
+        await populateStoresV1()
     }
 
-    func testCanMigrateV1toV2() {
-        populateStoresV1()
+    func testCanMigrateV1toV2() async {
+        await populateStoresV1()
 
-        let container = createAndLoadMultiStores(using: .TestModel_MultiConfig_2,
-                                                 configuration1: MultiConfigModel.config1Name,
-                                                 configuration2: MultiConfigModel.config2Name)
+        let container = await createAndLoadMultiStores(using: .TestModel_MultiConfig_2,
+                                                       configuration1: MultiConfigModel.config1Name,
+                                                       configuration2: MultiConfigModel.config2Name)
 
         verifyStoresV2(container: container)
     }
 
-    func testCanHandlePartialFailures() {
-        populateStoresV1()
+    func testCanHandlePartialFailures() async {
+        await populateStoresV1()
 
         do {
             // now overwrite the first store with a SimpleModel store
-            let cnr1 = createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true)
+            let cnr1 = await createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true)
             _ = SimpleModel.createV1(id: "123", context: cnr1.viewContext)
             saveChanges(container: cnr1)
         }
@@ -164,7 +164,7 @@ class TestMultiConfigMigrate: TestCase {
         addSecondStoreToContainer(container, configuration: MultiConfigModel.config2Name)
 
         do {
-            try loadStores(for: container, shouldFirstSucceed: false, shouldSecondSucceed: false)
+            try await loadStores(for: container, shouldFirstSucceed: false, shouldSecondSucceed: false)
             XCTFail("Stores loaded - should have failed")
         } catch MigrationError.coreqMigrationFailed(_) {
             // OK

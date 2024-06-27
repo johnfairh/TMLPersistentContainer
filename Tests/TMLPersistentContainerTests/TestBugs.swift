@@ -18,7 +18,7 @@ import CoreData
 ///
 class TestBugs: XCTestCase {
     
-    func testDestroyContainerBreaksMetadataForPersistentStore() {
+    func testDestroyContainerBreaksMetadataForPersistentStore() async {
 
         // Load model + set up persistent container as normal
         
@@ -85,6 +85,6 @@ class TestBugs: XCTestCase {
             doneExpectation.fulfill()
         }
         
-        waitForExpectations(timeout: 1000)
+        await fulfillment(of: [doneExpectation], timeout: 1000) // sure
     }
 }
