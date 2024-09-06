@@ -17,6 +17,8 @@ jobs:
         with:
           xcode-version: '16.0-beta'
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Tests
         run: xcodebuild build test -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-macOS -enableCodeCoverage YES
       - name: Generate coverage
