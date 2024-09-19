@@ -1,7 +1,9 @@
-## Master
+## 6.0.0
 
 ### Breaking
 
+* Various interface updates for `Sendable` / Swift concurrency.
+* Require Swift 6.
 * Update macOS minimum deployment level to 10.14.6.  
   [John Fairhurst](https://github.com/johnfairh)
 
