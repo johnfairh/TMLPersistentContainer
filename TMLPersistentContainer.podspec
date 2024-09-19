@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TMLPersistentContainer"
-  s.version      = "5.0.1"
+  s.version      = "6.0.0"
   s.authors      = { "John Fairhurst" => "johnfairh@gmail.com" }
   s.license      = { :type => "ISC", :file => "LICENSE" }
   s.homepage     = "https://github.com/johnfairh/TMLPersistentContainer"
@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
                   EDESC
   s.documentation_url = "https://johnfairh.github.io/TMLPersistentContainer/"
   s.ios.deployment_target = "12.0"
-  s.osx.deployment_target = "10.14.6"
+  s.osx.deployment_target = "14.0.0"
   s.watchos.deployment_target = "3.0"
   s.tvos.deployment_target = "12.0"
   s.source_files  = "Sources/*swift"
   s.frameworks  = "Foundation", "CoreData"
-  s.swift_version = '5.0'
+  s.swift_version = '6.0'
 end
