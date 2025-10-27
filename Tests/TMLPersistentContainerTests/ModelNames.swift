@@ -18,13 +18,13 @@ enum ModelName: String {
     /// Version 3 - {id: Int32, count: Int32}
     
     /// Unversioned model containing version 1 of the SimpleItem entity
-    case TestModel_Simple_1
-    
+    case TestModel_Simple_1 = "TestModel_Simple_A"
+
     /// Versioned model containing version 1 + 2 of the SimpleItem entity
-    case TestModel_Simple_2
-    
+    case TestModel_Simple_2 = "TestModel_Simple_B"
+
     /// Versioned model containing versions 1 + 2 + 3 of the SimpleItem entity
-    case TestModel_Simple_3
+    case TestModel_Simple_3 = "TestModel_Simple_C"
 
     /// A non-existent model
     case NonExistentModel
@@ -43,9 +43,9 @@ enum ModelName: String {
     ///      Version 2 - {id2: Int, counter2: Int}
 
     /// Base version containing version 1 of both entities
-    case TestModel_MultiConfig_1
+    case TestModel_MultiConfig_1 = "TestModel_MultiConfig_A"
 
     /// Versioned model containing versions 1 + 1 of both entities
-    case TestModel_MultiConfig_2
+    case TestModel_MultiConfig_2 = "TestModel_MultiConfig_B"
 }
 
