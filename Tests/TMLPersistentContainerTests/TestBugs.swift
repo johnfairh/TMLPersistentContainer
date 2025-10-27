@@ -22,7 +22,7 @@ class TestBugs: XCTestCase {
 
         // Load model + set up persistent container as normal
         
-        let modelFileName = "TestModel_Simple_1" // must have at least one entity
+        let modelFileName = ModelName.TestModel_Simple_1.rawValue
         let storeFileName = "TestBugs_1_Store"
         
         let unitTestBundle = Bundle(for: type(of: self))

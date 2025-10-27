@@ -76,24 +76,24 @@
 		02FE15A71E80394300FF077C /* TestModel_Simple_Mapping12.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15761E80394200FF077C /* TestModel_Simple_Mapping12.xcmappingmodel */; };
 		02FE15A81E80394300FF077C /* TestModel_Simple_Mapping12.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15761E80394200FF077C /* TestModel_Simple_Mapping12.xcmappingmodel */; };
 		02FE15A91E80394300FF077C /* TestModel_Simple_Mapping12.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15761E80394200FF077C /* TestModel_Simple_Mapping12.xcmappingmodel */; };
-		02FE15AA1E80394300FF077C /* TestModel_Simple_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15771E80394200FF077C /* TestModel_Simple_3.xcdatamodeld */; };
-		02FE15AB1E80394300FF077C /* TestModel_Simple_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15771E80394200FF077C /* TestModel_Simple_3.xcdatamodeld */; };
-		02FE15AC1E80394300FF077C /* TestModel_Simple_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15771E80394200FF077C /* TestModel_Simple_3.xcdatamodeld */; };
-		02FE15AD1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157B1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld */; };
-		02FE15AE1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157B1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld */; };
-		02FE15AF1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157B1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld */; };
-		02FE15B01E80394300FF077C /* TestModel_Simple_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157E1E80394300FF077C /* TestModel_Simple_1.xcdatamodeld */; };
-		02FE15B11E80394300FF077C /* TestModel_Simple_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157E1E80394300FF077C /* TestModel_Simple_1.xcdatamodeld */; };
-		02FE15B21E80394300FF077C /* TestModel_Simple_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157E1E80394300FF077C /* TestModel_Simple_1.xcdatamodeld */; };
+		02FE15AA1E80394300FF077C /* TestModel_Simple_C.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15771E80394200FF077C /* TestModel_Simple_C.xcdatamodeld */; };
+		02FE15AB1E80394300FF077C /* TestModel_Simple_C.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15771E80394200FF077C /* TestModel_Simple_C.xcdatamodeld */; };
+		02FE15AC1E80394300FF077C /* TestModel_Simple_C.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15771E80394200FF077C /* TestModel_Simple_C.xcdatamodeld */; };
+		02FE15AD1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157B1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld */; };
+		02FE15AE1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157B1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld */; };
+		02FE15AF1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157B1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld */; };
+		02FE15B01E80394300FF077C /* TestModel_Simple_A.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157E1E80394300FF077C /* TestModel_Simple_A.xcdatamodeld */; };
+		02FE15B11E80394300FF077C /* TestModel_Simple_A.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157E1E80394300FF077C /* TestModel_Simple_A.xcdatamodeld */; };
+		02FE15B21E80394300FF077C /* TestModel_Simple_A.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157E1E80394300FF077C /* TestModel_Simple_A.xcdatamodeld */; };
 		02FE15B91E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15841E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel */; };
 		02FE15BA1E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15841E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel */; };
 		02FE15BB1E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15841E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel */; };
-		02FE15BC1E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15851E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld */; };
-		02FE15BD1E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15851E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld */; };
-		02FE15BE1E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15851E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld */; };
-		02FE15BF1E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15881E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld */; };
-		02FE15C01E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15881E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld */; };
-		02FE15C11E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15881E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld */; };
+		02FE15BC1E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15851E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld */; };
+		02FE15BD1E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15851E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld */; };
+		02FE15BE1E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15851E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld */; };
+		02FE15BF1E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15881E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld */; };
+		02FE15C01E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15881E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld */; };
+		02FE15C11E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15881E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld */; };
 		02FE15C21E80394300FF077C /* TestLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE158A1E80394300FF077C /* TestLogging.swift */; };
 		02FE15C31E80394300FF077C /* TestLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE158A1E80394300FF077C /* TestLogging.swift */; };
 		02FE15C41E80394300FF077C /* TestLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE158A1E80394300FF077C /* TestLogging.swift */; };
@@ -127,12 +127,12 @@
 		02FE15FE1E8045C500FF077C /* TestModel_NotB.momd in Resources */ = {isa = PBXBuildFile; fileRef = 02FE15FD1E8045C500FF077C /* TestModel_NotB.momd */; };
 		02FE15FF1E8045C500FF077C /* TestModel_NotB.momd in Resources */ = {isa = PBXBuildFile; fileRef = 02FE15FD1E8045C500FF077C /* TestModel_NotB.momd */; };
 		02FE16001E8045C500FF077C /* TestModel_NotB.momd in Resources */ = {isa = PBXBuildFile; fileRef = 02FE15FD1E8045C500FF077C /* TestModel_NotB.momd */; };
-		02FE160C1E82A33800FF077C /* TestModel_Simple_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157E1E80394300FF077C /* TestModel_Simple_1.xcdatamodeld */; };
+		02FE160C1E82A33800FF077C /* TestModel_Simple_A.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157E1E80394300FF077C /* TestModel_Simple_A.xcdatamodeld */; };
 		02FE160F1E82E55900FF077C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE160E1E82E55900FF077C /* main.swift */; };
 		02FE16101E82E62600FF077C /* ModelNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15921E80394300FF077C /* ModelNames.swift */; };
 		02FE16111E82E73D00FF077C /* SimpleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15901E80394300FF077C /* SimpleModel.swift */; };
-		02FE16121E82E85600FF077C /* TestModel_Simple_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15771E80394200FF077C /* TestModel_Simple_3.xcdatamodeld */; };
-		02FE16131E82E85900FF077C /* TestModel_Simple_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157B1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld */; };
+		02FE16121E82E85600FF077C /* TestModel_Simple_C.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE15771E80394200FF077C /* TestModel_Simple_C.xcdatamodeld */; };
+		02FE16131E82E85900FF077C /* TestModel_Simple_B.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02FE157B1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld */; };
 		02FE16141E82EA4300FF077C /* TMLPersistentContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* TMLPersistentContainer.framework */; };
 		52D6D9871BEFF229002C0205 /* TMLPersistentContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* TMLPersistentContainer.framework */; };
 		DD7502881C68FEDE006590AF /* TMLPersistentContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* TMLPersistentContainer.framework */; };
@@ -209,16 +209,16 @@
 		02FE15741E80394200FF077C /* TestModelGraphSolving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestModelGraphSolving.swift; path = Tests/TMLPersistentContainerTests/TestModelGraphSolving.swift; sourceTree = "<group>"; };
 		02FE15751E80394200FF077C /* TestModelDiscovery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestModelDiscovery.swift; path = Tests/TMLPersistentContainerTests/TestModelDiscovery.swift; sourceTree = "<group>"; };
 		02FE15761E80394200FF077C /* TestModel_Simple_Mapping12.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = TestModel_Simple_Mapping12.xcmappingmodel; path = Tests/TMLPersistentContainerTests/TestModel_Simple_Mapping12.xcmappingmodel; sourceTree = "<group>"; };
-		02FE15781E80394300FF077C /* TestModel_Simple_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_1.xcdatamodel; sourceTree = "<group>"; };
-		02FE15791E80394300FF077C /* TestModel_Simple_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_2.xcdatamodel; sourceTree = "<group>"; };
-		02FE157A1E80394300FF077C /* TestModel_Simple_3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_3.xcdatamodel; sourceTree = "<group>"; };
-		02FE157C1E80394300FF077C /* TestModel_Simple_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_1.xcdatamodel; sourceTree = "<group>"; };
-		02FE157D1E80394300FF077C /* TestModel_Simple_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_2.xcdatamodel; sourceTree = "<group>"; };
-		02FE157F1E80394300FF077C /* TestModel_Simple_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_1.xcdatamodel; sourceTree = "<group>"; };
+		02FE15781E80394300FF077C /* TestModel_Simple_A.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_A.xcdatamodel; sourceTree = "<group>"; };
+		02FE15791E80394300FF077C /* TestModel_Simple_B.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_B.xcdatamodel; sourceTree = "<group>"; };
+		02FE157A1E80394300FF077C /* TestModel_Simple_C.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_C.xcdatamodel; sourceTree = "<group>"; };
+		02FE157C1E80394300FF077C /* TestModel_Simple_A.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_A.xcdatamodel; sourceTree = "<group>"; };
+		02FE157D1E80394300FF077C /* TestModel_Simple_B.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_B.xcdatamodel; sourceTree = "<group>"; };
+		02FE157F1E80394300FF077C /* TestModel_Simple_A.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_Simple_A.xcdatamodel; sourceTree = "<group>"; };
 		02FE15841E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = TestModel_MultiConfig_12.xcmappingmodel; path = Tests/TMLPersistentContainerTests/TestModel_MultiConfig_12.xcmappingmodel; sourceTree = "<group>"; };
-		02FE15861E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_MultiConfig_1.xcdatamodel; sourceTree = "<group>"; };
-		02FE15871E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_MultiConfig_2.xcdatamodel; sourceTree = "<group>"; };
-		02FE15891E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_MultiConfig_1.xcdatamodel; sourceTree = "<group>"; };
+		02FE15861E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_MultiConfig_A.xcdatamodel; sourceTree = "<group>"; };
+		02FE15871E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_MultiConfig_B.xcdatamodel; sourceTree = "<group>"; };
+		02FE15891E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel_MultiConfig_A.xcdatamodel; sourceTree = "<group>"; };
 		02FE158A1E80394300FF077C /* TestLogging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestLogging.swift; path = Tests/TMLPersistentContainerTests/TestLogging.swift; sourceTree = "<group>"; };
 		02FE158B1E80394300FF077C /* TestGraphSolving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestGraphSolving.swift; path = Tests/TMLPersistentContainerTests/TestGraphSolving.swift; sourceTree = "<group>"; };
 		02FE158C1E80394300FF077C /* TestCreateDelete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestCreateDelete.swift; path = Tests/TMLPersistentContainerTests/TestCreateDelete.swift; sourceTree = "<group>"; };
@@ -349,11 +349,11 @@
 				02FE15911E80394300FF077C /* MultiConfigModel.swift */,
 				02FE15921E80394300FF077C /* ModelNames.swift */,
 				02FE15941E80394300FF077C /* Delegates.swift */,
-				02FE15771E80394200FF077C /* TestModel_Simple_3.xcdatamodeld */,
-				02FE157B1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld */,
-				02FE157E1E80394300FF077C /* TestModel_Simple_1.xcdatamodeld */,
-				02FE15881E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld */,
-				02FE15851E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld */,
+				02FE15771E80394200FF077C /* TestModel_Simple_C.xcdatamodeld */,
+				02FE157B1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld */,
+				02FE157E1E80394300FF077C /* TestModel_Simple_A.xcdatamodeld */,
+				02FE15881E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld */,
+				02FE15851E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld */,
 				02FE15761E80394200FF077C /* TestModel_Simple_Mapping12.xcmappingmodel */,
 				02FE15841E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel */,
 				02FE15F91E8045B700FF077C /* TestModel_NotA.momd */,
@@ -607,7 +607,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 2610;
 				ORGANIZATIONNAME = TMLPersistentContainer;
 				TargetAttributes = {
 					02FE16041E82A03C00FF077C = {
@@ -742,9 +742,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				02FE160F1E82E55900FF077C /* main.swift in Sources */,
-				02FE160C1E82A33800FF077C /* TestModel_Simple_1.xcdatamodeld in Sources */,
-				02FE16131E82E85900FF077C /* TestModel_Simple_2.xcdatamodeld in Sources */,
-				02FE16121E82E85600FF077C /* TestModel_Simple_3.xcdatamodeld in Sources */,
+				02FE160C1E82A33800FF077C /* TestModel_Simple_A.xcdatamodeld in Sources */,
+				02FE16131E82E85900FF077C /* TestModel_Simple_B.xcdatamodeld in Sources */,
+				02FE16121E82E85600FF077C /* TestModel_Simple_C.xcdatamodeld in Sources */,
 				02FE16101E82E62600FF077C /* ModelNames.swift in Sources */,
 				02FE16111E82E73D00FF077C /* SimpleModel.swift in Sources */,
 			);
@@ -776,18 +776,18 @@
 			files = (
 				02FE15D41E80394300FF077C /* SimpleModel.swift in Sources */,
 				02FE15B91E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel in Sources */,
-				02FE15BF1E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld in Sources */,
-				02FE15AD1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld in Sources */,
+				02FE15BF1E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld in Sources */,
+				02FE15AD1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld in Sources */,
 				02FE15A41E80394300FF077C /* TestModelDiscovery.swift in Sources */,
 				02FE15981E80394300FF077C /* TestNodeUniqueness.swift in Sources */,
 				02FE15C51E80394300FF077C /* TestGraphSolving.swift in Sources */,
-				02FE15AA1E80394300FF077C /* TestModel_Simple_3.xcdatamodeld in Sources */,
+				02FE15AA1E80394300FF077C /* TestModel_Simple_C.xcdatamodeld in Sources */,
 				02FE15A11E80394300FF077C /* TestModelGraphSolving.swift in Sources */,
-				02FE15B01E80394300FF077C /* TestModel_Simple_1.xcdatamodeld in Sources */,
+				02FE15B01E80394300FF077C /* TestModel_Simple_A.xcdatamodeld in Sources */,
 				02FE159B1E80394300FF077C /* TestMultiConfigMigrate.swift in Sources */,
 				02FE15D11E80394300FF077C /* TestBugs.swift in Sources */,
 				02FE15CE1E80394300FF077C /* TestCase.swift in Sources */,
-				02FE15BC1E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld in Sources */,
+				02FE15BC1E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld in Sources */,
 				02FE15E01E80394300FF077C /* Delegates.swift in Sources */,
 				02FE15DA1E80394300FF077C /* ModelNames.swift in Sources */,
 				02FE15C81E80394300FF077C /* TestCreateDelete.swift in Sources */,
@@ -866,18 +866,18 @@
 			files = (
 				02FE15D51E80394300FF077C /* SimpleModel.swift in Sources */,
 				02FE15BA1E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel in Sources */,
-				02FE15C01E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld in Sources */,
-				02FE15AE1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld in Sources */,
+				02FE15C01E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld in Sources */,
+				02FE15AE1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld in Sources */,
 				02FE15A51E80394300FF077C /* TestModelDiscovery.swift in Sources */,
 				02FE15991E80394300FF077C /* TestNodeUniqueness.swift in Sources */,
 				02FE15C61E80394300FF077C /* TestGraphSolving.swift in Sources */,
-				02FE15AB1E80394300FF077C /* TestModel_Simple_3.xcdatamodeld in Sources */,
+				02FE15AB1E80394300FF077C /* TestModel_Simple_C.xcdatamodeld in Sources */,
 				02FE15A21E80394300FF077C /* TestModelGraphSolving.swift in Sources */,
-				02FE15B11E80394300FF077C /* TestModel_Simple_1.xcdatamodeld in Sources */,
+				02FE15B11E80394300FF077C /* TestModel_Simple_A.xcdatamodeld in Sources */,
 				02FE159C1E80394300FF077C /* TestMultiConfigMigrate.swift in Sources */,
 				02FE15D21E80394300FF077C /* TestBugs.swift in Sources */,
 				02FE15CF1E80394300FF077C /* TestCase.swift in Sources */,
-				02FE15BD1E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld in Sources */,
+				02FE15BD1E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld in Sources */,
 				02FE15E11E80394300FF077C /* Delegates.swift in Sources */,
 				02FE15DB1E80394300FF077C /* ModelNames.swift in Sources */,
 				02FE15C91E80394300FF077C /* TestCreateDelete.swift in Sources */,
@@ -896,18 +896,18 @@
 			files = (
 				02FE15D61E80394300FF077C /* SimpleModel.swift in Sources */,
 				02FE15BB1E80394300FF077C /* TestModel_MultiConfig_12.xcmappingmodel in Sources */,
-				02FE15C11E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld in Sources */,
-				02FE15AF1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld in Sources */,
+				02FE15C11E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld in Sources */,
+				02FE15AF1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld in Sources */,
 				02FE15A61E80394300FF077C /* TestModelDiscovery.swift in Sources */,
 				02FE159A1E80394300FF077C /* TestNodeUniqueness.swift in Sources */,
 				02FE15C71E80394300FF077C /* TestGraphSolving.swift in Sources */,
-				02FE15AC1E80394300FF077C /* TestModel_Simple_3.xcdatamodeld in Sources */,
+				02FE15AC1E80394300FF077C /* TestModel_Simple_C.xcdatamodeld in Sources */,
 				02FE15A31E80394300FF077C /* TestModelGraphSolving.swift in Sources */,
-				02FE15B21E80394300FF077C /* TestModel_Simple_1.xcdatamodeld in Sources */,
+				02FE15B21E80394300FF077C /* TestModel_Simple_A.xcdatamodeld in Sources */,
 				02FE159D1E80394300FF077C /* TestMultiConfigMigrate.swift in Sources */,
 				02FE15D31E80394300FF077C /* TestBugs.swift in Sources */,
 				02FE15D01E80394300FF077C /* TestCase.swift in Sources */,
-				02FE15BE1E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld in Sources */,
+				02FE15BE1E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld in Sources */,
 				02FE15E21E80394300FF077C /* Delegates.swift in Sources */,
 				02FE15DC1E80394300FF077C /* ModelNames.swift in Sources */,
 				02FE15CA1E80394300FF077C /* TestCreateDelete.swift in Sources */,
@@ -957,7 +957,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"-rpath",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx,
@@ -982,7 +982,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"-rpath",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx,
@@ -999,6 +999,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1052,6 +1053,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -1067,6 +1069,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1113,6 +1116,7 @@
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -1145,7 +1149,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				ONLY_ACTIVE_ARCH = NO;
@@ -1177,7 +1181,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-iOS";
@@ -1201,7 +1205,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-iOS-Tests";
 				PRODUCT_MODULE_NAME = TMLPersistentContainerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1221,7 +1225,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-iOS-Tests";
 				PRODUCT_MODULE_NAME = TMLPersistentContainerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1248,7 +1252,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-watchOS";
@@ -1278,7 +1282,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-watchOS";
@@ -1310,7 +1314,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-tvOS";
@@ -1340,7 +1344,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-tvOS";
@@ -1375,7 +1379,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-macOS";
@@ -1406,7 +1410,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-macOS";
@@ -1471,7 +1475,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-tvOS-Tests";
 				PRODUCT_MODULE_NAME = TMLPersistentContainerTests;
 				PRODUCT_NAME = "TMLPersistentContainer-tvOS Tests";
@@ -1492,7 +1496,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TMLPersistentContainer.TMLPersistentContainer-tvOS-Tests";
 				PRODUCT_MODULE_NAME = TMLPersistentContainerTests;
 				PRODUCT_NAME = "TMLPersistentContainer-tvOS Tests";
@@ -1591,62 +1595,62 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		02FE15771E80394200FF077C /* TestModel_Simple_3.xcdatamodeld */ = {
+		02FE15771E80394200FF077C /* TestModel_Simple_C.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				02FE15781E80394300FF077C /* TestModel_Simple_1.xcdatamodel */,
-				02FE15791E80394300FF077C /* TestModel_Simple_2.xcdatamodel */,
-				02FE157A1E80394300FF077C /* TestModel_Simple_3.xcdatamodel */,
+				02FE15781E80394300FF077C /* TestModel_Simple_A.xcdatamodel */,
+				02FE15791E80394300FF077C /* TestModel_Simple_B.xcdatamodel */,
+				02FE157A1E80394300FF077C /* TestModel_Simple_C.xcdatamodel */,
 			);
-			currentVersion = 02FE157A1E80394300FF077C /* TestModel_Simple_3.xcdatamodel */;
-			name = TestModel_Simple_3.xcdatamodeld;
-			path = Tests/TMLPersistentContainerTests/TestModel_Simple_3.xcdatamodeld;
+			currentVersion = 02FE157A1E80394300FF077C /* TestModel_Simple_C.xcdatamodel */;
+			name = TestModel_Simple_C.xcdatamodeld;
+			path = Tests/TMLPersistentContainerTests/TestModel_Simple_C.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		02FE157B1E80394300FF077C /* TestModel_Simple_2.xcdatamodeld */ = {
+		02FE157B1E80394300FF077C /* TestModel_Simple_B.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				02FE157C1E80394300FF077C /* TestModel_Simple_1.xcdatamodel */,
-				02FE157D1E80394300FF077C /* TestModel_Simple_2.xcdatamodel */,
+				02FE157C1E80394300FF077C /* TestModel_Simple_A.xcdatamodel */,
+				02FE157D1E80394300FF077C /* TestModel_Simple_B.xcdatamodel */,
 			);
-			currentVersion = 02FE157D1E80394300FF077C /* TestModel_Simple_2.xcdatamodel */;
-			name = TestModel_Simple_2.xcdatamodeld;
-			path = Tests/TMLPersistentContainerTests/TestModel_Simple_2.xcdatamodeld;
+			currentVersion = 02FE157D1E80394300FF077C /* TestModel_Simple_B.xcdatamodel */;
+			name = TestModel_Simple_B.xcdatamodeld;
+			path = Tests/TMLPersistentContainerTests/TestModel_Simple_B.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		02FE157E1E80394300FF077C /* TestModel_Simple_1.xcdatamodeld */ = {
+		02FE157E1E80394300FF077C /* TestModel_Simple_A.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				02FE157F1E80394300FF077C /* TestModel_Simple_1.xcdatamodel */,
+				02FE157F1E80394300FF077C /* TestModel_Simple_A.xcdatamodel */,
 			);
-			currentVersion = 02FE157F1E80394300FF077C /* TestModel_Simple_1.xcdatamodel */;
-			name = TestModel_Simple_1.xcdatamodeld;
-			path = Tests/TMLPersistentContainerTests/TestModel_Simple_1.xcdatamodeld;
+			currentVersion = 02FE157F1E80394300FF077C /* TestModel_Simple_A.xcdatamodel */;
+			name = TestModel_Simple_A.xcdatamodeld;
+			path = Tests/TMLPersistentContainerTests/TestModel_Simple_A.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		02FE15851E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodeld */ = {
+		02FE15851E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				02FE15861E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodel */,
-				02FE15871E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodel */,
+				02FE15861E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodel */,
+				02FE15871E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodel */,
 			);
-			currentVersion = 02FE15871E80394300FF077C /* TestModel_MultiConfig_2.xcdatamodel */;
-			name = TestModel_MultiConfig_2.xcdatamodeld;
-			path = Tests/TMLPersistentContainerTests/TestModel_MultiConfig_2.xcdatamodeld;
+			currentVersion = 02FE15871E80394300FF077C /* TestModel_MultiConfig_B.xcdatamodel */;
+			name = TestModel_MultiConfig_B.xcdatamodeld;
+			path = Tests/TMLPersistentContainerTests/TestModel_MultiConfig_B.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		02FE15881E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodeld */ = {
+		02FE15881E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				02FE15891E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodel */,
+				02FE15891E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodel */,
 			);
-			currentVersion = 02FE15891E80394300FF077C /* TestModel_MultiConfig_1.xcdatamodel */;
-			name = TestModel_MultiConfig_1.xcdatamodeld;
-			path = Tests/TMLPersistentContainerTests/TestModel_MultiConfig_1.xcdatamodeld;
+			currentVersion = 02FE15891E80394300FF077C /* TestModel_MultiConfig_A.xcdatamodel */;
+			name = TestModel_MultiConfig_A.xcdatamodeld;
+			path = Tests/TMLPersistentContainerTests/TestModel_MultiConfig_A.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
