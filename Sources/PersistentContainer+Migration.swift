@@ -243,12 +243,12 @@ extension PersistentContainerMigratable {
                                      totalSteps: totalSteps)
 
             try migrationManager.migrateStore(from: currentStoreURL,
-                                              sourceType: description.type,
+                                              type: description.eType,
                                               options: description.options,
-                                              with: edge.mappingModel,
-                                              toDestinationURL: newStoreURL,
-                                              destinationType: description.type,
-                                              destinationOptions: description.options)
+                                              mapping: edge.mappingModel,
+                                              to: newStoreURL,
+                                              type: description.eType,
+                                              options: description.options)
             // Update for next migration
             currentStoreURL = newStoreURL
             stepsRemaining -= 1
