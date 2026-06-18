@@ -17,6 +17,10 @@ internal typealias PersistentStoreMetadata = [String:Any]
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension NSPersistentStoreDescription {
 
+    var eType: NSPersistentStore.StoreType {
+        .init(rawValue: type)
+    }
+
     /// The URL of the store's backing file
     var fileURL: URL {
         precondition(url != nil && url!.isFileURL)
@@ -33,7 +37,7 @@ extension NSPersistentStoreDescription {
             return nil
         }
 
-        return try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: type, at: fileURL, options: options)
+        return try NSPersistentStoreCoordinator.metadataForPersistentStore(type: eType, at: fileURL, options: options)
     }
 
     /// Safely destroy the described store - as long as it is backed by some file.
@@ -42,7 +46,7 @@ extension NSPersistentStoreDescription {
     /// - Throws: Any filesystem access errors
     func destroyStore(coordinator: NSPersistentStoreCoordinator) throws {
         if let url = self.url, url.isFileURL {
-            try coordinator.destroyPersistentStore(at: url, ofType: type, options: options)
+            try coordinator.destroyPersistentStore(at: url, type: eType, options: options)
         }
     }
 
@@ -64,7 +68,7 @@ extension NSPersistentStoreDescription {
                                                    destinationOptions: options,
                                                    withPersistentStoreFrom: fromURL,
                                                    sourceOptions: options,
-                                                   ofType: type)
+                                                   type: .sqlite)
         } else {
             try FileManager.default.replaceItem(at: fileURL,
                                                 withItemAt: fromURL,

@@ -34,7 +34,7 @@ open class TestCase: XCTestCase {
 
     /// Create a persistent container from a particular MOM level
     func createPersistentContainer(using file: ModelName,
-                                   bundles: [Bundle] = Bundle.allBundles,
+                                   bundles: [Bundle] = Bundle.allMyBundles,
                                    order: ModelVersionOrder = .compare,
                                    configuration: String? = nil,
                                    storeType: String = NSSQLiteStoreType,
@@ -131,7 +131,7 @@ open class TestCase: XCTestCase {
     /// Initialise a PersistentContainer, optionally nuking the store first
     func createAndLoadStore(using model: ModelName,
                             makeEmpty: Bool = false,
-                            bundles: [Bundle] = Bundle.allBundles,
+                            bundles: [Bundle] = Bundle.allMyBundles,
                             delegate: MigrationDelegate? = nil,
                             configuration: String? = nil,
                             storeType: String = NSSQLiteStoreType,
@@ -157,7 +157,7 @@ open class TestCase: XCTestCase {
                                   configuration1: String,
                                   configuration2: String,
                                   makeEmpty: Bool = false,
-                                  bundles: [Bundle] = Bundle.allBundles,
+                                  bundles: [Bundle] = Bundle.allMyBundles,
                                   delegate: MigrationDelegate? = nil) async -> PersistentContainer {
         let container = createPersistentContainer(using: model, configuration: configuration1)
         container.migrationDelegate = delegate
@@ -236,5 +236,22 @@ extension XCTestCase {
         }
         
         return managedObjectModel
+    }
+}
+
+///
+/// So starting in Xcode 27 (but still macOS 26) ``Bundle.allBundles`` returns all kinds of bundles that are
+/// blatantly frameworks --- but only sometimes!  Running tests one by one doesn't show it, but run an entire
+/// suite and we're inundated with what seems to be all of Foundation.
+///
+/// I can't really remember where this pattern came from -- I think the problem was how to find MOMD type
+/// things from a test suite - in hindsight / more modernly it would be better to supply via an actual URL or
+/// something.
+/// 
+extension Bundle {
+    static var allMyBundles: [Bundle] {
+        allBundles.filter {
+            !$0.bundlePath.contains("Xcode/Agents") && !$0.bundlePath.contains("/System/Library/PrivateFrameworks")
+        }
     }
 }

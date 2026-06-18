@@ -18,7 +18,11 @@ import CoreData
 ///
 class TestBugs: XCTestCase {
     
-    func testDestroyContainerBreaksMetadataForPersistentStore() async {
+    func testDestroyContainerBreaksMetadataForPersistentStore() async throws {
+
+        if #available(anyAppleOS 27, *) {
+            throw XCTSkip("This is the pre-2027 OS test")
+        }
 
         // Load model + set up persistent container as normal
         
@@ -85,6 +89,70 @@ class TestBugs: XCTestCase {
             doneExpectation.fulfill()
         }
         
+        await fulfillment(of: [doneExpectation], timeout: 1000) // sure
+    }
+
+    func testDestroyContainerBreaksMetadataForPersistentStore2() async throws {
+
+        if #unavailable(anyAppleOS 27) {
+            throw XCTSkip("This is the 2027+ OS test")
+        }
+
+        // Load model + set up persistent container as normal
+
+        let modelFileName = ModelName.TestModel_Simple_1.rawValue
+        let storeFileName = "TestBugs_1_Store"
+
+        let unitTestBundle = Bundle(for: type(of: self))
+
+        guard let modelURL = unitTestBundle.url(forResource: modelFileName, withExtension: "momd") else {
+            XCTFail("Couldn't find \(modelFileName).momd in the bundle")
+            return
+        }
+
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL) else {
+            XCTFail("\(modelFileName).momd doesn't seem to be a managed object model")
+            return
+        }
+
+        let persistentContainer = NSPersistentContainer(name: storeFileName, managedObjectModel: managedObjectModel)
+
+        // Destroy the model on disk to start off in a clean state.
+        //
+        // For an SQLite store this does not erase the files but instead replaces them with files
+        // making up an empty database.
+        //
+        let storeDescription = persistentContainer.persistentStoreDescriptions[0]
+
+        do {
+            try persistentContainer.persistentStoreCoordinator.destroyPersistentStore(at: storeDescription.url!,
+                                                                                      ofType: storeDescription.type,
+                                                                                      options: storeDescription.options)
+        } catch {
+            XCTFail("Unexpected destroy error: \(error)")
+        }
+
+        // Load the metadata of the store.
+        // In the 2027 OSs this just throws after accessing the database.
+        do {
+            let metadata = try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: storeDescription.type,
+                                                                                       at: storeDescription.url!,
+                                                                                       options: storeDescription.options)
+
+            XCTFail("Unexpected metadataForPersistentStore success: \(metadata)")
+        } catch {
+        }
+
+        // Finally try to load the store.  In the 2027 OSs this works.
+        let doneExpectation = expectation(description: "Load store done")
+
+        persistentContainer.loadPersistentStores { description, error in
+            if let error {
+                XCTFail("Persistent store unexpectedly failed to load: \(error)")
+            }
+            doneExpectation.fulfill()
+        }
+
         await fulfillment(of: [doneExpectation], timeout: 1000) // sure
     }
 }
