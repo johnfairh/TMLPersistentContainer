@@ -95,7 +95,7 @@ class TestCreateDelete: TestCase {
         deleteFilesForStore(name: Constants.ModelVersion.rawValue)
 
         let container = PersistentContainer(name: Constants.ModelVersion.rawValue,
-                                            bundles: Bundle.allBundles,
+                                            bundles: Bundle.allMyBundles,
                                             logMessageHandler: { msg in print("LOG: \(msg)") })
 
         XCTAssertEqual(Constants.EntityCount, container.managedObjectModel.entities.count)
@@ -109,7 +109,7 @@ class TestCreateDelete: TestCase {
 
     func testCanSurviveCorruptModel() {
         let container = PersistentContainer(name: ModelName.TestModel_NotA.rawValue,
-                                            bundles: Bundle.allBundles,
+                                            bundles: Bundle.allMyBundles,
                                             logMessageHandler: { msg in print("LOG: \(msg)") })
 
         XCTAssertEqual(container.managedObjectModel.entities.count, 0)

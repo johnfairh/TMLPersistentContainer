@@ -11,20 +11,22 @@ on:
 jobs:
   macos:
     name: Tests
-    runs-on: macos-15
+    runs-on: xcode-27
     steps:
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '26.1.0-beta'
-      - uses: actions/checkout@v4
+          xcode-version: '27.0.0'
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: Tests
         run: xcodebuild build test -project TMLPersistentContainer.xcodeproj -scheme TMLPersistentContainer-macOS -enableCodeCoverage YES
       - name: Generate coverage
-        uses: sersoft-gmbh/swift-coverage-action@v4
+        uses: sersoft-gmbh/swift-coverage-action@v5
         id: coverage-files
       - name: Upload coverage
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v7
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           files: ${{ join(fromJSON(steps.coverage-files.outputs.files), ',') }}
+          verbose: true

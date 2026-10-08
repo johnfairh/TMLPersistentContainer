@@ -40,7 +40,7 @@ class TestLogging: TestCase {
 
     func testCanLogNodeDB() {
         let nodes = ModelVersionNodes(logMessageHandler: loggingCallback)
-        nodes.discover(from: Bundle.allBundles)
+        nodes.discover(from: Bundle.allMyBundles)
 
         nodes.logMetadata(.error)
     }

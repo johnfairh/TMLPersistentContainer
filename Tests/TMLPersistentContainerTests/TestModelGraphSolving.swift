@@ -21,7 +21,7 @@ class TestModelGraphSolving: TestCase {
         super.setUp()
 
         let uniGraph = ModelVersionGraph(logMessageHandler: loggingCallback)
-        uniGraph.discover(from: Bundle.allBundles)
+        uniGraph.discover(from: Bundle.allMyBundles)
 
         guard let simpleOrder = ModelVersionOrder.patternMatchCompare(".*Simple.*").prepare(for: NSPersistentStoreDescription()) else {
             fatalError("Can't compile pattern...")

@@ -18,7 +18,7 @@ class TestModelDiscovery: TestCase {
 
         let nodes = ModelVersionNodes(logMessageHandler: loggingCallback)
 
-        let candidateVersions = nodes.discoverCandidates(from: Bundle.allBundles)
+        let candidateVersions = nodes.discoverCandidates(from: Bundle.allMyBundles)
 
         XCTAssertEqual(candidateVersions.count, SimpleModel.totalVersions + MultiConfigModel.totalVersions)
 
@@ -35,7 +35,7 @@ class TestModelDiscovery: TestCase {
 
     func testCanDiscoverModelVersionsCompound() {
         let nodes = ModelVersionNodes(logMessageHandler: loggingCallback)
-        nodes.discover(from: Bundle.allBundles)
+        nodes.discover(from: Bundle.allMyBundles)
 
         XCTAssertEqual(nodes.nodes.count, SimpleModel.totalUniqueVersions + MultiConfigModel.totalUniqueVersions)
 
@@ -48,7 +48,7 @@ class TestModelDiscovery: TestCase {
 
     func testCanDiscoverExplicitMapping() {
         let nodes = ModelVersionNodes(logMessageHandler: loggingCallback)
-        nodes.discover(from: Bundle.allBundles)
+        nodes.discover(from: Bundle.allMyBundles)
 
         guard let simpleV1 = nodes[ModelName.TestModel_Simple_1.rawValue],
               let simpleV2 = nodes[ModelName.TestModel_Simple_2.rawValue] else {
@@ -57,7 +57,7 @@ class TestModelDiscovery: TestCase {
         }
 
         let edges = ModelVersionEdges(logMessageHandler: loggingCallback)
-        let edge = edges.discoverEdge(source: simpleV1, destination: simpleV2, from: Bundle.allBundles)
+        let edge = edges.discoverEdge(source: simpleV1, destination: simpleV2, from: Bundle.allMyBundles)
 
         if let edge = edge {
             XCTAssertEqual(edge.source, ModelName.TestModel_Simple_1.rawValue, "Bad source value")
@@ -70,7 +70,7 @@ class TestModelDiscovery: TestCase {
 
     func testCanDiscoverInferredMapping() {
         let nodes = ModelVersionNodes(logMessageHandler: loggingCallback)
-        nodes.discover(from: Bundle.allBundles)
+        nodes.discover(from: Bundle.allMyBundles)
 
         guard let simpleV2 = nodes[ModelName.TestModel_Simple_2.rawValue],
               let simpleV3 = nodes[ModelName.TestModel_Simple_3.rawValue] else {
@@ -79,7 +79,7 @@ class TestModelDiscovery: TestCase {
         }
 
         let edges = ModelVersionEdges(logMessageHandler: loggingCallback)
-        let edge = edges.discoverEdge(source: simpleV2, destination: simpleV3, from: Bundle.allBundles)
+        let edge = edges.discoverEdge(source: simpleV2, destination: simpleV3, from: Bundle.allMyBundles)
 
         if let edge = edge {
             XCTAssertEqual(edge.source, ModelName.TestModel_Simple_2.rawValue, "Bad source value")
@@ -93,7 +93,7 @@ class TestModelDiscovery: TestCase {
     func testCanDiscoverEdges() {
 
         let graph = ModelVersionGraph(logMessageHandler: loggingCallback)
-        graph.discover(from: Bundle.allBundles)
+        graph.discover(from: Bundle.allMyBundles)
 
         struct ExpectedEdge {
             let source: ModelName
@@ -144,7 +144,7 @@ class TestModelDiscovery: TestCase {
         let storeMetadata = try! storeDescription.loadStoreMetadata()!
 
         let graph = ModelVersionGraph(logMessageHandler: loggingCallback)
-        graph.discover(from: Bundle.allBundles)
+        graph.discover(from: Bundle.allMyBundles)
 
         let node = graph.nodeForStoreMetadata(storeMetadata, configuration: nil)
 
@@ -166,7 +166,7 @@ class TestModelDiscovery: TestCase {
         let container = await createAndLoadStore(using: .TestModel_Simple_1, makeEmpty: true)
 
         let graph = ModelVersionGraph(logMessageHandler: loggingCallback)
-        graph.discover(from: Bundle.allBundles)
+        graph.discover(from: Bundle.allMyBundles)
 
         let node = graph.nodeForObjectModel(container.managedObjectModel)
 

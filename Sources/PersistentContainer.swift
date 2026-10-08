@@ -43,7 +43,7 @@ extension PersistentContainerProtocol {
         }
     }
     
-    func loadPersistentStoresHelper(invokeCoreDataClosure: @escaping @Sendable ((_ block: CompletionBox) -> Void), completionHandler block: CompletionBox) {
+    func loadPersistentStoresHelper(invokeCoreDataClosure: sending @escaping (_ block: CompletionBox) -> Void, completionHandler block: CompletionBox) {
         // Filter out the stores that need loading to replicate the superclass API
         // There are probably only a handful at most of these so no need to be terribly efficient
         let storeURLs = persistentStoreCoordinator.persistentStores.compactMap(\.url)
@@ -279,3 +279,4 @@ class UncheckedSendable<T>: @unchecked Sendable {
         self.value = value
     }
 }
+

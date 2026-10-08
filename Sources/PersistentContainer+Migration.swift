@@ -102,7 +102,8 @@ extension PersistentContainerMigratable {
             do {
                 migrationDelegate?.persistentContainer(self, willConsiderStore: description)
 
-                guard let storeMetadata = try description.loadStoreMetadata() else {
+                guard !isOS27DestroyedStore(description: description),
+                    let storeMetadata = try description.loadStoreMetadata() else {
                     log(.info, "Store does not exist, no migration required.")
                     migrationDelegate?.persistentContainer(self, willNotMigrateStore: description, storeExists: false)
 
@@ -243,12 +244,12 @@ extension PersistentContainerMigratable {
                                      totalSteps: totalSteps)
 
             try migrationManager.migrateStore(from: currentStoreURL,
-                                              sourceType: description.type,
+                                              type: description.eType,
                                               options: description.options,
-                                              with: edge.mappingModel,
-                                              toDestinationURL: newStoreURL,
-                                              destinationType: description.type,
-                                              destinationOptions: description.options)
+                                              mapping: edge.mappingModel,
+                                              to: newStoreURL,
+                                              type: description.eType,
+                                              options: description.options)
             // Update for next migration
             currentStoreURL = newStoreURL
             stepsRemaining -= 1
@@ -339,6 +340,40 @@ extension PersistentContainerMigratable {
 
             return true
         }
+        return false
+    }
+
+    // In iOS etc. 27 the situation is arguably worse: metadataForPerStore() does not create the metadata
+    // but instead throws an aggravatingly stupid error "134070 - An error occurred in the persistent store.".
+    // It does open the file and causes sqlite to create the wal & shm sections, but the DB is left completely
+    // empty.
+    //
+    // Really the answer is to stop using the cursed 'destroy' API and instead manually destroy all the
+    // SQL remnants like a psychopath.
+    //
+    // Or maybe we embrace this as the 'correct behaviour' when the store is logically destroyed.  Painful
+    // because is taking the 'bad file system' path.  But I suppose that is rarer.
+    //
+    // Revisit later in the summer... don't assume this will be the same behaviour then.
+    private func isOS27DestroyedStore(description: NSPersistentStoreDescription) -> Bool {
+        guard let path = description.url?.path,
+              path.hasSuffix("sqlite"),
+              FileManager.default.fileExists(atPath: path),
+              FileManager.default.isReadableFile(atPath: path),
+              let fileSize = try? FileManager.default.attributesOfItem(atPath: path)[.size] as? Int64,
+              fileSize == 4096 else {
+            return false
+        }
+
+        do {
+              _ = try description.loadStoreMetadata()
+        } catch {
+            // This can only execute on os27+ and means that the store smells like a 'destroyed'
+            // store, AND has unreadable metadata.
+            print(error)
+            return true
+        }
+
         return false
     }
 }
