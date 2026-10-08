@@ -12,6 +12,20 @@
 
 * None.
 
+## 6.1.0
+
+### Breaking
+
+* None
+
+### Enhancements
+
+* Support Swift 6.4 / Xcode 27 (Apple xx27 OSs)
+
+### Bug Fixes
+
+* None.
+
 ## 6.0.0
 
 ### Breaking
