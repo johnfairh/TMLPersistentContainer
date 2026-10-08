@@ -6,12 +6,10 @@ Distributed under the ISC license, see LICENSE.
 
 # TMLPersistentContainer
 
-[![CI](https://travis-ci.org/johnfairh/TMLPersistentContainer.svg?branch=master)](https://travis-ci.org/johnfairh/TMLPersistentContainer)
-[![codecov](https://codecov.io/gh/johnfairh/TMLPersistentContainer/branch/master/graph/badge.svg)](https://codecov.io/gh/johnfairh/TMLPersistentContainer)
-![Pod](https://cocoapod-badges.herokuapp.com/v/TMLPersistentContainer/badge.png)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![Platforms](https://cocoapod-badges.herokuapp.com/p/TMLPersistentContainer/badge.png)
-![License](https://cocoapod-badges.herokuapp.com/l/TMLPersistentContainer/badge.png)
+![CI](https://github.com/johnfairh/TMLPersistentContainer/workflows/Tests/badge.svg)
+![codecov](https://img.shields.io/codecov/c/github/johnfairh/TMLPersistentContainer)
+![Platforms](https://img.shields.io/badge/Platforms_macOS_%7C_iOS_%7C_iPadOS_%7C_tvOS_%7C_watchOS?style=flat&labelColor=0xf0f0f0&color=blue)
+![License](https://img.shields.io/github/license/johnfairh/TMLPersistentContainer)
 
 Automatic shortest-path multi-step Core Data migrations in Swift.
 
@@ -73,10 +71,6 @@ of iOS 13.0, macOS 10.15, tvOS 13.0, or watchOS 6.0.`
 No additional software dependencies.
 
 ## Installation
-
-CocoaPods:
-
-    pod 'TMLPersistentContainer'
 
 Swift package manager:
 
