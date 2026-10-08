@@ -8,7 +8,7 @@ Distributed under the ISC license, see LICENSE.
 
 ![CI](https://github.com/johnfairh/TMLPersistentContainer/workflows/Tests/badge.svg)
 ![codecov](https://img.shields.io/codecov/c/github/johnfairh/TMLPersistentContainer)
-![Platforms](https://img.shields.io/badge/Platforms_macOS_%7C_iOS_%7C_iPadOS_%7C_tvOS_%7C_watchOS?style=flat&labelColor=0xf0f0f0&color=blue)
+![Platforms](https://img.shields.io/badge/platforms-macOS_iOS_iPadOS_tvOS_watchOS-lightgray)
 ![License](https://img.shields.io/github/license/johnfairh/TMLPersistentContainer)
 
 Automatic shortest-path multi-step Core Data migrations in Swift.
